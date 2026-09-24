@@ -3,6 +3,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { ImageResponse } from 'next/og';
+import { BASE_PATH } from '@/lib/config';
 import type { LevelId } from '@/lib/data/schema';
 
 export const OG_SIZE = { width: 1200, height: 630 };
@@ -29,7 +30,9 @@ async function font() {
 
 async function dataUrl(publicPath: string | null): Promise<string | null> {
   if (!publicPath) return null;
-  const buf = await fs.readFile(path.join(process.cwd(), 'public', publicPath.replace(/^\//, '')));
+  const buf = await fs.readFile(
+    path.join(process.cwd(), 'public', publicPath.slice(BASE_PATH.length).replace(/^\//, '')),
+  );
   return `data:image/png;base64,${buf.toString('base64')}`;
 }
 

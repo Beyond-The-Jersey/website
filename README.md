@@ -19,6 +19,7 @@ npm run dev          # http://localhost:3000
 |---|---|
 | `npm run dev` | Dev server |
 | `npm run build` | Validates the data, then writes the static site to `out/` |
+| `npm run build:pages` | What GitHub Pages serves: the live site in `out/` plus the seed demo in `out/demo/` |
 | `npm run preview` | Serves `out/` on http://localhost:4173 |
 | `npm test` | Unit tests (Vitest): rating rule, league summaries, search, data checks, hover intent |
 | `npm run test:e2e` | Builds, serves `out/` and runs the Playwright tests (desktop 1440×900 and a phone) |
@@ -64,11 +65,16 @@ Copy `.env.example` to `.env.local`.
 | `NEXT_PUBLIC_REPO_URL` | unset | The public GitHub repo. Until it's set, repo links go to `/#contribute` and the page shows a `github.com/[org]` placeholder. |
 | `NEXT_PUBLIC_SITE_URL` | `http://localhost:3000` | Absolute URLs for Open Graph images |
 | `NEXT_PUBLIC_SHOW_TEAM_CREST` | `true` | The crest next to the club name on team pages (a test feature) |
+| `NEXT_PUBLIC_BASE_PATH`, `NEXT_PUBLIC_DEMO` | unset | Set by `build:pages` for the `/demo/` copy |
 | `BTJ_DATA_SOURCE`, `BTJ_DATA_DIR`, `BTJ_DATA_URL`, `BTJ_DATA_TOKEN` | `seed` | See above |
 
 ## Deploying
 
-The site is on GitHub Pages at **https://behind-the-jersey.org**. [`.github/workflows/pages.yml`](.github/workflows/pages.yml) builds and deploys `main` after CI passes (or on demand from the Actions tab). The custom domain is set in the repo's Pages settings; DNS is at Gandi (apex `A`/`AAAA` records to GitHub Pages, `www` as a `CNAME` to `beyond-the-jersey.github.io`).
+The site is on GitHub Pages at **https://behind-the-jersey.org**. [`.github/workflows/pages.yml`](.github/workflows/pages.yml) builds and deploys `main` after CI passes (or on demand from the Actions tab). It runs `npm run build:pages`, which builds two copies:
+
+- `/`: the live site, from the data source set by `LIVE_DATA_SOURCE` in `pages.yml` (`seed` for now; `repo` once Beyond-The-Jersey/data passes `BTJ_DATA_SOURCE=repo npm run validate:data`. Switching needs a `DATA_REPO_TOKEN` secret with read access to that repo while it's private).
+- `/demo/`: always the seed data from the design handover, with a banner saying so. It's built with `NEXT_PUBLIC_BASE_PATH=/demo`.
+ The custom domain is set in the repo's Pages settings; DNS is at Gandi (apex `A`/`AAAA` records to GitHub Pages, `www` as a `CNAME` to `beyond-the-jersey.github.io`).
 
 `npm run build` writes a fully static site to `out/`, so any static host works. Routes end in `/` (`trailingSlash`), and a post-build step gives the Open Graph images a `.png` extension so static hosts serve them as images.
 
@@ -87,7 +93,7 @@ docs/data-request/   what the website needs from Beyond-The-Jersey/data
 e2e/, tests/         Playwright and Vitest
 handover/            the design handover as received (docs, snapshots, design source, assets)
 public/assets/       crests and shirt photos from the handover (not cleared for public use)
-public/fonts/        Big Shoulders Display, self-hosted (SIL OFL; licence in OFL.txt)
+app/fonts/           Big Shoulders Display, self-hosted and bundled by Next (SIL OFL; licence in OFL.txt)
 ```
 
 ## Differences from the design we chose to keep

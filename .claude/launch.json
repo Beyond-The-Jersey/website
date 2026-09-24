@@ -12,6 +12,12 @@
       "runtimeExecutable": "bash",
       "runtimeArgs": ["-c", "PATH=/opt/homebrew/opt/node@24/bin:$PATH npx serve handover -l 3200 --no-clipboard"],
       "port": 3200
+    },
+    {
+      "name": "static",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "PATH=/opt/homebrew/opt/node@24/bin:$PATH npx serve out -l 4173 --no-clipboard"],
+      "port": 4173
     }
   ]
 }

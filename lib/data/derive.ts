@@ -14,6 +14,7 @@ import {
   sourceLine,
   sourceLineShort,
 } from '../format';
+import { asset } from '../config';
 import type { Dataset } from './dataset';
 import { kitEnd, kitStart } from './dataset';
 import { compareLevels, isBad, isRated, levelForKit, TIER_SCORE } from './rating';
@@ -242,7 +243,7 @@ export function clubSummary(ds: Dataset, club: Club): ClubSummary {
     id: club.id,
     name: club.name,
     shortName: club.shortName,
-    crest: club.crest ? `/${club.crest}` : null,
+    crest: club.crest ? asset(club.crest) : null,
     initials: club.code || initials(club.name),
     level: clubLevel(ds, club.id),
     href: clubHref(ds, club),
@@ -342,7 +343,7 @@ export function latestChanges(ds: Dataset, n = 4): ChangeView[] {
         title: c.title,
         text: c.text,
         source: sourceView(c.source),
-        club: { name: club.name, crest: club.crest ? `/${club.crest}` : null, initials: club.code },
+        club: { name: club.name, crest: club.crest ? asset(club.crest) : null, initials: club.code },
         href: clubHref(ds, club),
       };
     });
@@ -368,7 +369,7 @@ export function droppedView(ds: Dataset, d: Dataset['dropped'][number]): Dropped
     id: d.id,
     year: d.year,
     name,
-    crest: club?.crest ? `/${club.crest}` : null,
+    crest: club?.crest ? asset(club.crest) : null,
     initials: club?.code ?? initials(name),
     what: d.what,
     text: d.text,
@@ -548,7 +549,7 @@ export function teamPage(ds: Dataset, clubId: string): TeamPage | null {
       level: kitLevel(ds, k),
       change: k.change,
       summary: k.summary,
-      photos: { front: `/${k.photos.front}`, back: `/${k.photos.back}` },
+      photos: { front: asset(k.photos.front!), back: asset(k.photos.back!) },
       sponsors: sponsorCards(ds, k),
     };
   });
@@ -570,7 +571,7 @@ export function teamPage(ds: Dataset, clubId: string): TeamPage | null {
   const sport = ds.byId.sport.get(club.sportId);
   const contact = ds.byId.contact.get(clubId);
   return {
-    club: { id: club.id, name: club.name, crest: club.crest ? `/${club.crest}` : null, initials: club.code },
+    club: { id: club.id, name: club.name, crest: club.crest ? asset(club.crest) : null, initials: club.code },
     crumbs: [
       ...(sport ? [{ label: sport.label, href: sportHref(sport) }] : []),
       ...(league ? [{ label: league.name, href: leagueHref(league) }] : []),

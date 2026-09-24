@@ -5,6 +5,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const OUT = 'out';
+// Next leaves the base path out of absolute Open Graph image URLs; add it for the /demo copy.
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
 let renamed = 0;
 let rewritten = 0;
 
@@ -17,7 +19,11 @@ function walk(dir) {
       renamed++;
     } else if (/\.(html|txt)$/.test(entry.name)) {
       const s = fs.readFileSync(p, 'utf8');
-      const t = s.replace(/\/opengraph-image(?=[?"'\\])/g, '/opengraph-image.png');
+      let t = s.replace(/\/opengraph-image(?=[?"'\\])/g, '/opengraph-image.png');
+      if (BASE)
+        t = t.replace(/(https?:\/\/[^/"'\\]+)(\/[^"'\\]*?opengraph-image\.png)/g, (m, origin, rest) =>
+          rest.startsWith(`${BASE}/`) ? m : `${origin}${BASE}${rest}`,
+        );
       if (t !== s) {
         fs.writeFileSync(p, t);
         rewritten++;

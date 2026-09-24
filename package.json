@@ -17,7 +17,8 @@
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "validate:data": "tsx scripts/validate-data.ts",
-    "data:pull": "bash scripts/pull-data.sh"
+    "data:pull": "bash scripts/pull-data.sh",
+    "build:pages": "bash scripts/build-pages.sh"
   },
   "dependencies": {
     "next": "^16.3.6",

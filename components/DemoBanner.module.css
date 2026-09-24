@@ -1,0 +1,25 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  padding: 8px var(--gutter);
+  background: var(--panel);
+  border-bottom: 1px solid var(--line-3);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: var(--text-3);
+  text-align: center;
+}
+
+.link {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

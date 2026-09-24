@@ -11,3 +11,4 @@ next-env.d.ts
 /.data-repo/
 .env*.local
 /.claude/settings.local.json
+/out-demo/

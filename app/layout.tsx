@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { IBM_Plex_Mono, Schibsted_Grotesk } from 'next/font/google';
+import { DemoBanner } from '@/components/DemoBanner';
+import { IS_DEMO } from '@/lib/config';
 import './globals.css';
 
 const schibsted = Schibsted_Grotesk({
@@ -30,16 +32,10 @@ export const viewport: Viewport = { themeColor: '#0f0d0c', colorScheme: 'dark' }
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${schibsted.variable} ${plexMono.variable}`}>
-      <head>
-        <link
-          rel="preload"
-          href="/fonts/big-shoulders-display-latin.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin=""
-        />
-      </head>
-      <body>{children}</body>
+      <body>
+        {IS_DEMO && <DemoBanner />}
+        {children}
+      </body>
     </html>
   );
 }
