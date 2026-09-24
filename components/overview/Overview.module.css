@@ -1,0 +1,582 @@
+.tabs {
+  border-bottom: 1px solid var(--line);
+}
+
+.tabsInner {
+  max-width: var(--page-w);
+  margin: 0 auto;
+  height: 56px;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  border-bottom: 3px solid transparent;
+  color: var(--text-4);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  color: var(--text);
+}
+
+.tabOn {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+.main {
+  max-width: var(--page-w);
+  margin: 0 auto;
+  padding: 40px var(--gutter) 0;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 760px;
+}
+
+.h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 72px;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.lede {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.45;
+  color: var(--text-2);
+}
+
+.chips {
+  margin-top: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 20px;
+  border: 1px solid var(--line-2);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.chip:hover {
+  border-color: var(--text-5);
+}
+
+.chipOn,
+.chipOn:hover {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--line-2);
+}
+
+.content {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Every club at a glance */
+.glance {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 22px;
+  border-radius: 16px;
+  background: var(--panel);
+  border: 1px solid var(--line-3);
+}
+
+.glanceTop {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+  flex-wrap: wrap;
+}
+
+.glanceHead {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.glanceCounts {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--text-3);
+}
+
+/* Level groups */
+.groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 36px;
+  align-items: stretch;
+}
+
+.group {
+  width: calc(var(--n) * 236px + (var(--n) - 1) * 20px);
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Fixed height so every card top lines up across groups. */
+.groupHead {
+  height: 118px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid;
+}
+
+.groupTitle {
+  height: 34px;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.groupWord {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 42px;
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+.groupCount {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.groupDesc {
+  height: 36px;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text-3);
+}
+
+.cards {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.card {
+  width: 236px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--panel);
+  border: 2px solid;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.cardLink:hover .cardName {
+  text-decoration: underline;
+}
+
+.media {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  flex-shrink: 0;
+  background: #ffffff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.mediaCrest {
+  margin-top: 30px;
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+}
+
+.mediaInitials {
+  margin-top: 70px;
+  font-family: var(--font-mono);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--bg);
+}
+
+.band {
+  height: 54px;
+  flex-shrink: 0;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bandWord {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+.bandRank {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+}
+
+.details {
+  padding: 14px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cardName {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.sponsors {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.payer {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text-2);
+}
+
+/* Not rated yet */
+.unrated {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.unratedHead {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 12px;
+  border-bottom: 3px dashed var(--line-4);
+}
+
+.unratedHead .groupTitle {
+  height: auto;
+}
+
+.unratedHead .groupDesc {
+  height: auto;
+}
+
+.unratedWord {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 0.8;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.unratedCount {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 22px 18px;
+}
+
+.tileItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--text-2);
+}
+
+.tile {
+  height: 116px;
+  border-radius: 10px;
+  background: #ffffff;
+  opacity: 0.92;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tile img {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+}
+
+.tileInitials {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--bg);
+}
+
+.tileName {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.more {
+  grid-column: span 2;
+  height: 116px;
+  border: 1px dashed #4a423d;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: 18px;
+}
+
+.moreN {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 38px;
+  line-height: 0.95;
+}
+
+.moreText {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--text-2);
+}
+
+/* Leagues and sports without data */
+.panel {
+  margin-top: 28px;
+  border: 1px dashed #4a423d;
+  border-radius: 14px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 760px;
+}
+
+.panelTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 34px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.panelText {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+.panelLink {
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent-soft);
+  text-decoration: none;
+}
+
+.panelLink:hover {
+  text-decoration: underline;
+}
+
+.sport {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 900px;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.rowTitle {
+  width: 300px;
+  flex-shrink: 0;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.rowText {
+  flex-grow: 1;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--text-2);
+}
+
+.rowStatus {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  white-space: nowrap;
+}
+
+.dropped {
+  margin-top: 64px;
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.droppedGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 1279px) {
+  .tiles {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1023px) {
+  .tiles {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .droppedGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .glance > div:last-child {
+    overflow-x: auto;
+  }
+  .glance > div:last-child > a {
+    min-width: 26px;
+  }
+}
+
+@media (max-width: 767px) {
+  .h1 {
+    font-size: 48px;
+  }
+  .lede {
+    font-size: 16px;
+  }
+  .chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-left: calc(-1 * var(--gutter));
+    margin-right: calc(-1 * var(--gutter));
+    padding: 0 var(--gutter);
+    scrollbar-width: none;
+  }
+  .groups {
+    flex-direction: column;
+  }
+  .group {
+    width: 100%;
+  }
+  .groupHead {
+    height: auto;
+  }
+  .groupDesc {
+    height: auto;
+  }
+  .card {
+    width: 100%;
+  }
+  .tiles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px 12px;
+  }
+  .tile {
+    height: 88px;
+  }
+  .tile img {
+    width: 56px;
+    height: 56px;
+  }
+  .more {
+    grid-column: span 3;
+  }
+  .row {
+    flex-wrap: wrap;
+    gap: 6px 16px;
+  }
+  .rowTitle {
+    width: 100%;
+  }
+  .droppedGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .panel {
+    padding: 22px;
+  }
+}

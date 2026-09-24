@@ -40,9 +40,14 @@ export function sourceDate(date: string): string {
   return /^\d{4}-\d{2}/.test(date) ? formatDate(date, 'month') : date;
 }
 
-/** 'SportsPro · Jul 2026'. */
+/** 'SportsPro (citing The Athletic) · Jul 2026'. */
 export function sourceLine(source: Pick<Source, 'name' | 'date'>): string {
   return `${source.name} · ${sourceDate(source.date)}`;
+}
+
+/** 'SportsPro · Jul 2026': without the '(citing …)' part, for small source lines on cards. */
+export function sourceLineShort(source: Pick<Source, 'name' | 'date'>): string {
+  return `${source.name.replace(/\s*\(.*?\)\s*/g, ' ').trim()} · ${sourceDate(source.date)}`;
 }
 
 const SYMBOL: Record<Money['currency'], string> = { GBP: '£', EUR: '€', USD: '$' };
@@ -89,7 +94,7 @@ export function placementPhrase(p: Placement): string {
 
 /** Monogram for things without a crest: 'Premier League' → 'PL', 'Visit Rwanda' → 'VR', 'Bundesliga' → 'BUN'. */
 export function initials(name: string): string {
-  const clean = name.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^A-Za-z0-9 &]/g, ' ');
+  const clean = name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^A-Za-z0-9 &]/g, ' ');
   const words = clean.split(/[\s&]+/).filter(Boolean);
   if (words.length === 1) return /^[A-Z0-9]{2,4}$/.test(words[0]) ? words[0] : words[0].slice(0, 3).toUpperCase();
   return words

@@ -1,0 +1,463 @@
+.hero {
+  position: relative;
+  z-index: 3;
+  padding: 84px 0 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  text-align: center;
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-4);
+}
+
+.lede {
+  margin: 0;
+  max-width: 700px;
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--text-2);
+}
+
+.key {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+}
+
+.keyLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-5);
+}
+
+.keyItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.keyWord {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.keyLink {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-2);
+  text-decoration: none;
+}
+
+.keyLink:hover {
+  color: #ffffff;
+}
+
+.section {
+  margin-top: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  scroll-margin-top: 24px;
+}
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.leagues {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+
+/* How we rate */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+  border-radius: 14px;
+  background: var(--panel);
+  border: 1px solid var(--line-3);
+}
+
+.stepTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stepN {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 34px;
+  line-height: 0.9;
+  color: var(--soaked-text);
+}
+
+.who {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  padding: 0 9px;
+  border-radius: 12px;
+  border: 1px solid;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.stepTitle {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.stepText {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--text-2);
+}
+
+.stepFoot {
+  margin-top: auto;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-4);
+}
+
+.defs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.defsLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-4);
+}
+
+.defsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.def {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.defText {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.defWord {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.defLine {
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--text-3);
+}
+
+/* How to help */
+.help {
+  padding: 48px;
+  border-radius: 24px;
+  background: var(--panel);
+  border: 1px solid var(--line-3);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 500px;
+  gap: 56px;
+}
+
+.helpLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.helpKicker {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+}
+
+.helpTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.helpText {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+.ways {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.way {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-3);
+}
+
+.wayN {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 34px;
+  line-height: 0.9;
+  color: var(--soaked-text);
+}
+
+.wayText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wayTitle {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.wayBody {
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--text-2);
+}
+
+.wayCta {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  border-radius: 18px;
+  border: 1px solid var(--line-4);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.wayCta:hover,
+.secondary:hover {
+  border-color: var(--text-5);
+}
+
+.helpRight {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pickLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  scroll-margin-top: 24px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.clubChip {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px 0 4px;
+  border-radius: 18px;
+  background: var(--bg);
+  border: 1px solid var(--line-3);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.clubChip:hover {
+  border-color: var(--text-5);
+}
+
+.more {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-3);
+}
+
+.helpButtons {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.primary,
+.secondary {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 26px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.primary {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.primary:hover {
+  background: #ffffff;
+}
+
+.secondary {
+  border: 1px solid var(--line-4);
+  color: var(--text);
+}
+
+.org {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-5);
+  text-align: center;
+}
+
+@media (max-width: 1279px) {
+  .grid4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .defsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .help {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .grid3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .hero {
+    padding: 56px 0 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    margin-top: 64px;
+  }
+  .grid4,
+  .grid3,
+  .steps,
+  .defsGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .lede {
+    font-size: 17px;
+  }
+  .help {
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+  .helpTitle {
+    font-size: 44px;
+  }
+  .way {
+    grid-template-columns: 32px minmax(0, 1fr);
+  }
+  .wayCta {
+    grid-column: 2;
+    justify-self: start;
+    min-height: 44px;
+  }
+}

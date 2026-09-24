@@ -1,0 +1,249 @@
+.wrap {
+  position: relative;
+  z-index: 30;
+}
+
+.hero {
+  width: 760px;
+  max-width: 100%;
+  margin-top: 12px;
+}
+
+.compact {
+  width: 440px;
+  max-width: 100%;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  background: var(--panel);
+  cursor: text;
+}
+
+.hero .field {
+  height: 68px;
+  gap: 12px;
+  padding: 0 22px;
+  border: 2px solid var(--line-4);
+  border-radius: 34px;
+  box-shadow: 0 12px 44px rgba(0, 0, 0, 0.5);
+}
+
+.compact .field {
+  height: 44px;
+  gap: 10px;
+  padding: 0 18px;
+  border: 1px solid var(--line-2);
+  border-radius: 22px;
+}
+
+.field:focus-within {
+  border-color: var(--text-5);
+}
+
+.field input {
+  flex-grow: 1;
+  min-width: 0;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+}
+
+.field input::placeholder {
+  color: var(--text-4);
+}
+
+.field input::-webkit-search-cancel-button {
+  filter: invert(0.7);
+}
+
+.hero .field input {
+  font-size: 19px;
+}
+
+.compact .field input {
+  font-size: 15px;
+}
+
+.panel {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--dropdown);
+  border: 1px solid var(--line-4);
+  border-radius: 16px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.6);
+  text-align: left;
+}
+
+.compact .panel {
+  width: 640px;
+  max-width: calc(100vw - 2 * var(--gutter));
+}
+
+.head {
+  padding: 6px 12px 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-5);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.row:hover,
+.rowActive {
+  background: var(--hover);
+}
+
+.text {
+  flex-grow: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.desc {
+  font-size: 13px;
+  color: var(--text-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.type {
+  width: 64px;
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  color: var(--text-5);
+}
+
+.rating {
+  width: 138px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.tag {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.empty {
+  padding: 10px 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.emptyTitle {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.emptyLink {
+  font-size: 14px;
+  color: var(--accent-soft);
+  text-decoration: none;
+}
+
+.emptyLink:hover {
+  text-decoration: underline;
+}
+
+.tries {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tryLabel {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-5);
+}
+
+.chip {
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 17px;
+  border: 1px solid var(--line-2);
+  background: transparent;
+  color: var(--text-2);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: var(--text-5);
+  color: var(--text);
+}
+
+@media (max-width: 767px) {
+  .type {
+    display: none;
+  }
+  .rating {
+    width: auto;
+  }
+  .rating > span[aria-hidden] {
+    display: none;
+  }
+  .hero .field {
+    height: 56px;
+    padding: 0 18px;
+  }
+  .hero .field input {
+    font-size: 17px;
+  }
+  .tries {
+    justify-content: flex-start;
+  }
+}
+
+/* The hero dropdown label is centred like the hero around it (as in the snapshot). */
+.hero .head {
+  text-align: center;
+}

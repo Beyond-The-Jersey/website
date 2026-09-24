@@ -1,0 +1,31 @@
+.badge {
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.white {
+  background: #ffffff;
+}
+
+.plain {
+  background: var(--line);
+  color: var(--text);
+}
+
+.shadow {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.img {
+  object-fit: contain;
+}
+
+.initials {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}

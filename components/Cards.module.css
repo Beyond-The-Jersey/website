@@ -1,0 +1,350 @@
+/* Section heading */
+.heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.headingText {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+}
+
+.h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.sub {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.45;
+  color: var(--text-2);
+}
+
+.headingLink {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-2);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.headingLink:hover {
+  color: #ffffff;
+}
+
+.good,
+.good:hover {
+  color: var(--good);
+}
+
+.source {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-5);
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.source a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.source a:hover {
+  color: var(--text-2);
+  text-decoration: underline;
+}
+
+/* Change card */
+.change {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+  border-radius: 16px;
+  background: var(--panel);
+  border: 1px solid var(--line-3);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.change:hover {
+  border-color: var(--text-6);
+}
+
+.changeTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.kind {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.date {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-5);
+  white-space: nowrap;
+}
+
+.club {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.clubName {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.clubName a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.clubName a:hover {
+  text-decoration: underline;
+}
+
+.changeTitle {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.changeText {
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--text-2);
+}
+
+.pinBottom {
+  margin-top: auto;
+}
+
+/* Dropped card */
+.dropped {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px;
+  border-radius: 16px;
+  background: rgba(79, 195, 176, 0.07);
+  border: 1px solid rgba(79, 195, 176, 0.3);
+}
+
+.droppedTop {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.droppedName {
+  flex-grow: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.what {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--good);
+}
+
+.year {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 0.85;
+  color: var(--good);
+}
+
+.droppedText {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #e6dfd7;
+}
+
+.droppedBottom {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.thanks {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  border-radius: 17px;
+  border: 1px solid var(--good);
+  background: transparent;
+  color: var(--good);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.thanks:hover {
+  background: rgba(79, 195, 176, 0.12);
+}
+
+/* Club strip */
+.strip {
+  display: flex;
+  gap: 4px;
+  min-width: 0;
+}
+
+.slot {
+  flex: 1 1 0px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-3);
+  text-decoration: none;
+}
+
+.slotCrest {
+  object-fit: contain;
+}
+
+.slotInitials {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-4);
+}
+
+.slotCircle {
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 1px dashed var(--unrated-dash);
+}
+
+.slotBar {
+  width: 100%;
+  border-radius: var(--bar-radius, 3px);
+}
+
+/* League row */
+.leagueRow {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr) 210px;
+  align-items: center;
+  gap: 32px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.leagueRow:hover .leagueTitle {
+  text-decoration: underline;
+}
+
+.leagueName {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.leagueTitle {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.leagueSub {
+  font-size: 13px;
+  color: var(--text-4);
+}
+
+.leagueBig {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  text-align: right;
+}
+
+.big {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 34px;
+  line-height: 0.85;
+}
+
+.small {
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--text-3);
+}
+
+@media (max-width: 1023px) {
+  .leagueRow {
+    grid-template-columns: 1fr auto;
+    gap: 14px 24px;
+  }
+  .leagueRow > .strip {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    overflow-x: auto;
+  }
+  .leagueRow .slot {
+    min-width: 22px;
+  }
+}
+
+@media (max-width: 767px) {
+  .heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .h2 {
+    font-size: 44px !important;
+  }
+}

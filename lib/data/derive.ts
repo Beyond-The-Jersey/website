@@ -1,6 +1,19 @@
 // Derived data the pages need. Pure functions over a Dataset; every view model returned here is
 // plain JSON so it can be handed to client components.
-import { formatDate, formatMoney, initials, listJoin, placementLabel, placementPhrase, seasonEndYear, seasonLabel, seasonSpan, seasonStartYear, sourceLine } from '../format';
+import {
+  formatDate,
+  formatMoney,
+  initials,
+  listJoin,
+  placementLabel,
+  placementPhrase,
+  seasonEndYear,
+  seasonLabel,
+  seasonSpan,
+  seasonStartYear,
+  sourceLine,
+  sourceLineShort,
+} from '../format';
 import type { Dataset } from './dataset';
 import { kitEnd, kitStart } from './dataset';
 import { compareLevels, isBad, isRated, levelForKit, TIER_SCORE } from './rating';
@@ -89,11 +102,14 @@ export interface SourceView {
   name: string;
   date: string;
   url: string | null;
+  /** 'SportsPro (citing The Athletic) · Jul 2026' */
   line: string;
+  /** 'SportsPro · Jul 2026' */
+  short: string;
 }
 
 export const sourceView = (s: Source | null | undefined): SourceView | null =>
-  s ? { name: s.name, date: s.date, url: s.url, line: sourceLine(s) } : null;
+  s ? { name: s.name, date: s.date, url: s.url, line: sourceLine(s), short: sourceLineShort(s) } : null;
 
 export interface ClaimView {
   id: string;

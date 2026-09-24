@@ -1,0 +1,60 @@
+.h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 104px;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+/* The second line keeps its height while the word changes width, so nothing below moves. */
+.h1 > span {
+  display: block;
+}
+
+.word {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  line-height: inherit;
+  text-transform: inherit;
+  color: var(--accent);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.anim {
+  display: inline-block;
+  animation: wordIn 0.35s ease-out;
+}
+
+@keyframes wordIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.18em);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim {
+    animation: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .h1 {
+    font-size: 76px;
+  }
+}
+
+@media (max-width: 599px) {
+  .h1 {
+    font-size: 52px;
+  }
+}

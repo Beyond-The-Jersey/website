@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "PATH=/opt/homebrew/opt/node@24/bin:$PATH npx next dev -p 3100"],
+      "port": 3100
+    },
+    {
+      "name": "design",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "PATH=/opt/homebrew/opt/node@24/bin:$PATH npx serve handover -l 3200 --no-clipboard"],
+      "port": 3200
+    }
+  ]
+}
