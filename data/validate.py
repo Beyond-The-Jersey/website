@@ -57,65 +57,77 @@ def asset(p, where):
 def sourced(s, where):
     if not s:
         warnings.append(f'{where}: no source yet')
+    elif not isinstance(s, dict):
+        errors.append(f'{where}: source must be an object {{name, date, url}}, got {type(s).__name__}')
     elif not s.get('url'):
         warnings.append(f'{where}: source "{s.get("name")}" has no URL yet')
 
 
-for l in get('leagues'):
-    need('sports', l['sportId'], 'leagues/' + l['id'])
-    count = sum(1 for c in get('clubs') if c['leagueId'] == l['id'])
-    if l.get('clubCount') is not None and count > l['clubCount']:
-        errors.append(f'leagues/{l["id"]}: {count} clubs in clubs.json but clubCount is {l["clubCount"]}')
-for c in get('clubs'):
-    need('sports', c['sportId'], 'clubs/' + c['id'])
-    need('leagues', c['leagueId'], 'clubs/' + c['id'])
-    asset(c['crest'], 'clubs/' + c['id'])
-for o in get('owners'):
-    need('owners', o['parentId'], 'owners/' + o['id'])
-for s in get('sponsors'):
-    need('owners', s['ownerId'], 'sponsors/' + s['id'])
-    for cl in s['claimIds']:
-        need('claims', cl, 'sponsors/' + s['id'])
-    if s['tier'] != 'unrated' and s['status'] != 'rated':
-        errors.append(f'sponsors/{s["id"]}: tier "{s["tier"]}" needs status "rated"')
-    if s['tier'] in ('concern', 'serious', 'severe') and not s['claimIds']:
-        errors.append(f'sponsors/{s["id"]}: tier "{s["tier"]}" needs at least one claim')
-for c in get('claims'):
-    for o in c['ownerIds']:
-        need('owners', o, 'claims/' + c['id'])
-    sourced(c['source'], 'claims/' + c['id'])
-for k in get('kits'):
-    where = 'kits/' + k['id']
-    need('clubs', k['clubId'], where)
-    for v in k['photos'].values():
-        asset(v, where)
-    for p in k['sponsors']:
-        need('sponsors', p['sponsorId'], where)
-        if 'hotspot' in p and not ('side' in p and 'cardSlot' in p):
-            errors.append(f'{where}: sponsor "{p["sponsorId"]}" has a hotspot but no side/cardSlot')
-        h = p.get('hotspot')
-        if h and not all(0 <= h[a] <= 1 for a in 'xywh'):
-            errors.append(f'{where}: hotspot for "{p["sponsorId"]}" must use fractions between 0 and 1')
-    if k['periodFrom'] and k['periodTo'] and k['periodFrom'] > k['periodTo']:
-        errors.append(f'{where}: periodFrom is after periodTo')
-for d in get('deals'):
-    need('clubs', d['clubId'], 'deals/' + d['id'])
-    need('sponsors', d['sponsorId'], 'deals/' + d['id'])
-    if d['value'] is not None:
-        sourced(d['source'], 'deals/' + d['id'])
-for n in ['changes', 'dropped']:
-    for x in get(n):
-        need('clubs', x.get('clubId'), f'{n}/{x["id"]}')
-        need('sponsors', x.get('sponsorId'), f'{n}/{x["id"]}')
-        sourced(x.get('source'), f'{n}/{x["id"]}')
-placeholder = re.compile(r'X{3,}|\.\.\.|example\.', re.I)
-for c in get('contacts'):
-    need('clubs', c['clubId'], 'contacts/' + c['clubId'])
-    for ch in c['channels']:
-        if placeholder.search(ch['value']):
-            errors.append(f'contacts/{c["clubId"]}: placeholder value "{ch["value"]}"')
-        if ch['type'] == 'email' and not re.fullmatch(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}', ch['value']):
-            errors.append(f'contacts/{c["clubId"]}: not a valid ASCII email address "{ch["value"]}"')
+def safe(fn):
+    try:
+        fn()
+    except (KeyError, TypeError, AttributeError) as e:
+        errors.append(f'reference checks stopped early on malformed data ({type(e).__name__}: {e}); fix the schema errors first')
+
+
+def references():
+    for l in get('leagues'):
+        need('sports', l['sportId'], 'leagues/' + l['id'])
+        count = sum(1 for c in get('clubs') if c['leagueId'] == l['id'])
+        if l.get('clubCount') is not None and count > l['clubCount']:
+            errors.append(f'leagues/{l["id"]}: {count} clubs in clubs.json but clubCount is {l["clubCount"]}')
+    for c in get('clubs'):
+        need('sports', c['sportId'], 'clubs/' + c['id'])
+        need('leagues', c['leagueId'], 'clubs/' + c['id'])
+        asset(c['crest'], 'clubs/' + c['id'])
+    for o in get('owners'):
+        need('owners', o['parentId'], 'owners/' + o['id'])
+    for s in get('sponsors'):
+        need('owners', s['ownerId'], 'sponsors/' + s['id'])
+        for cl in s['claimIds']:
+            need('claims', cl, 'sponsors/' + s['id'])
+        if s['tier'] != 'unrated' and s['status'] != 'rated':
+            errors.append(f'sponsors/{s["id"]}: tier "{s["tier"]}" needs status "rated"')
+        if s['tier'] in ('concern', 'serious', 'severe') and not s['claimIds']:
+            errors.append(f'sponsors/{s["id"]}: tier "{s["tier"]}" needs at least one claim')
+    for c in get('claims'):
+        for o in c['ownerIds']:
+            need('owners', o, 'claims/' + c['id'])
+        sourced(c['source'], 'claims/' + c['id'])
+    for k in get('kits'):
+        where = 'kits/' + k['id']
+        need('clubs', k['clubId'], where)
+        for v in k['photos'].values():
+            asset(v, where)
+        for p in k['sponsors']:
+            need('sponsors', p['sponsorId'], where)
+            if 'hotspot' in p and not ('side' in p and 'cardSlot' in p):
+                errors.append(f'{where}: sponsor "{p["sponsorId"]}" has a hotspot but no side/cardSlot')
+            h = p.get('hotspot')
+            if h and not all(0 <= h[a] <= 1 for a in 'xywh'):
+                errors.append(f'{where}: hotspot for "{p["sponsorId"]}" must use fractions between 0 and 1')
+        if k['periodFrom'] and k['periodTo'] and k['periodFrom'] > k['periodTo']:
+            errors.append(f'{where}: periodFrom is after periodTo')
+    for d in get('deals'):
+        need('clubs', d['clubId'], 'deals/' + d['id'])
+        need('sponsors', d['sponsorId'], 'deals/' + d['id'])
+        if d['value'] is not None:
+            sourced(d['source'], 'deals/' + d['id'])
+    for n in ['changes', 'dropped']:
+        for x in get(n):
+            need('clubs', x.get('clubId'), f'{n}/{x["id"]}')
+            need('sponsors', x.get('sponsorId'), f'{n}/{x["id"]}')
+            sourced(x.get('source'), f'{n}/{x["id"]}')
+    placeholder = re.compile(r'X{3,}|\.\.\.|example\.', re.I)
+    for c in get('contacts'):
+        need('clubs', c['clubId'], 'contacts/' + c['clubId'])
+        for ch in c['channels']:
+            if placeholder.search(ch['value']):
+                errors.append(f'contacts/{c["clubId"]}: placeholder value "{ch["value"]}"')
+            if ch['type'] == 'email' and not re.fullmatch(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}', ch['value']):
+                errors.append(f'contacts/{c["clubId"]}: not a valid ASCII email address "{ch["value"]}"')
+
+safe(references)
 
 for w in warnings:
     print('warning:', w)
