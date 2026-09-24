@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "They dropped it (positive precedents)",
+  "description": "",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "year",
+      "clubId",
+      "sponsorId",
+      "what",
+      "text",
+      "source",
+      "featured"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+      },
+      "year": {
+        "type": "integer"
+      },
+      "clubId": {
+        "anyOf": [
+          {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "orgName": {
+        "type": "string"
+      },
+      "sponsorId": {
+        "anyOf": [
+          {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "what": {
+        "type": "string"
+      },
+      "text": {
+        "type": "string"
+      },
+      "source": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "required": [
+          "name",
+          "date",
+          "url"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      },
+      "featured": {
+        "type": "boolean"
+      },
+      "todo": {
+        "type": "string"
+      }
+    }
+  }
+}

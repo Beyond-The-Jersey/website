@@ -1,0 +1,371 @@
+[
+  {
+    "id": "arsenal",
+    "name": "Arsenal",
+    "shortName": "Arsenal",
+    "code": "ARS",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/arsenal.png",
+    "aliases": [
+      "gunners",
+      "afc"
+    ],
+    "hasTeamPageDesign": true
+  },
+  {
+    "id": "aston-villa",
+    "name": "Aston Villa",
+    "shortName": "Aston Villa",
+    "code": "AVL",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/aston-villa.png",
+    "aliases": [
+      "villa",
+      "avfc"
+    ],
+    "hasTeamPageDesign": true
+  },
+  {
+    "id": "afc-bournemouth",
+    "name": "AFC Bournemouth",
+    "shortName": "Bournemouth",
+    "code": "BOU",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/afc-bournemouth.png",
+    "aliases": [],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "brentford",
+    "name": "Brentford",
+    "shortName": "Brentford",
+    "code": "BRE",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/brentford.png",
+    "aliases": [],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "brighton-and-hove-albion",
+    "name": "Brighton & Hove Albion",
+    "shortName": "Brighton",
+    "code": "BHA",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/brighton-and-hove-albion.png",
+    "aliases": [
+      "brighton",
+      "seagulls"
+    ],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "chelsea",
+    "name": "Chelsea",
+    "shortName": "Chelsea",
+    "code": "CHE",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/chelsea.png",
+    "aliases": [
+      "cfc",
+      "blues"
+    ],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "coventry-city",
+    "name": "Coventry City",
+    "shortName": "Coventry",
+    "code": "COV",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/coventry-city.png",
+    "aliases": [],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "crystal-palace",
+    "name": "Crystal Palace",
+    "shortName": "Palace",
+    "code": "CRY",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/crystal-palace.png",
+    "aliases": [],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "everton",
+    "name": "Everton",
+    "shortName": "Everton",
+    "code": "EVE",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/everton.png",
+    "aliases": [
+      "toffees"
+    ],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "fulham",
+    "name": "Fulham",
+    "shortName": "Fulham",
+    "code": "FUL",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/fulham.png",
+    "aliases": [],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "hull-city",
+    "name": "Hull City",
+    "shortName": "Hull",
+    "code": "HUL",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/hull-city.png",
+    "aliases": [],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "ipswich-town",
+    "name": "Ipswich Town",
+    "shortName": "Ipswich",
+    "code": "IPS",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/ipswich-town.png",
+    "aliases": [],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "leeds-united",
+    "name": "Leeds United",
+    "shortName": "Leeds",
+    "code": "LEE",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/leeds-united.png",
+    "aliases": [],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "liverpool",
+    "name": "Liverpool",
+    "shortName": "Liverpool",
+    "code": "LIV",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/liverpool.png",
+    "aliases": [
+      "lfc",
+      "reds"
+    ],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "manchester-city",
+    "name": "Manchester City",
+    "shortName": "Man City",
+    "code": "MCI",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/manchester-city.png",
+    "aliases": [
+      "man city",
+      "mcfc"
+    ],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "manchester-united",
+    "name": "Manchester United",
+    "shortName": "Man Utd",
+    "code": "MUN",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/manchester-united.png",
+    "aliases": [
+      "man utd",
+      "united"
+    ],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "newcastle-united",
+    "name": "Newcastle United",
+    "shortName": "Newcastle",
+    "code": "NEW",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/newcastle-united.png",
+    "aliases": [
+      "nufc",
+      "toon"
+    ],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "nottingham-forest",
+    "name": "Nottingham Forest",
+    "shortName": "Forest",
+    "code": "NFO",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/nottingham-forest.png",
+    "aliases": [],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "sunderland",
+    "name": "Sunderland",
+    "shortName": "Sunderland",
+    "code": "SUN",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/sunderland.png",
+    "aliases": [],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "tottenham-hotspur",
+    "name": "Tottenham Hotspur",
+    "shortName": "Tottenham",
+    "code": "TOT",
+    "sportId": "soccer",
+    "leagueId": "premier-league",
+    "country": "England",
+    "crest": "assets/crests/tottenham-hotspur.png",
+    "aliases": [
+      "spurs"
+    ],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "atletico-de-madrid",
+    "name": "Atlético de Madrid",
+    "shortName": "Atlético",
+    "code": "ATM",
+    "sportId": "soccer",
+    "leagueId": "la-liga",
+    "country": "Spain",
+    "crest": "assets/crests/atletico-de-madrid.png",
+    "aliases": [
+      "atletico",
+      "atleti"
+    ],
+    "hasTeamPageDesign": true
+  },
+  {
+    "id": "real-madrid",
+    "name": "Real Madrid",
+    "shortName": "Real Madrid",
+    "code": "RMA",
+    "sportId": "soccer",
+    "leagueId": "la-liga",
+    "country": "Spain",
+    "crest": "assets/crests/real-madrid.png",
+    "aliases": [],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "bayern-munich",
+    "name": "Bayern Munich",
+    "shortName": "Bayern Munich",
+    "code": "FCB",
+    "sportId": "soccer",
+    "leagueId": "bundesliga",
+    "country": "Germany",
+    "crest": "assets/crests/bayern-munich.png",
+    "aliases": [
+      "fc bayern",
+      "munchen"
+    ],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "schalke-04",
+    "name": "Schalke 04",
+    "shortName": "Schalke 04",
+    "code": "S04",
+    "sportId": "soccer",
+    "leagueId": null,
+    "country": "Germany",
+    "crest": "assets/crests/schalke-04.png",
+    "aliases": [
+      "schalke"
+    ],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "paris-saint-germain",
+    "name": "Paris Saint-Germain",
+    "shortName": "PSG",
+    "code": "PSG",
+    "sportId": "soccer",
+    "leagueId": "ligue-1",
+    "country": "France",
+    "crest": null,
+    "aliases": [
+      "psg",
+      "paris"
+    ],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "la-clippers",
+    "name": "LA Clippers",
+    "shortName": "LA Clippers",
+    "code": "LAC",
+    "sportId": "basketball",
+    "leagueId": "nba",
+    "country": "USA",
+    "crest": null,
+    "aliases": [
+      "clippers",
+      "nba"
+    ],
+    "hasTeamPageDesign": false
+  },
+  {
+    "id": "la-rams",
+    "name": "Los Angeles Rams",
+    "shortName": "Los Angeles Rams",
+    "code": "LAR",
+    "sportId": "american-football",
+    "leagueId": "nfl",
+    "country": "USA",
+    "crest": null,
+    "aliases": [
+      "rams",
+      "nfl"
+    ],
+    "hasTeamPageDesign": false
+  }
+]

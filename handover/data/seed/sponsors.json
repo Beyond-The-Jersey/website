@@ -1,0 +1,365 @@
+[
+  {
+    "id": "visit-rwanda",
+    "name": "Visit Rwanda",
+    "ownerId": "government-of-rwanda",
+    "ownership": "owned",
+    "tier": "severe",
+    "status": "rated",
+    "verdict": "Paid for by a government that UN experts say has 3,000–4,000 troops fighting alongside M23 rebels in eastern Congo.",
+    "claimIds": [
+      "rwanda-troops-m23",
+      "m23-coltan-levies",
+      "rubaya-smuggling",
+      "rubaya-tantalum-share",
+      "coltan-supply-chain"
+    ],
+    "aliases": [
+      "rwanda"
+    ]
+  },
+  {
+    "id": "emirates",
+    "name": "Emirates",
+    "ownerId": "government-of-dubai",
+    "ownership": "owned",
+    "tier": "serious",
+    "status": "rated",
+    "verdict": "The airline is owned by the Dubai government’s investment arm.",
+    "claimIds": [
+      "uae-mass-trial-2024"
+    ],
+    "aliases": [
+      "dubai"
+    ]
+  },
+  {
+    "id": "etihad-airways",
+    "name": "Etihad Airways",
+    "ownerId": "government-of-abu-dhabi",
+    "ownership": "owned",
+    "tier": "serious",
+    "status": "rated",
+    "verdict": "The airline is owned by the Government of Abu Dhabi.",
+    "claimIds": [
+      "uae-mass-trial-2024"
+    ],
+    "aliases": [
+      "etihad",
+      "abu dhabi"
+    ],
+    "note": "Evidence list is thin: add Abu Dhabi-specific sources."
+  },
+  {
+    "id": "riyadh-air",
+    "name": "Riyadh Air",
+    "ownerId": "saudi-pif",
+    "ownership": "owned",
+    "tier": "serious",
+    "status": "rated",
+    "verdict": "Owned by Saudi Arabia’s sovereign wealth fund, which is chaired by Crown Prince Mohammed bin Salman.",
+    "claimIds": [
+      "saudi-executions-2024",
+      "khashoggi-assessment"
+    ],
+    "aliases": [
+      "saudi",
+      "pif"
+    ]
+  },
+  {
+    "id": "sela",
+    "name": "Sela",
+    "ownerId": "saudi-pif",
+    "ownership": "owned",
+    "tier": "serious",
+    "status": "rated",
+    "verdict": "An events company owned by Saudi Arabia’s Public Investment Fund.",
+    "claimIds": [
+      "saudi-executions-2024",
+      "khashoggi-assessment"
+    ],
+    "aliases": [],
+    "note": "Tier illustrative; was Newcastle front sponsor until 2025/26."
+  },
+  {
+    "id": "noon",
+    "name": "noon",
+    "ownerId": "saudi-pif",
+    "ownership": "part-owned",
+    "tier": "concern",
+    "status": "rated",
+    "verdict": "Part-owned by Saudi Arabia’s Public Investment Fund.",
+    "claimIds": [
+      "saudi-executions-2024"
+    ],
+    "aliases": [
+      "saudi"
+    ]
+  },
+  {
+    "id": "turkish-airlines",
+    "name": "Turkish Airlines",
+    "ownerId": "turkiye-wealth-fund",
+    "ownership": "part-owned",
+    "tier": "unrated",
+    "status": "being-rated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "Part-owned by the Türkiye Wealth Fund. Liverpool front from 2027/28."
+  },
+  {
+    "id": "american-express",
+    "name": "American Express",
+    "ownerId": "american-express-company",
+    "ownership": "owned",
+    "tier": "none",
+    "status": "rated",
+    "verdict": "A listed US company with no state owner. Nothing found.",
+    "claimIds": [],
+    "aliases": [
+      "amex"
+    ]
+  },
+  {
+    "id": "kraken",
+    "name": "Kraken",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "Atlético sleeve 2026/27"
+  },
+  {
+    "id": "deel",
+    "name": "Deel",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "Arsenal sleeve from 2026/27"
+  },
+  {
+    "id": "betano",
+    "name": "Betano",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "Aston Villa front 2024/25–2025/26, sleeves 2026/27"
+  },
+  {
+    "id": "trade-nation",
+    "name": "Trade Nation",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "Aston Villa sleeve 2024/25–2025/26"
+  },
+  {
+    "id": "knox-hydration",
+    "name": "KNOX Hydration",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "South African sports drinks company; Newcastle front from 2026/27"
+  },
+  {
+    "id": "standard-chartered",
+    "name": "Standard Chartered",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "Liverpool front until 2026/27"
+  },
+  {
+    "id": "snapdragon",
+    "name": "Snapdragon",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "Manchester United front (LeadMonitor, verify)"
+  },
+  {
+    "id": "aia",
+    "name": "AIA",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "Tottenham Hotspur front (LeadMonitor, verify)"
+  },
+  {
+    "id": "vitality",
+    "name": "Vitality",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "AFC Bournemouth front 2026/27 (SportsPro)"
+  },
+  {
+    "id": "indeed",
+    "name": "Indeed",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "Brentford front 2026/27 (SportsPro)"
+  },
+  {
+    "id": "temporal",
+    "name": "Temporal",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "Crystal Palace front 2026/27 (SportsPro)"
+  },
+  {
+    "id": "clickhouse",
+    "name": "ClickHouse",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "Fulham front 2026/27 (SportsPro)"
+  },
+  {
+    "id": "cmc-markets",
+    "name": "CMC Markets",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "Everton front 2026/27 (SportsPro)"
+  },
+  {
+    "id": "marex",
+    "name": "Marex",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "Nottingham Forest front 2026/27 (SportsPro)"
+  },
+  {
+    "id": "monzo",
+    "name": "Monzo",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "Coventry City front 2026/27 (SportsPro)"
+  },
+  {
+    "id": "qatar-airways",
+    "name": "Qatar Airways",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "Bayern Munich sleeve until 2023 (dropped)"
+  },
+  {
+    "id": "gazprom",
+    "name": "Gazprom",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "Schalke 04 front 2007–2022; UEFA partner until 2022 (dropped)"
+  },
+  {
+    "id": "aeroflot",
+    "name": "Aeroflot",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "Manchester United partner until 2022 (dropped)"
+  },
+  {
+    "id": "visit-saudi",
+    "name": "Visit Saudi",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "Talks for the 2023 Women’s World Cup abandoned"
+  },
+  {
+    "id": "uralkali",
+    "name": "Uralkali",
+    "ownerId": null,
+    "ownership": null,
+    "tier": "unrated",
+    "status": "unrated",
+    "verdict": null,
+    "claimIds": [],
+    "aliases": [],
+    "note": "Haas F1 title sponsor until 2022 (dropped)"
+  }
+]

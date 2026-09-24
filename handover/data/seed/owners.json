@@ -1,0 +1,61 @@
+[
+  {
+    "id": "government-of-rwanda",
+    "name": "Government of Rwanda",
+    "type": "state",
+    "country": "Rwanda",
+    "via": "Rwanda Development Board",
+    "parentId": null
+  },
+  {
+    "id": "uae",
+    "name": "United Arab Emirates (federal)",
+    "type": "state",
+    "country": "UAE",
+    "parentId": null
+  },
+  {
+    "id": "government-of-dubai",
+    "name": "Government of Dubai",
+    "type": "state",
+    "country": "UAE",
+    "via": "Investment Corporation of Dubai",
+    "parentId": "uae"
+  },
+  {
+    "id": "government-of-abu-dhabi",
+    "name": "Government of Abu Dhabi",
+    "type": "state",
+    "country": "UAE",
+    "parentId": "uae"
+  },
+  {
+    "id": "saudi-pif",
+    "name": "Public Investment Fund (Saudi Arabia)",
+    "type": "state-fund",
+    "country": "Saudi Arabia",
+    "note": "Chaired by Crown Prince Mohammed bin Salman",
+    "parentId": "government-of-saudi-arabia"
+  },
+  {
+    "id": "government-of-saudi-arabia",
+    "name": "Government of Saudi Arabia",
+    "type": "state",
+    "country": "Saudi Arabia",
+    "parentId": null
+  },
+  {
+    "id": "turkiye-wealth-fund",
+    "name": "Türkiye Wealth Fund",
+    "type": "state-fund",
+    "country": "Türkiye",
+    "parentId": null
+  },
+  {
+    "id": "american-express-company",
+    "name": "American Express Company",
+    "type": "listed-company",
+    "country": "USA",
+    "parentId": null
+  }
+]

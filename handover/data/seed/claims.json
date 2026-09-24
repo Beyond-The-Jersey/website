@@ -1,0 +1,121 @@
+[
+  {
+    "id": "rwanda-troops-m23",
+    "ownerIds": [
+      "government-of-rwanda"
+    ],
+    "text": "UN experts say 3,000–4,000 Rwandan troops are fighting alongside M23 rebels in eastern Congo.",
+    "short": "3,000–4,000 Rwandan troops fighting alongside M23 in eastern Congo",
+    "source": {
+      "name": "UN Group of Experts on the DR Congo, final report",
+      "date": "2024",
+      "url": null,
+      "note": "Add exact document link"
+    },
+    "reviewed": false
+  },
+  {
+    "id": "m23-coltan-levies",
+    "ownerIds": [
+      "government-of-rwanda"
+    ],
+    "text": "M23 rebels take about $800,000 a month in levies on coltan mining.",
+    "short": "$800k a month in coltan levies taken by M23",
+    "source": {
+      "name": "UN Group of Experts on the DR Congo, final report",
+      "date": "2024",
+      "url": null,
+      "note": "Add exact document link"
+    },
+    "reviewed": false
+  },
+  {
+    "id": "rubaya-smuggling",
+    "ownerIds": [
+      "government-of-rwanda"
+    ],
+    "text": "More than 120 tonnes of coltan a month smuggled from Congo’s Rubaya mines into Rwanda since April 2024.",
+    "short": "120+ tonnes of coltan a month smuggled into Rwanda",
+    "source": {
+      "name": "Global Witness",
+      "date": "2026-06",
+      "url": null,
+      "note": "Add exact report link"
+    },
+    "reviewed": false
+  },
+  {
+    "id": "rubaya-tantalum-share",
+    "ownerIds": [
+      "government-of-rwanda"
+    ],
+    "text": "Rubaya, in eastern Congo, produces about 15% of the world’s tantalum, a metal used in phones and laptops. M23 took control of the mines in 2024.",
+    "source": {
+      "name": "Global Witness",
+      "date": "2026-06",
+      "url": null,
+      "note": "Add exact report link"
+    },
+    "reviewed": false
+  },
+  {
+    "id": "coltan-supply-chain",
+    "ownerIds": [
+      "government-of-rwanda"
+    ],
+    "text": "From Rwanda the coltan ships on to smelters in China, Kazakhstan and Thailand. Global Witness found it may have unwittingly reached global electronics brands.",
+    "source": {
+      "name": "Global Witness",
+      "date": "2026-06",
+      "url": null,
+      "note": "Add exact report link"
+    },
+    "reviewed": false
+  },
+  {
+    "id": "saudi-executions-2024",
+    "ownerIds": [
+      "government-of-saudi-arabia",
+      "saudi-pif"
+    ],
+    "text": "Saudi Arabia carried out a record 345 executions in 2024.",
+    "source": {
+      "name": "Amnesty International",
+      "date": "2025",
+      "url": null,
+      "note": "Add exact link"
+    },
+    "reviewed": false
+  },
+  {
+    "id": "khashoggi-assessment",
+    "ownerIds": [
+      "government-of-saudi-arabia",
+      "saudi-pif"
+    ],
+    "text": "US intelligence assessed that the crown prince approved the 2018 operation that killed journalist Jamal Khashoggi.",
+    "source": {
+      "name": "US Office of the Director of National Intelligence",
+      "date": "2021-02",
+      "url": null,
+      "note": "Assessment on the killing of Jamal Khashoggi; add link"
+    },
+    "reviewed": false
+  },
+  {
+    "id": "uae-mass-trial-2024",
+    "ownerIds": [
+      "uae",
+      "government-of-dubai",
+      "government-of-abu-dhabi"
+    ],
+    "text": "43 activists and dissidents were given life sentences in a 2024 mass trial that rights groups called grossly unfair.",
+    "source": {
+      "name": "Human Rights Watch",
+      "date": "2024-07",
+      "url": null,
+      "note": "UAE mass trial; add link"
+    },
+    "reviewed": false
+  }
+]

@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Team page</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&amp;family=IBM+Plex+Mono:wght@400;600&amp;family=Schibsted+Grotesk:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div onMouseMove="{{onMove}}" style="width: 1440px; height: {{rootH}}px; box-sizing: border-box; background: #0f0d0c; color: #f3ede6; font-family: 'Schibsted Grotesk', 'Helvetica Neue', sans-serif; display: flex; flex-direction: column; overflow: hidden">
+
+<header style="height: 72px; flex-shrink: 0; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 0 56px; border-bottom: 1px solid #2e2825">
+<a href="Landing.dc.html" style="display: flex; align-items: center; gap: 12px; color: #f3ede6; text-decoration: none">
+<svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 3 Q12 5.6 15.5 3 L19.6 4.3 L23 8.6 L20.3 11.4 L18.2 9.9 L18.2 21.4 Q12 22.3 5.8 21.4 L5.8 9.9 L3.7 11.4 L1 8.6 L4.4 4.3 Z" fill="none" stroke="#f3ede6" stroke-width="1.3" stroke-linejoin="round"></path><path d="M15.96 13.20 C16.15 13.50 16.21 13.77 16.51 14.23 C16.81 14.69 18.01 15.74 17.77 15.98 C17.53 16.21 15.71 15.71 15.07 15.65 C14.43 15.59 14.22 15.57 13.93 15.62 C13.63 15.66 13.51 15.78 13.31 15.92 C13.11 16.05 12.96 16.28 12.74 16.43 C12.52 16.59 12.27 16.73 12.00 16.85 C11.73 16.98 11.51 16.92 11.09 17.17 C10.68 17.42 9.78 18.51 9.51 18.37 C9.24 18.24 9.57 16.82 9.47 16.37 C9.38 15.91 9.12 15.87 8.95 15.63 C8.77 15.39 8.52 15.19 8.42 14.92 C8.33 14.66 8.38 14.32 8.37 14.03 C8.36 13.74 8.67 13.55 8.35 13.20 C8.04 12.85 6.41 12.19 6.49 11.94 C6.58 11.69 8.42 11.86 8.87 11.69 C9.31 11.53 9.08 11.23 9.18 10.95 C9.27 10.66 9.27 10.24 9.44 9.99 C9.61 9.74 9.90 9.52 10.18 9.43 C10.47 9.33 10.83 9.42 11.14 9.41 C11.44 9.40 11.66 9.60 12.00 9.37 C12.34 9.13 12.92 7.93 13.19 8.00 C13.46 8.07 13.43 9.44 13.63 9.81 C13.83 10.18 13.90 10.24 14.39 10.20 C14.89 10.15 16.44 9.30 16.59 9.54 C16.73 9.78 15.46 11.15 15.26 11.63 C15.06 12.11 15.27 12.16 15.39 12.43 C15.51 12.69 15.78 12.90 15.96 13.20 Z" fill="#d61f26"></path><path d="M11.7 16.6 L11.8 19.8 A0.42 0.42 0 0 0 12.64 19.8 L12.6 16.4 Z" fill="#d61f26"></path><circle cx="18.7" cy="7.3" r="0.6" fill="#d61f26"></circle><circle cx="6.4" cy="17.9" r="0.5" fill="#d61f26"></circle></svg>
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 25px; letter-spacing: 0.05em">BEHIND THE JERSEY</span>
+</a>
+<nav aria-label="Breadcrumb" style="flex-grow: 1; display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #a39a91">
+<a href="Overview-crests.dc.html" style="color: #d6cec5; text-decoration: none">All clubs</a>
+<span aria-hidden="true">/</span>
+<span>{{team.crumb}}</span>
+<span aria-hidden="true">/</span>
+<span style="color: #f3ede6">{{team.name}}</span>
+</nav>
+<nav style="display: flex; gap: 28px; font-size: 15px">
+<a href="#" style="color: #d6cec5; text-decoration: none">How we rate</a>
+<a href="#" style="color: #d6cec5; text-decoration: none">Sources</a>
+</nav>
+</header>
+
+<main style="flex-grow: 1; display: flex; flex-direction: column; padding: 28px 56px 0">
+
+<section style="display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 30px; row-gap: 0; align-items: baseline">
+<div aria-hidden="true" style="grid-column: 1; grid-row: 1 / span 2; align-self: stretch; border-radius: 16px; background: {{lv.tint}}; border: {{lv.boxBorder}}"></div>
+<div style="grid-column: 1; grid-row: 1; display: flex; align-items: baseline; gap: 16px; padding: 18px 24px 0">
+<span aria-hidden="true" style="display: flex; align-items: flex-end; gap: 5px; height: 50px">
+<sc-for list="{{levelBars}}" as="b" hint-placeholder-count="4">
+<span style="width: 13px; height: {{b.h}}px; border-radius: 2px; background: {{b.bg}}; border: {{b.border}}; box-sizing: border-box"></span>
+</sc-for>
+</span>
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 64px; line-height: 0.9; text-transform: uppercase; color: {{lv.text}}">{{lv.word}}</span>
+</div>
+<h1 style="grid-column: 2; grid-row: 1; position: relative; margin: 0; padding-left: {{crestPad}}px; font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 64px; line-height: 0.9; text-transform: uppercase"><sc-if value="{{showCrest}}" hint-placeholder-val="{{ true }}"><span style="position: absolute; left: 0; top: -8px; width: 72px; height: 72px; border-radius: 36px; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35); display: flex; align-items: center; justify-content: center"><img src="{{team.crest}}" alt="{{team.crestAlt}}" style="width: 52px; height: 52px; object-fit: contain"></span></sc-if>{{team.name}}</h1>
+<div style="grid-column: 1; grid-row: 2; align-self: start; padding: 10px 24px 16px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: {{lv.text}}">Blood level · {{lv.rank}}</div>
+<div style="grid-column: 2; grid-row: 2; align-self: start; padding-top: 10px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.06em; color: #d6cec5">{{kit.label}}</span>
+<sc-if value="{{hasChange}}" hint-placeholder-val="{{ false }}">
+<span style="height: 26px; display: flex; align-items: center; gap: 8px; padding: 0 12px; border-radius: 13px; border: 1px solid {{change.color}}; color: {{change.color}}; font-size: 13px; font-weight: 700">
+<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="{{change.arrow}}" fill="{{change.color}}"></path></svg>
+{{change.text}}
+</span>
+</sc-if>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.4; color: #f3ede6; text-wrap: pretty">{{kit.line}}</p>
+</div>
+</section>
+
+<section aria-label="The shirt and its sponsors" style="position: relative; width: 1328px; height: 634px; margin-top: 24px">
+<div style="position: absolute; left: 300px; top: 196px; width: 728px; height: 438px; border-radius: 16px; background: #ffffff"></div>
+<img src="{{kit.front}}" alt="{{frontAlt}}" style="position: absolute; left: 316px; top: 212px; width: 340px; height: 378px">
+<img src="{{kit.back}}" alt="{{backAlt}}" style="position: absolute; left: 672px; top: 212px; width: 340px; height: 378px">
+<div style="position: absolute; left: 316px; top: 604px; width: 340px; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; color: #5f584e">FRONT</div>
+<div style="position: absolute; left: 672px; top: 604px; width: 340px; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; color: #5f584e">BACK</div>
+
+<sc-for list="{{lines}}" as="l" hint-placeholder-count="3">
+<svg width="1328" height="634" viewBox="0 0 1328 634" aria-hidden="true" style="position: absolute; left: 0; top: 0; pointer-events: none; z-index: 2; opacity: {{l.op}}">
+<line x1="{{l.x1}}" y1="{{l.y1}}" x2="{{l.x2}}" y2="{{l.y2}}" stroke="#0f0d0c" stroke-opacity="0.45" stroke-width="{{l.halo}}" stroke-linecap="round"></line>
+<line x1="{{l.x1}}" y1="{{l.y1}}" x2="{{l.x2}}" y2="{{l.y2}}" stroke="{{l.color}}" stroke-width="{{l.w}}" stroke-dasharray="{{l.dash}}" stroke-linecap="round"></line>
+<circle cx="{{l.x2}}" cy="{{l.y2}}" r="7" fill="none" stroke="#ffffff" stroke-width="3.5"></circle>
+<circle cx="{{l.x2}}" cy="{{l.y2}}" r="7" fill="none" stroke="{{l.color}}" stroke-width="2"></circle>
+<circle cx="{{l.x1}}" cy="{{l.y1}}" r="3" fill="{{l.color}}"></circle>
+<line x1="{{l.x1}}" y1="{{l.y1}}" x2="{{l.x2}}" y2="{{l.y2}}" stroke="#000000" stroke-opacity="0" stroke-width="18" pointer-events="stroke" onMouseEnter="{{l.enter}}" onMouseLeave="{{l.leave}}" style="cursor: pointer"></line>
+</svg>
+</sc-for>
+
+<sc-for list="{{hits}}" as="h" hint-placeholder-count="3">
+<button type="button" onMouseEnter="{{h.enter}}" onMouseLeave="{{h.leave}}" onFocus="{{h.enter}}" onClick="{{h.toggle}}" aria-label="{{h.aria}}" style="position: absolute; left: {{h.x}}px; top: {{h.y}}px; width: {{h.w}}px; height: {{h.h}}px; z-index: 3; padding: 0; background: transparent; border: none; cursor: pointer"></button>
+</sc-for>
+
+<sc-for list="{{cards}}" as="c" hint-placeholder-count="3">
+<article data-card="{{c.id}}" onMouseEnter="{{c.enter}}" onMouseLeave="{{c.leave}}" style="position: absolute; left: {{c.left}}px; top: {{c.top}}px; width: {{c.w}}px; z-index: {{c.z}}; box-sizing: border-box; background: {{c.bg}}; border: {{c.border}}; border-radius: 14px; box-shadow: {{c.shadow}}; overflow: hidden">
+<sc-if value="{{c.isNote}}" hint-placeholder-val="{{ false }}">
+<div style="padding: 16px 18px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #b3aaa0">Back of shirt</span>
+<span style="font-size: 15px; line-height: 1.4; color: #e8e2da">No sponsor on the back.</span>
+</div>
+</sc-if>
+<sc-if value="{{c.isCard}}" hint-placeholder-val="{{ true }}">
+<button type="button" onFocus="{{c.enter}}" onClick="{{c.toggle}}" aria-expanded="{{c.open}}" style="width: 100%; box-sizing: border-box; display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px 10px; background: transparent; border: none; color: #f3ede6; text-align: left; cursor: pointer; font-family: 'Schibsted Grotesk', sans-serif">
+<svg width="46" height="46" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink: 0">
+<path d="M8.5 3 Q12 5.6 15.5 3 L19.6 4.3 L23 8.6 L20.3 11.4 L18.2 9.9 L18.2 21.4 Q12 22.3 5.8 21.4 L5.8 9.9 L3.7 11.4 L1 8.6 L4.4 4.3 Z" fill="none" stroke="{{c.mark.stroke}}" stroke-width="1.1" stroke-dasharray="{{c.mark.dash}}" stroke-linejoin="round"></path>
+<g transform="{{c.mark.tf}}" opacity="{{c.mark.splatOp}}">
+<path d="M15.96 13.20 C16.15 13.50 16.21 13.77 16.51 14.23 C16.81 14.69 18.01 15.74 17.77 15.98 C17.53 16.21 15.71 15.71 15.07 15.65 C14.43 15.59 14.22 15.57 13.93 15.62 C13.63 15.66 13.51 15.78 13.31 15.92 C13.11 16.05 12.96 16.28 12.74 16.43 C12.52 16.59 12.27 16.73 12.00 16.85 C11.73 16.98 11.51 16.92 11.09 17.17 C10.68 17.42 9.78 18.51 9.51 18.37 C9.24 18.24 9.57 16.82 9.47 16.37 C9.38 15.91 9.12 15.87 8.95 15.63 C8.77 15.39 8.52 15.19 8.42 14.92 C8.33 14.66 8.38 14.32 8.37 14.03 C8.36 13.74 8.67 13.55 8.35 13.20 C8.04 12.85 6.41 12.19 6.49 11.94 C6.58 11.69 8.42 11.86 8.87 11.69 C9.31 11.53 9.08 11.23 9.18 10.95 C9.27 10.66 9.27 10.24 9.44 9.99 C9.61 9.74 9.90 9.52 10.18 9.43 C10.47 9.33 10.83 9.42 11.14 9.41 C11.44 9.40 11.66 9.60 12.00 9.37 C12.34 9.13 12.92 7.93 13.19 8.00 C13.46 8.07 13.43 9.44 13.63 9.81 C13.83 10.18 13.90 10.24 14.39 10.20 C14.89 10.15 16.44 9.30 16.59 9.54 C16.73 9.78 15.46 11.15 15.26 11.63 C15.06 12.11 15.27 12.16 15.39 12.43 C15.51 12.69 15.78 12.90 15.96 13.20 Z" fill="{{c.mark.color}}"></path>
+<path d="M11.7 16.6 L11.8 19.8 A0.42 0.42 0 0 0 12.64 19.8 L12.6 16.4 Z" fill="{{c.mark.color}}"></path>
+</g>
+</svg>
+<span style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: {{c.tierColor}}">{{c.tier}}</span>
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 28px; line-height: 0.95; text-transform: uppercase">{{c.name}}</span>
+<span style="font-size: 13px; line-height: 1.4; color: #e8e2da">{{c.sub}}</span>
+</span>
+</button>
+<div style="position: relative; max-height: {{c.maxH}}px; overflow: hidden; padding: 0 16px">
+<div style="display: flex; flex-direction: column; gap: 12px; padding: 10px 0 16px; border-top: 1px solid #3d332f">
+<p style="margin: 0; font-size: 14.5px; line-height: 1.45; text-wrap: pretty">{{c.verdict}}</p>
+<sc-if value="{{c.hasMoney}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #b3aaa0">How much</span>
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 800; font-size: 22px">{{c.money}}</span>
+</div>
+</sc-if>
+<sc-for list="{{c.tied}}" as="f" hint-placeholder-count="2">
+<div style="display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 13.5px; line-height: 1.4">{{f.t}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #b3aaa0">{{f.s}}</span>
+</div>
+</sc-for>
+<sc-if value="{{c.isRated}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; gap: 8px">
+<button type="button" style="flex-grow: 1; height: 40px; border-radius: 20px; border: none; background: #c8191f; color: #ffffff; font-family: 'Schibsted Grotesk', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer">Tell the club</button>
+<button type="button" style="flex-grow: 1; height: 40px; border-radius: 20px; border: 1px solid #7a6f66; background: transparent; color: #f3ede6; font-family: 'Schibsted Grotesk', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer">Share</button>
+</div>
+</sc-if>
+<sc-if value="{{c.isUnrated}}" hint-placeholder-val="{{ false }}">
+<button type="button" style="align-self: flex-start; height: 40px; padding: 0 18px; border-radius: 20px; border: 1px solid #7a6f66; background: transparent; color: #f3ede6; font-family: 'Schibsted Grotesk', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer">Ask us to rate it</button>
+</sc-if>
+</div>
+<sc-if value="{{c.faded}}" hint-placeholder-val="{{ true }}">
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40px; background: linear-gradient(rgba(38, 32, 29, 0), #26201d); pointer-events: none"></div>
+</sc-if>
+</div>
+</sc-if>
+</article>
+</sc-for>
+</section>
+
+<sc-if value="{{hasTimeline}}" hint-placeholder-val="{{ false }}">
+<section aria-label="Over the years" style="margin-top: 28px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: baseline; gap: 16px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #f3ede6">Over the years</span>
+<span style="font-size: 13px; color: #a39a91">Hover a period or a sponsor to put that shirt on the page.</span>
+</div>
+<div onMouseLeave="{{tl.leave}}" style="position: relative; width: 1328px; height: {{tl.h}}px">
+<sc-for list="{{tl.cols}}" as="p" hint-placeholder-count="3">
+<button type="button" onMouseEnter="{{p.enter}}" onFocus="{{p.pick}}" onClick="{{p.pick}}" aria-pressed="{{p.on}}" aria-label="{{p.aria}}" style="position: absolute; left: {{p.x}}px; top: 0; width: {{p.w}}px; height: 54px; box-sizing: border-box; padding: 0 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-radius: 10px; background: {{p.bg}}; border: {{p.border}}; box-shadow: {{p.ring}}; color: {{p.fg}}; cursor: pointer; font-family: 'Schibsted Grotesk', sans-serif; text-align: left">
+<span style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.04em; opacity: 0.9; white-space: nowrap">{{p.label}}</span>
+<span style="display: flex; align-items: flex-end; gap: 7px">
+<span aria-hidden="true" style="display: flex; align-items: flex-end; gap: 2px; height: 14px">
+<sc-for list="{{p.bars}}" as="b" hint-placeholder-count="4">
+<span style="width: 4px; height: {{b.h}}px; border-radius: 1px; background: {{b.bg}}; border: {{b.border}}; box-sizing: border-box"></span>
+</sc-for>
+</span>
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 19px; line-height: 0.8; text-transform: uppercase; color: {{p.wordColor}}">{{p.word}}</span>
+</span>
+</span>
+<sc-if value="{{p.hasNote}}" hint-placeholder-val="{{ false }}">
+<span style="display: flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 700; white-space: nowrap">
+<span aria-hidden="true" style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 9px; background: {{p.noteColor}}; display: flex; align-items: center; justify-content: center">
+<svg width="10" height="10" viewBox="0 0 12 12"><path d="{{p.noteArrow}}" fill="#0f0d0c"></path></svg>
+</span>
+{{p.note}}
+</span>
+</sc-if>
+</button>
+</sc-for>
+<sc-for list="{{tl.pills}}" as="b" hint-placeholder-count="3">
+<div style="position: absolute; left: {{b.x}}px; top: {{b.y}}px; width: {{b.w}}px; height: 18px; box-sizing: border-box; border-radius: 9px; background: {{b.bg}}; border: {{b.border}}; box-shadow: {{b.ring}}; display: flex; align-items: center; padding: 0 10px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: {{b.fg}}; white-space: nowrap; overflow: hidden">{{b.text}}</div>
+</sc-for>
+<sc-for list="{{tl.segs}}" as="s" hint-placeholder-count="4">
+<button type="button" onMouseEnter="{{s.enter}}" onMouseLeave="{{s.leave}}" onFocus="{{s.pick}}" onClick="{{s.pick}}" aria-label="{{s.aria}}" style="position: absolute; left: {{s.x}}px; top: {{s.y}}px; width: {{s.w}}px; height: 24px; padding: 0; background: transparent; border: none; cursor: pointer; z-index: 3"></button>
+</sc-for>
+</div>
+</section>
+</sc-if>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"teamId":{"editor":"enum","options":["atletico","arsenal","villa"],"default":"atletico"},"showCrest":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":940}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    const teams = this.teams();
+    const t = teams[props.teamId] || teams.atletico;
+    this.state = { period: t.current, hover: null, lane: null };
+    this.aim = null;
+    this.pending = null;
+    this.aimTimer = null;
+  }
+  componentWillUnmount() { clearTimeout(this.aimTimer); }
+  // Hover intent, in the spirit of menu-aim / safe polygons: when the pointer leaves
+  // a sponsor bar, logo or line, the card stays open while the pointer keeps heading
+  // toward it. Other hovers are held back until the pointer arrives, turns away or stalls.
+  startAim(id, e) {
+    if (this.state.hover !== id || !e) return;
+    const doc = (e.currentTarget && e.currentTarget.ownerDocument) || document;
+    const el = doc.querySelector('[data-card="' + id + '"]');
+    if (!el) { this.setState({ hover: null }); return; }
+    const r = el.getBoundingClientRect();
+    this.aim = { id: id, x: e.clientX, y: e.clientY, l: r.left, t: r.top, r: r.right, b: r.bottom };
+    this.pending = null;
+    this.armAim(900);
+  }
+  armAim(ms) { clearTimeout(this.aimTimer); this.aimTimer = setTimeout(() => this.failAim(), ms); }
+  clearAim() { clearTimeout(this.aimTimer); this.aim = null; this.pending = null; }
+  failAim() {
+    const next = this.pending;
+    this.clearAim();
+    if (next) next(); else this.setState({ hover: null, lane: null });
+  }
+  heading(a, x, y) {
+    const pad = 16;
+    const c = [[a.l - pad, a.t - pad], [a.r + pad, a.t - pad], [a.r + pad, a.b + pad], [a.l - pad, a.b + pad]];
+    if (x >= c[0][0] && x <= c[1][0] && y >= c[0][1] && y <= c[2][1]) return true;
+    const side = (p, q, r) => (q[0] - p[0]) * (r[1] - p[1]) - (q[1] - p[1]) * (r[0] - p[0]);
+    const inTri = (p, a1, b1, c1) => {
+      const d1 = side(p, a1, b1), d2 = side(p, b1, c1), d3 = side(p, c1, a1);
+      return !((d1 < 0 || d2 < 0 || d3 < 0) && (d1 > 0 || d2 > 0 || d3 > 0));
+    };
+    const o = [a.x, a.y], p = [x, y];
+    for (let i = 0; i < 4; i++) { if (inTri(p, o, c[i], c[(i + 1) % 4])) return true; }
+    return false;
+  }
+  moved(e) {
+    const a = this.aim;
+    if (!a) return;
+    const x = e.clientX, y = e.clientY;
+    if (x >= a.l && x <= a.r && y >= a.t && y <= a.b) { this.clearAim(); return; }
+    if (this.heading(a, x, y)) { this.armAim(500); return; }
+    this.failAim();
+  }
+  // wrap a hover handler so it waits while the pointer is on its way to an open card
+  gated(targetId, fn) {
+    return () => {
+      if (this.aim) {
+        if (targetId && targetId === this.aim.id) return;
+        this.pending = fn;
+        return;
+      }
+      fn();
+    };
+  }
+  teams() {
+    const B = (id) => '/_blob/' + id;
+    const IMG = {
+      atm_f: B('97157bf9628f7ca9e857beb381d8d940'), atm_b: B('216b0dcaa24d0ca4ddf7eccd78422107'),
+      ars17_f: B('b9166218bb0e03bfd69723eec6bb588d'), ars17_b: B('6b65172b69380ad21bb4ac7588e0bdeb'),
+      ars25_f: B('7dc68817b1dd001d845a94cc8d313b1e'), ars25_b: B('1676e7c2e656003c5e440da933023b87'),
+      ars27_f: B('20d752c4a6a78974ced7f9e3e9eab7d5'), ars27_b: B('6c1f84ebcdf4dc8febc5f16fd45d574b'),
+      avl25_f: B('29e57dcfc9bce00931f8b2baadd322b2'), avl25_b: B('f8cffc78f267431d2526de19dbc33e34'),
+      avl_f: B('015bfe1226d2a5382951358e9f0ceb42'), avl_b: B('80a231443e80be01b3875a1fa3216c9c')
+    };
+    const R = {
+      vr: {
+        lvl: 3, owner: 'Government of Rwanda', via: 'Rwanda Development Board',
+        verdict: 'Paid for by a government that UN experts say has 3,000–4,000 troops fighting alongside M23 rebels in eastern Congo.',
+        tied: [
+          { t: 'M23 rebels take about $800,000 a month in levies on coltan mining.', s: 'UN Group of Experts, 2024' },
+          { t: 'More than 120 tonnes of coltan a month smuggled from Congo’s Rubaya mines into Rwanda since April 2024.', s: 'Global Witness, Jun 2026' }
+        ]
+      },
+      saudi: {
+        lvl: 2, owner: 'Government of Saudi Arabia', via: 'Public Investment Fund',
+        verdict: 'Owned by Saudi Arabia’s sovereign wealth fund, which is chaired by Crown Prince Mohammed bin Salman.',
+        tied: [
+          { t: 'Saudi Arabia carried out a record 345 executions in 2024.', s: 'Amnesty International, 2025' },
+          { t: 'US intelligence assessed that the crown prince approved the 2018 operation that killed journalist Jamal Khashoggi.', s: 'US Office of the DNI, Feb 2021' }
+        ]
+      },
+      dubai: {
+        lvl: 2, owner: 'Government of Dubai, UAE', via: 'Investment Corporation of Dubai',
+        verdict: 'The airline is owned by the Dubai government’s investment arm.',
+        tied: [
+          { t: '43 activists and dissidents were given life sentences in a 2024 mass trial that rights groups called grossly unfair.', s: 'Human Rights Watch, Jul 2024' }
+        ]
+      },
+      none: {
+        lvl: 0, owner: '', via: '',
+        verdict: 'We haven’t investigated this sponsor yet. A rating only goes up once every claim behind it is sourced.',
+        tied: []
+      }
+    };
+    // hw/hh: size of the logo on the photo, used as its hover area
+    const sp = (id, name, place, side, slot, x, y, rating, money, hw, hh) =>
+      Object.assign({ id: id, name: name, place: place, side: side, slot: slot, x: x, y: y, money: money || '', rating: rating, hw: hw || 0.44, hh: hh || 0.14 }, R[rating]);
+    const emi = (x, y, hw, hh) => sp('emirates', 'Emirates', 'Front of shirt', 'front', 'L', x, y, 'dubai', '[DEAL VALUE]', hw, hh);
+    return {
+      atletico: {
+        name: 'Atlético de Madrid', crest: B('c248839c67d1d79154c44bbbdefaa709'), crestAlt: 'Atlético de Madrid crest', crumb: 'Soccer / La Liga', current: 0,
+        periods: [{
+          label: '2026/27', level: 3,
+          kit: {
+            label: 'Home shirt · 2026/27', front: IMG.atm_f, back: IMG.atm_b, change: null,
+            line: 'Saudi Arabia’s state fund pays for the front of this shirt. Rwanda’s government pays for the back.',
+            items: [
+              sp('riyadh', 'Riyadh Air', 'Front of shirt', 'front', 'L', 0.49, 0.468, 'saudi', '[DEAL VALUE]', 0.38, 0.23),
+              sp('kraken', 'Kraken', 'Sleeve', 'front', 'T', 0.883, 0.236, 'none', '', 0.06, 0.13),
+              sp('vr', 'Visit Rwanda', 'Back of shirt', 'back', 'R', 0.507, 0.678, 'vr', '[DEAL VALUE]', 0.27, 0.09)
+            ]
+          }
+        }],
+        lanes: []
+      },
+      arsenal: {
+        name: 'Arsenal', crest: B('3f0cca48f17c0f4c087f90bf087fab3a'), crestAlt: 'Arsenal crest', crumb: 'Soccer / Premier League', current: 2,
+        periods: [
+          { label: '2006/07 – 2017/18', level: 2, note: null, kit: {
+            label: 'Home shirt · 2017/18', front: IMG.ars17_f, back: IMG.ars17_b, change: null,
+            line: 'Dubai’s government pays for the front of this shirt.',
+            items: [emi(0.503, 0.40, 0.38, 0.15)] } },
+          { label: '2018/19 – 2025/26', level: 3, note: { kind: 'bad', text: '+ Visit Rwanda' }, kit: {
+            label: 'Home shirt · 2025/26', front: IMG.ars25_f, back: IMG.ars25_b,
+            change: { kind: 'bad', text: 'Worse from 2018: Visit Rwanda joined' },
+            line: 'Dubai’s government pays for the front. Rwanda’s government pays for the sleeve.',
+            items: [emi(0.507, 0.395, 0.42, 0.17), sp('vr', 'Visit Rwanda', 'Sleeve · 2018–2026', 'front', 'T', 0.881, 0.29, 'vr', 'About £10m a year', 0.06, 0.07)] } },
+          { label: '2026/27', level: 2, note: { kind: 'good', text: 'Rwanda gone' }, kit: {
+            label: 'Home shirt · 2026/27', front: IMG.ars27_f, back: IMG.ars27_b,
+            change: { kind: 'good', text: 'Better than last season: Visit Rwanda is gone' },
+            line: 'Rwanda is off the sleeve, but Dubai’s government still pays for the front, so the shirt stays stained.',
+            items: [emi(0.50, 0.41, 0.40, 0.16), sp('deel', 'Deel', 'Sleeve · from 2026/27', 'front', 'T', 0.865, 0.295, 'none', '', 0.07, 0.06)] } }
+        ],
+        lanes: [
+          { id: 'emirates', name: 'Emirates', rating: 'dubai', from: 0, to: 2 },
+          { id: 'vr', name: 'Visit Rwanda', rating: 'vr', from: 1, to: 1 },
+          { id: 'deel', name: 'Deel', rating: 'none', from: 2, to: 2 }
+        ]
+      },
+      villa: {
+        name: 'Aston Villa', crest: B('7a60232877ace1049d7ca1338cb7d007'), crestAlt: 'Aston Villa crest', crumb: 'Soccer / Premier League', current: 1,
+        periods: [
+          { label: '2024/25 – 2025/26', level: -1, note: null, kit: {
+            label: 'Home shirt · 2025/26', front: IMG.avl25_f, back: IMG.avl25_b, change: null,
+            line: 'Betano and Trade Nation haven’t been rated yet.',
+            items: [
+              sp('betano', 'Betano', 'Front of shirt', 'front', 'L', 0.512, 0.383, 'none', '', 0.36, 0.09),
+              sp('tradenation', 'Trade Nation', 'Sleeve', 'front', 'T', 0.846, 0.31, 'none', '', 0.06, 0.13)
+            ] } },
+          { label: '2026/27', level: 3, note: { kind: 'bad', text: '+ Visit Rwanda' }, kit: {
+            label: 'Home shirt · 2026/27', front: IMG.avl_f, back: IMG.avl_b,
+            change: { kind: 'bad', text: 'Worse than last season: Visit Rwanda took the front' },
+            line: 'The front of this shirt is paid for by the Government of Rwanda.',
+            items: [
+              sp('vr', 'Visit Rwanda', 'Front of shirt · from 2026/27', 'front', 'L', 0.513, 0.393, 'vr', 'Up to £20m a year', 0.37, 0.13),
+              sp('betano', 'Betano', 'Sleeves', 'front', 'T', 0.855, 0.338, 'none', '', 0.09, 0.06)
+            ] } }
+        ],
+        lanes: [
+          { id: 'betano', name: 'Betano · front, then sleeves', rating: 'none', from: 0, to: 1 },
+          { id: 'tradenation', name: 'Trade Nation · sleeve', rating: 'none', from: 0, to: 0 },
+          { id: 'vr', name: 'Visit Rwanda · front', rating: 'vr', from: 1, to: 1 }
+        ]
+      }
+    };
+  }
+  renderVals() {
+    const TW = 340, TH = 378, FX = 316, BX = 672, TY = 212, PANEL_Y = 196, STAGE_H = 634;
+    const CARD_H = 158, ATTACH = 52, COLLAPSED = 48;
+    const TEAL = '#4fc3b0';
+    const LEVEL = {
+      '3': { word: 'Soaked', fill: '#e3121b', text: '#ff4a3d', tint: 'rgba(227, 18, 27, 0.16)', boxBorder: '2px solid #e3121b', rank: '4 of 4 · worst', segBg: '#c8121b', segFg: '#ffffff' },
+      '2': { word: 'Stained', fill: '#8a2a22', text: '#e0705f', tint: 'rgba(176, 64, 47, 0.18)', boxBorder: '2px solid #b0402f', rank: '3 of 4', segBg: '#5a231d', segFg: '#ffe3de' },
+      '1': { word: 'Spotted', fill: '#d9a399', text: '#e6b3a8', tint: 'rgba(217, 163, 153, 0.12)', boxBorder: '2px solid #d9a399', rank: '2 of 4', segBg: '#d9a399', segFg: '#2a1512' },
+      '0': { word: 'Clean', fill: '#e8e2da', text: '#f3ede6', tint: 'transparent', boxBorder: '2px solid #e8e2da', rank: '1 of 4', segBg: '#e8e2da', segFg: '#0f0d0c' },
+      '-1': { word: 'Not rated', fill: 'transparent', text: '#b3aaa0', tint: 'transparent', boxBorder: '2px dashed #6f665e', rank: 'not checked yet', segBg: '#1f1a18', segFg: '#d6cec5' }
+    };
+    const TIER = {
+      '3': { word: 'Severe', color: '#ff4a3d', fill: '#e3121b', fg: '#ffffff', splat: 1.35 },
+      '2': { word: 'Serious', color: '#e0705f', fill: '#8a2a22', fg: '#ffe3de', splat: 0.95 },
+      '1': { word: 'Concern', color: '#e6b3a8', fill: '#d9a399', fg: '#2a1512', splat: 0.55 },
+      '0': { word: 'Not rated yet', color: '#b3aaa0', fill: 'transparent', fg: '#b3aaa0', splat: 0 }
+    };
+    const UP = 'M6 1 L11 8 L7.5 8 L7.5 11 L4.5 11 L4.5 8 L1 8 Z';
+    const DOWN = 'M6 11 L11 4 L7.5 4 L7.5 1 L4.5 1 L4.5 4 L1 4 Z';
+    const meter = (level, hs, on) => [0, 1, 2, 3].map((n) => ({
+      h: hs[n],
+      bg: level < 0 ? 'transparent' : (n <= level ? (on || LEVEL[String(level)].text) : 'rgba(255, 255, 255, 0.18)'),
+      border: level < 0 ? '1px dashed #8a8078' : 'none'
+    }));
+    const markFor = (lvl) => {
+      const t = TIER[String(lvl)];
+      return {
+        stroke: lvl > 0 ? '#f3ede6' : '#8a8078', dash: lvl === 0 ? '1.6 1.4' : 'none',
+        color: lvl === 3 ? '#e3121b' : t.color,
+        tf: 'translate(12 13.2) scale(' + (t.splat || 0.001) + ') translate(-12 -13.2)',
+        splatOp: t.splat > 0 ? 1 : 0
+      };
+    };
+    const teams = this.teams();
+    const tid = this.props.teamId || 'atletico';
+    const team = teams[tid] || teams.atletico;
+    const pIdx = team.periods[this.state.period] ? this.state.period : team.current;
+    const period = team.periods[pIdx];
+    const kit = period.kit;
+    const hover = this.state.hover;
+    const open = (id) => this.gated(id, () => this.setState({ hover: id }));
+    const close = () => { if (!this.aim) this.setState({ hover: null }); };
+    const aimFrom = (id) => (e) => this.startAim(id, e);
+    const toggle = (id) => () => { this.clearAim(); this.setState({ hover: this.state.hover === id ? null : id }); };
+
+    // cards sit around the two shirts; arrows stop at the edge of each logo
+    const anchor = (i) => {
+      let x = i.x, y = i.y;
+      if (i.slot === 'L') x = Math.max(0.04, x - i.hw / 2);
+      if (i.slot === 'R') x = Math.min(0.96, x + i.hw / 2);
+      if (i.slot === 'T') y = y - i.hh / 2;
+      return { ax: Math.round((i.side === 'back' ? BX : FX) + x * TW), ay: Math.round(TY + y * TH) };
+    };
+    const cards = [];
+    const stackSide = (slot, left) => {
+      const list = kit.items.filter((i) => i.slot === slot).map((i) => Object.assign({}, i, anchor(i))).sort((a, b) => a.ay - b.ay);
+      let prev = 0;
+      list.forEach((i) => {
+        let top = Math.max(i.ay - ATTACH, PANEL_Y, prev);
+        top = Math.min(top, STAGE_H - CARD_H);
+        prev = top + CARD_H + 14;
+        cards.push(Object.assign(i, { left: left, top: top, w: 280, attachX: slot === 'L' ? 280 : left, attachY: top + ATTACH }));
+      });
+    };
+    stackSide('L', 0);
+    stackSide('R', 1048);
+    const tops = kit.items.filter((i) => i.slot === 'T').map((i) => Object.assign({}, i, anchor(i)));
+    const tw = 260, tg = 16, total = tops.length * tw + Math.max(0, tops.length - 1) * tg;
+    tops.forEach((i, n) => {
+      const left = Math.round(664 - total / 2 + n * (tw + tg));
+      cards.push(Object.assign(i, { left: left, top: 16, w: tw, attachX: left + tw / 2, attachY: 16 + CARD_H }));
+    });
+    const backEmpty = !kit.items.some((i) => i.side === 'back');
+
+    const cardVals = cards.map((c) => {
+      const isOpen = hover === c.id;
+      const t = TIER[String(c.lvl)];
+      return {
+        isNote: false, isCard: true,
+        left: c.left, top: c.top, w: c.w, z: isOpen ? 20 : 4,
+        bg: '#26201d',
+        border: isOpen ? '1px solid ' + t.color : '1px solid ' + (c.lvl > 0 ? '#6a3a31' : '#463c37'),
+        shadow: isOpen ? '0 18px 40px rgba(0, 0, 0, 0.6)' : '0 1px 0 rgba(255, 255, 255, 0.04) inset',
+        mark: markFor(c.lvl),
+        tier: t.word, tierColor: t.color, name: c.name,
+        sub: c.lvl > 0 ? c.place + ' · paid for by the ' + c.owner : c.place + ' · not investigated yet',
+        open: isOpen, faded: !isOpen, maxH: isOpen ? 640 : COLLAPSED,
+        verdict: c.verdict, hasMoney: c.money !== '', money: c.money, tied: c.tied || [],
+        isRated: c.lvl > 0, isUnrated: c.lvl === 0,
+        id: c.id,
+        enter: () => {
+          if (this.aim && this.aim.id === c.id) { this.clearAim(); return; }
+          if (this.aim) { this.pending = () => this.setState({ hover: c.id, lane: null }); return; }
+          this.setState({ hover: c.id, lane: null });
+        },
+        leave: close, toggle: toggle(c.id)
+      };
+    });
+    if (backEmpty) {
+      cardVals.push({ id: 'note', isNote: true, isCard: false, left: 1048, top: 330, w: 280, z: 1, bg: '#26201d', border: '1px solid #463c37', shadow: 'none',
+        mark: markFor(0), tier: '', tierColor: '', name: '', sub: '', open: false, faded: false, maxH: 0,
+        verdict: '', hasMoney: false, money: '', tied: [], isRated: false, isUnrated: false, enter: () => {}, leave: () => {}, toggle: () => {} });
+    }
+    const lines = cards.map((c) => {
+      const color = TIER[String(c.lvl)].color;
+      const active = hover === c.id;
+      return {
+        x1: c.attachX, y1: c.attachY, x2: c.ax, y2: c.ay, color: color,
+        w: active ? 3 : 1.8, halo: active ? 6 : 4.5,
+        dash: c.lvl === 0 ? '5 4' : 'none', op: hover && !active ? 0.3 : 1,
+        enter: open(c.id), leave: aimFrom(c.id)
+      };
+    });
+    // the logo itself is a hover target too
+    const hits = cards.map((c) => {
+      const w = Math.max(34, Math.round(c.hw * TW) + 10), h = Math.max(34, Math.round(c.hh * TH) + 10);
+      const cx = (c.side === 'back' ? BX : FX) + c.x * TW, cy = TY + c.y * TH;
+      return {
+        x: Math.round(cx - w / 2), y: Math.round(cy - h / 2), w: w, h: h,
+        aria: c.name + ': show who pays',
+        enter: open(c.id), leave: aimFrom(c.id), toggle: toggle(c.id)
+      };
+    });
+
+    const lv = LEVEL[String(period.level)];
+    const ch = kit.change;
+
+    // compact history: one row of periods, thin sponsor pills underneath
+    const n = team.periods.length;
+    const TRACK = 1328, GAP = 8, MINW = 250;
+    const seasons = team.periods.map((p) => {
+      const m = p.label.match(/(\d{4})\/\d{2}\s*–\s*(\d{4})\/\d{2}/);
+      return m ? Number(m[2]) - Number(m[1]) + 1 : 1;
+    });
+    const totalS = seasons.reduce((a, b) => a + b, 0);
+    const usable = TRACK - GAP * (n - 1);
+    const rest = usable - MINW * n;
+    let acc = 0;
+    const xs = team.periods.map((p, i) => { const w = Math.round(MINW + rest * seasons[i] / totalS); const x = acc; acc += w + GAP; return { x: x, w: w }; });
+    const rLvl = (r) => r === 'vr' ? 3 : (r === 'none' ? 0 : 2);
+    const laneHover = this.state.lane;
+    const cols = team.periods.map((p, i) => {
+      const L = LEVEL[String(p.level)];
+      const on = i === pIdx;
+      const note = p.note;
+      return {
+        x: xs[i].x, w: xs[i].w, label: p.label, word: L.word,
+        bg: on ? 'rgba(243, 237, 230, 0.06)' : 'transparent', fg: on ? '#f3ede6' : '#b3aaa0', wordColor: on ? '#f3ede6' : '#d6cec5',
+        border: on ? '2px solid #f3ede6' : (p.level < 0 ? '1px dashed #6f665e' : '1px solid #3d332f'),
+        ring: 'none',
+        bars: meter(p.level, [5, 8, 11, 14]),
+        hasNote: !!note, note: note ? note.text : '',
+        noteColor: note && note.kind === 'good' ? TEAL : '#ff4a3d',
+        noteArrow: note && note.kind === 'good' ? DOWN : UP,
+        on: on, aria: 'Show the ' + p.label + ' shirt, ' + L.word,
+        pick: () => { this.clearAim(); this.setState({ period: i, hover: null, lane: null }); },
+        enter: this.gated(null, () => this.setState({ period: i, hover: null, lane: null }))
+      };
+    });
+    const PILLS_Y = 64, PILL_H = 24;
+    const pills = team.lanes.map((l, k) => {
+      const t = TIER[String(rLvl(l.rating))];
+      const x = xs[l.from].x, end = xs[l.to].x + xs[l.to].w;
+      const on = laneHover === l.id;
+      return {
+        x: x, y: PILLS_Y + k * PILL_H, w: end - x,
+        bg: l.rating === 'none' ? 'transparent' : t.fill, fg: t.fg,
+        border: l.rating === 'none' ? '1px dashed #7a6f66' : 'none',
+        ring: on ? '0 0 0 2px #0f0d0c, 0 0 0 3px #f3ede6' : 'none',
+        text: l.name + ' · ' + t.word
+      };
+    });
+    const segs = [];
+    team.lanes.forEach((l, k) => {
+      for (let p = l.from; p <= l.to; p++) {
+        segs.push({
+          x: xs[p].x, y: PILLS_Y + k * PILL_H - 3, w: xs[p].w,
+          aria: l.name + ', ' + team.periods[p].label,
+          pick: () => { this.clearAim(); this.setState({ period: p, hover: l.id, lane: l.id }); },
+          enter: this.gated('lane:' + l.id + ':' + p, () => this.setState({ period: p, hover: l.id, lane: l.id })),
+          leave: aimFrom(l.id)
+        });
+      }
+    });
+
+    return {
+      rootH: n > 1 ? 1120 : 940,
+      showCrest: this.props.showCrest !== false, crestPad: this.props.showCrest !== false ? 94 : 0,
+      team: team, kit: kit, lv: lv,
+      levelBars: meter(period.level, [14, 25, 37, 50]),
+      hasChange: !!ch,
+      change: ch ? { text: ch.text, color: ch.kind === 'good' ? TEAL : '#ff4a3d', arrow: ch.kind === 'good' ? DOWN : UP } : { text: '', color: '#a39a91', arrow: UP },
+      frontAlt: team.name + ' ' + kit.label + ', front', backAlt: team.name + ' ' + kit.label + ', back',
+      cards: cardVals, lines: lines, hits: hits,
+      hasTimeline: n > 1,
+      tl: {
+        h: PILLS_Y + team.lanes.length * PILL_H,
+        cols: cols, pills: pills, segs: segs,
+        leave: () => this.setState({ lane: null })
+      },
+      onMove: (e) => this.moved(e)
+    };
+  }
+}
+</script>
+</body>
+</html>

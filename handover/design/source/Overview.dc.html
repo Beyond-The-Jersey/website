@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Behind the Jersey — soccer overview</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&amp;family=IBM+Plex+Mono:wght@400;600&amp;family=Schibsted+Grotesk:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 1440px; height: {{rootH}}px; box-sizing: border-box; background: #0f0d0c; color: #f3ede6; font-family: 'Schibsted Grotesk', 'Helvetica Neue', sans-serif; display: flex; flex-direction: column; overflow: hidden">
+
+<header style="height: 72px; flex-shrink: 0; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 0 56px; border-bottom: 1px solid #2e2825">
+<a href="Landing.dc.html" style="display: flex; align-items: center; gap: 12px; color: #f3ede6; text-decoration: none">
+<svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 3 Q12 5.6 15.5 3 L19.6 4.3 L23 8.6 L20.3 11.4 L18.2 9.9 L18.2 21.4 Q12 22.3 5.8 21.4 L5.8 9.9 L3.7 11.4 L1 8.6 L4.4 4.3 Z" fill="none" stroke="#f3ede6" stroke-width="1.3" stroke-linejoin="round"></path><path d="M15.96 13.20 C16.15 13.50 16.21 13.77 16.51 14.23 C16.81 14.69 18.01 15.74 17.77 15.98 C17.53 16.21 15.71 15.71 15.07 15.65 C14.43 15.59 14.22 15.57 13.93 15.62 C13.63 15.66 13.51 15.78 13.31 15.92 C13.11 16.05 12.96 16.28 12.74 16.43 C12.52 16.59 12.27 16.73 12.00 16.85 C11.73 16.98 11.51 16.92 11.09 17.17 C10.68 17.42 9.78 18.51 9.51 18.37 C9.24 18.24 9.57 16.82 9.47 16.37 C9.38 15.91 9.12 15.87 8.95 15.63 C8.77 15.39 8.52 15.19 8.42 14.92 C8.33 14.66 8.38 14.32 8.37 14.03 C8.36 13.74 8.67 13.55 8.35 13.20 C8.04 12.85 6.41 12.19 6.49 11.94 C6.58 11.69 8.42 11.86 8.87 11.69 C9.31 11.53 9.08 11.23 9.18 10.95 C9.27 10.66 9.27 10.24 9.44 9.99 C9.61 9.74 9.90 9.52 10.18 9.43 C10.47 9.33 10.83 9.42 11.14 9.41 C11.44 9.40 11.66 9.60 12.00 9.37 C12.34 9.13 12.92 7.93 13.19 8.00 C13.46 8.07 13.43 9.44 13.63 9.81 C13.83 10.18 13.90 10.24 14.39 10.20 C14.89 10.15 16.44 9.30 16.59 9.54 C16.73 9.78 15.46 11.15 15.26 11.63 C15.06 12.11 15.27 12.16 15.39 12.43 C15.51 12.69 15.78 12.90 15.96 13.20 Z" fill="#d61f26"></path><path d="M11.7 16.6 L11.8 19.8 A0.42 0.42 0 0 0 12.64 19.8 L12.6 16.4 Z" fill="#d61f26"></path><circle cx="18.7" cy="7.3" r="0.6" fill="#d61f26"></circle><circle cx="6.4" cy="17.9" r="0.5" fill="#d61f26"></circle></svg>
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 25px; letter-spacing: 0.05em">BEHIND THE JERSEY</span>
+</a>
+<label style="width: 440px; height: 44px; box-sizing: border-box; display: flex; align-items: center; gap: 10px; padding: 0 18px; background: #1a1614; border: 1px solid #3a3330; border-radius: 22px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a39a91" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20 L16 16"></path></svg>
+<input type="search" placeholder="Search a club, league or sponsor" aria-label="Search a club, league or sponsor" style="flex-grow: 1; height: 40px; background: transparent; border: none; color: #f3ede6; font-family: inherit; font-size: 15px">
+</label>
+<nav style="display: flex; gap: 28px; font-size: 15px">
+<a href="#" style="color: #d6cec5; text-decoration: none">How we rate</a>
+<a href="#" style="color: #d6cec5; text-decoration: none">Sources</a>
+<a href="#" style="color: #d6cec5; text-decoration: none">About</a>
+</nav>
+</header>
+
+<nav aria-label="Sports" style="height: 56px; flex-shrink: 0; box-sizing: border-box; display: flex; align-items: stretch; gap: 4px; padding: 0 56px; border-bottom: 1px solid #2e2825">
+<sc-for list="{{sports}}" as="s" hint-placeholder-count="5">
+<button type="button" onClick="{{s.pick}}" aria-pressed="{{s.on}}" style="padding: 0 18px; border: none; border-bottom: {{s.underline}}; background: transparent; color: {{s.fg}}; font-family: 'Schibsted Grotesk', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer">{{s.label}}</button>
+</sc-for>
+</nav>
+
+<main style="flex-grow: 1; display: flex; flex-direction: column; padding: 40px 56px 0">
+
+<section style="display: flex; align-items: flex-end; justify-content: space-between; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<h1 style="margin: 0; font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 72px; line-height: 0.9; text-transform: uppercase">What’s on your club’s shirt?</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.45; color: #d6cec5">Every sponsor, traced back to who really pays. The more blood behind the money, the higher the blood level.</p>
+</div>
+</section>
+
+<sc-if value="{{isSoccer}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; margin-top: 36px">
+<div role="group" aria-label="League" style="display: flex; gap: 8px">
+<sc-for list="{{leagues}}" as="g" hint-placeholder-count="6">
+<button type="button" onClick="{{g.pick}}" aria-pressed="{{g.on}}" style="height: 40px; padding: 0 16px; border-radius: 20px; border: 1px solid #3a3330; background: {{g.bg}}; color: {{g.fg}}; font-family: 'Schibsted Grotesk', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer">{{g.label}}</button>
+</sc-for>
+</div>
+
+<sc-if value="{{hasCards}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 40px; margin-top: 28px">
+
+<section aria-label="Every club at a glance" style="display: flex; flex-direction: column; gap: 12px; padding: 20px 22px; border-radius: 16px; background: #1a1614; border: 1px solid #3d332f">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px">
+<span style="font-size: 20px; font-weight: 700">{{headline}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #b3aaa0">{{subline}}</span>
+</div>
+<div style="display: flex; gap: 4px">
+<sc-for list="{{strip}}" as="t" hint-placeholder-count="20">
+<a href="{{t.href}}" title="{{t.title}}" style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; text-decoration: none; color: #b3aaa0">
+<sc-if value="{{showCrests}}" hint-placeholder-val="{{ true }}">
+<sc-if value="{{t.hasCrest}}" hint-placeholder-val="{{ true }}">
+<img src="{{t.crest}}" alt="" style="width: 30px; height: 30px; object-fit: contain; opacity: {{t.op}}">
+</sc-if>
+<sc-if value="{{t.noCrest}}" hint-placeholder-val="{{ false }}">
+<span style="width: 26px; height: 26px; margin: 2px; box-sizing: border-box; border-radius: 13px; border: 1px dashed #5a504a"></span>
+</sc-if>
+</sc-if>
+<sc-if value="{{showCodes}}" hint-placeholder-val="{{ false }}">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: {{t.codeColor}}">{{t.code}}</span>
+</sc-if>
+<span style="width: 100%; height: 22px; box-sizing: border-box; border-radius: 4px; background: {{t.bg}}; border: {{t.border}}"></span>
+</a>
+</sc-for>
+</div>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; gap: 40px 36px; align-items: stretch">
+<sc-for list="{{rated}}" as="g" hint-placeholder-count="3">
+<section style="width: {{g.w}}px; display: flex; flex-direction: column; gap: 16px">
+<div style="height: 118px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; padding-bottom: 12px; border-bottom: 3px solid {{g.border}}">
+<div style="height: 34px; display: flex; align-items: flex-end; gap: 12px">
+<span aria-hidden="true" style="display: flex; align-items: flex-end; gap: 3px; height: 30px">
+<sc-for list="{{g.bars}}" as="b" hint-placeholder-count="4">
+<span style="width: 8px; height: {{b.h}}px; border-radius: 2px; background: {{b.bg}}; border: {{b.border}}; box-sizing: border-box"></span>
+</sc-for>
+</span>
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 42px; line-height: 0.8; text-transform: uppercase; color: {{g.text}}">{{g.word}}</span>
+</div>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: {{g.text}}">{{g.count}}</span>
+<span style="height: 36px; overflow: hidden; font-size: 13px; line-height: 1.4; color: #b3aaa0">{{g.desc}}</span>
+</div>
+<div style="flex-grow: 1; display: flex; align-items: stretch; gap: 20px">
+<sc-for list="{{g.cards}}" as="c" hint-placeholder-count="1">
+<a href="{{c.href}}" style="width: 236px; box-sizing: border-box; display: flex; flex-direction: column; border-radius: 14px; overflow: hidden; background: #1a1614; border: 2px solid {{c.border}}; color: #f3ede6; text-decoration: none">
+<div style="position: relative; width: 232px; height: {{mediaH}}px; flex-shrink: 0; background: #ffffff; overflow: hidden">
+<sc-if value="{{showJersey}}" hint-placeholder-val="{{ true }}">
+<img src="{{c.img}}" alt="{{c.alt}}" style="position: absolute; left: 0; top: 0; width: 232px; height: 232px">
+</sc-if>
+<sc-if value="{{crestOnly}}" hint-placeholder-val="{{ false }}">
+<img src="{{c.crest}}" alt="{{c.crestAlt}}" style="position: absolute; left: 51px; top: 30px; width: 130px; height: 130px; object-fit: contain">
+</sc-if>
+<sc-if value="{{crestBadge}}" hint-placeholder-val="{{ false }}">
+<span style="position: absolute; left: 10px; top: 10px; width: 56px; height: 56px; border-radius: 28px; background: #ffffff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28); display: flex; align-items: center; justify-content: center">
+<img src="{{c.crest}}" alt="{{c.crestAlt}}" style="width: 40px; height: 40px; object-fit: contain">
+</span>
+</sc-if>
+<sc-if value="{{c.hasBack}}" hint-placeholder-val="{{ false }}">
+<sc-if value="{{showJersey}}" hint-placeholder-val="{{ true }}">
+<span style="position: absolute; right: 8px; bottom: 8px; width: 60px; height: 66px; border-radius: 8px; overflow: hidden; background: #ffffff; box-shadow: 0 0 0 2px #0f0d0c">
+<img src="{{c.backImg}}" alt="Back of the shirt" style="width: 60px; height: 66px; display: block">
+<span style="position: absolute; left: 0; right: 0; bottom: 0; height: 16px; display: flex; align-items: center; justify-content: center; background: rgba(15, 13, 12, 0.85); color: #f3ede6; font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 600; letter-spacing: 0.1em">BACK</span>
+</span>
+</sc-if>
+</sc-if>
+</div>
+<div style="height: 54px; flex-shrink: 0; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; gap: 10px; background: {{c.band}}; color: {{c.bandFg}}">
+<span aria-hidden="true" style="display: flex; align-items: flex-end; gap: 3px; height: 24px">
+<sc-for list="{{c.bars}}" as="b" hint-placeholder-count="4">
+<span style="width: 6px; height: {{b.h}}px; border-radius: 1px; background: {{b.bg}}"></span>
+</sc-for>
+</span>
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 30px; line-height: 0.8; text-transform: uppercase">{{c.word}}</span>
+<span style="margin-left: auto; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; opacity: 0.85">{{c.rank}}</span>
+</div>
+<div style="padding: 14px 14px 16px; display: flex; flex-direction: column; gap: 5px">
+<span style="font-size: 18px; font-weight: 700; line-height: 1.2">{{c.name}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 1.45; color: {{c.text}}">{{c.spons}}</span>
+<span style="font-size: 13px; line-height: 1.4; color: #d6cec5">{{c.payer}}</span>
+</div>
+</a>
+</sc-for>
+</div>
+</section>
+</sc-for>
+</div>
+
+<section style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px; padding-bottom: 12px; border-bottom: 3px dashed #4a403b">
+<div style="display: flex; align-items: flex-end; gap: 12px">
+<span aria-hidden="true" style="display: flex; align-items: flex-end; gap: 3px; height: 30px">
+<span style="width: 8px; height: 10px; border-radius: 2px; border: 1px dashed #8a8078; box-sizing: border-box"></span>
+<span style="width: 8px; height: 16px; border-radius: 2px; border: 1px dashed #8a8078; box-sizing: border-box"></span>
+<span style="width: 8px; height: 23px; border-radius: 2px; border: 1px dashed #8a8078; box-sizing: border-box"></span>
+<span style="width: 8px; height: 30px; border-radius: 2px; border: 1px dashed #8a8078; box-sizing: border-box"></span>
+</span>
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 44px; line-height: 0.8; text-transform: uppercase; color: #b3aaa0">Not rated yet</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #b3aaa0">{{unratedCount}}</span>
+</div>
+<span style="font-size: 13px; line-height: 1.4; color: #b3aaa0">We haven’t checked who is behind these sponsors yet.</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 22px 18px">
+<sc-for list="{{unrated}}" as="c" hint-placeholder-count="8">
+<a href="#" style="display: flex; flex-direction: column; gap: 8px; color: #d6cec5; text-decoration: none">
+<div style="position: relative; width: 100%; height: {{tileH}}px; border-radius: 10px; overflow: hidden; background: #ffffff; opacity: 0.92">
+<sc-if value="{{showJersey}}" hint-placeholder-val="{{ true }}">
+<img src="{{c.img}}" alt="{{c.alt}}" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover">
+</sc-if>
+<sc-if value="{{crestOnly}}" hint-placeholder-val="{{ false }}">
+<img src="{{c.crest}}" alt="{{c.crestAlt}}" style="position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px; object-fit: contain">
+</sc-if>
+<sc-if value="{{crestBadge}}" hint-placeholder-val="{{ false }}">
+<span style="position: absolute; left: 8px; top: 8px; width: 42px; height: 42px; border-radius: 21px; background: #ffffff; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28); display: flex; align-items: center; justify-content: center">
+<img src="{{c.crest}}" alt="{{c.crestAlt}}" style="width: 30px; height: 30px; object-fit: contain">
+</span>
+</sc-if>
+</div>
+<span style="font-size: 14px; font-weight: 700; line-height: 1.25">{{c.name}}</span>
+</a>
+</sc-for>
+<sc-if value="{{hasMore}}" hint-placeholder-val="{{ false }}">
+<div style="grid-column: span 2; height: {{tileH}}px; box-sizing: border-box; border: 1px dashed #4a423d; border-radius: 10px; display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 18px">
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 38px; line-height: 0.95">{{moreCount}}</span>
+<span style="font-size: 14px; line-height: 1.4; color: #d6cec5">{{moreText}}</span>
+</div>
+</sc-if>
+</div>
+</section>
+</div>
+</sc-if>
+
+<sc-if value="{{noCards}}" hint-placeholder-val="{{ false }}">
+<div style="margin-top: 28px; box-sizing: border-box; border: 1px dashed #4a423d; border-radius: 14px; padding: 32px; display: flex; flex-direction: column; gap: 10px; max-width: 760px">
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 34px; text-transform: uppercase">{{leaguePanel.title}}</span>
+<span style="font-size: 17px; line-height: 1.5; color: #d6cec5">{{leaguePanel.text}}</span>
+</div>
+</sc-if>
+</div>
+</sc-if>
+
+<sc-if value="{{notSoccer}}" hint-placeholder-val="{{ false }}">
+<div style="margin-top: 40px; display: flex; flex-direction: column; gap: 18px; max-width: 900px">
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 34px; text-transform: uppercase">{{sportPanel.title}}</span>
+<div style="display: flex; flex-direction: column; border-top: 1px solid #2e2825">
+<sc-for list="{{sportPanel.items}}" as="i" hint-placeholder-count="2">
+<div style="display: flex; align-items: baseline; gap: 24px; padding: 16px 0; border-bottom: 1px solid #2e2825">
+<span style="width: 300px; flex-shrink: 0; font-size: 17px; font-weight: 700">{{i.t}}</span>
+<span style="flex-grow: 1; font-size: 15px; line-height: 1.45; color: #d6cec5">{{i.d}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #a39a91; white-space: nowrap">{{i.s}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<section aria-label="They dropped it" style="margin-top: 64px; padding-top: 36px; border-top: 1px solid #2e2825; display: flex; flex-direction: column; gap: 26px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 56px; line-height: 0.9; text-transform: uppercase">They dropped it</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.45; color: #d6cec5">When fans find out, deals end.</p>
+</div>
+<div style="display: flex; gap: 40px; align-items: flex-start">
+<div style="display: flex; gap: 24px">
+<sc-for list="{{dropped}}" as="d" hint-placeholder-count="3">
+<div style="width: 290px; display: flex; flex-direction: column; gap: 12px">
+<div style="position: relative; width: 290px; height: {{droppedH}}px; border-radius: 10px; overflow: hidden; background: #ffffff">
+<sc-if value="{{showJersey}}" hint-placeholder-val="{{ true }}">
+<img src="{{d.img}}" alt="{{d.alt}}" style="position: absolute; left: 0; top: 0; width: 290px; height: 290px; filter: grayscale(0.55)">
+</sc-if>
+<sc-if value="{{crestOnly}}" hint-placeholder-val="{{ false }}">
+<img src="{{d.crest}}" alt="{{d.crestAlt}}" style="position: absolute; left: 85px; top: 30px; width: 120px; height: 120px; object-fit: contain; filter: grayscale(0.4)">
+</sc-if>
+<span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-8deg); padding: 6px 14px; border: 3px solid #f3ede6; border-radius: 6px; background: rgba(15, 13, 12, 0.72); color: #f3ede6; font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 30px; letter-spacing: 0.06em; white-space: nowrap">DROPPED {{d.year}}</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 17px; font-weight: 700">{{d.title}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #a39a91; text-transform: uppercase; letter-spacing: 0.06em">{{d.where}}</span>
+<span style="font-size: 14.5px; line-height: 1.45; color: #d6cec5">{{d.text}}</span>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="flex-grow: 1; display: flex; flex-direction: column; border-top: 1px solid #2e2825">
+<sc-for list="{{droppedList}}" as="d" hint-placeholder-count="6">
+<div style="display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid #2e2825">
+<span style="width: 44px; flex-shrink: 0; font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 800; font-size: 22px; color: #a39a91">{{d.year}}</span>
+<div style="display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 700">{{d.title}}</span>
+<span style="font-size: 13.5px; line-height: 1.4; color: #d6cec5">{{d.text}}</span>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<footer style="margin-top: auto; height: 72px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #2e2825; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8a8078">
+<span>Shirt photos: footballkitarchive.com. Club crests: football-data.org. Both need permission before going public.</span>
+<span>Ratings shown are illustrative until the method is final.</span>
+</footer>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"view":{"editor":"enum","options":["jerseys","crests","both"],"default":"both"},"$preview":{"width":1440,"height":2600}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { sport: 'soccer', league: 'pl' };
+  }
+  renderVals() {
+    const view = this.props.view || 'both';
+    const B = (id) => '/_blob/' + id;
+    const IMG = {
+      avl: 'b6c7f310eaf89cfef2d24002c9b03d7c', ars: 'd18020c7dcfb021b162ef882c5f6a90a', mci: 'f4ba8a672e8940736d949649bff6e207',
+      new: 'cf16b8a062ef1db90360cbdde21ec121', bou: '28a05706554f4b1c9a7921c97315593b', bha: '1f5c3eaccea79431cde87860e597cb91',
+      bre: '9a636c850fa1d1e42dbcc295d2d26ec0', che: '2f8312f6aa442ef22cf4e0ca8286e76b', cov: '8ba2dc5fabd12c329c3f5deb9fed3aec',
+      cry: '88e4108d170dc87a103eb32d4a2630c6', eve: '0b386d2cca9b9896b9e8feb20ddb432c', ful: '4006c47f45f7402a81bfb6e99fa38823',
+      hul: 'c84a804c754ebd18ebaefb0f5be36553', ips: 'ae0b4388378763dbd0b9d9c3094f785d', lee: '95a6b7a997182f2087b87c4212c0eb31',
+      liv: '0250aa1d27067a6c678628802fcebdd6', mun: '03e3a720c895cbf1db4a3c5b5f9e715a', nfo: '6ec6da95e4bba7081edef02b781500d5',
+      sun: '6e9966eafa36f5db3ed17aa583b50986', tot: '9c1f954bd9d14e8241ab1db7edd73e87', atm: '92f93190ca4ffd7e1f7d87e53e59f31c',
+      rma: 'c2d109960e64f9d8f005f4f447afbf97', ars25: 'b80366217ff49d6f69490bd21d7b2ecc', fcb: 'd7af237535593e17d8c537b21d1e2e0f',
+      s04: '878499873c547f52d924d5427114bca7', atm_b: '5513fa1f48398f00eb24f198ed0acc74'
+    };
+    const CREST = {
+      ars: '3f0cca48f17c0f4c087f90bf087fab3a', atm: 'c248839c67d1d79154c44bbbdefaa709', avl: '7a60232877ace1049d7ca1338cb7d007',
+      bha: '65c67816c86967b37dd97d446ca473ba', bou: '2f0493bb09ea374d19ec812acd85cc02', bre: 'eb4d6b703ae6f37c74ea3f9865b7bbf1',
+      che: 'a70db627f0c07e94eae475b90fa75aa6', cov: '7a33270aad48f915482ab6f6042749af', cry: '03259ead43f93426e1f4c76450f00f17',
+      eve: '4456de895b669ce99b3b8f6c6f181db9', fcb: '1cbcf9cfd2c7c71ac5f8e63775310e5f', ful: '38229b69f1f85430d7d5b64008adcee6',
+      hul: '13783b6f46b2c2a4c7cff01421db56e4', ips: '099dbb121e8402bde70d7a8ead374090', lee: '423098acba2ab04cc4023b93e878bd8b',
+      liv: 'e60c9731a20bb2b4cf5f5f496b7d3da8', mci: '2e8e6d8f8a37bd8beaccfacb7df2ec0a', mun: 'a27da7ea9bfcfc7d10c94fe55098d652',
+      new: '9a535d388b04f72bb7522e9eb5587556', nfo: '5fbc3aa7329da9218f99e59e43317eb8', rma: '87a713e02afdb4464ca386acb01e563d',
+      s04: 'cf55f64a7a5c2d0e28630c554dc34f8e', sun: '05ef0eb0ea8cc06c50dfa80526ffbbd4', tot: 'ae08fee6f84628bf83c27685db761eb4'
+    };
+    const LV = {
+      '3': { word: 'Soaked', text: '#ff4a3d', band: '#c8121b', bandFg: '#ffffff', border: '#e3121b', seg: '#e3121b', rank: '4 OF 4',
+        desc: 'A severe sponsor on the front, or two serious ones.' },
+      '2': { word: 'Stained', text: '#e0705f', band: '#6e2820', bandFg: '#ffe3de', border: '#b0402f', seg: '#b0402f', rank: '3 OF 4',
+        desc: 'A serious sponsor on the front, or a severe one elsewhere.' },
+      '1': { word: 'Spotted', text: '#e6b3a8', band: '#d9a399', bandFg: '#2a1512', border: '#d9a399', seg: '#d9a399', rank: '2 OF 4',
+        desc: 'A lesser link, like a sponsor part-owned by a state.' },
+      '0': { word: 'Clean', text: '#f3ede6', band: '#e8e2da', bandFg: '#0f0d0c', border: '#e8e2da', seg: '#e8e2da', rank: '1 OF 4',
+        desc: 'Every sponsor and its owner checked. Nothing found.' }
+    };
+    const meter = (level, hs, fg, off) => [0, 1, 2, 3].map((n) => ({ h: hs[n], bg: n <= level ? fg : off, border: 'none' }));
+    const card = (id, code, name, level, spons, payer, href, extra) => Object.assign({
+      id: id, code: code, name: name, level: level, href: href || '#',
+      img: B(IMG[id]), alt: name + ' 2026/27 home shirt', crest: B(CREST[id]), crestAlt: name + ' crest',
+      spons: spons, payer: payer, hasBack: false, backImg: ''
+    }, extra || {});
+    const unratedPL = [
+      ['bou', 'BOU', 'AFC Bournemouth'], ['bre', 'BRE', 'Brentford'], ['che', 'CHE', 'Chelsea'],
+      ['cov', 'COV', 'Coventry City'], ['cry', 'CRY', 'Crystal Palace'], ['eve', 'EVE', 'Everton'], ['ful', 'FUL', 'Fulham'],
+      ['hul', 'HUL', 'Hull City'], ['ips', 'IPS', 'Ipswich Town'], ['lee', 'LEE', 'Leeds United'], ['liv', 'LIV', 'Liverpool'],
+      ['mun', 'MUN', 'Manchester United'], ['nfo', 'NFO', 'Nottingham Forest'], ['sun', 'SUN', 'Sunderland'], ['tot', 'TOT', 'Tottenham Hotspur']
+    ].map((u) => card(u[0], u[1], u[2], -1, '', '', '#'));
+    const PL = [
+      card('avl', 'AVL', 'Aston Villa', 3, 'Visit Rwanda · front of shirt', 'Paid for by the Government of Rwanda', 'Team-villa.dc.html'),
+      card('ars', 'ARS', 'Arsenal', 2, 'Emirates · front of shirt', 'Paid for by the Government of Dubai', 'Team-arsenal.dc.html'),
+      card('mci', 'MCI', 'Manchester City', 2, 'Etihad Airways · front of shirt', 'Paid for by the Government of Abu Dhabi', '#'),
+      card('new', 'NEW', 'Newcastle United', 1, 'noon · sleeve', 'Part-owned by Saudi Arabia’s state fund', '#'),
+      card('bha', 'BHA', 'Brighton & Hove Albion', 0, 'American Express · front', 'A listed US company with no state owner.', '#')
+    ].concat(unratedPL);
+    const LALIGA = [
+      card('atm', 'ATM', 'Atlético de Madrid', 3, 'Riyadh Air · front, Visit Rwanda · back', 'Paid for by the governments of Saudi Arabia and Rwanda', 'TeamDetail.dc.html',
+        { hasBack: true, backImg: B(IMG.atm_b) }),
+      card('rma', 'RMA', 'Real Madrid', 2, 'Emirates · front of shirt', 'Paid for by the Government of Dubai', '#')
+    ];
+    const leagueDefs = [
+      { id: 'pl', label: 'Premier League', cards: PL, total: 20, more: 0 },
+      { id: 'laliga', label: 'La Liga', cards: LALIGA, total: 20, more: 18, moreText: 'more La Liga clubs, not rated yet' },
+      { id: 'bundesliga', label: 'Bundesliga', cards: [], panel: { title: 'Bundesliga is next', text: 'Already on file: Bayern Munich dropped Qatar Airways from the sleeve in 2023 and moved away from the Visit Rwanda branding in 2025. Schalke 04 dropped Gazprom in 2022.' } },
+      { id: 'ligue1', label: 'Ligue 1', cards: [], panel: { title: 'Ligue 1 is next', text: 'Already on file: Paris Saint-Germain renewed its Visit Rwanda partnership until 2028. Not rated yet.' } },
+      { id: 'seriea', label: 'Serie A', cards: [], panel: { title: 'Serie A is coming', text: 'We haven’t mapped Serie A shirts yet. Tell us which club to start with.' } },
+      { id: 'mls', label: 'MLS', cards: [], panel: { title: 'MLS is coming', text: 'We haven’t mapped MLS shirts yet. Tell us which club to start with.' } }
+    ];
+    const lg = leagueDefs.find((l) => l.id === this.state.league) || leagueDefs[0];
+    const ratedCards = lg.cards.filter((c) => c.level >= 0);
+    const unratedCards = lg.cards.filter((c) => c.level < 0);
+    const rated = [3, 2, 1, 0].map((lvl) => {
+      const list = ratedCards.filter((c) => c.level === lvl);
+      if (!list.length) return null;
+      const v = LV[String(lvl)];
+      return {
+        word: v.word, text: v.text, border: v.border, desc: v.desc, w: list.length * 236 + (list.length - 1) * 20,
+        count: v.rank.toLowerCase() + ' · ' + list.length + (list.length === 1 ? ' club' : ' clubs'),
+        bars: meter(lvl, [10, 16, 23, 30], v.text, '#3a3330'),
+        cards: list.map((c) => Object.assign({}, c, {
+          word: v.word, rank: v.rank, band: v.band, bandFg: v.bandFg, border: v.border, text: v.text,
+          bars: meter(lvl, [8, 13, 18, 24], v.bandFg, lvl === 3 || lvl === 2 ? 'rgba(255, 255, 255, 0.28)' : 'rgba(0, 0, 0, 0.2)')
+        }))
+      };
+    }).filter(Boolean);
+    const strip = ratedCards.slice().sort((a, b) => b.level - a.level).concat(unratedCards).map((c) => {
+      const v = LV[String(c.level)];
+      return {
+        href: c.href, code: c.code, crest: c.crest,
+        title: c.name + ': ' + (v ? v.word : 'not rated yet'),
+        bg: v ? v.seg : 'transparent', border: v ? 'none' : '1px dashed #5a504a',
+        op: v ? 1 : 0.55, codeColor: v ? v.text : '#8a8078', hasCrest: true, noCrest: false
+      };
+    }).concat(Array.from({ length: lg.more || 0 }, () => ({
+      href: '#', code: '···', crest: '', title: 'Not rated yet', bg: 'transparent', border: '1px dashed #5a504a',
+      op: 0.55, codeColor: '#8a8078', hasCrest: false, noCrest: true
+    })));
+    const counts = [3, 2, 1, 0].map((l) => ({ l: l, n: ratedCards.filter((c) => c.level === l).length })).filter((x) => x.n);
+    const badN = ratedCards.filter((c) => c.level >= 1).length;
+    const nr = unratedCards.length + (lg.more || 0);
+    const worst = counts.length ? counts[0] : null;
+    const sportDefs = [
+      { id: 'soccer', label: 'Soccer' },
+      { id: 'basketball', label: 'Basketball', panel: { title: 'Basketball shirts are next', items: [
+        { t: 'LA Clippers', d: 'Visit Rwanda partner since 2025.', s: 'Not rated yet' },
+        { t: 'Basketball Africa League', d: 'Visit Rwanda partner, reportedly $6–7m a year.', s: 'Not rated yet' } ] } },
+      { id: 'football', label: 'American football', panel: { title: 'NFL is next', items: [
+        { t: 'Los Angeles Rams', d: 'Visit Rwanda partner since 2025, at the stadium rather than on the shirt.', s: 'Not rated yet' } ] } },
+      { id: 'motor', label: 'Motorsport', panel: { title: 'Motorsport: cars, not shirts', items: [
+        { t: 'Haas F1 × Uralkali', d: 'Title sponsorship with the Russian fertiliser company ended right after the invasion of Ukraine.', s: 'Dropped 2022' },
+        { t: 'Formula 1 × Russian Grand Prix', d: 'Race cancelled, then the promoter contract terminated.', s: 'Dropped 2022' } ] } },
+      { id: 'events', label: 'Tournaments & governing bodies', panel: { title: 'Tournaments and governing bodies', items: [
+        { t: 'UEFA × Gazprom', d: 'Ended across the Champions League, national-team competitions and Euro 2024.', s: 'Dropped 2022' },
+        { t: 'Women’s World Cup × Visit Saudi', d: 'Talks abandoned after players and the host federations objected.', s: 'Dropped 2023' } ] } }
+    ];
+    const sp = sportDefs.find((s) => s.id === this.state.sport) || sportDefs[0];
+    const isSoccer = sp.id === 'soccer';
+    const showJersey = view !== 'crests';
+    return {
+      rootH: view === 'crests' ? 2420 : 2600,
+      mediaH: showJersey ? 232 : 190, tileH: showJersey ? 150 : 116, droppedH: showJersey ? 290 : 180,
+      showJersey: showJersey, crestOnly: view === 'crests', crestBadge: view === 'both',
+      showCrests: view !== 'jerseys', showCodes: view === 'jerseys',
+      sports: sportDefs.map((s) => ({
+        label: s.label, on: s.id === sp.id,
+        fg: s.id === sp.id ? '#f3ede6' : '#a39a91',
+        underline: s.id === sp.id ? '3px solid #ff3b30' : '3px solid transparent',
+        pick: () => this.setState({ sport: s.id })
+      })),
+      isSoccer: isSoccer, notSoccer: !isSoccer,
+      sportPanel: sp.panel || { title: '', items: [] },
+      leagues: leagueDefs.map((l) => ({
+        label: l.label, on: l.id === lg.id,
+        bg: l.id === lg.id ? '#f3ede6' : 'transparent', fg: l.id === lg.id ? '#0f0d0c' : '#f3ede6',
+        pick: () => this.setState({ league: l.id })
+      })),
+      hasCards: lg.cards.length > 0, noCards: lg.cards.length === 0,
+      headline: lg.label + ': ' + badN + ' of ' + (lg.total || lg.cards.length) + ' home shirts carry a sponsor we rate as bad' + (worst ? '. ' + worst.n + ' ' + (worst.n === 1 ? 'is' : 'are') + ' ' + LV[String(worst.l)].word.toLowerCase() + '.' : '.'),
+      subline: counts.map((x) => x.n + ' ' + LV[String(x.l)].word.toLowerCase()).concat(nr ? [nr + ' not rated yet'] : []).join(' · '),
+      strip: strip, rated: rated, unrated: unratedCards,
+      unratedCount: nr + (nr === 1 ? ' club' : ' clubs'),
+      hasMore: (lg.more || 0) > 0, moreCount: '+' + (lg.more || 0), moreText: lg.moreText || '',
+      leaguePanel: lg.panel || { title: '', text: '' },
+      dropped: [
+        { img: B(IMG.ars25), crest: B(CREST.ars), alt: 'Arsenal 2025/26 home shirt', crestAlt: 'Arsenal crest', year: '2026', title: 'Arsenal × Visit Rwanda', where: 'Sleeve · 2018–2026', text: 'Ended in June 2026, after years of fan protest.' },
+        { img: B(IMG.fcb), crest: B(CREST.fcb), alt: 'Bayern Munich 2022/23 home shirt', crestAlt: 'Bayern Munich crest', year: '2023', title: 'Bayern Munich × Qatar Airways', where: 'Sleeve · until 2023', text: 'Fans protested for years with banners, AGM motions and pressure on the board. The deal was not renewed.' },
+        { img: B(IMG.s04), crest: B(CREST.s04), alt: 'Schalke 04 2021/22 home shirt', crestAlt: 'Schalke 04 crest', year: '2022', title: 'Schalke 04 × Gazprom', where: 'Front of shirt · 2007–2022', text: 'Logo removed, then the deal cancelled early after Russia invaded Ukraine.' }
+      ],
+      droppedList: [
+        { year: '2025', title: 'Bayern Munich × Visit Rwanda', text: 'Moved away from the Visit Rwanda branding after criticism.' },
+        { year: '2023', title: 'Women’s World Cup × Visit Saudi', text: 'Dropped after players and the host federations objected.' },
+        { year: '2022', title: 'UEFA × Gazprom', text: 'Ended across the Champions League and Euro 2024.' },
+        { year: '2022', title: 'Manchester United × Aeroflot', text: 'Terminated early, citing Ukraine and fans’ concerns.' },
+        { year: '2022', title: 'Haas F1 × Uralkali', text: 'Title sponsor cut right after the invasion.' },
+        { year: '2022', title: 'Formula 1 × Russian Grand Prix', text: 'Race cancelled, promoter contract ended.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

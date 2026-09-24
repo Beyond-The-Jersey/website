@@ -1,0 +1,675 @@
+[
+  {
+    "id": "atletico-de-madrid-2026-27-home",
+    "clubId": "atletico-de-madrid",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "front": "assets/shirts/atletico-de-madrid/2026-27-home-front.jpg",
+      "back": "assets/shirts/atletico-de-madrid/2026-27-home-back.jpg",
+      "square": "assets/shirts/grid/atletico-de-madrid-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "riyadh-air",
+        "placement": "front",
+        "side": "front",
+        "hotspot": {
+          "x": 0.49,
+          "y": 0.468,
+          "w": 0.38,
+          "h": 0.23
+        },
+        "cardSlot": "L"
+      },
+      {
+        "sponsorId": "kraken",
+        "placement": "sleeve",
+        "side": "front",
+        "hotspot": {
+          "x": 0.883,
+          "y": 0.236,
+          "w": 0.06,
+          "h": 0.13
+        },
+        "cardSlot": "T"
+      },
+      {
+        "sponsorId": "visit-rwanda",
+        "placement": "back",
+        "side": "back",
+        "hotspot": {
+          "x": 0.507,
+          "y": 0.678,
+          "w": 0.27,
+          "h": 0.09
+        },
+        "cardSlot": "R"
+      }
+    ],
+    "sponsorsComplete": true,
+    "summary": "Saudi Arabia’s state fund pays for the front of this shirt. Rwanda’s government pays for the back.",
+    "change": null
+  },
+  {
+    "id": "arsenal-2017-18-home",
+    "clubId": "arsenal",
+    "season": "2017-18",
+    "kitType": "home",
+    "periodLabel": "2006/07 – 2017/18",
+    "periodFrom": "2006-07",
+    "periodTo": "2017-18",
+    "photos": {
+      "front": "assets/shirts/arsenal/2017-18-home-front.jpg",
+      "back": "assets/shirts/arsenal/2017-18-home-back.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "emirates",
+        "placement": "front",
+        "side": "front",
+        "hotspot": {
+          "x": 0.503,
+          "y": 0.4,
+          "w": 0.38,
+          "h": 0.15
+        },
+        "cardSlot": "L"
+      }
+    ],
+    "sponsorsComplete": true,
+    "summary": "Dubai’s government pays for the front of this shirt.",
+    "change": null
+  },
+  {
+    "id": "arsenal-2025-26-home",
+    "clubId": "arsenal",
+    "season": "2025-26",
+    "kitType": "home",
+    "periodLabel": "2018/19 – 2025/26",
+    "periodFrom": "2018-19",
+    "periodTo": "2025-26",
+    "photos": {
+      "front": "assets/shirts/arsenal/2025-26-home-front.jpg",
+      "back": "assets/shirts/arsenal/2025-26-home-back.jpg",
+      "square": "assets/shirts/grid/arsenal-2025-26-home-front-square.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "emirates",
+        "placement": "front",
+        "side": "front",
+        "hotspot": {
+          "x": 0.507,
+          "y": 0.395,
+          "w": 0.42,
+          "h": 0.17
+        },
+        "cardSlot": "L"
+      },
+      {
+        "sponsorId": "visit-rwanda",
+        "placement": "sleeve",
+        "side": "front",
+        "hotspot": {
+          "x": 0.881,
+          "y": 0.29,
+          "w": 0.06,
+          "h": 0.07
+        },
+        "cardSlot": "T"
+      }
+    ],
+    "sponsorsComplete": true,
+    "summary": "Dubai’s government pays for the front. Rwanda’s government pays for the sleeve.",
+    "change": {
+      "kind": "worse",
+      "text": "Worse from 2018: Visit Rwanda joined",
+      "badge": "+ Visit Rwanda"
+    }
+  },
+  {
+    "id": "arsenal-2026-27-home",
+    "clubId": "arsenal",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "front": "assets/shirts/arsenal/2026-27-home-front.jpg",
+      "back": "assets/shirts/arsenal/2026-27-home-back.jpg",
+      "square": "assets/shirts/grid/arsenal-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "emirates",
+        "placement": "front",
+        "side": "front",
+        "hotspot": {
+          "x": 0.5,
+          "y": 0.41,
+          "w": 0.4,
+          "h": 0.16
+        },
+        "cardSlot": "L"
+      },
+      {
+        "sponsorId": "deel",
+        "placement": "sleeve",
+        "side": "front",
+        "hotspot": {
+          "x": 0.865,
+          "y": 0.295,
+          "w": 0.07,
+          "h": 0.06
+        },
+        "cardSlot": "T"
+      }
+    ],
+    "sponsorsComplete": true,
+    "summary": "Rwanda is off the sleeve, but Dubai’s government still pays for the front, so the shirt stays stained.",
+    "change": {
+      "kind": "better",
+      "text": "Better than last season: Visit Rwanda is gone",
+      "badge": "Rwanda gone"
+    }
+  },
+  {
+    "id": "aston-villa-2025-26-home",
+    "clubId": "aston-villa",
+    "season": "2025-26",
+    "kitType": "home",
+    "periodLabel": "2024/25 – 2025/26",
+    "periodFrom": "2024-25",
+    "periodTo": "2025-26",
+    "photos": {
+      "front": "assets/shirts/aston-villa/2025-26-home-front.jpg",
+      "back": "assets/shirts/aston-villa/2025-26-home-back.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "betano",
+        "placement": "front",
+        "side": "front",
+        "hotspot": {
+          "x": 0.512,
+          "y": 0.383,
+          "w": 0.36,
+          "h": 0.09
+        },
+        "cardSlot": "L"
+      },
+      {
+        "sponsorId": "trade-nation",
+        "placement": "sleeve",
+        "side": "front",
+        "hotspot": {
+          "x": 0.846,
+          "y": 0.31,
+          "w": 0.06,
+          "h": 0.13
+        },
+        "cardSlot": "T"
+      }
+    ],
+    "sponsorsComplete": true,
+    "summary": "Betano and Trade Nation haven’t been rated yet.",
+    "change": null
+  },
+  {
+    "id": "aston-villa-2026-27-home",
+    "clubId": "aston-villa",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "front": "assets/shirts/aston-villa/2026-27-home-front.jpg",
+      "back": "assets/shirts/aston-villa/2026-27-home-back.jpg",
+      "square": "assets/shirts/grid/aston-villa-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "visit-rwanda",
+        "placement": "front",
+        "side": "front",
+        "hotspot": {
+          "x": 0.513,
+          "y": 0.393,
+          "w": 0.37,
+          "h": 0.13
+        },
+        "cardSlot": "L"
+      },
+      {
+        "sponsorId": "betano",
+        "placement": "sleeve",
+        "side": "front",
+        "hotspot": {
+          "x": 0.855,
+          "y": 0.338,
+          "w": 0.09,
+          "h": 0.06
+        },
+        "cardSlot": "T"
+      }
+    ],
+    "sponsorsComplete": true,
+    "summary": "The front of this shirt is paid for by the Government of Rwanda.",
+    "change": {
+      "kind": "worse",
+      "text": "Worse than last season: Visit Rwanda took the front",
+      "badge": "+ Visit Rwanda"
+    }
+  },
+  {
+    "id": "manchester-city-2026-27-home",
+    "clubId": "manchester-city",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "square": "assets/shirts/grid/manchester-city-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "etihad-airways",
+        "placement": "front"
+      }
+    ],
+    "sponsorsComplete": false,
+    "summary": "Paid for by the Government of Abu Dhabi.",
+    "change": null
+  },
+  {
+    "id": "newcastle-united-2026-27-home",
+    "clubId": "newcastle-united",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "square": "assets/shirts/grid/newcastle-united-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "knox-hydration",
+        "placement": "front"
+      },
+      {
+        "sponsorId": "noon",
+        "placement": "sleeve"
+      }
+    ],
+    "sponsorsComplete": false,
+    "summary": "noon, on the sleeve, is part-owned by Saudi Arabia’s state fund.",
+    "change": {
+      "kind": "better",
+      "text": "Better than last season: Saudi-owned Sela is off the front",
+      "badge": "Sela gone"
+    }
+  },
+  {
+    "id": "newcastle-united-2025-26-home",
+    "clubId": "newcastle-united",
+    "season": "2025-26",
+    "kitType": "home",
+    "periodLabel": "2025/26",
+    "periodFrom": "2025-26",
+    "periodTo": "2025-26",
+    "photos": {},
+    "sponsors": [
+      {
+        "sponsorId": "sela",
+        "placement": "front"
+      },
+      {
+        "sponsorId": "noon",
+        "placement": "sleeve"
+      }
+    ],
+    "sponsorsComplete": false,
+    "summary": "Saudi-owned Sela on the front, noon on the sleeve.",
+    "change": null
+  },
+  {
+    "id": "brighton-and-hove-albion-2026-27-home",
+    "clubId": "brighton-and-hove-albion",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "square": "assets/shirts/grid/brighton-and-hove-albion-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "american-express",
+        "placement": "front"
+      }
+    ],
+    "sponsorsComplete": true,
+    "summary": "A listed US company with no state owner. Nothing found.",
+    "change": null
+  },
+  {
+    "id": "real-madrid-2026-27-home",
+    "clubId": "real-madrid",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "square": "assets/shirts/grid/real-madrid-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "emirates",
+        "placement": "front"
+      }
+    ],
+    "sponsorsComplete": false,
+    "summary": "Paid for by the Government of Dubai.",
+    "change": null
+  },
+  {
+    "id": "afc-bournemouth-2026-27-home",
+    "clubId": "afc-bournemouth",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "square": "assets/shirts/grid/afc-bournemouth-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "vitality",
+        "placement": "front"
+      }
+    ],
+    "sponsorsComplete": false,
+    "summary": null,
+    "change": null
+  },
+  {
+    "id": "brentford-2026-27-home",
+    "clubId": "brentford",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "square": "assets/shirts/grid/brentford-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "indeed",
+        "placement": "front"
+      }
+    ],
+    "sponsorsComplete": false,
+    "summary": null,
+    "change": null
+  },
+  {
+    "id": "crystal-palace-2026-27-home",
+    "clubId": "crystal-palace",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "square": "assets/shirts/grid/crystal-palace-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "temporal",
+        "placement": "front"
+      }
+    ],
+    "sponsorsComplete": false,
+    "summary": null,
+    "change": null
+  },
+  {
+    "id": "fulham-2026-27-home",
+    "clubId": "fulham",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "square": "assets/shirts/grid/fulham-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "clickhouse",
+        "placement": "front"
+      }
+    ],
+    "sponsorsComplete": false,
+    "summary": null,
+    "change": null
+  },
+  {
+    "id": "everton-2026-27-home",
+    "clubId": "everton",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "square": "assets/shirts/grid/everton-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "cmc-markets",
+        "placement": "front"
+      }
+    ],
+    "sponsorsComplete": false,
+    "summary": null,
+    "change": null
+  },
+  {
+    "id": "nottingham-forest-2026-27-home",
+    "clubId": "nottingham-forest",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "square": "assets/shirts/grid/nottingham-forest-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "marex",
+        "placement": "front"
+      }
+    ],
+    "sponsorsComplete": false,
+    "summary": null,
+    "change": null
+  },
+  {
+    "id": "coventry-city-2026-27-home",
+    "clubId": "coventry-city",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "square": "assets/shirts/grid/coventry-city-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "monzo",
+        "placement": "front"
+      }
+    ],
+    "sponsorsComplete": false,
+    "summary": null,
+    "change": null
+  },
+  {
+    "id": "liverpool-2026-27-home",
+    "clubId": "liverpool",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "square": "assets/shirts/grid/liverpool-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "standard-chartered",
+        "placement": "front"
+      }
+    ],
+    "sponsorsComplete": false,
+    "summary": null,
+    "change": null
+  },
+  {
+    "id": "manchester-united-2026-27-home",
+    "clubId": "manchester-united",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "square": "assets/shirts/grid/manchester-united-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "snapdragon",
+        "placement": "front"
+      }
+    ],
+    "sponsorsComplete": false,
+    "summary": null,
+    "change": null
+  },
+  {
+    "id": "tottenham-hotspur-2026-27-home",
+    "clubId": "tottenham-hotspur",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "square": "assets/shirts/grid/tottenham-hotspur-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [
+      {
+        "sponsorId": "aia",
+        "placement": "front"
+      }
+    ],
+    "sponsorsComplete": false,
+    "summary": null,
+    "change": null
+  },
+  {
+    "id": "chelsea-2026-27-home",
+    "clubId": "chelsea",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "square": "assets/shirts/grid/chelsea-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [],
+    "sponsorsComplete": false,
+    "summary": "No front-of-shirt sponsor at the start of the season (SportsPro).",
+    "change": null
+  },
+  {
+    "id": "sunderland-2026-27-home",
+    "clubId": "sunderland",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "square": "assets/shirts/grid/sunderland-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [],
+    "sponsorsComplete": false,
+    "summary": "No front-of-shirt sponsor at the start of the season (SportsPro).",
+    "change": null
+  },
+  {
+    "id": "hull-city-2026-27-home",
+    "clubId": "hull-city",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "square": "assets/shirts/grid/hull-city-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [],
+    "sponsorsComplete": false,
+    "summary": null,
+    "change": null
+  },
+  {
+    "id": "ipswich-town-2026-27-home",
+    "clubId": "ipswich-town",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "square": "assets/shirts/grid/ipswich-town-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [],
+    "sponsorsComplete": false,
+    "summary": null,
+    "change": null
+  },
+  {
+    "id": "leeds-united-2026-27-home",
+    "clubId": "leeds-united",
+    "season": "2026-27",
+    "kitType": "home",
+    "periodLabel": "2026/27",
+    "periodFrom": "2026-27",
+    "periodTo": "2026-27",
+    "photos": {
+      "square": "assets/shirts/grid/leeds-united-2026-27-home-front-square.jpg"
+    },
+    "sponsors": [],
+    "sponsorsComplete": false,
+    "summary": null,
+    "change": null
+  }
+]

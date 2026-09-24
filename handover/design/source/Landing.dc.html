@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Behind the Jersey — home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&amp;family=IBM+Plex+Mono:wght@400;600&amp;family=Schibsted+Grotesk:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.btj-r:hover{background:#2c2522}
+.btj-chip:hover{border-color:#8a8078;color:#f3ede6}
+.btj-link:hover{color:#ffffff}
+.btj-card:hover{border-color:#6f665e}
+@keyframes btjWordIn{from{opacity:0;transform:translateY(0.18em)}to{opacity:1;transform:none}}
+.btj-word{display:inline-block;animation:btjWordIn 0.35s ease-out}
+</style>
+</helmet>
+<div style="width: 1440px; height: 4260px; box-sizing: border-box; background: #0f0d0c; color: #f3ede6; font-family: 'Schibsted Grotesk', 'Helvetica Neue', sans-serif; display: flex; flex-direction: column; overflow: hidden">
+
+<header style="height: 72px; flex-shrink: 0; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; padding: 0 56px; border-bottom: 1px solid #2e2825">
+<a href="Landing.dc.html" style="display: flex; align-items: center; gap: 12px; color: #f3ede6; text-decoration: none">
+<svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 3 Q12 5.6 15.5 3 L19.6 4.3 L23 8.6 L20.3 11.4 L18.2 9.9 L18.2 21.4 Q12 22.3 5.8 21.4 L5.8 9.9 L3.7 11.4 L1 8.6 L4.4 4.3 Z" fill="none" stroke="#f3ede6" stroke-width="1.3" stroke-linejoin="round"></path><path d="M15.96 13.20 C16.15 13.50 16.21 13.77 16.51 14.23 C16.81 14.690 18.01 15.74 17.77 15.98 C17.53 16.21 15.71 15.71 15.07 15.65 C14.43 15.59 14.22 15.57 13.93 15.62 C13.63 15.66 13.51 15.78 13.31 15.92 C13.11 16.05 12.96 16.28 12.74 16.43 C12.52 16.59 12.27 16.73 12.00 16.85 C11.73 16.98 11.51 16.92 11.09 17.17 C10.68 17.42 9.78 18.51 9.51 18.37 C9.24 18.24 9.57 16.82 9.47 16.37 C9.38 15.91 9.12 15.87 8.95 15.63 C8.77 15.39 8.52 15.19 8.42 14.92 C8.33 14.66 8.38 14.32 8.37 14.03 C8.36 13.74 8.67 13.55 8.35 13.20 C8.04 12.85 6.41 12.19 6.49 11.94 C6.58 11.69 8.42 11.86 8.87 11.69 C9.31 11.53 9.08 11.23 9.18 10.95 C9.27 10.66 9.27 10.24 9.44 9.99 C9.61 9.74 9.90 9.52 10.18 9.43 C10.47 9.33 10.83 9.42 11.14 9.41 C11.44 9.40 11.66 9.60 12.00 9.37 C12.34 9.13 12.92 7.93 13.19 8.00 C13.46 8.07 13.43 9.44 13.63 9.81 C13.83 10.18 13.90 10.24 14.39 10.20 C14.89 10.15 16.44 9.30 16.59 9.54 C16.73 9.78 15.46 11.15 15.26 11.63 C15.06 12.11 15.27 12.16 15.39 12.43 C15.51 12.69 15.78 12.90 15.96 13.20 Z" fill="#d61f26"></path><path d="M11.7 16.6 L11.8 19.8 A0.42 0.42 0 0 0 12.64 19.8 L12.6 16.4 Z" fill="#d61f26"></path><circle cx="18.7" cy="7.3" r="0.6" fill="#d61f26"></circle><circle cx="6.4" cy="17.9" r="0.5" fill="#d61f26"></circle></svg>
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 25px; letter-spacing: 0.05em">BEHIND THE JERSEY</span>
+</a>
+<nav style="display: flex; align-items: center; gap: 28px; font-size: 15px">
+<a href="Overview-crests.dc.html" class="btj-link" style="color: #d6cec5; text-decoration: none">Sports</a>
+<a href="#" class="btj-link" style="color: #d6cec5; text-decoration: none">How we rate</a>
+<a href="#contribute" class="btj-link" style="color: #d6cec5; text-decoration: none">Contribute</a>
+<a href="#" class="btj-chip" style="height: 36px; display: flex; align-items: center; gap: 8px; padding: 0 14px; border-radius: 18px; border: 1px solid #4a403b; color: #d6cec5; text-decoration: none; font-size: 14px; font-weight: 700"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7 L3 12 L8 17"></path><path d="M16 7 L21 12 L16 17"></path><path d="M13.5 4 L10.5 20"></path></svg>Open data on GitHub</a>
+</nav>
+</header>
+
+<main style="flex-grow: 1; display: flex; flex-direction: column; padding: 0 56px">
+
+<section style="position: relative; z-index: 3; padding: 84px 0 64px; display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #a39a91">7 clubs rated · 2 leagues mapped · updated 24 Sep 2026</span>
+<h1 aria-label="Who’s buying your loyalty?" style="margin: 0; font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 104px; line-height: 0.88; text-transform: uppercase">Who’s buying<br>your <span onClick="{{replayWords}}" title="Play again" style="cursor: pointer; color: #ff3b30"><sc-if value="{{wordEven}}" hint-placeholder-val="{{ false }}"><span class="btj-word">{{word}}</span></sc-if><sc-if value="{{wordOdd}}" hint-placeholder-val="{{ true }}"><span class="btj-word">{{word}}</span></sc-if></span>?</h1>
+<p style="margin: 0; max-width: 700px; font-size: 20px; line-height: 1.45; color: #d6cec5">Type a club, a league, a sport or a sponsor. We trace every sponsor back to who really pays, and rate how much blood is on the money.</p>
+<div style="margin-top: 12px">
+<div style="position: relative; width: 760px; z-index: 30">
+<label style="height: 68px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; padding: 0 22px; background: #1a1614; border: 2px solid #4a403b; border-radius: 34px; box-shadow: 0 12px 44px rgba(0, 0, 0, 0.5)">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d6cec5" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20 L16 16"></path></svg>
+<input type="search" ref="{{setInput}}" value="{{q}}" onChange="{{onQ}}" onFocus="{{onFocus}}" onBlur="{{onBlur}}" placeholder="Search a club, league, sport or sponsor" aria-label="Search a club, league, sport or sponsor" autocomplete="off" style="flex-grow: 1; min-width: 0; height: 100%; background: transparent; border: none; outline: none; color: #f3ede6; font-family: 'Schibsted Grotesk', sans-serif; font-size: 19px">
+</label>
+<sc-if value="{{open}}" hint-placeholder-val="{{ false }}">
+<div role="listbox" aria-label="Search results" style="position: absolute; left: 0; width: 760px; top: 76px; box-sizing: border-box; padding: 8px; display: flex; flex-direction: column; gap: 2px; background: #1f1a18; border: 1px solid #4a403b; border-radius: 16px; box-shadow: 0 18px 48px rgba(0, 0, 0, 0.6)">
+<span style="padding: 6px 12px 8px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #8a8078">{{resultsHead}}</span>
+<sc-for list="{{results}}" as="r" hint-placeholder-count="5">
+<a href="{{r.href}}" role="option" class="btj-r" style="display: flex; align-items: center; gap: 14px; padding: 10px 12px; border-radius: 10px; color: #f3ede6; text-decoration: none; text-align: left">
+<span style="width: 38px; height: 38px; flex-shrink: 0; border-radius: 19px; background: {{r.iconBg}}; display: flex; align-items: center; justify-content: center; overflow: hidden">
+<sc-if value="{{r.hasCrest}}" hint-placeholder-val="{{ true }}"><img src="{{r.crest}}" alt="" style="width: 28px; height: 28px; object-fit: contain"></sc-if>
+<sc-if value="{{r.noCrest}}" hint-placeholder-val="{{ false }}"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 600; color: {{r.iconFg}}">{{r.mono}}</span></sc-if>
+</span>
+<span style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 16px; font-weight: 700">{{r.label}}</span>
+<span style="font-size: 13px; color: #b3aaa0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{r.sub}}</span>
+</span>
+<span style="width: 64px; flex-shrink: 0; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; color: #8a8078">{{r.typeLabel}}</span>
+<span style="width: 138px; flex-shrink: 0; display: flex; align-items: center; justify-content: flex-end; gap: 8px">
+<sc-if value="{{r.showBars}}" hint-placeholder-val="{{ true }}">
+<span aria-hidden="true" style="display: flex; align-items: flex-end; gap: 2px; height: 15px">
+<sc-for list="{{r.bars}}" as="b" hint-placeholder-count="4"><span style="width: 4px; height: {{b.h}}px; border-radius: 1px; background: {{b.bg}}"></span></sc-for>
+</span>
+</sc-if>
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 800; font-size: 18px; text-transform: uppercase; color: {{r.tagColor}}; white-space: nowrap">{{r.tag}}</span>
+</span>
+</a>
+</sc-for>
+<sc-if value="{{noResults}}" hint-placeholder-val="{{ false }}">
+<div style="padding: 10px 12px 14px; display: flex; flex-direction: column; gap: 6px; text-align: left">
+<span style="font-size: 15px; font-weight: 700">Nothing on file for “{{q}}” yet.</span>
+<a href="#contribute" style="font-size: 14px; color: #ff6b5e; text-decoration: none">Add it yourself: every club and sponsor lives on GitHub →</a>
+</div>
+</sc-if>
+</div>
+</sc-if>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 10px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #8a8078">Try</span>
+<sc-for list="{{tries}}" as="t" hint-placeholder-count="5">
+<button type="button" onClick="{{t.pick}}" class="btj-chip" style="height: 34px; padding: 0 14px; border-radius: 17px; border: 1px solid #3a3330; background: transparent; color: #d6cec5; font-family: 'Schibsted Grotesk', sans-serif; font-size: 14px; cursor: pointer">{{t.label}}</button>
+</sc-for>
+</div>
+<div aria-label="Blood levels" style="margin-top: 4px; display: flex; align-items: center; gap: 22px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #8a8078">Blood level</span>
+<span style="display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="display: flex; align-items: flex-end; gap: 2px; height: 16px"><span style="width: 4px; height: 6px; border-radius: 1px; background: #e8e2da"></span><span style="width: 4px; height: 9px; border-radius: 1px; background: #3a3330"></span><span style="width: 4px; height: 12px; border-radius: 1px; background: #3a3330"></span><span style="width: 4px; height: 16px; border-radius: 1px; background: #3a3330"></span></span><span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 18px; text-transform: uppercase; color: #f3ede6">Clean</span></span>
+<span style="display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="display: flex; align-items: flex-end; gap: 2px; height: 16px"><span style="width: 4px; height: 6px; border-radius: 1px; background: #d9a399"></span><span style="width: 4px; height: 9px; border-radius: 1px; background: #d9a399"></span><span style="width: 4px; height: 12px; border-radius: 1px; background: #3a3330"></span><span style="width: 4px; height: 16px; border-radius: 1px; background: #3a3330"></span></span><span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 18px; text-transform: uppercase; color: #e6b3a8">Spotted</span></span>
+<span style="display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="display: flex; align-items: flex-end; gap: 2px; height: 16px"><span style="width: 4px; height: 6px; border-radius: 1px; background: #b0402f"></span><span style="width: 4px; height: 9px; border-radius: 1px; background: #b0402f"></span><span style="width: 4px; height: 12px; border-radius: 1px; background: #b0402f"></span><span style="width: 4px; height: 16px; border-radius: 1px; background: #3a3330"></span></span><span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 18px; text-transform: uppercase; color: #e0705f">Stained</span></span>
+<span style="display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="display: flex; align-items: flex-end; gap: 2px; height: 16px"><span style="width: 4px; height: 6px; border-radius: 1px; background: #e3121b"></span><span style="width: 4px; height: 9px; border-radius: 1px; background: #e3121b"></span><span style="width: 4px; height: 12px; border-radius: 1px; background: #e3121b"></span><span style="width: 4px; height: 16px; border-radius: 1px; background: #e3121b"></span></span><span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 18px; text-transform: uppercase; color: #ff4a3d">Soaked</span></span>
+<a href="#how" class="btj-link" style="font-size: 14px; font-weight: 700; color: #d6cec5; text-decoration: none">How we rate →</a>
+</div>
+</section>
+
+<section aria-label="Just changed" style="margin-top: 24px; display: flex; flex-direction: column; gap: 26px">
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 56px; line-height: 0.9; text-transform: uppercase">Just changed</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.45; color: #d6cec5">Sponsors come and go every summer. This is what moved, and which way.</p>
+</div>
+<a href="#" class="btj-link" style="font-size: 15px; font-weight: 700; color: #d6cec5; text-decoration: none">Every change, with sources →</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; align-items: stretch">
+<sc-for list="{{changes}}" as="f" hint-placeholder-count="4">
+<a href="{{f.href}}" class="btj-card" style="display: flex; flex-direction: column; gap: 14px; padding: 20px; border-radius: 16px; background: #1a1614; border: 1px solid #3d332f; color: #f3ede6; text-decoration: none">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<span style="display: inline-flex; align-items: center; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: {{f.kindColor}}">
+<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="{{f.arrow}}" fill="{{f.kindColor}}"></path></svg>{{f.kindLabel}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8a8078">{{f.date}}</span>
+</div>
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="width: 48px; height: 48px; flex-shrink: 0; border-radius: 24px; background: #ffffff; display: flex; align-items: center; justify-content: center">
+<img src="{{f.crest}}" alt="" style="width: 35px; height: 35px; object-fit: contain">
+</span>
+<span style="font-size: 19px; font-weight: 700; line-height: 1.2">{{f.club}}</span>
+</div>
+<div style="display: flex">
+<span style="height: 28px; flex-shrink: 0; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; padding: 0 10px; border-radius: 6px; background: {{f.band}}; color: {{f.bandFg}}; border: {{f.bandBorder}}">
+<span aria-hidden="true" style="display: flex; align-items: flex-end; gap: 2px; height: 14px">
+<sc-for list="{{f.bars}}" as="lb" hint-placeholder-count="4"><span style="width: 4px; height: {{lb.h}}px; border-radius: 1px; background: {{lb.bg}}"></span></sc-for>
+</span>
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 17px; letter-spacing: 0.02em; text-transform: uppercase; white-space: nowrap">{{f.word}}</span>
+</span>
+</div>
+<span style="font-size: 17px; font-weight: 700; line-height: 1.3">{{f.title}}</span>
+<span style="font-size: 14.5px; line-height: 1.45; color: #d6cec5">{{f.text}}</span>
+<span style="margin-top: auto; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8a8078">{{f.src}}</span>
+</a>
+</sc-for>
+</div>
+</section>
+
+<section aria-label="They dropped it" style="margin-top: 96px; display: flex; flex-direction: column; gap: 26px">
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 56px; line-height: 0.9; text-transform: uppercase">They dropped it</h2>
+<p style="margin: 0; max-width: 720px; font-size: 17px; line-height: 1.45; color: #d6cec5">Clubs can change, and these ones did. Say thanks, and ask your own club to be next.</p>
+</div>
+<a href="#contribute" class="btj-link" style="font-size: 15px; font-weight: 700; color: #4fc3b0; text-decoration: none">Know a club that changed? Tell us →</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch">
+<sc-for list="{{dropped}}" as="d" hint-placeholder-count="6">
+<div style="display: flex; flex-direction: column; gap: 14px; padding: 22px; border-radius: 16px; background: rgba(79, 195, 176, 0.07); border: 1px solid rgba(79, 195, 176, 0.3)">
+<div style="display: flex; align-items: center; gap: 14px">
+<span style="width: 56px; height: 56px; flex-shrink: 0; border-radius: 28px; background: #ffffff; display: flex; align-items: center; justify-content: center"><img src="{{d.crest}}" alt="{{d.crestAlt}}" style="width: 40px; height: 40px; object-fit: contain"></span>
+<span style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 19px; font-weight: 700; line-height: 1.2">{{d.club}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #4fc3b0">{{d.what}}</span>
+</span>
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 40px; line-height: 0.85; color: #4fc3b0">{{d.year}}</span>
+</div>
+<span style="font-size: 15px; line-height: 1.5; color: #e6dfd7">{{d.text}}</span>
+<div style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<a href="#" style="height: 34px; display: flex; align-items: center; gap: 8px; padding: 0 14px; border-radius: 17px; border: 1px solid #4fc3b0; color: #4fc3b0; font-size: 14px; font-weight: 700; text-decoration: none">Say thanks</a>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8a8078">{{d.src}}</span>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section aria-label="League by league" style="margin-top: 96px; display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 56px; line-height: 0.9; text-transform: uppercase">League by league</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.45; color: #d6cec5">Every club gets a slot, worst first. Dashed means nobody has checked it yet.</p>
+</div>
+<a href="Overview-crests.dc.html" class="btj-link" style="font-size: 15px; font-weight: 700; color: #d6cec5; text-decoration: none">All sports and leagues →</a>
+</div>
+<div style="display: flex; flex-direction: column; border-top: 1px solid #2e2825">
+<sc-for list="{{leagues}}" as="l" hint-placeholder-count="6">
+<a href="{{l.href}}" style="display: grid; grid-template-columns: 220px minmax(0, 1fr) 210px; align-items: center; gap: 32px; padding: 20px 0; border-bottom: 1px solid #2e2825; color: #f3ede6; text-decoration: none">
+<span style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 20px; font-weight: 700">{{l.name}}</span><span style="font-size: 13px; color: #a39a91">{{l.sub}}</span></span>
+<span style="display: flex; gap: 4px">
+<sc-for list="{{l.slots}}" as="t" hint-placeholder-count="20">
+<span title="{{t.title}}" style="flex: 1 1 0px; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 6px">
+<sc-if value="{{t.hasCrest}}" hint-placeholder-val="{{ true }}"><img src="{{t.crest}}" alt="" style="width: 26px; height: 26px; object-fit: contain; opacity: {{t.op}}"></sc-if>
+<sc-if value="{{t.noCrest}}" hint-placeholder-val="{{ false }}"><span style="width: 22px; height: 22px; margin: 2px; box-sizing: border-box; border-radius: 11px; border: 1px dashed #5a504a"></span></sc-if>
+<span style="width: 100%; height: 18px; box-sizing: border-box; border-radius: 3px; background: {{t.bg}}; border: {{t.border}}"></span>
+</span>
+</sc-for>
+</span>
+<span style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px; text-align: right">
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 34px; line-height: 0.85; color: {{l.bigColor}}">{{l.big}}</span>
+<span style="font-size: 13px; line-height: 1.35; color: #b3aaa0">{{l.small}}</span>
+</span>
+</a>
+</sc-for>
+</div>
+</section>
+
+<section id="how" aria-label="How a rating is made" style="margin-top: 96px; display: flex; flex-direction: column; gap: 26px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #ff6b5e">How we rate</span>
+<h2 style="margin: 0; font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 56px; line-height: 0.9; text-transform: uppercase">Not a hunch. The same five steps for every shirt.</h2>
+<p style="margin: 0; max-width: 760px; font-size: 17px; line-height: 1.45; color: #d6cec5">Agents do the legwork, people check it, and every claim links to its source. Anyone can see every step on GitHub.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px">
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="5">
+<div style="position: relative; display: flex; flex-direction: column; gap: 10px; padding: 18px; border-radius: 14px; background: #1a1614; border: 1px solid #3d332f">
+<span style="display: flex; align-items: center; justify-content: space-between">
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 34px; line-height: 0.9; color: #ff4a3d">{{s.n}}</span>
+<span style="height: 24px; display: flex; align-items: center; padding: 0 9px; border-radius: 12px; border: 1px solid {{s.whoColor}}; color: {{s.whoColor}}; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">{{s.who}}</span>
+</span>
+<span style="font-size: 18px; font-weight: 700">{{s.title}}</span>
+<span style="font-size: 14px; line-height: 1.45; color: #d6cec5">{{s.text}}</span>
+<span style="margin-top: auto; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #a39a91">{{s.path}}</span>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #a39a91">What the levels mean</span>
+<div role="list" aria-label="What the levels mean" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
+<div style="display: flex; align-items: center; gap: 14px; padding: 16px 18px; border-radius: 12px; background: #1a1614; border: 1px solid #2e2825">
+<span aria-hidden="true" style="display: flex; align-items: flex-end; gap: 3px; height: 26px"><span style="width: 6px; height: 9px; border-radius: 1px; background: #e8e2da"></span><span style="width: 6px; height: 14px; border-radius: 1px; background: #3a3330"></span><span style="width: 6px; height: 20px; border-radius: 1px; background: #3a3330"></span><span style="width: 6px; height: 26px; border-radius: 1px; background: #3a3330"></span></span>
+<span style="display: flex; flex-direction: column; gap: 3px; text-align: left"><span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 24px; line-height: 0.9; text-transform: uppercase; color: #f3ede6">Clean</span><span style="font-size: 13px; line-height: 1.35; color: #b3aaa0">Checked. Nothing found.</span></span>
+</div>
+<div style="display: flex; align-items: center; gap: 14px; padding: 16px 18px; border-radius: 12px; background: #1a1614; border: 1px solid #2e2825">
+<span aria-hidden="true" style="display: flex; align-items: flex-end; gap: 3px; height: 26px"><span style="width: 6px; height: 9px; border-radius: 1px; background: #d9a399"></span><span style="width: 6px; height: 14px; border-radius: 1px; background: #d9a399"></span><span style="width: 6px; height: 20px; border-radius: 1px; background: #3a3330"></span><span style="width: 6px; height: 26px; border-radius: 1px; background: #3a3330"></span></span>
+<span style="display: flex; flex-direction: column; gap: 3px; text-align: left"><span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 24px; line-height: 0.9; text-transform: uppercase; color: #e6b3a8">Spotted</span><span style="font-size: 13px; line-height: 1.35; color: #b3aaa0">A lesser link to a state.</span></span>
+</div>
+<div style="display: flex; align-items: center; gap: 14px; padding: 16px 18px; border-radius: 12px; background: #1a1614; border: 1px solid #2e2825">
+<span aria-hidden="true" style="display: flex; align-items: flex-end; gap: 3px; height: 26px"><span style="width: 6px; height: 9px; border-radius: 1px; background: #b0402f"></span><span style="width: 6px; height: 14px; border-radius: 1px; background: #b0402f"></span><span style="width: 6px; height: 20px; border-radius: 1px; background: #b0402f"></span><span style="width: 6px; height: 26px; border-radius: 1px; background: #3a3330"></span></span>
+<span style="display: flex; flex-direction: column; gap: 3px; text-align: left"><span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 24px; line-height: 0.9; text-transform: uppercase; color: #e0705f">Stained</span><span style="font-size: 13px; line-height: 1.35; color: #b3aaa0">A serious sponsor on the front.</span></span>
+</div>
+<div style="display: flex; align-items: center; gap: 14px; padding: 16px 18px; border-radius: 12px; background: #1a1614; border: 1px solid #2e2825">
+<span aria-hidden="true" style="display: flex; align-items: flex-end; gap: 3px; height: 26px"><span style="width: 6px; height: 9px; border-radius: 1px; background: #e3121b"></span><span style="width: 6px; height: 14px; border-radius: 1px; background: #e3121b"></span><span style="width: 6px; height: 20px; border-radius: 1px; background: #e3121b"></span><span style="width: 6px; height: 26px; border-radius: 1px; background: #e3121b"></span></span>
+<span style="display: flex; flex-direction: column; gap: 3px; text-align: left"><span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 24px; line-height: 0.9; text-transform: uppercase; color: #ff4a3d">Soaked</span><span style="font-size: 13px; line-height: 1.35; color: #b3aaa0">A severe sponsor, or two serious ones.</span></span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contribute" aria-label="How to help" style="margin-top: 96px; box-sizing: border-box; padding: 48px; border-radius: 24px; background: #1a1614; border: 1px solid #3d332f; display: grid; grid-template-columns: minmax(0, 1fr) 500px; gap: 56px">
+<div style="display: flex; flex-direction: column; gap: 22px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #ff6b5e">Open data · open pipelines · open agents</span>
+<h2 style="margin: 0; font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 60px; line-height: 0.9; text-transform: uppercase">Help us check every shirt</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.5; color: #d6cec5">All the data, the pipelines and the agents are public on GitHub. Pick the way that suits you. A person reviews every claim before it goes live.</p>
+<div style="display: flex; flex-direction: column; border-top: 1px solid #3d332f">
+<sc-for list="{{ways}}" as="w" hint-placeholder-count="3">
+<div style="display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; align-items: start; gap: 16px; padding: 18px 0; border-bottom: 1px solid #3d332f">
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 34px; line-height: 0.9; color: #ff4a3d">{{w.n}}</span>
+<span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 18px; font-weight: 700">{{w.title}}</span><span style="font-size: 14.5px; line-height: 1.45; color: #d6cec5">{{w.text}}</span></span>
+<a href="#" class="btj-chip" style="height: 36px; display: flex; align-items: center; padding: 0 14px; border-radius: 18px; border: 1px solid #4a403b; color: #f3ede6; font-size: 14px; font-weight: 700; text-decoration: none; white-space: nowrap">{{w.cta}}</a>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 18px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #a39a91">Nobody has checked these yet · pick one</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{todo}}" as="c" hint-placeholder-count="15">
+<a href="#" title="{{c.name}}" style="height: 36px; display: flex; align-items: center; gap: 8px; padding: 0 12px 0 4px; border-radius: 18px; background: #0f0d0c; border: 1px solid #3d332f; color: #f3ede6; font-size: 13px; font-weight: 700; text-decoration: none">
+<span style="width: 28px; height: 28px; border-radius: 14px; background: #ffffff; display: flex; align-items: center; justify-content: center"><img src="{{c.crest}}" alt="" style="width: 20px; height: 20px; object-fit: contain"></span>{{c.short}}</a>
+</sc-for>
+</div>
+<span style="font-size: 14px; line-height: 1.5; color: #b3aaa0">Plus the Bundesliga, Ligue 1, Serie A and MLS: nobody has started those yet.</span>
+<div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px">
+<a href="#" style="height: 52px; display: flex; align-items: center; justify-content: center; gap: 10px; border-radius: 26px; background: #f3ede6; color: #0f0d0c; font-size: 16px; font-weight: 700; text-decoration: none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7 L3 12 L8 17"></path><path d="M16 7 L21 12 L16 17"></path><path d="M13.5 4 L10.5 20"></path></svg>Open the repo on GitHub</a>
+<a href="#" style="height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 26px; border: 1px solid #4a403b; color: #f3ede6; font-size: 16px; font-weight: 700; text-decoration: none">Read the contributor guide</a>
+</div>
+</div>
+</section>
+
+<div style="height: 64px; flex-shrink: 0"></div>
+<footer style="margin-top: auto; height: 88px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; gap: 40px; border-top: 1px solid #2e2825">
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase; color: #8a2a22">Your chest. Their ad.</span>
+<span style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8a8078; text-align: right">
+<span>Deal values are reported estimates per year (SportsPro, The Athletic). Ratings are illustrative until the method is final.</span>
+<span>Club crests: football-data.org.</span>
+</span>
+</footer>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4260}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { q: '', focus: false, sport: 'soccer', hl: null };
+    this.inputEl = null;
+    this.blurT = null;
+  }
+  componentWillUnmount() { clearTimeout(this.blurT); clearInterval(this.wordT); }
+  data() {
+    const B = (id) => '/_blob/' + id;
+    const CREST = {
+      ars: '3f0cca48f17c0f4c087f90bf087fab3a', atm: 'c248839c67d1d79154c44bbbdefaa709', avl: '7a60232877ace1049d7ca1338cb7d007',
+      bha: '65c67816c86967b37dd97d446ca473ba', bou: '2f0493bb09ea374d19ec812acd85cc02', bre: 'eb4d6b703ae6f37c74ea3f9865b7bbf1',
+      che: 'a70db627f0c07e94eae475b90fa75aa6', cov: '7a33270aad48f915482ab6f6042749af', cry: '03259ead43f93426e1f4c76450f00f17',
+      eve: '4456de895b669ce99b3b8f6c6f181db9', fcb: '1cbcf9cfd2c7c71ac5f8e63775310e5f', ful: '38229b69f1f85430d7d5b64008adcee6',
+      hul: '13783b6f46b2c2a4c7cff01421db56e4', ips: '099dbb121e8402bde70d7a8ead374090', lee: '423098acba2ab04cc4023b93e878bd8b',
+      liv: 'e60c9731a20bb2b4cf5f5f496b7d3da8', mci: '2e8e6d8f8a37bd8beaccfacb7df2ec0a', mun: 'a27da7ea9bfcfc7d10c94fe55098d652',
+      new: '9a535d388b04f72bb7522e9eb5587556', nfo: '5fbc3aa7329da9218f99e59e43317eb8', rma: '87a713e02afdb4464ca386acb01e563d',
+      s04: 'cf55f64a7a5c2d0e28630c554dc34f8e', sun: '05ef0eb0ea8cc06c50dfa80526ffbbd4', tot: 'ae08fee6f84628bf83c27685db761eb4'
+    };
+    const crest = (id) => (CREST[id] ? B(CREST[id]) : '');
+    const LV = {
+      '3': { word: 'Soaked', text: '#ff4a3d', seg: '#e3121b', band: '#c8121b', bandFg: '#ffffff', border: 'none' },
+      '2': { word: 'Stained', text: '#e0705f', seg: '#b0402f', band: '#6e2820', bandFg: '#ffe3de', border: 'none' },
+      '1': { word: 'Spotted', text: '#e6b3a8', seg: '#d9a399', band: '#d9a399', bandFg: '#2a1512', border: 'none' },
+      '0': { word: 'Clean', text: '#f3ede6', seg: '#e8e2da', band: '#e8e2da', bandFg: '#0f0d0c', border: 'none' },
+      '-1': { word: 'Not rated yet', text: '#a39a91', seg: '#3a3330', band: 'transparent', bandFg: '#b3aaa0', border: '1px dashed #6f665e' }
+    };
+    const TIER = {
+      '3': { word: 'Severe', text: '#ff4a3d' }, '2': { word: 'Serious', text: '#e0705f' },
+      '1': { word: 'Concern', text: '#e6b3a8' }, '0': { word: 'Nothing found', text: '#f3ede6' },
+      '-1': { word: 'Being rated', text: '#a39a91' }
+    };
+    const bars = (lvl, hs, fg, off) => [0, 1, 2, 3].map((n) => ({ h: hs[n], bg: lvl >= 0 && n <= lvl ? fg : off }));
+    const chip = (lvl) => {
+      const v = LV[String(lvl)];
+      return { word: v.word, band: v.band, bandFg: v.bandFg, bandBorder: v.border, lvText: v.text,
+        bars: bars(lvl, [5, 8, 11, 14], v.bandFg, lvl >= 2 ? 'rgba(255, 255, 255, 0.28)' : 'rgba(0, 0, 0, 0.2)') };
+    };
+    return { B, CREST, crest, LV, TIER, bars, chip };
+  }
+  index() {
+    const { crest } = this.data();
+    const club = (id, label, sub, lvl, href, aliases, mono) => ({ type: 'Club', label: label, sub: sub, lvl: lvl, href: href || 'Overview-crests.dc.html', crest: crest(id), mono: mono || '', aliases: aliases || '' });
+    const other = (type, label, sub, tag, mono, aliases, href) => ({ type: type, label: label, sub: sub, lvl: null, tag: tag, href: href || 'Overview-crests.dc.html', crest: '', mono: mono, aliases: aliases || '' });
+    const sponsor = (label, sub, lvl, mono, aliases) => ({ type: 'Sponsor', label: label, sub: sub, lvl: lvl, href: 'Overview-crests.dc.html', crest: '', mono: mono, aliases: aliases || '' });
+    return [
+      club('avl', 'Aston Villa', 'Premier League · Visit Rwanda on the front', 3, 'Team-villa.dc.html', 'villa avfc'),
+      club('ars', 'Arsenal', 'Premier League · Emirates on the front', 2, 'Team-arsenal.dc.html', 'gunners afc'),
+      club('mci', 'Manchester City', 'Premier League · Etihad Airways on the front', 2, '', 'man city mcfc'),
+      club('new', 'Newcastle United', 'Premier League · noon on the sleeve', 1, '', 'nufc toon'),
+      club('bha', 'Brighton & Hove Albion', 'Premier League · American Express on the front', 0, '', 'brighton seagulls'),
+      club('atm', 'Atlético de Madrid', 'La Liga · Riyadh Air on the front, Visit Rwanda on the back', 3, 'TeamDetail.dc.html', 'atletico atleti'),
+      club('rma', 'Real Madrid', 'La Liga · Emirates on the front', 2, '', 'real madrid'),
+      club('liv', 'Liverpool', 'Premier League · Turkish Airlines from 2027/28', -1, '', 'lfc reds'),
+      club('che', 'Chelsea', 'Premier League · no shirt sponsor yet', -1, '', 'cfc blues'),
+      club('mun', 'Manchester United', 'Premier League', -1, '', 'man utd united'),
+      club('tot', 'Tottenham Hotspur', 'Premier League', -1, '', 'spurs'),
+      club('eve', 'Everton', 'Premier League', -1, '', 'toffees'),
+      club('fcb', 'Bayern Munich', 'Bundesliga · dropped Qatar Airways in 2023', -1, '', 'fc bayern munchen'),
+      club('s04', 'Schalke 04', 'Germany · dropped Gazprom in 2022', -1, '', 'schalke'),
+      club('psg', 'Paris Saint-Germain', 'Ligue 1 · Visit Rwanda until 2028', -1, '', 'psg paris', 'PSG'),
+      club('lac', 'LA Clippers', 'NBA · Visit Rwanda', -1, '', 'clippers nba basketball', 'LAC'),
+      other('League', 'Premier League', 'Soccer · 20 clubs · 5 rated', '35% bad money', 'PL', 'epl england'),
+      other('League', 'La Liga', 'Soccer · 20 clubs · 2 rated', '2 rated', 'LL', 'laliga spain'),
+      other('League', 'Bundesliga', 'Soccer · Germany', 'Not mapped yet', 'BL', 'germany'),
+      other('League', 'Ligue 1', 'Soccer · France', 'Not mapped yet', 'L1', 'france'),
+      other('League', 'Serie A', 'Soccer · Italy', 'Not mapped yet', 'SA', 'italy'),
+      other('League', 'MLS', 'Soccer · USA and Canada', 'Not mapped yet', 'MLS', 'usa major league soccer'),
+      other('Sport', 'Soccer', '7 clubs rated in 2 leagues', '7 rated', 'SOC', 'football'),
+      other('Sport', 'Basketball', 'NBA, Basketball Africa League', 'Not mapped yet', 'BSK', 'nba bal'),
+      other('Sport', 'American football', 'NFL', 'Not mapped yet', 'NFL', 'nfl'),
+      other('Sport', 'Motorsport', 'Formula 1 and more', 'Not mapped yet', 'F1', 'f1 formula racing'),
+      other('Sport', 'Tournaments & governing bodies', 'FIFA, UEFA and events', 'Not mapped yet', 'EVT', 'fifa uefa world cup'),
+      sponsor('Visit Rwanda', 'Government of Rwanda · Aston Villa, Atlético, PSG, LA Clippers', 3, 'VR', 'rwanda'),
+      sponsor('Emirates', 'Government of Dubai · Arsenal, Real Madrid', 2, 'EK', 'dubai'),
+      sponsor('Etihad Airways', 'Government of Abu Dhabi · Manchester City', 2, 'EY', 'abu dhabi'),
+      sponsor('Riyadh Air', 'Saudi Arabia’s state fund · Atlético de Madrid', 2, 'RX', 'saudi pif'),
+      sponsor('noon', 'Part-owned by Saudi Arabia’s state fund · Newcastle United', 1, 'NO', 'saudi pif'),
+      sponsor('American Express', 'Listed US company · Brighton & Hove Albion', 0, 'AX', 'amex'),
+      sponsor('Turkish Airlines', 'Part-owned by Türkiye’s wealth fund · Liverpool from 2027/28', -1, 'TK', 'turkey')
+    ];
+  }
+  results() {
+    const norm = (x) => String(x || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+    const q = norm(this.state.q.trim());
+    const idx = this.index();
+    if (!q) return ['Arsenal', 'Premier League', 'Visit Rwanda', 'Atlético de Madrid', 'Motorsport'].map((l) => idx.find((i) => i.label === l));
+    return idx.map((i) => {
+      const L = norm(i.label);
+      const words = L.split(/[\s&-]+/).concat(norm(i.aliases).split(' '));
+      let sc = -1;
+      if (L.startsWith(q)) sc = 0;
+      else if (words.some((w) => w && w.startsWith(q))) sc = 1;
+      else if (L.includes(q)) sc = 2;
+      else if (q.length >= 4 && norm(i.sub).includes(q)) sc = 3;
+      return { i: i, sc: sc };
+    }).filter((x) => x.sc >= 0).sort((a, b) => a.sc - b.sc).slice(0, 6).map((x) => x.i);
+  }
+  searchVals() {
+    const { LV, TIER, bars } = this.data();
+    const res = this.results().map((r) => {
+      const isClub = r.type === 'Club';
+      const isSp = r.type === 'Sponsor';
+      const lv = isClub ? LV[String(r.lvl)] : null;
+      const tier = isSp ? TIER[String(r.lvl)] : null;
+      return Object.assign({}, r, {
+        hasCrest: !!r.crest, noCrest: !r.crest,
+        iconBg: r.crest ? '#ffffff' : '#2e2825', iconFg: '#f3ede6',
+        typeLabel: r.type.toUpperCase(),
+        tag: isClub ? lv.word : isSp ? tier.word : r.tag,
+        tagColor: isClub ? lv.text : isSp ? tier.text : '#b3aaa0',
+        showBars: isClub && r.lvl >= 0,
+        bars: bars(isClub ? r.lvl : -1, [6, 9, 12, 15], lv ? lv.seg : '#3a3330', '#3a3330')
+      });
+    });
+    const q = this.state.q;
+    return {
+      q: q, open: this.state.focus, results: res, noResults: res.length === 0,
+      resultsHead: q.trim() ? 'Clubs, leagues, sports and sponsors' : 'Popular right now',
+      setInput: (el) => { this.inputEl = el; },
+      onQ: (e) => this.setState({ q: e.target.value, focus: true }),
+      onFocus: () => { clearTimeout(this.blurT); this.setState({ focus: true }); },
+      onBlur: () => { clearTimeout(this.blurT); this.blurT = setTimeout(() => this.setState({ focus: false }), 180); },
+      tries: ['Arsenal', 'Premier League', 'Visit Rwanda', 'Formula 1', 'Real Madrid'].map((t) => ({
+        label: t,
+        pick: () => { clearTimeout(this.blurT); this.setState({ q: t, focus: true }); if (this.inputEl && this.inputEl.focus) this.inputEl.focus(); }
+      }))
+    };
+  }
+  feed() {
+    const { crest, chip } = this.data();
+    const K = {
+      worse: { label: 'Got worse', color: '#ff4a3d', arrow: 'M6 1 L11 8 L7.5 8 L7.5 11 L4.5 11 L4.5 8 L1 8 Z' },
+      better: { label: 'Got better', color: '#4fc3b0', arrow: 'M6 11 L11 4 L7.5 4 L7.5 1 L4.5 1 L4.5 4 L1 4 Z' },
+      same: { label: 'Renewed', color: '#d6cec5', arrow: 'M1 4.5 L8 4.5 L8 1.5 L11 6 L8 10.5 L8 7.5 L1 7.5 Z' },
+      pending: { label: 'Being rated', color: '#a39a91', arrow: 'M2 5 L10 5 L10 7 L2 7 Z' }
+    };
+    return [
+      { date: '6 Aug 2026', id: 'ars', club: 'Arsenal', kind: 'same', lvl: 2, title: 'Renews Emirates until 2033', text: 'Reportedly up to $93m a season, from an airline owned by the Government of Dubai.', src: 'SportsPro · Aug 2026', href: 'Team-arsenal.dc.html' },
+      { date: '15 Jul 2026', id: 'avl', club: 'Aston Villa', kind: 'worse', lvl: 3, title: 'Visit Rwanda goes on the front', text: 'Up to $27m a year from the Government of Rwanda. It replaces a betting sponsor after the ban.', src: 'SportsPro · Jul 2026', href: 'Team-villa.dc.html' },
+      { date: 'Jun 2026', id: 'ars', club: 'Arsenal', kind: 'better', lvl: 2, title: 'Visit Rwanda comes off the sleeve', text: 'Gone after eight seasons of fan protest. Emirates stays on the front, so still stained.', src: 'SportsPro · Jul 2026', href: 'Team-arsenal.dc.html' },
+      { date: '10 Jun 2026', id: 'rma', club: 'Real Madrid', kind: 'same', lvl: 2, title: 'Record Emirates renewal', text: 'Until 2031, reportedly $115m a year: the biggest shirt deal in Europe.', src: 'SportsPro · Jun 2026', href: 'Overview-crests.dc.html' },
+      { date: 'Jun 2026', id: 'new', club: 'Newcastle United', kind: 'better', lvl: 1, title: 'Saudi-owned Sela is off the front', text: 'A drinks brand replaces it. noon, part-owned by the same Saudi state fund, stays on the sleeve.', src: 'The Mag · Jun 2026', href: 'Overview-crests.dc.html' },
+      { date: 'Apr 2026', id: 'liv', club: 'Liverpool', kind: 'pending', lvl: -1, title: 'Turkish Airlines from 2027/28', text: 'Replaces Standard Chartered. The airline is part-owned by Türkiye’s wealth fund. We are checking it now.', src: 'Footy Headlines · Apr 2026', href: 'Overview-crests.dc.html' }
+    ].map((f) => Object.assign({}, chip(f.lvl), f, {
+      crest: crest(f.id), kindLabel: K[f.kind].label, kindColor: K[f.kind].color, arrow: K[f.kind].arrow,
+      isPending: f.kind === 'pending', notPending: f.kind !== 'pending'
+    }));
+  }
+  componentDidMount() { this.playWords(); }
+  playWords() {
+    const last = 6;
+    clearInterval(this.wordT);
+    this.setState({ wi: 0 });
+    this.wordT = setInterval(() => {
+      const n = Math.min((this.state.wi || 0) + 1, last);
+      this.setState({ wi: n });
+      if (n >= last) clearInterval(this.wordT);
+    }, 1300);
+  }
+  renderVals() {
+    const { crest, LV } = this.data();
+    const sv = this.searchVals();
+    const slot = (id, name, lvl) => {
+      const v = LV[String(lvl)]; const c = crest(id); const rated = lvl >= 0;
+      return { title: name ? name + ': ' + (rated ? v.word : 'not rated yet') : 'Not rated yet', crest: c, hasCrest: !!c, noCrest: !c, op: rated ? 1 : 0.5,
+        bg: rated ? v.seg : 'transparent', border: rated ? 'none' : '1px dashed #5a504a' };
+    };
+    const empty = (n) => Array.from({ length: n }, () => slot('', '', -1));
+    const plUnrated = [['bou', 'AFC Bournemouth'], ['bre', 'Brentford'], ['che', 'Chelsea'], ['cov', 'Coventry City'], ['cry', 'Crystal Palace'], ['eve', 'Everton'], ['ful', 'Fulham'], ['hul', 'Hull City'], ['ips', 'Ipswich Town'], ['lee', 'Leeds United'], ['liv', 'Liverpool'], ['mun', 'Manchester United'], ['nfo', 'Nottingham Forest'], ['sun', 'Sunderland'], ['tot', 'Tottenham Hotspur']];
+    const grey = '#6f665e';
+    const leagues = [
+      { name: 'Premier League', sub: 'England · 5 of 20 rated', href: 'Overview-crests.dc.html',
+        slots: [slot('avl', 'Aston Villa', 3), slot('ars', 'Arsenal', 2), slot('mci', 'Manchester City', 2), slot('new', 'Newcastle United', 1), slot('bha', 'Brighton & Hove Albion', 0)].concat(plUnrated.map((u) => slot(u[0], u[1], -1))),
+        big: '4 of 20', bigColor: '#ff4a3d', small: 'shirts carry a sponsor we rate as bad' },
+      { name: 'La Liga', sub: 'Spain · 2 of 20 rated', href: 'Overview-crests.dc.html',
+        slots: [slot('atm', 'Atlético de Madrid', 3), slot('rma', 'Real Madrid', 2)].concat(empty(18)),
+        big: '2 of 20', bigColor: '#ff4a3d', small: 'bad so far, 18 clubs still to check' },
+      { name: 'Bundesliga', sub: 'Germany · 0 of 18 rated', href: '#contribute', slots: [slot('fcb', 'Bayern Munich', -1)].concat(empty(17)),
+        big: 'Not started', bigColor: grey, small: 'Bayern dropped Qatar Airways in 2023' },
+      { name: 'Ligue 1', sub: 'France · 0 of 18 rated', href: '#contribute', slots: empty(18),
+        big: 'Not started', bigColor: grey, small: 'PSG has Visit Rwanda until 2028' },
+      { name: 'Serie A', sub: 'Italy · 0 of 20 rated', href: '#contribute', slots: empty(20),
+        big: 'Not started', bigColor: grey, small: 'Be the first to map it' },
+      { name: 'MLS', sub: 'USA and Canada · 0 of 30 rated', href: '#contribute', slots: empty(30),
+        big: 'Not started', bigColor: grey, small: 'Be the first to map it' }
+    ];
+    const drop = (id, club, what, year, text, src) => ({ club: club, what: what, year: year, text: text, src: src, crest: crest(id), crestAlt: club + ' crest' });
+    const WORDS = ['shirt', 'shoes', 'stadium', 'game', 'league', 'club', 'loyalty'];
+    const wi = Math.min(this.state.wi || 0, WORDS.length - 1);
+    return Object.assign(sv, {
+      word: WORDS[wi], wordEven: wi % 2 === 0, wordOdd: wi % 2 === 1,
+      replayWords: () => this.playWords(),
+      changes: this.feed().slice(0, 4),
+      dropped: [
+        drop('ars', 'Arsenal', 'Dropped Visit Rwanda', '2026', 'Off the sleeve after eight seasons. Fans had spoken up about it for years.', 'SportsPro · Jul 2026'),
+        drop('new', 'Newcastle United', 'Dropped Sela', '2026', 'The Saudi state-owned events company is off the front of the shirt. A drinks brand replaces it.', 'The Mag · Jun 2026'),
+        drop('fcb', 'Bayern Munich', 'Stepped back from Visit Rwanda', '2025', 'Moved away from the Visit Rwanda branding after criticism, two years after ending Qatar Airways.', ''),
+        drop('fcb', 'Bayern Munich', 'Dropped Qatar Airways', '2023', 'Members raised it at meetings and in the stands for years. The deal was not renewed.', ''),
+        drop('s04', 'Schalke 04', 'Dropped Gazprom', '2022', 'Took the logo off the shirt within days, then ended a 15-year deal early.', ''),
+        drop('mun', 'Manchester United', 'Dropped Aeroflot', '2022', 'Ended the deal early and said it shared fans’ concerns.', '')
+      ],
+      leagues: leagues,
+      steps: [
+        { n: '1', who: 'Agent', whoColor: '#a39a91', title: 'Collect', text: 'Who is on every shirt this season: front, back and sleeve.', path: 'Every club, every season' },
+        { n: '2', who: 'Agent', whoColor: '#a39a91', title: 'Trace', text: 'Who owns each sponsor, all the way up to a state or a fund.', path: 'Company registries, reports' },
+        { n: '3', who: 'Agent + you', whoColor: '#e6b3a8', title: 'Find evidence', text: 'Human-rights reports tied to that owner. Every claim gets a source.', path: 'UN, NGOs, courts, press' },
+        { n: '4', who: 'Person', whoColor: '#4fc3b0', title: 'Review', text: 'A person checks each claim and source before anything counts.', path: 'Nothing goes live unchecked' },
+        { n: '5', who: 'Automatic', whoColor: '#a39a91', title: 'Publish', text: 'The rating goes live and the change is logged for everyone to see.', path: 'Full history, public' }
+      ],
+      ways: [
+        { n: '1', title: 'Run our agents', text: 'Point our pipeline at a club nobody has checked yet and open a pull request with what it finds.', cta: 'Read the guide' },
+        { n: '2', title: 'Bring your own agent', text: 'Any agent can help if it writes our evidence format: one claim, one source, one file.', cta: 'See the format' },
+        { n: '3', title: 'Check a club by hand', text: 'No code needed. Pick a club, note who sponsors it and who owns them, and link your sources.', cta: 'Pick a club' }
+      ],
+      todo: plUnrated.map((u) => ({ name: u[1], crest: crest(u[0]), short: u[1].replace('AFC ', '').replace(' Hotspur', '').replace(' United', ' Utd') }))
+    });
+  }
+}
+</script>
+</body>
+</html>

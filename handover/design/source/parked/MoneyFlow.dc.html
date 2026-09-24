@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Behind the Jersey — money flow section</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&amp;family=IBM+Plex+Mono:wght@400;600&amp;family=Schibsted+Grotesk:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 1328px; height: 720px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px; background: #0f0d0c; color: #f3ede6; font-family: 'Schibsted Grotesk', 'Helvetica Neue', sans-serif">
+
+<div style="height: 46px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; gap: 24px">
+<div role="group" aria-label="Start the money from" style="display: flex; gap: 4px; padding: 4px; border-radius: 23px; background: #1a1614; border: 1px solid #3d332f">
+<sc-for list="{{modes}}" as="m" hint-placeholder-count="2">
+<button type="button" onClick="{{m.pick}}" aria-pressed="{{m.on}}" style="height: 36px; padding: 0 18px; border-radius: 18px; border: none; background: {{m.bg}}; color: {{m.fg}}; font-family: 'Schibsted Grotesk', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer">{{m.label}}</button>
+</sc-for>
+</div>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; color: #8a8078">{{hint}}</span>
+</div>
+
+<div style="position: relative; height: 600px; flex-shrink: 0; box-sizing: border-box; border-radius: 20px; background: #141110; border: 1px solid #2e2825; overflow: hidden">
+<sc-for list="{{cols}}" as="c" hint-placeholder-count="3">
+<span style="position: absolute; left: {{c.x}}px; top: 22px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; color: #8a8078">{{c.label}}</span>
+</sc-for>
+<svg width="1326" height="598" viewBox="0 0 1326 598" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+<sc-for list="{{ribbons}}" as="r" hint-placeholder-count="12">
+<path d="{{r.d}}" fill="{{r.fill}}" fill-opacity="{{r.op}}" stroke="{{r.stroke}}" stroke-width="1.4" stroke-dasharray="{{r.dash}}" stroke-opacity="{{r.sop}}" onMouseEnter="{{r.enter}}" onMouseLeave="{{r.leave}}" style="cursor: pointer"></path>
+</sc-for>
+<sc-for list="{{nodes}}" as="n" hint-placeholder-count="15">
+<rect x="{{n.x}}" y="{{n.y}}" width="{{n.w}}" height="{{n.h}}" rx="2" fill="{{n.fill}}" fill-opacity="{{n.op}}"></rect>
+</sc-for>
+</svg>
+<sc-for list="{{leftLabels}}" as="l" hint-placeholder-count="4">
+<div onMouseEnter="{{l.enter}}" onMouseLeave="{{l.leave}}" style="position: absolute; left: {{l.x}}px; top: {{l.y}}px; transform: translate(-100%, -50%); display: flex; flex-direction: column; align-items: flex-end; gap: 3px; text-align: right; white-space: nowrap; opacity: {{l.op}}; cursor: pointer">
+<span style="font-size: 19px; font-weight: 700; line-height: 1.1">{{l.name}}</span>
+<span style="display: flex; align-items: baseline; gap: 8px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #a39a91">{{l.sub}}</span>
+<span style="font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; font-size: 24px; line-height: 0.9; color: {{l.color}}">{{l.amount}}</span>
+</span>
+</div>
+</sc-for>
+<sc-for list="{{midLabels}}" as="s" hint-placeholder-count="4">
+<div style="position: absolute; left: {{s.x}}px; top: {{s.y}}px; transform: translateY(-50%); display: flex; flex-direction: column; gap: 2px; padding: 5px 10px; border-radius: 8px; background: rgba(20, 17, 16, 0.9); white-space: nowrap; opacity: {{s.op}}; pointer-events: none">
+<span style="font-size: 16px; font-weight: 700; line-height: 1.15">{{s.name}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; color: {{s.color}}">{{s.tier}}</span>
+</div>
+</sc-for>
+<sc-for list="{{clubLabels}}" as="c" hint-placeholder-count="7">
+<div style="position: absolute; left: {{c.x}}px; top: {{c.y}}px; transform: translateY(-50%); display: flex; align-items: center; gap: 10px; white-space: nowrap; opacity: {{c.op}}">
+<span style="width: 30px; height: 30px; flex-shrink: 0; border-radius: 15px; background: #ffffff; display: flex; align-items: center; justify-content: center; color: #0f0d0c; font-family: 'IBM Plex Mono', monospace; font-size: 8.5px; font-weight: 600">
+<sc-if value="{{c.hasCrest}}" hint-placeholder-val="{{ true }}"><img src="{{c.crest}}" alt="" style="width: 22px; height: 22px; object-fit: contain"></sc-if>
+<sc-if value="{{c.noCrest}}" hint-placeholder-val="{{ false }}">{{c.mono}}</sc-if>
+</span>
+<span style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 15px; font-weight: 700; line-height: 1.15">{{c.name}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: {{c.color}}">{{c.amount}}</span>
+</span>
+</div>
+</sc-for>
+</div>
+
+<div style="display: flex; align-items: center; gap: 24px; font-size: 13px; color: #b3aaa0">
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 22px; height: 10px; border-radius: 2px; background: #e3121b"></span>Severe sponsor</span>
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 22px; height: 10px; border-radius: 2px; background: #b0402f"></span>Serious sponsor</span>
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 22px; height: 0; border-top: 2px dashed #e3121b"></span>Value not disclosed</span>
+<span style="margin-left: auto; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8a8078">Width = reported value per year, 2026/27. Sources: SportsPro, The Athletic.</span>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1328,"height":720}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { mode: 'country', hl: null };
+  }
+  renderVals() {
+    const B = (id) => '/_blob/' + id;
+    const CREST = {
+      ars: '3f0cca48f17c0f4c087f90bf087fab3a', atm: 'c248839c67d1d79154c44bbbdefaa709', avl: '7a60232877ace1049d7ca1338cb7d007',
+      mci: '2e8e6d8f8a37bd8beaccfacb7df2ec0a', rma: '87a713e02afdb4464ca386acb01e563d'
+    };
+    const mode = this.state.mode;
+    const byCountry = mode === 'country';
+    const hl = this.state.hl;
+    const TOP = 58, H = 522, U = 4, W = 14;
+    const LX = byCountry ? 250 : 380, SX = 600, CX = 1000;
+    const SEV = '#e3121b', SER = '#b0402f';
+    const govs = [
+      { id: 'dubai', name: 'Dubai', sub: 'UAE · via Emirates', amount: '$208m', color: '#e0705f', sp: 'emirates' },
+      { id: 'abudhabi', name: 'Abu Dhabi', sub: 'UAE · via Etihad', amount: '$90m', color: '#e0705f', sp: 'etihad' },
+      { id: 'saudi', name: 'Saudi Arabia', sub: 'via Riyadh Air', amount: '$46m', color: '#e0705f', sp: 'riyadh' },
+      { id: 'rwanda', name: 'Rwanda', sub: 'via Visit Rwanda', amount: '$27m+', color: '#ff4a3d', sp: 'vr' }
+    ];
+    const sps = [
+      { id: 'emirates', name: 'Emirates', owner: 'Government of Dubai', tier: 'SERIOUS · $208M', amount: '$208m', color: '#e0705f', fill: SER, gov: 'dubai' },
+      { id: 'etihad', name: 'Etihad Airways', owner: 'Government of Abu Dhabi', tier: 'SERIOUS · $90M', amount: '$90m', color: '#e0705f', fill: SER, gov: 'abudhabi' },
+      { id: 'riyadh', name: 'Riyadh Air', owner: 'Saudi state fund (PIF)', tier: 'SERIOUS · $46M', amount: '$46m', color: '#e0705f', fill: SER, gov: 'saudi' },
+      { id: 'vr', name: 'Visit Rwanda', owner: 'Government of Rwanda', tier: 'SEVERE · $27M+', amount: '$27m+', color: '#ff4a3d', fill: SEV, gov: 'rwanda' }
+    ];
+    const clubs = [
+      { id: 'rma', name: 'Real Madrid', fill: SER, color: '#e0705f', amount: '$115m a year' },
+      { id: 'ars', name: 'Arsenal', fill: SER, color: '#e0705f', amount: '$93m a year' },
+      { id: 'mci', name: 'Manchester City', fill: SER, color: '#e0705f', amount: '$90m a year' },
+      { id: 'atm', name: 'Atlético de Madrid', fill: SEV, color: '#ff4a3d', amount: '$46m + undisclosed' },
+      { id: 'avl', name: 'Aston Villa', fill: SEV, color: '#ff4a3d', amount: '$27m a year' },
+      { id: 'psg', name: 'Paris Saint-Germain', mono: 'PSG', fill: '#6f665e', color: '#a39a91', amount: 'value not disclosed' },
+      { id: 'lac', name: 'LA Clippers', mono: 'LAC', fill: '#6f665e', color: '#a39a91', amount: 'value not disclosed' }
+    ];
+    const flows = [
+      { sp: 'emirates', club: 'rma', v: 115 }, { sp: 'emirates', club: 'ars', v: 93 },
+      { sp: 'etihad', club: 'mci', v: 90 }, { sp: 'riyadh', club: 'atm', v: 46 },
+      { sp: 'vr', club: 'atm', v: 0 }, { sp: 'vr', club: 'avl', v: 27 },
+      { sp: 'vr', club: 'psg', v: 0 }, { sp: 'vr', club: 'lac', v: 0 }
+    ].map((f) => Object.assign({}, f, { t: f.v ? f.v : U, gov: sps.find((s) => s.id === f.sp).gov }));
+    const sumT = (pred) => flows.filter(pred).reduce((a, f) => a + f.t, 0);
+    const layout = (list, hOf, gaps) => {
+      const hs = list.map(hOf);
+      const total = hs.reduce((a, b) => a + b, 0) + gaps.reduce((a, b) => a + b, 0);
+      let y = TOP + (H - total) / 2;
+      return list.map((n, i) => { const o = { y: y, h: hs[i] }; y += hs[i] + (gaps[i] || 0); return Object.assign({}, n, o); });
+    };
+    const G = layout(govs, (g) => sumT((f) => f.gov === g.id), [34, 34, 34]);
+    const S = layout(sps, (s) => sumT((f) => f.sp === s.id), [34, 34, 34]);
+    const C = layout(clubs, (c) => sumT((f) => f.club === c.id), [16, 16, 16, 16, 34, 34]);
+    const on = (gov) => !hl || hl === gov;
+    const enter = (gov) => () => this.setState({ hl: gov });
+    const leave = () => this.setState({ hl: null });
+    const r1 = (n) => Math.round(n * 10) / 10;
+    const ribbon = (x0, a0, b0, x1, a1, b1) => {
+      const xm = Math.round((x0 + x1) / 2);
+      return 'M' + x0 + ' ' + r1(a0) + ' C' + xm + ' ' + r1(a0) + ' ' + xm + ' ' + r1(a1) + ' ' + x1 + ' ' + r1(a1) +
+        ' L' + x1 + ' ' + r1(b1) + ' C' + xm + ' ' + r1(b1) + ' ' + xm + ' ' + r1(b0) + ' ' + x0 + ' ' + r1(b0) + ' Z';
+    };
+    const ribbons = [];
+    if (byCountry) {
+      G.forEach((g) => {
+        const s = S.find((x) => x.id === g.sp);
+        ribbons.push({ d: ribbon(LX + W, g.y, g.y + g.h, SX, s.y, s.y + s.h), fill: s.fill, op: on(g.id) ? 0.5 : 0.1, stroke: 'none', dash: 'none', sop: 0, enter: enter(g.id), leave: leave });
+      });
+    }
+    const fromX = byCountry ? SX + W : LX + W;
+    const outY = {}; S.forEach((s) => { outY[s.id] = s.y; });
+    const inY = {}; C.forEach((c) => { inY[c.id] = c.y; });
+    flows.forEach((f) => {
+      const s = S.find((x) => x.id === f.sp);
+      const a0 = outY[f.sp]; outY[f.sp] += f.t;
+      const a1 = inY[f.club]; inY[f.club] += f.t;
+      const hidden = !f.v;
+      ribbons.push({
+        d: ribbon(fromX, a0, a0 + f.t, CX, a1, a1 + f.t),
+        fill: hidden ? 'none' : s.fill, op: hidden ? 0 : on(f.gov) ? 0.5 : 0.1,
+        stroke: hidden ? s.fill : 'none', dash: hidden ? '5 4' : 'none', sop: hidden ? (on(f.gov) ? 0.9 : 0.2) : 0,
+        enter: enter(f.gov), leave: leave
+      });
+    });
+    const clubOn = (c) => flows.some((f) => f.club === c.id && on(f.gov));
+    const nodes = []
+      .concat(byCountry ? G.map((g) => ({ x: LX, y: Math.round(g.y), w: W, h: Math.round(g.h), fill: '#d6cec5', op: on(g.id) ? 1 : 0.3 })) : [])
+      .concat(S.map((s) => ({ x: byCountry ? SX : LX, y: Math.round(s.y), w: W, h: Math.round(s.h), fill: s.fill, op: on(s.gov) ? 1 : 0.3 })))
+      .concat(C.map((c) => ({ x: CX, y: Math.round(c.y), w: W, h: Math.round(c.h), fill: c.fill, op: clubOn(c) ? 1 : 0.3 })));
+    const leftLabels = byCountry
+      ? G.map((g) => ({ name: g.name, sub: g.sub, amount: g.amount, color: g.color, x: LX - 16, y: Math.round(g.y + g.h / 2), op: on(g.id) ? 1 : 0.35, enter: enter(g.id), leave: leave }))
+      : S.map((s) => ({ name: s.name, sub: s.owner, amount: s.amount, color: s.color, x: LX - 16, y: Math.round(s.y + s.h / 2), op: on(s.gov) ? 1 : 0.35, enter: enter(s.gov), leave: leave }));
+    return {
+      modes: [{ id: 'country', label: 'By country' }, { id: 'company', label: 'By company' }].map((m) => ({
+        label: m.label, on: m.id === mode,
+        bg: m.id === mode ? '#f3ede6' : 'transparent', fg: m.id === mode ? '#0f0d0c' : '#d6cec5',
+        pick: () => this.setState({ mode: m.id, hl: null })
+      })),
+      hint: byCountry ? 'Hover a country to follow its money' : 'Hover a company to follow its money',
+      cols: byCountry
+        ? [{ x: 32, label: 'COUNTRY' }, { x: SX, label: 'SPONSOR' }, { x: CX, label: 'SHIRT' }]
+        : [{ x: 32, label: 'COMPANY' }, { x: CX, label: 'SHIRT' }],
+      ribbons: ribbons, nodes: nodes, leftLabels: leftLabels,
+      midLabels: byCountry ? S.map((s) => ({ name: s.name, tier: s.tier, color: s.color, x: SX + W + 10, y: Math.round(s.y + s.h / 2), op: on(s.gov) ? 1 : 0.35 })) : [],
+      clubLabels: C.map((c) => {
+        const cr = CREST[c.id] ? B(CREST[c.id]) : '';
+        return { name: c.name, amount: c.amount, color: c.color, crest: cr, hasCrest: !!cr, noCrest: !cr, mono: c.mono || '',
+          x: CX + W + 12, y: Math.round(c.y + c.h / 2), op: clubOn(c) ? 1 : 0.35 };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>
