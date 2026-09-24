@@ -94,6 +94,19 @@ export function placeCards(sponsors: SponsorCardView[]): { cards: PlacedCard[]; 
 
 export const BACK_NOTE = { left: RIGHT_X, top: 330, width: SIDE_W };
 
+/** An open card moves up if it needs to, so it gets at least this much height inside the stage. */
+const OPEN_MIN_H = 420;
+const STAGE_PAD = 8;
+
+/**
+ * Where an open card sits: inside the stage, never past its bottom edge, so opening a card can't
+ * change the page height. The body scrolls within maxHeight when the evidence is long.
+ */
+export function openPlacement(card: Pick<PlacedCard, 'top'>): { top: number; maxHeight: number } {
+  const top = Math.max(16, Math.min(card.top, STAGE.H - STAGE_PAD - OPEN_MIN_H));
+  return { top, maxHeight: STAGE.H - STAGE_PAD - top };
+}
+
 // ---------------------------------------------------------------- timeline
 
 export const TIMELINE = { TRACK: 1328, GAP: 8, MIN_W: 250, BLOCK_H: 54, PILLS_Y: 64, PILL_H: 24 } as const;

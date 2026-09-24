@@ -115,69 +115,99 @@ test.describe('overview', () => {
   });
 });
 
-test.describe('team page', () => {
-  test('hovering a logo opens its card; Esc closes it', async ({ page }) => {
+test.describe('team page (click, the default)', () => {
+  const expanded = (page: import('@playwright/test').Page, key: string) =>
+    page.locator(`[data-card="${key}"] button[aria-expanded]`);
+
+  test('hover only highlights; a click opens the card; Esc and outside clicks close it', async ({ page }) => {
     await page.goto('/clubs/atletico-de-madrid/');
-    const card = page.locator('[data-card="visit-rwanda:back"] button[aria-expanded]');
-    await expect(card).toHaveAttribute('aria-expanded', 'false');
-    await page.getByRole('button', { name: 'Visit Rwanda: show who pays' }).hover();
-    await expect(card).toHaveAttribute('aria-expanded', 'true');
+    const hotspot = page.getByRole('button', { name: 'Visit Rwanda: show who pays' });
+    await hotspot.hover();
+    await page.waitForTimeout(300);
+    await expect(expanded(page, 'visit-rwanda:back')).toHaveAttribute('aria-expanded', 'false');
+    await hotspot.click();
+    await expect(expanded(page, 'visit-rwanda:back')).toHaveAttribute('aria-expanded', 'true');
     await expect(page.locator('[data-card="visit-rwanda:back"]')).toContainText('Value not disclosed');
     await expect(page.locator('[data-card="visit-rwanda:back"]')).toContainText('UN Group of Experts');
+    // Moving the mouse away doesn't close it.
+    await page.mouse.move(700, 880);
+    await page.waitForTimeout(1200);
+    await expect(expanded(page, 'visit-rwanda:back')).toHaveAttribute('aria-expanded', 'true');
     await page.keyboard.press('Escape');
-    await expect(card).toHaveAttribute('aria-expanded', 'false');
+    await expect(expanded(page, 'visit-rwanda:back')).toHaveAttribute('aria-expanded', 'false');
+    await hotspot.click();
+    await page.mouse.click(60, 60);
+    await expect(expanded(page, 'visit-rwanda:back')).toHaveAttribute('aria-expanded', 'false');
   });
 
-  test('keyboard focus on a logo opens its card', async ({ page }) => {
+  test('keyboard: Enter on a logo opens its card', async ({ page }) => {
     await page.goto('/clubs/atletico-de-madrid/');
-    await page.getByRole('button', { name: 'Riyadh Air: show who pays' }).focus();
-    await expect(page.locator('[data-card="riyadh-air:front"] button[aria-expanded]')).toHaveAttribute(
-      'aria-expanded',
-      'true',
-    );
+    const hotspot = page.getByRole('button', { name: 'Riyadh Air: show who pays' });
+    await hotspot.focus();
+    await expect(expanded(page, 'riyadh-air:front')).toHaveAttribute('aria-expanded', 'false');
+    await page.keyboard.press('Enter');
+    await expect(expanded(page, 'riyadh-air:front')).toHaveAttribute('aria-expanded', 'true');
   });
 
-  test('hover intent keeps the card open on the way to it', async ({ page }) => {
+  test('an open card stays inside the stage and nothing reflows', async ({ page }) => {
     await page.goto('/clubs/atletico-de-madrid/');
-    const hit = await page.getByRole('button', { name: 'Riyadh Air: show who pays' }).boundingBox();
-    const card = page.locator('[data-card="riyadh-air:front"]');
-    await page.mouse.move(hit!.x + 8, hit!.y + hit!.height / 2);
-    await expect(card.locator('button[aria-expanded]')).toHaveAttribute('aria-expanded', 'true');
-    // Leave the logo to the left, cross the Kraken hotspot's surroundings, and arrive on the card.
-    const box = (await card.boundingBox())!;
-    const target = { x: box.x + box.width / 2, y: box.y + 30 };
-    await page.mouse.move(target.x, target.y, { steps: 12 });
-    await expect(card.locator('button[aria-expanded]')).toHaveAttribute('aria-expanded', 'true');
-    // Turning away closes it.
-    await page.mouse.move(700, 150, { steps: 4 });
-    await page.mouse.move(700, 880, { steps: 4 });
-    await expect(card.locator('button[aria-expanded]')).toHaveAttribute('aria-expanded', 'false', { timeout: 2000 });
+    const docH = () => page.evaluate(() => document.documentElement.scrollHeight);
+    const before = await docH();
+    await page.getByRole('button', { name: 'Visit Rwanda: show who pays' }).click();
+    const stage = (await page.locator('section[aria-label="The shirt and its sponsors"]').first().boundingBox())!;
+    const card = (await page.locator('[data-card="visit-rwanda:back"]').boundingBox())!;
+    expect(card.y + card.height).toBeLessThanOrEqual(stage.y + stage.height + 1);
+    expect(await docH()).toBe(before);
   });
 
-  test('timeline periods switch the shirt, level and sentence', async ({ page }) => {
+  test('timeline: hover does nothing, a click switches the shirt, level and sentence', async ({ page }) => {
     await page.goto('/clubs/arsenal/');
-    await expect(page.getByRole('heading', { level: 1, name: 'Arsenal' })).toBeVisible();
-    await expect(page.getByText('Better than last season: Visit Rwanda is gone')).toBeVisible();
-    await page.getByRole('button', { name: /Show the 2018\/19 – 2025\/26 shirt/ }).hover();
+    const summary = page.locator('p:visible', { hasText: 'Rwanda is off the sleeve' });
+    await expect(summary).toBeVisible();
+    const block = page.getByRole('button', { name: /Show the 2018\/19 – 2025\/26 shirt/ });
+    await block.hover();
+    await page.waitForTimeout(300);
+    await expect(block).toHaveAttribute('aria-pressed', 'false');
+    await block.click();
+    await expect(block).toHaveAttribute('aria-pressed', 'true');
     await expect(page.getByText('Worse from 2018: Visit Rwanda joined')).toBeVisible();
     await expect(page.locator('img[alt="Arsenal Home shirt · 2025/26, front"]').first()).toBeVisible();
-    await page.getByRole('button', { name: /Show the 2006\/07 – 2017\/18 shirt/ }).focus();
+    await expect(page).toHaveURL(/\?season=2018-19$/);
+    // Arrow keys move between periods.
+    await page.keyboard.press('ArrowLeft');
     await expect(page.getByText('Dubai’s government pays for the front of this shirt.')).toBeVisible();
   });
 
-  test('a sponsor lane selects its period and opens the card', async ({ page }) => {
+  test('switching periods never moves the page', async ({ page }) => {
     await page.goto('/clubs/arsenal/');
-    await page.getByRole('button', { name: 'Visit Rwanda, 2018/19 – 2025/26' }).hover();
-    await expect(page.locator('[data-card="visit-rwanda:sleeve"] button[aria-expanded]')).toHaveAttribute(
-      'aria-expanded',
-      'true',
-    );
+    const tops = async () =>
+      page.evaluate(() =>
+        ['section[aria-label="The shirt and its sponsors"]', 'section[aria-labelledby="over-the-years"]', 'h1'].map(
+          (sel) => {
+            const r = document.querySelector(sel)!.getBoundingClientRect();
+            return [Math.round(r.top + window.scrollY), Math.round(r.left)];
+          },
+        ),
+      );
+    const first = await tops();
+    for (const label of ['2006/07 – 2017/18', '2018/19 – 2025/26', '2026/27']) {
+      await page.getByRole('button', { name: new RegExp(`Show the ${label.replace(/\//g, '\\/')} shirt`) }).click();
+      expect(await tops()).toEqual(first);
+    }
+  });
+
+  test('a click on a sponsor lane selects its period and opens the card', async ({ page }) => {
+    await page.goto('/clubs/arsenal/');
+    await page.getByRole('button', { name: 'Visit Rwanda, 2018/19 – 2025/26' }).click();
+    await expect(expanded(page, 'visit-rwanda:sleeve')).toHaveAttribute('aria-expanded', 'true');
     await expect(page.getByText('Sleeve · 2018–2026', { exact: false }).first()).toBeVisible();
   });
 
   test('?season= deep links to a period', async ({ page }) => {
     await page.goto('/clubs/aston-villa/?season=2024-25');
-    await expect(page.getByText('Betano and Trade Nation haven’t been rated yet.')).toBeVisible();
+    await expect(
+      page.locator('p:visible', { hasText: 'Betano and Trade Nation haven’t been rated yet.' }),
+    ).toBeVisible();
     await expect(page.getByRole('button', { name: /Show the 2024\/25 – 2025\/26 shirt/ })).toHaveAttribute(
       'aria-pressed',
       'true',
@@ -196,5 +226,37 @@ test.describe('team page', () => {
   test('clubs without a designed kit have no team page', async ({ page }) => {
     const res = await page.goto('/clubs/chelsea/');
     expect(res?.status()).toBe(404);
+  });
+});
+
+test.describe('team page (?interaction=hover, the original design)', () => {
+  test('hovering a logo opens its card; Esc closes it', async ({ page }) => {
+    await page.goto('/clubs/atletico-de-madrid/?interaction=hover');
+    const card = page.locator('[data-card="visit-rwanda:back"] button[aria-expanded]');
+    await expect(card).toHaveAttribute('aria-expanded', 'false');
+    await page.getByRole('button', { name: 'Visit Rwanda: show who pays' }).hover();
+    await expect(card).toHaveAttribute('aria-expanded', 'true');
+    await page.keyboard.press('Escape');
+    await expect(card).toHaveAttribute('aria-expanded', 'false');
+  });
+
+  test('hover intent keeps the card open on the way to it', async ({ page }) => {
+    await page.goto('/clubs/atletico-de-madrid/?interaction=hover');
+    const hit = await page.getByRole('button', { name: 'Riyadh Air: show who pays' }).boundingBox();
+    const card = page.locator('[data-card="riyadh-air:front"]');
+    await page.mouse.move(hit!.x + 8, hit!.y + hit!.height / 2);
+    await expect(card.locator('button[aria-expanded]')).toHaveAttribute('aria-expanded', 'true');
+    const box = (await card.boundingBox())!;
+    await page.mouse.move(box.x + box.width / 2, box.y + 30, { steps: 12 });
+    await expect(card.locator('button[aria-expanded]')).toHaveAttribute('aria-expanded', 'true');
+    await page.mouse.move(700, 150, { steps: 4 });
+    await page.mouse.move(700, 880, { steps: 4 });
+    await expect(card.locator('button[aria-expanded]')).toHaveAttribute('aria-expanded', 'false', { timeout: 2000 });
+  });
+
+  test('hovering a period switches the shirt', async ({ page }) => {
+    await page.goto('/clubs/arsenal/?interaction=hover');
+    await page.getByRole('button', { name: /Show the 2018\/19 – 2025\/26 shirt/ }).hover();
+    await expect(page.getByText('Worse from 2018: Visit Rwanda joined')).toBeVisible();
   });
 });

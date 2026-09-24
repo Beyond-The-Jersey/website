@@ -66,6 +66,7 @@ Copy `.env.example` to `.env.local`.
 | `NEXT_PUBLIC_SITE_URL` | `http://localhost:3000` | Absolute URLs for Open Graph images |
 | `NEXT_PUBLIC_SHOW_TEAM_CREST` | `true` | The crest next to the club name on team pages (a test feature) |
 | `NEXT_PUBLIC_BASE_PATH`, `NEXT_PUBLIC_DEMO` | unset | Set by `build:pages` for the `/demo/` copy |
+| `NEXT_PUBLIC_TEAM_INTERACTION` | `click` | Team page: `click` (hover highlights, a click opens a card or selects a period) or `hover` (the original design: hover opens cards and switches periods, with hover intent). Any visit can override it with `?interaction=hover` or `?interaction=click`. |
 | `BTJ_DATA_SOURCE`, `BTJ_DATA_DIR`, `BTJ_DATA_URL`, `BTJ_DATA_TOKEN` | `seed` | See above |
 
 ## Deploying
@@ -105,6 +106,8 @@ Compared with `handover/design/static/*` at 1440px:
 - **Overview "They dropped it"** uses the landing page's teal cards, filtered to the league, as the handover recommends, instead of the older stamp style.
 - **Team pages have the standard footer** with the photo licensing note. The design source has no footer there.
 - **Header links without a destination** ("Sources", "About") point to the repo and the contribute section. "About" is dropped.
+- **Team page reacts to clicks, not hover** (after user feedback that hovers moved the page and left nowhere safe for the mouse). Hovering a logo or card only highlights it; a click opens the card, which stays open until you click elsewhere or press Esc. Timeline periods and sponsor lanes change on click (and arrow keys), and the selected period goes into the URL. The original hover behaviour is still there with `?interaction=hover`.
+- **Nothing reflows:** the title row keeps its size for every period, an open card stays inside the stage and scrolls instead of growing the page, and the page always reserves room for the scrollbar.
 - **Other cards don't fade** when a sponsor card is open, only the other lines, as in the design source (the page spec says cards fade too).
 - **Search icons** use generic initials (EA, RA) rather than the hand-picked codes (EY, RX).
 - **"Say thanks"** has no destination yet, as the handover says. **"Share"** uses the phone's share sheet or copies a link. **"Tell the club"** opens the club's sourced contacts (none in the seed yet).

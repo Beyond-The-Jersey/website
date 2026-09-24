@@ -60,7 +60,7 @@ const CASES = [
     route: '/clubs/atletico-de-madrid/',
     design: 'team-atletico--card-open.html',
     act: async (p) => {
-      await p.getByRole('button', { name: 'Visit Rwanda: show who pays' }).hover();
+      await p.getByRole('button', { name: 'Visit Rwanda: show who pays' }).click();
     },
   },
   { name: 'team-arsenal', route: '/clubs/arsenal/', design: 'team-arsenal.html' },

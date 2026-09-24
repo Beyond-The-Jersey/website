@@ -25,5 +25,13 @@ export const claimClubHref = (clubName: string) =>
 /** The crest next to the club name on team pages is a test feature (handover/docs/03-page-specs.md §4.1). */
 export const SHOW_TEAM_CREST = process.env.NEXT_PUBLIC_SHOW_TEAM_CREST !== 'false';
 
+/**
+ * How the team page reacts to the pointer. 'click' (default): hovering only highlights, a click
+ * opens a sponsor card or selects a timeline period. 'hover': the original design, where hover opens
+ * cards and switches periods. Can be overridden per visit with ?interaction=hover|click.
+ */
+export const TEAM_INTERACTION: 'click' | 'hover' =
+  process.env.NEXT_PUBLIC_TEAM_INTERACTION === 'hover' ? 'hover' : 'click';
+
 /** Development-only markers (missing sources, [org] placeholder). */
 export const IS_DEV = process.env.NODE_ENV !== 'production';

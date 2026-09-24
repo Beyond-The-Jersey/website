@@ -28,6 +28,8 @@ export function cardSub(sp: SponsorCardView): string {
 export function SponsorCard({
   sp,
   open,
+  highlight = false,
+  maxHeight,
   dim,
   style,
   number,
@@ -44,6 +46,10 @@ export function SponsorCard({
   variant?: 'stage' | 'list';
   sp: SponsorCardView;
   open: boolean;
+  /** Hover or focus highlight: tier-coloured border, no change in size. */
+  highlight?: boolean;
+  /** Cap for the open card; the body scrolls inside it. Keeps the card within the stage. */
+  maxHeight?: number;
   dim?: boolean;
   style?: CSSProperties;
   /** Marker number on mobile. */
@@ -66,7 +72,8 @@ export function SponsorCard({
       className={`${s.card} ${open ? s.cardOpen : ''}`}
       style={{
         ...style,
-        borderColor: open ? t.color : scored ? '#6a3a31' : '#463c37',
+        ...(open && maxHeight ? { maxHeight } : {}),
+        borderColor: open || highlight ? t.color : scored ? '#6a3a31' : '#463c37',
         opacity: dim ? 0.3 : 1,
       }}
       onPointerEnter={(e) => e.pointerType === 'mouse' && onEnter?.()}
