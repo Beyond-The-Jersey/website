@@ -90,14 +90,16 @@ function LeagueContent({ league, desc }: { league: LeagueSummary; desc: Record<L
           {league.name} is {league.notes.length ? 'next' : 'coming'}
         </h2>
         <p className={s.panelText}>{text}</p>
-        <a href="/#contribute" className={s.panelLink}>
+        <Link href="/#contribute" className={s.panelLink}>
           Help map it →
-        </a>
+        </Link>
       </div>
     );
   }
   const unrated = league.clubs.filter((c) => !LEVELS[c.level].rated);
-  const groups = RATED.map((lv) => ({ lv, clubs: league.clubs.filter((c) => c.level === lv) })).filter((g) => g.clubs.length);
+  const groups = RATED.map((lv) => ({ lv, clubs: league.clubs.filter((c) => c.level === lv) })).filter(
+    (g) => g.clubs.length,
+  );
   const notRatedCount = unrated.length + league.unknown;
   return (
     <div className={s.content}>

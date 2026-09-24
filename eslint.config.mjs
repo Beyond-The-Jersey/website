@@ -4,7 +4,17 @@ import nextTs from 'eslint-config-next/typescript';
 const config = [
   ...nextVitals,
   ...nextTs,
-  { ignores: ['.next/**', 'out/**', 'handover/**', 'node_modules/**', 'playwright-report/**', 'test-results/**', 'next-env.d.ts'] },
+  {
+    ignores: [
+      '.next/**',
+      'out/**',
+      'handover/**',
+      'node_modules/**',
+      'playwright-report/**',
+      'test-results/**',
+      'next-env.d.ts',
+    ],
+  },
 ];
 
 export default config;

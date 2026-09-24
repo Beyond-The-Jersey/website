@@ -26,7 +26,9 @@ function clubDescription(ds: Dataset, club: Club): string {
   const kit = currentKit(ds, club.id);
   const rated = kit?.sponsors.filter((s) => tierOf(ds, s.sponsorId) !== 'unrated') ?? [];
   if (rated.length) {
-    parts.push(rated.map((s) => `${ds.byId.sponsor.get(s.sponsorId)!.name} ${placementPhrase(s.placement)}`).join(', '));
+    parts.push(
+      rated.map((s) => `${ds.byId.sponsor.get(s.sponsorId)!.name} ${placementPhrase(s.placement)}`).join(', '),
+    );
   } else {
     const deals = ds.deals.filter((d) => d.clubId === club.id && !isDealOver(ds, d));
     const future = deals.find((d) => isDealFuture(ds, d));
@@ -122,4 +124,3 @@ export function buildSearchIndex(ds: Dataset): SearchEntry[] {
   }
   return out;
 }
-

@@ -17,9 +17,9 @@ The website builds every page from **14 normalised JSON files**, each with a JSO
 | `sponsors.json` | one per company, shared across clubs: owner, **tier** (unrated, none, concern, serious, severe), verdict, claims |
 | `owners.json` | owner chains up to a state, e.g. Riyadh Air → Saudi PIF → Government of Saudi Arabia |
 | `claims.json` | one sourced statement about an owner each, with `reviewed` |
-| `deals.json` | money per club × sponsor × placement × period, always with a source |
+| `deals.json` | money per club × sponsor × placement × period, always with a source (organisation deals also get a `leagueId`) |
 | `changes.json` | dated changes (got worse, got better, renewed, being rated) |
-| `dropped.json` | clubs and organisations that ended a bad deal |
+| `dropped.json` | clubs and organisations that ended a bad deal (organisation items also get a `leagueId`) |
 | `levels.json`, `tiers.json` | display scales (copy from the seed) |
 | `contacts.json` | **new**: sourced public channels a fan can use to tell a club what they think |
 

@@ -17,7 +17,20 @@ import {
 import type { Dataset } from './dataset';
 import { kitEnd, kitStart } from './dataset';
 import { compareLevels, isBad, isRated, levelForKit, TIER_SCORE } from './rating';
-import type { Club, ContactChannel, Deal, Kit, KitSponsor, League, LevelId, Owner, Source, Sponsor, Sport, TierId } from './schema';
+import type {
+  Club,
+  ContactChannel,
+  Deal,
+  Kit,
+  KitSponsor,
+  League,
+  LevelId,
+  Owner,
+  Source,
+  Sponsor,
+  Sport,
+  TierId,
+} from './schema';
 
 // ---------------------------------------------------------------- basics
 
@@ -176,7 +189,10 @@ export function sponsorLine(ds: Dataset, kit: Kit): string {
   const one = list.length === 1;
   return list
     .map((s) => {
-      const where = one && (s.placement === 'front' || s.placement === 'back') ? `${s.placement} of shirt` : placementLabel(s.placement, 'short');
+      const where =
+        one && (s.placement === 'front' || s.placement === 'back')
+          ? `${s.placement} of shirt`
+          : placementLabel(s.placement, 'short');
       return `${ds.byId.sponsor.get(s.sponsorId)?.name} · ${where}`;
     })
     .join(', ');
@@ -191,7 +207,14 @@ export function payerLine(ds: Dataset, kit: Kit): string | null {
     const clean = sponsors.find((s) => s.tier === 'none');
     return clean?.verdict ?? kit.summary;
   }
-  const owned = [...new Set(bad.filter((s) => s.ownership !== 'part-owned').map((s) => payerName(ds, s)).filter(Boolean) as string[])];
+  const owned = [
+    ...new Set(
+      bad
+        .filter((s) => s.ownership !== 'part-owned')
+        .map((s) => payerName(ds, s))
+        .filter(Boolean) as string[],
+    ),
+  ];
   if (owned.length > 1 && owned.every((n) => n.startsWith('Government of ')))
     return `Paid for by the governments of ${listJoin(owned.map((n) => n.replace('Government of ', '')))}`;
   if (owned.length) return `Paid for by the ${listJoin(owned)}`;
@@ -393,7 +416,10 @@ export function knownForSport(ds: Dataset, sportId: string): KnownDealRow[] {
     const club = d.clubId ? ds.byId.club.get(d.clubId) : undefined;
     const since = d.from ? ` since ${seasonStartYear(d.from)}` : '';
     const until = d.to ? ` until ${seasonEndYear(d.to)}` : '';
-    const what = d.placement === 'partner' || d.placement === 'league-partner' ? `${sponsor.name} partner` : `${sponsor.name} ${placementPhrase(d.placement)}`;
+    const what =
+      d.placement === 'partner' || d.placement === 'league-partner'
+        ? `${sponsor.name} partner`
+        : `${sponsor.name} ${placementPhrase(d.placement)}`;
     rows.push({
       title: club?.name ?? d.orgName ?? '',
       text: `${what}${since || until}.${d.value && d.note ? ` ${d.note}` : ''}`,
@@ -440,8 +466,10 @@ export interface SponsorCardView {
 function placementText(ds: Dataset, kit: Kit, ks: KitSponsor, deal: Deal | null): string {
   const base = placementLabel(ks.placement);
   if (!deal) return base;
-  if (deal.from && deal.to && deal.to < ds.currentSeason) return `${base} · ${seasonStartYear(deal.from)}–${seasonEndYear(deal.to)}`;
-  if (deal.from && deal.from === ds.currentSeason && kitEnd(kit) === ds.currentSeason) return `${base} · from ${seasonLabel(deal.from)}`;
+  if (deal.from && deal.to && deal.to < ds.currentSeason)
+    return `${base} · ${seasonStartYear(deal.from)}–${seasonEndYear(deal.to)}`;
+  if (deal.from && deal.from === ds.currentSeason && kitEnd(kit) === ds.currentSeason)
+    return `${base} · from ${seasonLabel(deal.from)}`;
   return base;
 }
 

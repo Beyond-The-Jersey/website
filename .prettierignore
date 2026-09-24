@@ -5,3 +5,5 @@ out/
 data/seed/
 data/schema/
 docs/data-request/request.json
+*.md
+package-lock.json

@@ -9,7 +9,10 @@ export const LEVEL_ORDER: LevelId[] = ['soaked', 'stained', 'spotted', 'clean', 
 
 export const LEVEL_METER: Record<LevelId, number> = { 'not-rated': 0, clean: 1, spotted: 2, stained: 3, soaked: 4 };
 
-export function levelForKit(kit: Pick<Kit, 'sponsors' | 'sponsorsComplete' | 'levelOverride'>, tierOf: (sponsorId: string) => TierId): LevelId {
+export function levelForKit(
+  kit: Pick<Kit, 'sponsors' | 'sponsorsComplete' | 'levelOverride'>,
+  tierOf: (sponsorId: string) => TierId,
+): LevelId {
   if (kit.levelOverride) return kit.levelOverride;
   const s = kit.sponsors.map((p) => ({ placement: p.placement, score: TIER_SCORE[tierOf(p.sponsorId)] }));
   const rated = s.filter((x): x is { placement: typeof x.placement; score: number } => x.score !== null);
@@ -17,7 +20,10 @@ export function levelForKit(kit: Pick<Kit, 'sponsors' | 'sponsorsComplete' | 'le
   const severeFront = rated.some((x) => x.score === 3 && x.placement === 'front');
   const seriousOrWorse = rated.filter((x) => x.score >= 2).length;
   if (severeFront || seriousOrWorse >= 2) return 'soaked';
-  if (rated.some((x) => x.score === 2 && x.placement === 'front') || rated.some((x) => x.score === 3 && x.placement !== 'front'))
+  if (
+    rated.some((x) => x.score === 2 && x.placement === 'front') ||
+    rated.some((x) => x.score === 3 && x.placement !== 'front')
+  )
     return 'stained';
   if (rated.some((x) => x.score >= 1)) return 'spotted';
   if (rated.length === s.length && kit.sponsorsComplete) return 'clean';

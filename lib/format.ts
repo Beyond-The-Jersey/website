@@ -65,7 +65,8 @@ function perText(per: string): string {
 export function formatMoney(v: Money): { main: string; usd: string | null } {
   const value = `${SYMBOL[v.currency]}${amount(v.amount)}${v.unit}`;
   const main = `${v.upTo ? 'Up to ' : ''}${value} ${perText(v.per)}`;
-  const usd = v.currency !== 'USD' && v.usdApprox !== null ? `about $${amount(v.usdApprox)}${v.unit} ${perText(v.per)}` : null;
+  const usd =
+    v.currency !== 'USD' && v.usdApprox !== null ? `about $${amount(v.usdApprox)}${v.unit} ${perText(v.per)}` : null;
   return { main, usd };
 }
 
@@ -94,7 +95,10 @@ export function placementPhrase(p: Placement): string {
 
 /** Monogram for things without a crest: 'Premier League' → 'PL', 'Visit Rwanda' → 'VR', 'Bundesliga' → 'BUN'. */
 export function initials(name: string): string {
-  const clean = name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^A-Za-z0-9 &]/g, ' ');
+  const clean = name
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^A-Za-z0-9 &]/g, ' ');
   const words = clean.split(/[\s&]+/).filter(Boolean);
   if (words.length === 1) return /^[A-Z0-9]{2,4}$/.test(words[0]) ? words[0] : words[0].slice(0, 3).toUpperCase();
   return words

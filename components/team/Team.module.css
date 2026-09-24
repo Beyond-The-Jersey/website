@@ -1,0 +1,839 @@
+.view {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------------------------------------------------------- title row */
+.title {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 30px;
+  row-gap: 0;
+  align-items: baseline;
+}
+
+.levelBox {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  align-self: stretch;
+  border-radius: 16px;
+}
+
+.levelRow {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 18px 24px 0;
+}
+
+.levelWord,
+.clubName {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.clubName {
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  margin: 0;
+}
+
+.titleCrest {
+  position: absolute;
+  left: 0;
+  top: -8px;
+}
+
+.levelRank {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: start;
+  padding: 10px 24px 16px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.titleMeta {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.kitRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.kitLabel {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--text-2);
+}
+
+.changeBadge {
+  height: 26px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border-radius: 13px;
+  border: 1px solid currentColor;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.summary {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--text);
+  text-wrap: pretty;
+}
+
+/* ---------------------------------------------------------------- stage */
+.stageWrap {
+  margin-top: 24px;
+  width: 100%;
+}
+
+.stage {
+  position: relative;
+}
+
+.panel {
+  position: absolute;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.photo {
+  position: absolute;
+  width: 340px;
+  height: 378px;
+}
+
+.side {
+  position: absolute;
+  top: 604px;
+  width: 340px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #5f584e;
+}
+
+.lines {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.lines g {
+  transition: opacity 0.15s;
+}
+
+.lineHit {
+  pointer-events: stroke;
+  cursor: pointer;
+}
+
+circle.lineHit {
+  pointer-events: fill;
+}
+
+/* Invisible hover target over each logo. The team asked for no outline on hover. */
+.hit {
+  position: absolute;
+  z-index: 3;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hit:focus-visible {
+  outline: 2px dashed var(--bg);
+  outline-offset: 2px;
+}
+
+.note {
+  position: absolute;
+  z-index: 1;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-radius: 14px;
+  background: var(--card-dark);
+  border: 1px solid #463c37;
+}
+
+.noteLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.noteText {
+  font-size: 15px;
+  line-height: 1.4;
+  color: #e8e2da;
+}
+
+/* ---------------------------------------------------------------- sponsor card */
+.card {
+  background: var(--card-dark);
+  border: 1px solid;
+  border-radius: 14px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  overflow: hidden;
+  transition:
+    opacity 0.15s,
+    box-shadow 0.15s;
+}
+
+.cardOpen {
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+}
+
+.cardHead {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px 10px;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.cardHead:focus-visible {
+  outline-offset: -4px;
+}
+
+.cardNumber {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  margin-top: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--text);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cardHeadText {
+  flex-grow: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cardTier {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cardName {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.cardSub {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #e8e2da;
+}
+
+.cardBody {
+  position: relative;
+  max-height: 48px;
+  overflow: hidden;
+  padding: 0 16px;
+  transition: max-height 0.2s ease-out;
+}
+
+.cardBody[data-open='true'] {
+  max-height: 900px;
+}
+
+.cardInner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px 0 16px;
+  border-top: 1px solid var(--line-3);
+}
+
+.verdict {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+.money {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.moneyLabel {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  white-space: nowrap;
+}
+
+.moneyValue {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  text-align: right;
+}
+
+.moneyMain {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.moneyUsd {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-3);
+}
+
+.claim {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.claimText {
+  font-size: 13.5px;
+  line-height: 1.4;
+}
+
+.claimSource {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-3);
+}
+
+.claimSource a {
+  color: inherit;
+}
+
+.claimSource a:hover {
+  color: var(--text);
+}
+
+.cardButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.tell,
+.share {
+  flex-grow: 1;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.tell {
+  border: none;
+  background: var(--cta-red);
+  color: #ffffff;
+}
+
+.tell:hover {
+  background: #e02027;
+}
+
+.share {
+  border: 1px solid #7a6f66;
+  background: transparent;
+  color: var(--text);
+}
+
+.share:hover {
+  border-color: var(--text-3);
+}
+
+.helpRate {
+  flex-grow: 0;
+  align-self: flex-start;
+}
+
+.fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40px;
+  background: linear-gradient(rgba(38, 32, 29, 0), var(--card-dark));
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------------- mobile stage */
+.mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .stageWrap {
+    display: none;
+  }
+  .mobile {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .mobile .note {
+    position: static;
+  }
+}
+
+.mobilePhotos {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  margin: 0 calc(-1 * var(--gutter));
+  padding: 0 var(--gutter);
+  scrollbar-width: none;
+}
+
+.mobilePhoto {
+  flex: 0 0 85%;
+  margin: 0;
+  scroll-snap-align: center;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 10px;
+}
+
+.mobilePhotoInner {
+  position: relative;
+}
+
+.mobilePhotoInner img {
+  width: 100%;
+  height: auto;
+}
+
+.mobileSide {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #5f584e;
+  padding-top: 6px;
+}
+
+.marker {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  margin: -16px 0 0 -16px;
+  border-radius: 50%;
+  border: 3px solid;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0 0 2px #ffffff;
+}
+
+.mobileList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobileList > li {
+  scroll-margin-top: 16px;
+}
+
+/* ---------------------------------------------------------------- timeline */
+.timeline {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tlHead {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.tlLabel {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.tlHint {
+  font-size: 13px;
+  color: var(--text-4);
+}
+
+.tlToggle {
+  display: none;
+  margin-left: auto;
+  padding: 0 12px;
+  height: 32px;
+  border-radius: 16px;
+  border: 1px solid var(--line-4);
+  background: transparent;
+  color: var(--text-2);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tlScroll {
+  width: 100%;
+}
+
+.track {
+  position: relative;
+}
+
+.block {
+  position: absolute;
+  top: 0;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.blockText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.blockLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+.blockLevel {
+  display: flex;
+  align-items: flex-end;
+  gap: 7px;
+}
+
+.blockWord {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 19px;
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+.blockNote {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.noteDot {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pill {
+  position: absolute;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.seg {
+  position: absolute;
+  z-index: 3;
+  height: 24px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1439px) {
+  .tlScroll {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .tlToggle {
+    display: inline-flex;
+    align-items: center;
+  }
+  .tlHint {
+    display: none;
+  }
+  .track {
+    width: 760px !important;
+  }
+  .track:not(.lanesOn) {
+    height: 54px !important;
+  }
+  .track:not(.lanesOn) .pill,
+  .track:not(.lanesOn) .seg {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------------- title row on smaller screens */
+@media (max-width: 1023px) {
+  .levelWord,
+  .clubName {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .levelBox {
+    grid-row: 1 / span 2;
+  }
+  .levelRow {
+    padding: 14px 18px 0;
+  }
+  .levelRank {
+    grid-row: 2;
+    padding: 8px 18px 14px;
+  }
+  .clubName {
+    grid-column: 1;
+    grid-row: 3;
+    margin-top: 20px;
+    font-size: 44px;
+    padding-left: 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .titleCrest {
+    position: static;
+    width: 56px !important;
+    height: 56px !important;
+  }
+  .titleMeta {
+    grid-column: 1;
+    grid-row: 4;
+  }
+  .levelWord {
+    font-size: 44px;
+  }
+}
+
+/* ---------------------------------------------------------------- dialog */
+.dialog {
+  width: min(560px, calc(100vw - 32px));
+  padding: 0;
+  border-radius: 18px;
+  border: 1px solid var(--line-4);
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+}
+
+.dialog::backdrop {
+  background: rgba(15, 13, 12, 0.7);
+}
+
+.dialogInner {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.dialogTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.dialogText {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+.dialogLink {
+  color: var(--accent-soft);
+}
+
+.dialogNote {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-5);
+}
+
+.channels {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line-3);
+}
+
+.channel {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 2px 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line-3);
+}
+
+.channelType {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-4);
+}
+
+.channelValue {
+  font-weight: 700;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.channelSource {
+  grid-column: 2;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-5);
+}
+
+.draft {
+  width: 100%;
+  font-size: 14px;
+  color: var(--text-2);
+}
+
+.draft summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.draft pre {
+  white-space: pre-wrap;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--bg);
+  border: 1px solid var(--line-3);
+}

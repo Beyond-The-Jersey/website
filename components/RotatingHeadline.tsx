@@ -45,7 +45,14 @@ export function RotatingHeadline() {
         Who’s buying
         <br />
         your{' '}
-        <button type="button" className={s.word} onClick={play} aria-label="Play again" title="Play again" tabIndex={-1}>
+        <button
+          type="button"
+          className={s.word}
+          onClick={play}
+          aria-label="Play again"
+          title="Play again"
+          tabIndex={-1}
+        >
           <span key={i} className={s.anim}>
             {WORDS[i]}
           </span>

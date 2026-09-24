@@ -1,5 +1,7 @@
 # CLAUDE.md: Behind the Jersey
 
+> **This repo, as built so far (24 Sep 2026).** The site lives at the repo root (Next.js 16, static export, Node 24 via `.nvmrc`); the handover is kept as received in `handover/`. Data goes through `lib/data` (see `lib/data/README.md`), from `data/seed` by default. The real data repo (Beyond-The-Jersey/data) doesn't publish the normalised files yet: the request to the data agent is in `docs/data-request/`. `README.md` lists the differences from the design we chose to keep. Checks: `npm run build`, `npm test`, `npm run test:e2e`, `node scripts/visual-compare.mjs --site <url>`.
+
 You are implementing **Behind the Jersey**, a fan-facing website that shows who really pays for the sponsors on sports jerseys. It rates each club with a blood level: Clean, Spotted, Stained, Soaked. The design is finished for five pages. Your job is to build them as a real, data-driven website and connect them to the data that exists.
 
 Read this file first, then the docs in this order:

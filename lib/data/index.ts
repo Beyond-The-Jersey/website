@@ -47,7 +47,8 @@ export async function loadDataset(opts: LoadOptions = {}): Promise<{ dataset: Da
       if (!fs.existsSync(path.join(publicDir, a.path))) errors.push(`${a.where}: asset not found: ${a.path}`);
     }
   }
-  if (errors.length) throw new DataError(`${source.name} data (${source.location}) has errors:\n  ${errors.join('\n  ')}`);
+  if (errors.length)
+    throw new DataError(`${source.name} data (${source.location}) has errors:\n  ${errors.join('\n  ')}`);
   return { dataset: buildDataset(raw, source.name), warnings };
 }
 

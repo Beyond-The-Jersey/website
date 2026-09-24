@@ -48,7 +48,17 @@ export function SectionHeading({
 }
 
 /** "SportsPro · Jul 2026", linked when there's a URL. Missing sources show a TODO in development only. */
-export function SourceNote({ source, todo, link = true, className }: { source: SourceView | null; todo?: string | null; link?: boolean; className?: string }) {
+export function SourceNote({
+  source,
+  todo,
+  link = true,
+  className,
+}: {
+  source: SourceView | null;
+  todo?: string | null;
+  link?: boolean;
+  className?: string;
+}) {
   if (!source) return IS_DEV ? <span className="dev-todo">TODO: {todo ?? 'add source'}</span> : null;
   const text = source.short;
   return (
@@ -143,7 +153,14 @@ export function ClubStrip({
       <>
         {c.crest ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={c.crest} alt="" width={crest} height={crest} className={s.slotCrest} style={{ opacity: lv.rated ? 1 : linkSlots ? 0.55 : 0.5 }} />
+          <img
+            src={c.crest}
+            alt=""
+            width={crest}
+            height={crest}
+            className={s.slotCrest}
+            style={{ opacity: lv.rated ? 1 : linkSlots ? 0.55 : 0.5 }}
+          />
         ) : (
           <span className={s.slotInitials} style={{ height: crest }}>
             {c.initials}
@@ -202,7 +219,9 @@ export function LeagueRow({ league }: { league: LeagueSummary }) {
               {league.bad} of {league.total}
             </span>
             <span className={s.small}>
-              {league.unknown === 0 ? 'shirts carry a sponsor we rate as bad' : `bad so far, ${league.total - league.rated} clubs still to check`}
+              {league.unknown === 0
+                ? 'shirts carry a sponsor we rate as bad'
+                : `bad so far, ${league.total - league.rated} clubs still to check`}
             </span>
           </>
         ) : (

@@ -17,11 +17,41 @@ import s from './landing.module.css';
 const TRIES = ['Arsenal', 'Premier League', 'Visit Rwanda', 'Formula 1', 'Real Madrid'];
 
 const STEPS = [
-  { title: 'Collect', who: 'Agent', color: 'var(--text-4)', text: 'Who is on every shirt this season: front, back and sleeve.', foot: 'Every club, every season' },
-  { title: 'Trace', who: 'Agent', color: 'var(--text-4)', text: 'Who owns each sponsor, all the way up to a state or a fund.', foot: 'Company registries, reports' },
-  { title: 'Find evidence', who: 'Agent + you', color: 'var(--spotted-text)', text: 'Human-rights reports tied to that owner. Every claim gets a source.', foot: 'UN, NGOs, courts, press' },
-  { title: 'Review', who: 'Person', color: 'var(--good)', text: 'A person checks each claim and source before anything counts.', foot: 'Nothing goes live unchecked' },
-  { title: 'Publish', who: 'Automatic', color: 'var(--text-4)', text: 'The rating goes live and the change is logged for everyone to see.', foot: 'Full history, public' },
+  {
+    title: 'Collect',
+    who: 'Agent',
+    color: 'var(--text-4)',
+    text: 'Who is on every shirt this season: front, back and sleeve.',
+    foot: 'Every club, every season',
+  },
+  {
+    title: 'Trace',
+    who: 'Agent',
+    color: 'var(--text-4)',
+    text: 'Who owns each sponsor, all the way up to a state or a fund.',
+    foot: 'Company registries, reports',
+  },
+  {
+    title: 'Find evidence',
+    who: 'Agent + you',
+    color: 'var(--spotted-text)',
+    text: 'Human-rights reports tied to that owner. Every claim gets a source.',
+    foot: 'UN, NGOs, courts, press',
+  },
+  {
+    title: 'Review',
+    who: 'Person',
+    color: 'var(--good)',
+    text: 'A person checks each claim and source before anything counts.',
+    foot: 'Nothing goes live unchecked',
+  },
+  {
+    title: 'Publish',
+    who: 'Automatic',
+    color: 'var(--text-4)',
+    text: 'The rating goes live and the change is logged for everyone to see.',
+    foot: 'Full history, public',
+  },
 ];
 
 const DEFINITIONS: [LevelId, string][] = [
@@ -32,9 +62,24 @@ const DEFINITIONS: [LevelId, string][] = [
 ];
 
 const WAYS = [
-  { title: 'Run our agents', text: 'Point our pipeline at a club nobody has checked yet and open a pull request with what it finds.', cta: 'Read the guide', href: repoHref('#readme') },
-  { title: 'Bring your own agent', text: 'Any agent can help if it writes our evidence format: one claim, one source, one file.', cta: 'See the format', href: repoHref('#readme') },
-  { title: 'Check a club by hand', text: 'No code needed. Pick a club, note who sponsors it and who owns them, and link your sources.', cta: 'Pick a club', href: '#pick-a-club' },
+  {
+    title: 'Run our agents',
+    text: 'Point our pipeline at a club nobody has checked yet and open a pull request with what it finds.',
+    cta: 'Read the guide',
+    href: repoHref('#readme'),
+  },
+  {
+    title: 'Bring your own agent',
+    text: 'Any agent can help if it writes our evidence format: one claim, one source, one file.',
+    cta: 'See the format',
+    href: repoHref('#readme'),
+  },
+  {
+    title: 'Check a club by hand',
+    text: 'No code needed. Pick a club, note who sponsors it and who owns them, and link your sources.',
+    cta: 'Pick a club',
+    href: '#pick-a-club',
+  },
 ];
 
 export default async function Landing() {
@@ -59,8 +104,8 @@ export default async function Landing() {
             </span>
             <RotatingHeadline />
             <p className={s.lede}>
-              Type a club, a league, a sport or a sponsor. We trace every sponsor back to who really pays, and rate how much
-              blood is on the money.
+              Type a club, a league, a sport or a sponsor. We trace every sponsor back to who really pays, and rate how
+              much blood is on the money.
             </p>
             <SearchBox index={index} variant="hero" tries={TRIES} />
             <div className={s.key} aria-label="Blood levels">
@@ -172,8 +217,8 @@ export default async function Landing() {
                 Help us check every shirt
               </h2>
               <p className={s.helpText}>
-                All the data, the pipelines and the agents are public on GitHub. Pick the way that suits you. A person reviews
-                every claim before it goes live.
+                All the data, the pipelines and the agents are public on GitHub. Pick the way that suits you. A person
+                reviews every claim before it goes live.
               </p>
               <ol className={s.ways}>
                 {WAYS.map((w, i) => (

@@ -27,12 +27,12 @@ export function SiteHeader(props: HeaderProps) {
         <Link href="/soccer/premier-league/" className={s.link}>
           Sports
         </Link>
-        <a href="/#how" className={s.link}>
+        <Link href="/#how" className={s.link}>
           How we rate
-        </a>
-        <a href="/#contribute" className={s.link}>
+        </Link>
+        <Link href="/#contribute" className={s.link}>
           Contribute
-        </a>
+        </Link>
         <a href={repoHref()} className={s.pill}>
           <CodeIcon />
           Open data on GitHub
@@ -47,15 +47,15 @@ export function SiteHeader(props: HeaderProps) {
     );
     nav = (
       <>
-        <a href="/#how" className={s.link}>
+        <Link href="/#how" className={s.link}>
           How we rate
-        </a>
+        </Link>
         <a href={repoHref()} className={s.link}>
           Sources
         </a>
-        <a href="/#contribute" className={s.link}>
+        <Link href="/#contribute" className={s.link}>
           Contribute
-        </a>
+        </Link>
       </>
     );
   } else {
@@ -90,9 +90,9 @@ export function SiteHeader(props: HeaderProps) {
     );
     nav = (
       <>
-        <a href="/#how" className={s.link}>
+        <Link href="/#how" className={s.link}>
           How we rate
-        </a>
+        </Link>
         <a href={repoHref()} className={s.link}>
           Sources
         </a>
@@ -121,15 +121,18 @@ export function SiteFooter({ variant }: { variant: 'landing' | 'standard' }) {
             <span className={s.chest}>Your chest. Their ad.</span>
             <span className={s.footerLines}>
               <span>
-                Deal values are reported estimates per year (SportsPro, The Athletic). Ratings are illustrative until the
-                method is final.
+                Deal values are reported estimates per year (SportsPro, The Athletic). Ratings are illustrative until
+                the method is final.
               </span>
               <span>Club crests: football-data.org.</span>
             </span>
           </>
         ) : (
           <>
-            <span>Shirt photos: footballkitarchive.com. Club crests: football-data.org. Both need permission before going public.</span>
+            <span>
+              Shirt photos: footballkitarchive.com. Club crests: football-data.org. Both need permission before going
+              public.
+            </span>
             <span>Ratings shown are illustrative until the method is final.</span>
           </>
         )}

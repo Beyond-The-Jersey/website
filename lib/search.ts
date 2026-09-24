@@ -5,9 +5,7 @@ import type { LevelId, TierId } from './data/schema';
 export type SearchType = 'club' | 'league' | 'sport' | 'sponsor';
 
 export type SearchRating =
-  | { kind: 'level'; level: LevelId }
-  | { kind: 'tier'; tier: TierId; label: string }
-  | { kind: 'status'; text: string };
+  { kind: 'level'; level: LevelId } | { kind: 'tier'; tier: TierId; label: string } | { kind: 'status'; text: string };
 
 export interface SearchEntry {
   type: SearchType;

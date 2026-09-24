@@ -9,7 +9,14 @@ import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
 
-const TYPES = { '.html': 'text/html', '.png': 'image/png', '.jpg': 'image/jpeg', '.json': 'application/json', '.css': 'text/css', '.js': 'text/javascript' };
+const TYPES = {
+  '.html': 'text/html',
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.json': 'application/json',
+  '.css': 'text/css',
+  '.js': 'text/javascript',
+};
 /** A tiny static server for the handover folder. */
 function serveDir(dir) {
   const server = http.createServer((req, res) => {

@@ -46,27 +46,64 @@ describe('rating rule on the seed kits', () => {
   });
 
   it('rates every other club Not rated', () => {
-    const rated = ['atletico-de-madrid', 'arsenal', 'aston-villa', 'manchester-city', 'newcastle-united', 'brighton-and-hove-albion', 'real-madrid'];
+    const rated = [
+      'atletico-de-madrid',
+      'arsenal',
+      'aston-villa',
+      'manchester-city',
+      'newcastle-united',
+      'brighton-and-hove-albion',
+      'real-madrid',
+    ];
     for (const c of ds.clubs.filter((c) => !rated.includes(c.id))) expect(clubLevel(ds, c.id), c.id).toBe('not-rated');
   });
 
   it('follows the draft rule on edge cases', () => {
     const tiers: Record<string, 'unrated' | 'none' | 'concern' | 'serious' | 'severe'> = {
-      a: 'serious', b: 'serious', c: 'severe', d: 'none', e: 'unrated', f: 'concern',
+      a: 'serious',
+      b: 'serious',
+      c: 'severe',
+      d: 'none',
+      e: 'unrated',
+      f: 'concern',
     };
     const t = (id: string) => tiers[id];
     const k = (sponsors: [string, 'front' | 'back' | 'sleeve'][], complete = true) => ({
       sponsors: sponsors.map(([sponsorId, placement]) => ({ sponsorId, placement })),
       sponsorsComplete: complete,
     });
-    expect(levelForKit(k([['a', 'sleeve'], ['b', 'back']]), t)).toBe('soaked'); // two serious anywhere
+    expect(
+      levelForKit(
+        k([
+          ['a', 'sleeve'],
+          ['b', 'back'],
+        ]),
+        t,
+      ),
+    ).toBe('soaked'); // two serious anywhere
     expect(levelForKit(k([['c', 'front']]), t)).toBe('soaked');
     expect(levelForKit(k([['c', 'sleeve']]), t)).toBe('stained');
     expect(levelForKit(k([['a', 'sleeve']]), t)).toBe('spotted'); // serious off the front counts as a lesser link
-    expect(levelForKit(k([['d', 'front'], ['e', 'sleeve']]), t)).toBe('not-rated'); // clean needs every sponsor checked
+    expect(
+      levelForKit(
+        k([
+          ['d', 'front'],
+          ['e', 'sleeve'],
+        ]),
+        t,
+      ),
+    ).toBe('not-rated'); // clean needs every sponsor checked
     expect(levelForKit(k([['d', 'front']], false), t)).toBe('not-rated');
     expect(levelForKit(k([['d', 'front']]), t)).toBe('clean');
-    expect(levelForKit(k([['f', 'sleeve'], ['e', 'front']]), t)).toBe('spotted');
+    expect(
+      levelForKit(
+        k([
+          ['f', 'sleeve'],
+          ['e', 'front'],
+        ]),
+        t,
+      ),
+    ).toBe('spotted');
     expect(levelForKit({ ...k([['c', 'front']]), levelOverride: 'clean' }, t)).toBe('clean');
   });
 });
@@ -112,7 +149,11 @@ describe('selectors', () => {
 
   it('picks the current kit and team pages', () => {
     expect(currentKit(ds, 'arsenal')?.id).toBe('arsenal-2026-27-home');
-    expect(ds.clubs.filter((c) => hasTeamPage(ds, c.id)).map((c) => c.id)).toEqual(['arsenal', 'aston-villa', 'atletico-de-madrid']);
+    expect(ds.clubs.filter((c) => hasTeamPage(ds, c.id)).map((c) => c.id)).toEqual([
+      'arsenal',
+      'aston-villa',
+      'atletico-de-madrid',
+    ]);
   });
 
   it('lists the newest four changes like the design', () => {
@@ -182,7 +223,18 @@ describe('validation', () => {
   });
 
   it('rejects placeholder contacts', () => {
-    const files = { ...rawFiles(), contacts: [{ clubId: 'arsenal', lastChecked: '2026-09-24', channels: [{ type: 'phone', value: '+44 800 XXX XXXX', source: { name: 'x', url: 'https://x.org', date: '2026' } }] }] };
+    const files = {
+      ...rawFiles(),
+      contacts: [
+        {
+          clubId: 'arsenal',
+          lastChecked: '2026-09-24',
+          channels: [
+            { type: 'phone', value: '+44 800 XXX XXXX', source: { name: 'x', url: 'https://x.org', date: '2026' } },
+          ],
+        },
+      ],
+    };
     expect(() => parseFiles(files, 'test')).toThrow(/placeholder/);
   });
 
@@ -195,7 +247,22 @@ describe('validation', () => {
 
 function rawFiles(): Record<string, unknown> {
   const out: Record<string, unknown> = {};
-  for (const k of ['meta', 'levels', 'tiers', 'sports', 'leagues', 'clubs', 'owners', 'claims', 'sponsors', 'kits', 'deals', 'changes', 'dropped', 'contacts'] as const) {
+  for (const k of [
+    'meta',
+    'levels',
+    'tiers',
+    'sports',
+    'leagues',
+    'clubs',
+    'owners',
+    'claims',
+    'sponsors',
+    'kits',
+    'deals',
+    'changes',
+    'dropped',
+    'contacts',
+  ] as const) {
     out[k] = structuredClone((ds as unknown as Record<string, unknown>)[k]);
   }
   return out;

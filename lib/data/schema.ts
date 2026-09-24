@@ -34,7 +34,13 @@ export const level = z
     meter: z.number().int().min(0).max(4),
     definition: z.string(),
     colors: z
-      .object({ text: z.string(), fill: z.string(), band: z.string(), bandText: z.string(), border: z.string().optional() })
+      .object({
+        text: z.string(),
+        fill: z.string(),
+        band: z.string(),
+        bandText: z.string(),
+        border: z.string().optional(),
+      })
       .strict(),
   })
   .strict();
@@ -145,9 +151,7 @@ export const kitSponsor = z
   })
   .strict();
 
-export const kitChange = z
-  .object({ kind: z.enum(['worse', 'better']), text: z.string(), badge: z.string() })
-  .strict();
+export const kitChange = z.object({ kind: z.enum(['worse', 'better']), text: z.string(), badge: z.string() }).strict();
 
 export const kit = z
   .object({
@@ -239,9 +243,7 @@ export const contactChannel = z
       .min(3)
       .refine((v) => !PLACEHOLDER.test(v), 'placeholder values are not allowed'),
     label: z.string().optional(),
-    source: z
-      .object({ name: z.string(), url: z.string().regex(/^https?:\/\//), date: z.string() })
-      .strict(),
+    source: z.object({ name: z.string(), url: z.string().regex(/^https?:\/\//), date: z.string() }).strict(),
   })
   .strict()
   .refine(

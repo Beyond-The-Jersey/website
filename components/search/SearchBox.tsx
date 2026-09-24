@@ -105,7 +105,16 @@ export function SearchBox({
     <>
       <div className={`${s.wrap} ${hero ? s.hero : s.compact}`}>
         <label className={s.field}>
-          <svg width={hero ? 24 : 18} height={hero ? 24 : 18} viewBox="0 0 24 24" fill="none" stroke={hero ? 'var(--text-2)' : 'var(--text-4)'} strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+          <svg
+            width={hero ? 24 : 18}
+            height={hero ? 24 : 18}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke={hero ? 'var(--text-2)' : 'var(--text-4)'}
+            strokeWidth="2"
+            strokeLinecap="round"
+            aria-hidden="true"
+          >
             <circle cx="11" cy="11" r="7" />
             <path d="M20 20 L16 16" />
           </svg>
@@ -167,9 +176,9 @@ export function SearchBox({
             {results.length === 0 && (
               <div className={s.empty}>
                 <span className={s.emptyTitle}>Nothing on file for “{q.trim()}” yet.</span>
-                <a href="/#contribute" className={s.emptyLink} onMouseDown={(ev) => ev.preventDefault()}>
+                <Link href="/#contribute" className={s.emptyLink} onMouseDown={(ev) => ev.preventDefault()}>
                   Add it yourself: every club and sponsor lives on GitHub →
-                </a>
+                </Link>
               </div>
             )}
           </div>

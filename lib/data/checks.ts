@@ -59,7 +59,8 @@ export function checkDataset(d: RawDataset): CheckResult {
   for (const s of d.sponsors) {
     need('owners', s.ownerId, `sponsors/${s.id}`);
     for (const c of s.claimIds) need('claims', c, `sponsors/${s.id}`);
-    if (s.tier !== 'unrated' && s.status !== 'rated') errors.push(`sponsors/${s.id}: tier "${s.tier}" needs status "rated"`);
+    if (s.tier !== 'unrated' && s.status !== 'rated')
+      errors.push(`sponsors/${s.id}: tier "${s.tier}" needs status "rated"`);
     if (['concern', 'serious', 'severe'].includes(s.tier) && s.claimIds.length === 0)
       errors.push(`sponsors/${s.id}: tier "${s.tier}" needs at least one claim`);
   }
@@ -72,7 +73,8 @@ export function checkDataset(d: RawDataset): CheckResult {
     need('clubs', k.clubId, where);
     for (const p of k.sponsors) {
       need('sponsors', p.sponsorId, where);
-      if (p.hotspot && !(p.side && p.cardSlot)) errors.push(`${where}: sponsor "${p.sponsorId}" has a hotspot but no side/cardSlot`);
+      if (p.hotspot && !(p.side && p.cardSlot))
+        errors.push(`${where}: sponsor "${p.sponsorId}" has a hotspot but no side/cardSlot`);
       const h = p.hotspot;
       if (h && ![h.x, h.y, h.w, h.h].every((v) => v >= 0 && v <= 1))
         errors.push(`${where}: hotspot for "${p.sponsorId}" must use fractions between 0 and 1`);
