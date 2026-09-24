@@ -2,7 +2,7 @@
 
 A fan-facing website that shows who really pays for the sponsors on sports jerseys, and rates each club's shirt with a blood level: **Clean, Spotted, Stained, Soaked**.
 
-> **Private preview only.** The shirt photos and crests aren't cleared for public use (see [`public/assets/manifest.json`](public/assets/manifest.json)), and all ratings are illustrative until the method is agreed. Don't deploy publicly without the team's OK.
+> **Preview.** The shirt photos and crests aren't cleared for public use yet (see [`public/assets/manifest.json`](public/assets/manifest.json)), and all ratings are illustrative until the method is agreed. The site is public at https://behind-the-jersey.org but asks search engines not to index it.
 
 Built from the design handover in [`handover/`](handover/README.md): Next.js (App Router) + TypeScript, statically exported, CSS Modules with the design tokens as CSS custom properties, data validated with zod.
 
@@ -66,9 +66,13 @@ Copy `.env.example` to `.env.local`.
 | `NEXT_PUBLIC_SHOW_TEAM_CREST` | `true` | The crest next to the club name on team pages (a test feature) |
 | `BTJ_DATA_SOURCE`, `BTJ_DATA_DIR`, `BTJ_DATA_URL`, `BTJ_DATA_TOKEN` | `seed` | See above |
 
-## Deploying a preview
+## Deploying
 
-`npm run build` writes a fully static site to `out/`; any static host works. Keep it private or password-protected. Two notes for the host: routes end in `/` (`trailingSlash`), and the Open Graph images are files named `opengraph-image` without an extension, so the host should serve them as `image/png`.
+The site is on GitHub Pages at **https://behind-the-jersey.org**. [`.github/workflows/pages.yml`](.github/workflows/pages.yml) builds and deploys `main` after CI passes (or on demand from the Actions tab). The custom domain is set in the repo's Pages settings; DNS is at Gandi (apex `A`/`AAAA` records to GitHub Pages, `www` as a `CNAME` to `beyond-the-jersey.github.io`).
+
+`npm run build` writes a fully static site to `out/`, so any static host works. Routes end in `/` (`trailingSlash`), and a post-build step gives the Open Graph images a `.png` extension so static hosts serve them as images.
+
+Pages are still marked `noindex` (see `app/layout.tsx`) until the team clears the image rights and the rating method.
 
 ## Layout
 

@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "npm run validate:data && next build",
+    "build": "npm run validate:data && next build && node scripts/postbuild.mjs",
     "preview": "serve out -l 4173",
     "lint": "eslint .",
     "format": "prettier --write .",
