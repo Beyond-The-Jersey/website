@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Clubs and teams",
+  "description": "",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "name",
+      "shortName",
+      "code",
+      "sportId",
+      "leagueId",
+      "country",
+      "crest",
+      "aliases"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+      },
+      "name": {
+        "type": "string"
+      },
+      "shortName": {
+        "type": "string"
+      },
+      "code": {
+        "type": "string"
+      },
+      "sportId": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+      },
+      "leagueId": {
+        "anyOf": [
+          {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "country": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "crest": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "aliases": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "hasTeamPageDesign": {
+        "type": "boolean",
+        "description": "Deprecated, optional. The site decides whether a team page exists from the current kit (front and back photos plus hotspots)."
+      }
+    }
+  }
+}

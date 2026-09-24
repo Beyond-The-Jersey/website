@@ -1,0 +1,48 @@
+[
+  {
+    "id": "soccer",
+    "label": "Soccer",
+    "status": "active",
+    "aliases": [
+      "football"
+    ]
+  },
+  {
+    "id": "basketball",
+    "label": "Basketball",
+    "status": "not-mapped",
+    "aliases": [
+      "nba",
+      "bal"
+    ]
+  },
+  {
+    "id": "american-football",
+    "label": "American football",
+    "status": "not-mapped",
+    "aliases": [
+      "nfl"
+    ]
+  },
+  {
+    "id": "motorsport",
+    "label": "Motorsport",
+    "status": "not-mapped",
+    "aliases": [
+      "f1",
+      "formula",
+      "racing"
+    ]
+  },
+  {
+    "id": "events",
+    "label": "Tournaments & governing bodies",
+    "status": "not-mapped",
+    "aliases": [
+      "fifa",
+      "uefa",
+      "world cup",
+      "cycling"
+    ]
+  }
+]

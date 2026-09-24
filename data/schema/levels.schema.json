@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Blood levels",
+  "description": "Club-level scale shown with a 4-bar meter.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "order",
+      "label",
+      "meter",
+      "definition",
+      "colors"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "enum": [
+          "not-rated",
+          "clean",
+          "spotted",
+          "stained",
+          "soaked"
+        ]
+      },
+      "order": {
+        "type": "integer"
+      },
+      "label": {
+        "type": "string"
+      },
+      "meter": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 4
+      },
+      "definition": {
+        "type": "string"
+      },
+      "colors": {
+        "type": "object",
+        "required": [
+          "text",
+          "fill",
+          "band",
+          "bandText"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "fill": {
+            "type": "string"
+          },
+          "band": {
+            "type": "string"
+          },
+          "bandText": {
+            "type": "string"
+          },
+          "border": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

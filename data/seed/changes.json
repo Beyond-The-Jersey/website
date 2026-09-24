@@ -1,0 +1,98 @@
+[
+  {
+    "id": "2026-08-06-arsenal-emirates",
+    "date": "2026-08-06",
+    "datePrecision": "day",
+    "clubId": "arsenal",
+    "sponsorId": "emirates",
+    "kind": "renewed",
+    "levelAfter": "stained",
+    "title": "Renews Emirates until 2033",
+    "text": "Reportedly up to $93m a season, from an airline owned by the Government of Dubai.",
+    "source": {
+      "name": "Inside World Football",
+      "date": "2026-08-06",
+      "url": "https://www.insideworldfootball.com/2026/08/06/arsenal-announce-emirates-renewal-to-2033"
+    }
+  },
+  {
+    "id": "2026-07-15-villa-visit-rwanda",
+    "date": "2026-07-15",
+    "datePrecision": "day",
+    "clubId": "aston-villa",
+    "sponsorId": "visit-rwanda",
+    "kind": "worse",
+    "levelAfter": "soaked",
+    "title": "Visit Rwanda goes on the front",
+    "text": "Up to $27m a year from the Government of Rwanda. It replaces a betting sponsor after the ban.",
+    "source": {
+      "name": "SportsPro (citing The Athletic)",
+      "date": "2026-07-15",
+      "url": "https://www.sportspro.com/news/sponsorship-marketing/aston-villa-visit-rwanda-shirt-principal-sponsorship-july-2026/"
+    }
+  },
+  {
+    "id": "2026-06-arsenal-visit-rwanda-ends",
+    "date": "2026-06",
+    "datePrecision": "month",
+    "clubId": "arsenal",
+    "sponsorId": "visit-rwanda",
+    "kind": "better",
+    "levelAfter": "stained",
+    "title": "Visit Rwanda comes off the sleeve",
+    "text": "Gone after eight seasons of fan protest. Emirates stays on the front, so still stained.",
+    "source": {
+      "name": "SportsPro (citing The Athletic)",
+      "date": "2026-07-15",
+      "url": "https://www.sportspro.com/news/sponsorship-marketing/aston-villa-visit-rwanda-shirt-principal-sponsorship-july-2026/"
+    }
+  },
+  {
+    "id": "2026-06-10-real-madrid-emirates",
+    "date": "2026-06-10",
+    "datePrecision": "day",
+    "clubId": "real-madrid",
+    "sponsorId": "emirates",
+    "kind": "renewed",
+    "levelAfter": "stained",
+    "title": "Record Emirates renewal",
+    "text": "Until 2031, reportedly $115m a year: the biggest shirt deal in Europe.",
+    "source": {
+      "name": "SportsPro",
+      "date": "2026-06-10",
+      "url": "https://www.sportspro.com/news/sponsorship-marketing/real-madrid-emirates-record-sponsorship-june-2026/"
+    }
+  },
+  {
+    "id": "2026-06-newcastle-sela-ends",
+    "date": "2026-06",
+    "datePrecision": "month",
+    "clubId": "newcastle-united",
+    "sponsorId": "sela",
+    "kind": "better",
+    "levelAfter": "spotted",
+    "title": "Saudi-owned Sela is off the front",
+    "text": "A drinks brand replaces it. noon, part-owned by the same Saudi state fund, stays on the sleeve.",
+    "source": {
+      "name": "The Mag",
+      "date": "2026-06",
+      "url": "https://www.themag.co.uk/2026/06/newcastle-united-have-agreed-new-main-sponsor-front-of-shirt-three-year-deal-to-replace-sela/"
+    }
+  },
+  {
+    "id": "2026-04-liverpool-turkish-airlines",
+    "date": "2026-04",
+    "datePrecision": "month",
+    "clubId": "liverpool",
+    "sponsorId": "turkish-airlines",
+    "kind": "being-rated",
+    "levelAfter": "not-rated",
+    "title": "Turkish Airlines from 2027/28",
+    "text": "Replaces Standard Chartered. The airline is part-owned by Türkiye’s wealth fund. We are checking it now.",
+    "source": {
+      "name": "Footy Headlines",
+      "date": "2026-04",
+      "url": "https://www.footyheadlines.com/2026/04/lfc-new-sponsor.html"
+    }
+  }
+]

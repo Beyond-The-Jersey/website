@@ -1,0 +1,339 @@
+[
+  {
+    "id": "villa-visit-rwanda",
+    "clubId": "aston-villa",
+    "orgName": null,
+    "sponsorId": "visit-rwanda",
+    "placement": "front",
+    "from": "2026-27",
+    "to": null,
+    "value": {
+      "amount": 20,
+      "currency": "GBP",
+      "unit": "m",
+      "per": "year",
+      "upTo": true,
+      "usdApprox": 27
+    },
+    "source": {
+      "name": "SportsPro (citing The Athletic)",
+      "date": "2026-07-15",
+      "url": "https://www.sportspro.com/news/sponsorship-marketing/aston-villa-visit-rwanda-shirt-principal-sponsorship-july-2026/"
+    },
+    "note": "Up to £20m a year if bonuses are met. Men’s, women’s and academy shirts."
+  },
+  {
+    "id": "arsenal-emirates",
+    "clubId": "arsenal",
+    "orgName": null,
+    "sponsorId": "emirates",
+    "placement": "front",
+    "from": "2006-07",
+    "to": "2032-33",
+    "value": {
+      "amount": 70,
+      "currency": "GBP",
+      "unit": "m",
+      "per": "year",
+      "upTo": true,
+      "usdApprox": 93
+    },
+    "source": {
+      "name": "Sporting Goods Intelligence (citing SportsPro estimate)",
+      "date": "2026-08-06",
+      "url": "https://www.sgieurope.com/marketing/emirates-and-arsenal-extend-shirt-deal-to-2033/122576.article"
+    },
+    "note": "Renewal announced 6 Aug 2026 (Inside World Football). Estimate; Footy Headlines suggests £65m for 2026/27–2027/28 then £75m."
+  },
+  {
+    "id": "arsenal-visit-rwanda",
+    "clubId": "arsenal",
+    "orgName": null,
+    "sponsorId": "visit-rwanda",
+    "placement": "sleeve",
+    "from": "2018-19",
+    "to": "2025-26",
+    "value": {
+      "amount": 10,
+      "currency": "GBP",
+      "unit": "m",
+      "per": "year",
+      "upTo": false,
+      "usdApprox": 13
+    },
+    "source": {
+      "name": "SportsPro (citing The Athletic)",
+      "date": "2026-07-15",
+      "url": "https://www.sportspro.com/news/sponsorship-marketing/aston-villa-visit-rwanda-shirt-principal-sponsorship-july-2026/"
+    },
+    "note": "About £10m a year; ended June 2026."
+  },
+  {
+    "id": "arsenal-deel",
+    "clubId": "arsenal",
+    "orgName": null,
+    "sponsorId": "deel",
+    "placement": "sleeve",
+    "from": "2026-27",
+    "to": null,
+    "value": null,
+    "source": null
+  },
+  {
+    "id": "city-etihad",
+    "clubId": "manchester-city",
+    "orgName": null,
+    "sponsorId": "etihad-airways",
+    "placement": "front",
+    "from": "2026-27",
+    "to": null,
+    "value": {
+      "amount": 67.5,
+      "currency": "GBP",
+      "unit": "m",
+      "per": "year",
+      "upTo": false,
+      "usdApprox": 90
+    },
+    "source": {
+      "name": "All Football",
+      "date": "older report",
+      "url": "https://m.allfootballapp.com/news/EPL/Manchester-City-set-to-keep-up-%C2%A367.5million-a-year-deal-with-Abu-Dhabi-airline-Etihad/2424047",
+      "note": "Older figure, check again"
+    }
+  },
+  {
+    "id": "newcastle-knox",
+    "clubId": "newcastle-united",
+    "orgName": null,
+    "sponsorId": "knox-hydration",
+    "placement": "front",
+    "from": "2026-27",
+    "to": "2028-29",
+    "value": {
+      "amount": 60,
+      "currency": "GBP",
+      "unit": "m",
+      "per": "3 years",
+      "upTo": false,
+      "usdApprox": 80
+    },
+    "source": {
+      "name": "The Mag",
+      "date": "2026-06",
+      "url": "https://www.themag.co.uk/2026/06/newcastle-united-have-agreed-new-main-sponsor-front-of-shirt-three-year-deal-to-replace-sela/"
+    },
+    "note": "£10m in 2026/27, then £25m a year."
+  },
+  {
+    "id": "newcastle-sela",
+    "clubId": "newcastle-united",
+    "orgName": null,
+    "sponsorId": "sela",
+    "placement": "front",
+    "from": null,
+    "to": "2025-26",
+    "value": null,
+    "source": {
+      "name": "The Mag",
+      "date": "2026-06",
+      "url": "https://www.themag.co.uk/2026/06/newcastle-united-have-agreed-new-main-sponsor-front-of-shirt-three-year-deal-to-replace-sela/"
+    }
+  },
+  {
+    "id": "newcastle-noon",
+    "clubId": "newcastle-united",
+    "orgName": null,
+    "sponsorId": "noon",
+    "placement": "sleeve",
+    "from": null,
+    "to": null,
+    "value": null,
+    "source": null
+  },
+  {
+    "id": "brighton-amex",
+    "clubId": "brighton-and-hove-albion",
+    "orgName": null,
+    "sponsorId": "american-express",
+    "placement": "front",
+    "from": null,
+    "to": null,
+    "value": null,
+    "source": null
+  },
+  {
+    "id": "atletico-riyadh-air",
+    "clubId": "atletico-de-madrid",
+    "orgName": null,
+    "sponsorId": "riyadh-air",
+    "placement": "front",
+    "from": "2025-26",
+    "to": "2034-35",
+    "value": {
+      "amount": 40,
+      "currency": "EUR",
+      "unit": "m",
+      "per": "year",
+      "upTo": false,
+      "usdApprox": 46
+    },
+    "source": {
+      "name": "SportsPro",
+      "date": "2025-04",
+      "url": "https://www.sportspro.com/news/atletico-madrid-riyadh-air-saudi-new-shirt-sponsor/"
+    },
+    "note": "Reported €40m per season, until 2035."
+  },
+  {
+    "id": "atletico-visit-rwanda",
+    "clubId": "atletico-de-madrid",
+    "orgName": null,
+    "sponsorId": "visit-rwanda",
+    "placement": "back",
+    "from": null,
+    "to": null,
+    "value": null,
+    "source": null,
+    "note": "Value not disclosed."
+  },
+  {
+    "id": "atletico-kraken",
+    "clubId": "atletico-de-madrid",
+    "orgName": null,
+    "sponsorId": "kraken",
+    "placement": "sleeve",
+    "from": "2026-27",
+    "to": null,
+    "value": null,
+    "source": null
+  },
+  {
+    "id": "real-madrid-emirates",
+    "clubId": "real-madrid",
+    "orgName": null,
+    "sponsorId": "emirates",
+    "placement": "front",
+    "from": null,
+    "to": "2030-31",
+    "value": {
+      "amount": 100,
+      "currency": "EUR",
+      "unit": "m",
+      "per": "year",
+      "upTo": false,
+      "usdApprox": 115
+    },
+    "source": {
+      "name": "SportsPro",
+      "date": "2026-06-10",
+      "url": "https://www.sportspro.com/news/sponsorship-marketing/real-madrid-emirates-record-sponsorship-june-2026/"
+    },
+    "note": "Renewed 10 Jun 2026, a European record."
+  },
+  {
+    "id": "liverpool-turkish-airlines",
+    "clubId": "liverpool",
+    "orgName": null,
+    "sponsorId": "turkish-airlines",
+    "placement": "front",
+    "from": "2027-28",
+    "to": null,
+    "value": null,
+    "source": {
+      "name": "Footy Headlines",
+      "date": "2026-04",
+      "url": "https://www.footyheadlines.com/2026/04/lfc-new-sponsor.html"
+    },
+    "note": "Replaces Standard Chartered; described as a record deal; value not confirmed."
+  },
+  {
+    "id": "psg-visit-rwanda",
+    "clubId": "paris-saint-germain",
+    "orgName": null,
+    "sponsorId": "visit-rwanda",
+    "placement": "partner",
+    "from": null,
+    "to": "2027-28",
+    "value": null,
+    "source": null,
+    "note": "Renewed until 2028; value not disclosed."
+  },
+  {
+    "id": "clippers-visit-rwanda",
+    "clubId": "la-clippers",
+    "orgName": null,
+    "sponsorId": "visit-rwanda",
+    "placement": "partner",
+    "from": "2025",
+    "to": null,
+    "value": null,
+    "source": null,
+    "note": "Value not disclosed."
+  },
+  {
+    "id": "rams-visit-rwanda",
+    "clubId": "la-rams",
+    "orgName": null,
+    "sponsorId": "visit-rwanda",
+    "placement": "stadium",
+    "from": "2025",
+    "to": null,
+    "value": null,
+    "source": null,
+    "note": "At the stadium rather than on the shirt; value not disclosed."
+  },
+  {
+    "id": "bal-visit-rwanda",
+    "clubId": null,
+    "orgName": "Basketball Africa League",
+    "sponsorId": "visit-rwanda",
+    "placement": "league-partner",
+    "from": null,
+    "to": null,
+    "value": {
+      "amount": 6.5,
+      "currency": "USD",
+      "unit": "m",
+      "per": "year",
+      "upTo": false,
+      "usdApprox": 6.5
+    },
+    "source": null,
+    "note": "Reportedly $6–7m a year."
+  },
+  {
+    "id": "villa-betano",
+    "clubId": "aston-villa",
+    "orgName": null,
+    "sponsorId": "betano",
+    "placement": "front",
+    "from": "2024-25",
+    "to": "2025-26",
+    "value": null,
+    "source": null,
+    "note": "Moved to the sleeves for 2026/27."
+  },
+  {
+    "id": "villa-betano-sleeve",
+    "clubId": "aston-villa",
+    "orgName": null,
+    "sponsorId": "betano",
+    "placement": "sleeve",
+    "from": "2026-27",
+    "to": null,
+    "value": null,
+    "source": null
+  },
+  {
+    "id": "villa-trade-nation",
+    "clubId": "aston-villa",
+    "orgName": null,
+    "sponsorId": "trade-nation",
+    "placement": "sleeve",
+    "from": "2024-25",
+    "to": "2025-26",
+    "value": null,
+    "source": null
+  }
+]

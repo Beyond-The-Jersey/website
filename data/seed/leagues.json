@@ -1,0 +1,181 @@
+[
+  {
+    "id": "premier-league",
+    "aliases": [
+      "epl",
+      "england"
+    ],
+    "sportId": "soccer",
+    "name": "Premier League",
+    "country": "England",
+    "clubCount": 20,
+    "season": "2026-27",
+    "status": "partial",
+    "frontOfShirtTotal": {
+      "amount": 444,
+      "currency": "GBP",
+      "unit": "m",
+      "per": "year",
+      "usdApprox": 593,
+      "source": {
+        "name": "Inside World Football (Ampere study)",
+        "date": "2026-09-22",
+        "url": "https://www.insideworldfootball.com/2026/09/22/ampere-study-showcases-front-of-shirt-sponsor-worth-in-english-premier-league"
+      }
+    },
+    "notes": [
+      "The 2026/27 season is the first with the front-of-shirt betting ban; 11 clubs needed new sponsors (SportsPro)."
+    ]
+  },
+  {
+    "id": "la-liga",
+    "aliases": [
+      "laliga",
+      "spain"
+    ],
+    "sportId": "soccer",
+    "name": "La Liga",
+    "country": "Spain",
+    "clubCount": 20,
+    "season": "2026-27",
+    "status": "partial",
+    "notes": [
+      "Only Atlético de Madrid and Real Madrid are in the data so far."
+    ]
+  },
+  {
+    "id": "bundesliga",
+    "aliases": [
+      "germany"
+    ],
+    "sportId": "soccer",
+    "name": "Bundesliga",
+    "country": "Germany",
+    "clubCount": 18,
+    "season": "2026-27",
+    "status": "not-started",
+    "notes": [
+      "Bayern Munich dropped Qatar Airways in 2023 and moved away from Visit Rwanda in 2025."
+    ]
+  },
+  {
+    "id": "ligue-1",
+    "aliases": [
+      "france"
+    ],
+    "sportId": "soccer",
+    "name": "Ligue 1",
+    "country": "France",
+    "clubCount": 18,
+    "season": "2026-27",
+    "status": "not-started",
+    "notes": [
+      "Paris Saint-Germain has Visit Rwanda until 2028."
+    ]
+  },
+  {
+    "id": "serie-a",
+    "aliases": [
+      "italy"
+    ],
+    "sportId": "soccer",
+    "name": "Serie A",
+    "country": "Italy",
+    "clubCount": 20,
+    "season": "2026-27",
+    "status": "not-started",
+    "notes": []
+  },
+  {
+    "id": "mls",
+    "aliases": [
+      "major league soccer",
+      "usa"
+    ],
+    "sportId": "soccer",
+    "name": "MLS",
+    "country": "USA and Canada",
+    "clubCount": 30,
+    "season": "2026",
+    "status": "not-started",
+    "notes": []
+  },
+  {
+    "id": "nba",
+    "aliases": [
+      "basketball"
+    ],
+    "sportId": "basketball",
+    "name": "NBA",
+    "country": "USA and Canada",
+    "clubCount": 30,
+    "status": "not-started",
+    "notes": [
+      "LA Clippers × Visit Rwanda (since 2025), value not disclosed."
+    ]
+  },
+  {
+    "id": "basketball-africa-league",
+    "aliases": [
+      "bal"
+    ],
+    "sportId": "basketball",
+    "name": "Basketball Africa League",
+    "country": "Africa",
+    "status": "not-started",
+    "notes": [
+      "Visit Rwanda is a league partner, reportedly $6–7m a year."
+    ]
+  },
+  {
+    "id": "nfl",
+    "aliases": [
+      "american football"
+    ],
+    "sportId": "american-football",
+    "name": "NFL",
+    "country": "USA",
+    "clubCount": 32,
+    "status": "not-started",
+    "notes": [
+      "LA Rams × Visit Rwanda (since 2025), at the stadium rather than on the shirt."
+    ]
+  },
+  {
+    "id": "formula-1",
+    "aliases": [
+      "f1"
+    ],
+    "sportId": "motorsport",
+    "name": "Formula 1",
+    "status": "not-started",
+    "notes": [
+      "Haas dropped Uralkali in 2022; the Russian Grand Prix was cancelled in 2022."
+    ]
+  },
+  {
+    "id": "uefa",
+    "aliases": [
+      "champions league",
+      "euro"
+    ],
+    "sportId": "events",
+    "name": "UEFA competitions",
+    "status": "not-started",
+    "notes": [
+      "UEFA ended its Gazprom deal in 2022."
+    ]
+  },
+  {
+    "id": "fifa",
+    "aliases": [
+      "world cup"
+    ],
+    "sportId": "events",
+    "name": "FIFA World Cups",
+    "status": "not-started",
+    "notes": [
+      "Visit Saudi talks for the 2023 Women’s World Cup were abandoned."
+    ]
+  }
+]

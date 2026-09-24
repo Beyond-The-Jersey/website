@@ -1,0 +1,122 @@
+[
+  {
+    "id": "arsenal-visit-rwanda-2026",
+    "year": 2026,
+    "clubId": "arsenal",
+    "sponsorId": "visit-rwanda",
+    "what": "Dropped Visit Rwanda",
+    "text": "Off the sleeve after eight seasons. Fans had spoken up about it for years.",
+    "source": {
+      "name": "SportsPro (citing The Athletic)",
+      "date": "2026-07-15",
+      "url": "https://www.sportspro.com/news/sponsorship-marketing/aston-villa-visit-rwanda-shirt-principal-sponsorship-july-2026/"
+    },
+    "featured": true
+  },
+  {
+    "id": "newcastle-sela-2026",
+    "year": 2026,
+    "clubId": "newcastle-united",
+    "sponsorId": "sela",
+    "what": "Dropped Sela",
+    "text": "The Saudi state-owned events company is off the front of the shirt. A drinks brand replaces it.",
+    "source": {
+      "name": "The Mag",
+      "date": "2026-06",
+      "url": "https://www.themag.co.uk/2026/06/newcastle-united-have-agreed-new-main-sponsor-front-of-shirt-three-year-deal-to-replace-sela/"
+    },
+    "featured": true
+  },
+  {
+    "id": "bayern-visit-rwanda-2025",
+    "year": 2025,
+    "clubId": "bayern-munich",
+    "sponsorId": "visit-rwanda",
+    "what": "Stepped back from Visit Rwanda",
+    "text": "Moved away from the Visit Rwanda branding after criticism, two years after ending Qatar Airways.",
+    "source": null,
+    "featured": true,
+    "todo": "Add source"
+  },
+  {
+    "id": "bayern-qatar-airways-2023",
+    "year": 2023,
+    "clubId": "bayern-munich",
+    "sponsorId": "qatar-airways",
+    "what": "Dropped Qatar Airways",
+    "text": "Members raised it at meetings and in the stands for years. The deal was not renewed.",
+    "source": null,
+    "featured": true,
+    "todo": "Add source"
+  },
+  {
+    "id": "schalke-gazprom-2022",
+    "year": 2022,
+    "clubId": "schalke-04",
+    "sponsorId": "gazprom",
+    "what": "Dropped Gazprom",
+    "text": "Took the logo off the shirt within days, then ended a 15-year deal early.",
+    "source": null,
+    "featured": true,
+    "todo": "Add source"
+  },
+  {
+    "id": "manutd-aeroflot-2022",
+    "year": 2022,
+    "clubId": "manchester-united",
+    "sponsorId": "aeroflot",
+    "what": "Dropped Aeroflot",
+    "text": "Ended the deal early and said it shared fans’ concerns.",
+    "source": null,
+    "featured": true,
+    "todo": "Add source"
+  },
+  {
+    "id": "wwc-visit-saudi-2023",
+    "year": 2023,
+    "clubId": null,
+    "orgName": "Women’s World Cup (FIFA)",
+    "sponsorId": "visit-saudi",
+    "what": "Dropped Visit Saudi",
+    "text": "Talks abandoned after players and the host federations objected.",
+    "source": null,
+    "featured": false,
+    "todo": "Add source"
+  },
+  {
+    "id": "uefa-gazprom-2022",
+    "year": 2022,
+    "clubId": null,
+    "orgName": "UEFA",
+    "sponsorId": "gazprom",
+    "what": "Dropped Gazprom",
+    "text": "Ended across the Champions League, national-team competitions and Euro 2024.",
+    "source": null,
+    "featured": false,
+    "todo": "Add source"
+  },
+  {
+    "id": "haas-uralkali-2022",
+    "year": 2022,
+    "clubId": null,
+    "orgName": "Haas F1 Team",
+    "sponsorId": "uralkali",
+    "what": "Dropped Uralkali",
+    "text": "Title sponsorship with the Russian fertiliser company ended right after the invasion of Ukraine.",
+    "source": null,
+    "featured": false,
+    "todo": "Add source"
+  },
+  {
+    "id": "f1-russian-gp-2022",
+    "year": 2022,
+    "clubId": null,
+    "orgName": "Formula 1",
+    "sponsorId": null,
+    "what": "Cancelled the Russian Grand Prix",
+    "text": "Race cancelled, then the promoter contract terminated.",
+    "source": null,
+    "featured": false,
+    "todo": "Add source"
+  }
+]

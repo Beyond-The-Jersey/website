@@ -1,0 +1,68 @@
+[
+  {
+    "id": "not-rated",
+    "order": 0,
+    "label": "Not rated yet",
+    "meter": 0,
+    "definition": "Nobody has checked this club yet, or none of its sponsors are rated.",
+    "colors": {
+      "text": "#a39a91",
+      "fill": "transparent",
+      "band": "transparent",
+      "bandText": "#b3aaa0",
+      "border": "1px dashed #6f665e"
+    }
+  },
+  {
+    "id": "clean",
+    "order": 1,
+    "label": "Clean",
+    "meter": 1,
+    "definition": "Every sponsor and its owner checked. Nothing found.",
+    "colors": {
+      "text": "#f3ede6",
+      "fill": "#e8e2da",
+      "band": "#e8e2da",
+      "bandText": "#0f0d0c"
+    }
+  },
+  {
+    "id": "spotted",
+    "order": 2,
+    "label": "Spotted",
+    "meter": 2,
+    "definition": "A lesser link, like a sponsor part-owned by a state.",
+    "colors": {
+      "text": "#e6b3a8",
+      "fill": "#d9a399",
+      "band": "#d9a399",
+      "bandText": "#2a1512"
+    }
+  },
+  {
+    "id": "stained",
+    "order": 3,
+    "label": "Stained",
+    "meter": 3,
+    "definition": "A serious sponsor on the front, or a severe one elsewhere.",
+    "colors": {
+      "text": "#e0705f",
+      "fill": "#b0402f",
+      "band": "#6e2820",
+      "bandText": "#ffe3de"
+    }
+  },
+  {
+    "id": "soaked",
+    "order": 4,
+    "label": "Soaked",
+    "meter": 4,
+    "definition": "A severe sponsor on the front, or two serious ones.",
+    "colors": {
+      "text": "#ff4a3d",
+      "fill": "#e3121b",
+      "band": "#c8121b",
+      "bandText": "#ffffff"
+    }
+  }
+]
