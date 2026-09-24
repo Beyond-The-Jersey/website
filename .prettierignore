@@ -1,0 +1,7 @@
+handover/
+public/
+out/
+.next/
+data/seed/
+data/schema/
+docs/data-request/request.json

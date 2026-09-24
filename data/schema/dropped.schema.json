@@ -89,6 +89,18 @@
       },
       "todo": {
         "type": "string"
+      },
+      "leagueId": {
+        "anyOf": [
+          {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "Optional. For items about an organisation rather than a club (orgName), the league or competition it belongs to, so it can be shown under the right sport."
       }
     }
   }

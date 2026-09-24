@@ -1,0 +1,41 @@
+{
+  "name": "behind-the-jersey",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Behind the Jersey: who's buying your loyalty? Shows who really pays for the sponsors on sports jerseys.",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run validate:data && next build",
+    "preview": "serve out -l 4173",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "validate:data": "tsx scripts/validate-data.ts",
+    "data:pull": "bash scripts/pull-data.sh"
+  },
+  "dependencies": {
+    "next": "^16.3.6",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^24.13.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.6",
+    "prettier": "^3.9.9",
+    "serve": "^14.2.6",
+    "tsx": "^4.23.15",
+    "typescript": "~5.9.3",
+    "vitest": "^5.0.1"
+  }
+}
