@@ -7,3 +7,4 @@ data/schema/
 docs/data-request/request.json
 *.md
 package-lock.json
+docs/coverage/targets.json
