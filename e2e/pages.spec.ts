@@ -165,6 +165,25 @@ test.describe('team page (v3)', () => {
     await expect(row(page, 'emirates-front')).toHaveAttribute('aria-expanded', 'true');
   });
 
+  test('the number itself is part of the target: hover highlights, a click opens the row', async ({ page }) => {
+    await page.goto('/clubs/arsenal/');
+    // Deel's number sits above its logo, outside the logo area.
+    const two = marker(page, 2);
+    const box = (await two.boundingBox())!;
+    const logo = (await page.getByRole('button', { name: '2: Deel, sleeve' }).boundingBox())!;
+    // Its centre (where we hover and click) is outside the logo area.
+    expect(box.y + box.height / 2).toBeLessThan(logo.y);
+    await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+    await expect(two).toHaveAttribute('data-hl', 'true');
+    await expect(page.locator('[data-hl]').filter({ has: row(page, 'deel-sleeve') })).toHaveCount(1);
+    await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+    await expect(row(page, 'deel-sleeve')).toHaveAttribute('aria-expanded', 'true');
+    // Emirates' number overlaps the logo's left edge: its far left point counts too.
+    const one = (await marker(page, 1).boundingBox())!;
+    await page.mouse.move(one.x + 4, one.y + one.height / 2);
+    await expect(marker(page, 1)).toHaveAttribute('data-hl', 'true');
+  });
+
   test('keyboard: focusing a logo highlights its marker, Enter opens the row', async ({ page }) => {
     await page.goto('/clubs/atletico-de-madrid/');
     const hit = page.getByRole('button', { name: '1: Visit Rwanda, back of shirt' });

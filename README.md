@@ -128,6 +128,7 @@ Compared with `handover/design/static/*` and `handover/update-v3/design/static/*
 - **Not designed, kept minimal:** the old-shirt notice, the "Tell {club}" dialog (no checked address yet, so it offers the draft to copy), the Follow dialog, the "Link copied" toast, the fact sheet at `/clubs/[slug]/fact-sheet/`, the notes on an old shirt's rating scale ("{club} is here now"), and the phone layout (UPDATE.md §10).
 - **Search icons** use generic initials (EA, RA) rather than the hand-picked codes (EY, RX).
 - **"Tell {club}" says where the message goes:** the design's text (to the supporter liaison officer) only when the club publishes one; otherwise "send it from your own email" for a general fan inbox, or "send it to the club yourself" when no fan-facing address is on file. Ticket offices, shops, hospitality, legal inboxes and named staff are never used.
+- **The numbers on the shirt are part of the click target.** UPDATE.md §5.8 has them ignore the pointer, but small logos put the number above the logo, outside its hit area, so hovering or clicking the number did nothing. Each sponsor is now one button: the area over the logo with its number inside.
 - **"Nothing found" sponsors get a dark marker with a solid ring**, not the red one: red is for concern or worse.
 - **"Share the card"** uses the phone's share sheet or copies a link. The link's preview is the club's share card.
 - **Page heights** are natural. The design artboards have fixed heights with extra space before the footer.

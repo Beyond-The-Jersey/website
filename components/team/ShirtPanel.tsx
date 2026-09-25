@@ -32,6 +32,8 @@ function Photo({
     <div className={s.photo}>
       {/* eslint-disable-next-line @next/next/no-img-element -- static export */}
       <img src={src} alt={alt} width={720} height={800} className={s.photoImg} />
+      {/* One button per sponsor: the invisible area over the logo, with its number inside it
+          (placed relative to the button), so the number reacts to hover and clicks as well. */}
       {placed.map(({ r, m }) => (
         <button
           key={r.key}
@@ -45,18 +47,21 @@ function Photo({
           onFocus={() => onHighlight(r.key)}
           onBlur={() => onHighlight(null)}
           onClick={() => onPick(r.key)}
-        />
-      ))}
-      {placed.map(({ r, m }) => (
-        <span
-          key={r.key}
-          className={s.markerWrap}
-          data-hl={highlight === r.key || undefined}
-          data-marker={r.number}
-          style={{ left: u(m.left), top: u(m.top), width: u(m.size), height: u(m.size) }}
         >
-          <SponsorMarker n={r.number} tier={r.tier} size={u(m.size)} />
-        </span>
+          <span
+            className={s.markerWrap}
+            data-hl={highlight === r.key || undefined}
+            data-marker={r.number}
+            style={{
+              left: u(m.left - m.hit.left),
+              top: u(m.top - m.hit.top),
+              width: u(m.size),
+              height: u(m.size),
+            }}
+          >
+            <SponsorMarker n={r.number} tier={r.tier} size={u(m.size)} />
+          </span>
+        </button>
       ))}
     </div>
   );
