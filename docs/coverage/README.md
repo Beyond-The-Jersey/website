@@ -3,12 +3,13 @@
 Research leads for contributors and agents, **not ratings**. Every lead below has a source URL; a person reviews every claim before anything goes on the site. Compiled on 24 September 2026.
 
 - [`targets.json`](targets.json): 46 targets with entities, official team lists, sourced leads and data notes, for agents.
+- [`../agents/README.md`](../agents/README.md): the brief for the orchestrating agent (repos, pipeline, issues, workflow).
 - [`subagent-brief.md`](subagent-brief.md): the prompt to start one subagent per target.
 - Every target has an issue in [Beyond-The-Jersey/data](https://github.com/Beyond-The-Jersey/data/issues) (`issue` in `targets.json`); claim it there before starting, as the [index issue](https://github.com/Beyond-The-Jersey/data/issues/181) describes.
 
 ## Before starting subagents
 
-1. **The pipeline doesn't produce what the site reads.** `Beyond-The-Jersey/pipeline` ends with per-team files in the old format. Nothing in it writes the `normalized/` files or runs the validator, which is why the first hand-built `normalized/` failed with 1,947 errors ([data#1](https://github.com/Beyond-The-Jersey/data/issues/1)). Until the pipeline gets a `build_normalized` step, each subagent has to write and validate the normalised files itself; the brief says how.
+1. **The pipeline doesn't produce what the site reads.** `Beyond-The-Jersey/pipeline` ends with per-team files in the old format. Nothing in it writes the `normalized/` files or runs the validator, which is why the first hand-built `normalized/` failed with 1,947 errors ([data#1](https://github.com/Beyond-The-Jersey/data/issues/1)). The data agent has since added `build_normalized.py`, which rebuilds `normalized/` and runs the validator; subagents deliver one research file per target and the orchestrator merges it (see [`../agents/README.md`](../agents/README.md)).
 2. **Not every sport fits the site yet.** Each target has a *shape*:
    - `club-shirt`: clubs or teams with sponsors on the shirt. Fits the data model now. Soccer leagues get the full overview; other sports need the overview generalised (a small change).
    - `org-partner`: sponsors of a league, tour or federation. Fits now as organisation deals, shown in the sport's known-deals panel.

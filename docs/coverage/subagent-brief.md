@@ -1,30 +1,29 @@
-# Subagent brief: map one target for Behind the Jersey
+# Subagent brief: research one target for Behind the Jersey
 
-Copy everything below the line into the subagent's prompt and replace `{{TARGET_ID}}` with an id from [`targets.json`](targets.json) (e.g. `ligue-1`, `uci-worldtour-men`, `saudi-pro-league`). One subagent per target.
+The orchestrator (see [`../agents/README.md`](../agents/README.md)) copies everything below the line into a subagent's prompt, replacing `{{TARGET_ID}}` with an id from [`targets.json`](targets.json) (e.g. `ligue-1`, `uci-worldtour-men`, `saudi-pro-league`). One subagent per target. The orchestrator claims the target's issue before starting you.
 
 ---
 
-You are mapping **{{TARGET_ID}}** for Behind the Jersey, a site that shows who really pays for the sponsors on sports jerseys and events, and rates how much human-rights abuse sits behind them.
+You are researching **{{TARGET_ID}}** for Behind the Jersey, a site that shows who really pays for the sponsors on sports jerseys and events, and rates how much human-rights abuse sits behind them. Your output is one research file; the orchestrator merges it into the data.
 
 **Read first**
-- The target: the entry with `"id": "{{TARGET_ID}}"` in https://github.com/Beyond-The-Jersey/website/blob/main/docs/coverage/targets.json (entities to cover, the official team list, sourced leads to start from, data notes).
-- The data contract: the JSON Schemas in https://github.com/Beyond-The-Jersey/website/tree/main/data/schema and the examples in https://github.com/Beyond-The-Jersey/website/tree/main/data/seed.
-- The rules and field mapping: https://github.com/Beyond-The-Jersey/website/blob/main/docs/data-request/README.md.
-- The pipeline: https://github.com/Beyond-The-Jersey/pipeline. New leagues go into `scripts/collect_data.py`: an official URL in `OFFICIAL_SOURCES`, a parser (`extract_teams_<league>`) or a fallback list in `KNOWN_TEAMS`.
+- Your target: the entry with `"id": "{{TARGET_ID}}"` in `/tmp/website/docs/coverage/targets.json`: the entities to cover, the official list, sourced leads to start from, data notes, the shape, and the `issue` URL. Read that issue and its comments too.
+- The data contract: the JSON Schemas in `/tmp/website/data/schema/` and the examples in `/tmp/website/data/seed/`.
+- What already exists: `/tmp/data/normalized/*.json`. Reuse existing ids for clubs, sponsors and owners (e.g. `saudi-pif`, `government-of-saudi-arabia`, `government-of-dubai`, `qatar-airways`); search before creating one.
 
 **Do**
-0. **Claim the issue first.** Each target has an `issue` in `targets.json`. Follow the rules in https://github.com/Beyond-The-Jersey/data/issues/181: assign it to yourself and comment one line on what you'll do. If someone else is assigned, pick another target.
-1. **Entities.** Add the league (`leagues.json`, with `clubCount`) and, if the sport is new, the sport (`sports.json`, `status: "not-mapped"`). List every club or team for the current season from the official team list, as `clubs.json` entries with ASCII kebab-case ids, `leagueId`, `country` and `aliases`. Keep existing ids.
-2. **Sponsors on the shirt.** For each club or team, one kit for the current season (`kits.json`) listing every sponsor with its `placement` (front, back, sleeve, shorts) and a `source` `{name, date, url}`: the club's kit launch or announcement, or a named press article. Wikipedia is a lead, not a source.
-3. **Organisation deals.** Sponsors of the league or competition itself (title sponsor, official partner) go in `deals.json` with `clubId: null`, `orgName`, `leagueId` and `placement: "league-partner"`, each with a source.
-4. **Owners.** For each sponsor, trace the owner chain up to a state or a fund where there is one (`owners.json`, `parentId`), using company registries, annual reports or the sponsor's own site.
-5. **Claims.** For state-linked owners only, add sourced statements about the owner's human-rights record (`claims.json`), each with the primary source's URL and `reviewed: false`. Reuse existing claims and owners where they exist (e.g. `saudi-pif`, `government-of-dubai`).
-6. **Validate.** Put your files next to a copy of the current `normalized/` folder, merge, and run `python3 validate.py normalized/` from the website repo's `data/` folder. It must print `OK`.
-7. **Deliver.** A pull request to Beyond-The-Jersey/data with the merged `normalized/` files, and one to Beyond-The-Jersey/pipeline with the collector changes. In the data PR description, list every sponsor with a **proposed** tier and why, and every fact you couldn't source.
+1. **Entities.** The league (with `clubCount`) and, if the sport is new, the sport (`status: "not-mapped"`). Every club or team for the current season from the official list: ASCII kebab-case `id`, `name`, `shortName`, `code`, `sportId`, `leagueId`, `country`, `crest: null`, `aliases`.
+2. **Sponsors on the shirt.** One kit per club or team for the current season, listing every sponsor with its `placement` (front, back, sleeve, shorts) and a `source` `{name, date, url}` from the club's kit launch or announcement, or a named press article. `season`, `periodFrom` and `periodTo` are `YYYY-YY` (`2026-27`) for season leagues, `YYYY` only for calendar-year competitions. `sponsorsComplete: true` only when you've checked every placement.
+3. **Organisation deals.** Sponsors of the league or competition itself (title sponsor, official partner) as deals with `clubId: null`, `orgName`, `leagueId` and `placement: "league-partner"`, each with a source.
+4. **Owners.** For each sponsor, the owner chain up to a state or a fund where there is one (`parentId`), from company filings, annual reports or the sponsor's own site.
+5. **Claims.** For state-linked owners only: sourced statements about the owner's human-rights record, each with the primary source's URL and `reviewed: false`. Reuse existing claims where they fit.
+6. **Proposed tiers.** New sponsors stay `tier: "unrated"`. For each sponsor you think deserves a tier, add a `proposedRatings` entry: `{sponsorId, tier, ownerId, claimIds, reasoning}`. A person decides.
+7. **Write** everything to `/tmp/data/research/{{TARGET_ID}}.json` in the format described in the agents brief (§5): `target`, `issue`, `sports`, `leagues`, `clubs`, `owners`, `sponsors`, `kits`, `deals`, `claims`, `proposedRatings`, `unsourced`. Every entry must match its schema.
+8. **Report back** to the orchestrator: counts, the sponsors you propose to rate and why, anything you couldn't source, and anything that disagreed between sources.
 
 **Don't**
-- Don't invent anything: no facts, figures, dates, URLs or contact details. Unknown is `null` with a note, or left out.
-- Don't set `tier` above `unrated` or `reviewed: true`. A person reviews every claim and decides the tier.
-- Don't publish club blood levels; the site works them out.
-- Don't change existing records unless a better, newer source says otherwise, and say so in the PR.
-- Events, races and car liveries (targets with the shape `event-host` or `car-livery`) don't fit the schema yet. For those, collect the facts in the PR description and flag which placements you'd need.
+- Don't invent anything: no facts, figures, dates, URLs, owners or contact details. Unknown is `null` with a note, or goes in `unsourced` as plain text.
+- Don't cite Wikipedia or Wikidata as a source; use them only to find the primary document. Open every URL you cite.
+- Don't edit `normalized/`, `pipeline_data.py`, `research_additions.json` or any builder, and don't commit or comment on issues: the orchestrator does that.
+- Don't set a tier or `reviewed: true`, and don't write club levels.
+- Races, fights and tournaments (shape `event-host`) and car liveries (`car-livery`) don't fit the schema yet. Record those facts in `unsourced` with their sources, and don't force them into kits.
