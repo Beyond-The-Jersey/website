@@ -2,6 +2,7 @@
 
 import { fill, TEAM_COPY } from '@/lib/copy/team-page';
 import { markerPosition, type SponsorRowView, type TeamPeriodView } from '@/lib/data/team';
+import { ShirtOutline } from '@/components/LogoMark';
 import { SponsorMarker } from './SponsorMarker';
 import s from './Team.module.css';
 
@@ -54,7 +55,7 @@ function Photo({
           data-marker={r.number}
           style={{ left: u(m.left), top: u(m.top), width: u(m.size), height: u(m.size) }}
         >
-          <SponsorMarker n={r.number} rated={r.rated} size={u(m.size)} />
+          <SponsorMarker n={r.number} tier={r.tier} size={u(m.size)} />
         </span>
       ))}
     </div>
@@ -65,32 +66,58 @@ export function ShirtPanel({ club, period, ...linked }: { club: string; period: 
   const onShirt = period.rows.filter((r) => r.hotspot && r.side);
   const front = onShirt.filter((r) => r.side === 'front');
   const back = onShirt.filter((r) => r.side === 'back');
-  const shirt = `${club} ${period.label} ${period.kitLabel.split(' ')[0].toLowerCase()} shirt`;
+  const shirt = `${club} ${period.label} ${period.kitType.toLowerCase()} shirt`;
   const hint = (
     <span className={s.hint}>
       <span className={s.hintHover}>{C.hint}</span>
       <span className={s.hintTouch}>{C.hintTouch}</span>
     </span>
   );
+  const head = (
+    <div className={s.shirtHead}>
+      <span className={s.shirtLabel}>
+        {period.hasKit ? fill(C.header, { kitLabel: period.kitLabel }) : C.header.replace(' · {kitLabel}', '')}
+      </span>
+      {period.shirt !== 'none' && <span className={s.shirtSide}>{C.front}</span>}
+    </div>
+  );
+
+  if (period.shirt === 'none')
+    return (
+      <aside aria-label="The shirt" className={s.shirt}>
+        {head}
+        <div className={s.noPhoto}>
+          <ShirtOutline size={120} />
+          <span>{period.hasKit ? C.noPhoto : C.noKit}</span>
+        </div>
+      </aside>
+    );
+
+  if (period.shirt === 'photo')
+    return (
+      <aside aria-label="The shirt" className={s.shirt}>
+        {head}
+        <Photo src={period.photos.front!} alt={`${shirt}, front`} rows={[]} {...linked} />
+        <p className={`${s.hint} ${s.unmarked}`}>{C.unmarked}</p>
+      </aside>
+    );
+
   return (
     <aside aria-label="The shirt" className={s.shirt}>
-      <div className={s.shirtHead}>
-        <span className={s.shirtLabel}>{fill(C.header, { kitLabel: period.kitLabel })}</span>
-        <span className={s.shirtSide}>{C.front}</span>
-      </div>
-      <Photo src={period.photos.front} alt={`${shirt}, front`} rows={front} {...linked} />
+      {head}
+      <Photo src={period.photos.front!} alt={`${shirt}, front`} rows={front} {...linked} />
       {period.backHasSponsor ? (
         <>
           <div className={`${s.shirtHead} ${s.shirtHeadBack}`}>
             <span className={s.shirtLabel}>{C.back}</span>
           </div>
-          <Photo src={period.photos.back} alt={`${shirt}, back`} rows={back} {...linked} />
+          <Photo src={period.photos.back!} alt={`${shirt}, back`} rows={back} {...linked} />
           {hint}
         </>
       ) : (
         <div className={s.backRow}>
           {/* eslint-disable-next-line @next/next/no-img-element -- static export */}
-          <img src={period.photos.back} alt={`${shirt}, back`} width={80} height={89} className={s.backThumb} />
+          <img src={period.photos.back!} alt={`${shirt}, back`} width={80} height={89} className={s.backThumb} />
           <div className={s.backText}>
             <span className={s.shirtLabel}>{C.backNone}</span>
             {hint}

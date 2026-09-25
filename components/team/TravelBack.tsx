@@ -1,6 +1,7 @@
 'use client';
 
 import { LevelMeter } from '@/components/Level';
+import { ShirtOutline } from '@/components/LogoMark';
 import { TEAM_COPY } from '@/lib/copy/team-page';
 import type { TeamPeriodView } from '@/lib/data/team';
 import { LEVELS } from '@/lib/levels';
@@ -48,8 +49,12 @@ export function TravelBack({
               }}
             >
               <span className={s.thumb}>
-                {/* eslint-disable-next-line @next/next/no-img-element -- static export */}
-                <img src={p.photos.front} alt="" width={58} height={64} loading="lazy" />
+                {p.photos.front ? (
+                  // eslint-disable-next-line @next/next/no-img-element -- static export
+                  <img src={p.photos.front} alt="" width={58} height={64} loading="lazy" />
+                ) : (
+                  <ShirtOutline size={44} />
+                )}
               </span>
               <span className={s.seasonText}>
                 <span className={s.seasonLabelRow}>

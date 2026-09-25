@@ -86,11 +86,11 @@ describe('Arsenal 2026/27', () => {
       name: 'Emirates',
       placement: 'front',
       ownerVerb: 'owned by',
-      owner: 'Government of Dubai',
+      owner: 'the Government of Dubai',
       messageLine: 'In 2024, 43 activists in the UAE got life sentences in one mass trial.',
     });
     expect(act.check?.name).toBe('Deel');
-    expect(act.contact).toEqual({ email: null, url: null });
+    expect(act.contact).toEqual({ kind: null, email: null, url: null });
     expect(act.share).toEqual({
       title: 'Arsenal is Stained',
       text: 'The shirt is Stained: the front sponsor, Emirates, is owned by the Government of Dubai.',
@@ -303,5 +303,34 @@ describe('factSheet', () => {
     expect(vr.claims.every((c) => c.source?.name)).toBe(true);
     expect(f.headline).toBe('The shirt is Stained: the front sponsor, Emirates, is owned by the Government of Dubai.');
     expect(f.checked).toBe('24 Sep 2026');
+  });
+});
+
+describe('every club has a page', () => {
+  it('a kit without marked logos shows its photo and all its sponsors', () => {
+    const t = page('newcastle-united');
+    const now = t.periods[t.current];
+    expect(now.shirt).toBe('photo');
+    expect(now.photos.front).toMatch(/newcastle-united-2026-27-home-front-square\.jpg$/);
+    expect(now.backHasSponsor).toBe(false);
+    expect(now.rows.map((r) => r.name)).toEqual(['noon', 'KNOX Hydration']);
+    expect(now.departed.map((d) => d.name)).toEqual(['Sela']);
+    // The older kit has no photo at all.
+    expect(t.periods[0].shirt).toBe('none');
+  });
+
+  it('a club with no shirt on file says so and asks for help', () => {
+    const t = page('bayern-munich');
+    expect(t.periods).toHaveLength(1);
+    const p = t.periods[0];
+    expect([p.hasKit, p.shirt, p.level, p.rows.length]).toEqual([false, 'none', 'not-rated', 0]);
+    expect(p.headline.text).toBe('We haven’t recorded the sponsors on Bayern Munich’s shirt yet.');
+    expect(t.act.raise).toEqual([]);
+    expect(t.act.check).toMatchObject({ kind: 'club', name: 'Bayern Munich' });
+  });
+
+  it('only unknown clubs have no page', () => {
+    expect(teamPage(ds, 'not-a-club')).toBeNull();
+    expect(ds.clubs.every((c) => teamPage(ds, c.id))).toBe(true);
   });
 });

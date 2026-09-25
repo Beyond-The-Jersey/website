@@ -88,8 +88,8 @@ test.describe('overview', () => {
     await expect(page.locator('section[aria-label="Every club at a glance"] a')).toHaveCount(20);
     await expect(page.getByRole('heading', { name: 'Soaked' })).toBeVisible();
     await expect(page.locator('section[aria-label="Soaked"] a')).toHaveAttribute('href', '/clubs/aston-villa/');
-    // Clubs without a team page aren't links.
-    await expect(page.locator('section[aria-label="Stained"] a')).toHaveCount(1);
+    // Every club is a link, whether or not its shirt photo is marked up.
+    await expect(page.locator('section[aria-label="Stained"] a')).toHaveCount(2);
   });
 
   test('group headers line up so every card starts at the same y', async ({ page }) => {
@@ -111,7 +111,8 @@ test.describe('overview', () => {
     await expect(page.getByRole('heading', { name: 'Bundesliga is next' })).toBeVisible();
     await page.getByRole('link', { name: 'Basketball' }).click();
     await expect(page).toHaveURL(/\/basketball\/$/);
-    await expect(page.getByText('LA Clippers', { exact: true })).toBeVisible();
+    // The club as a tile in its league, and its deal in the list, both link to its page.
+    await expect(page.locator('a[href="/clubs/la-clippers/"]')).toHaveCount(2);
   });
 });
 
@@ -274,8 +275,35 @@ test.describe('team page (v3)', () => {
     await expect(page.getByText('Ratings are illustrative until the method is final.')).toBeVisible();
   });
 
-  test('clubs without a designed kit have no team page', async ({ page }) => {
-    const res = await page.goto('/clubs/chelsea/');
+  test('every club on a league page links to its own page', async ({ page }) => {
+    await page.goto('/soccer/premier-league/');
+    const cards = page.locator('main section[aria-label] a[href^="/clubs/"]');
+    const clubs = await cards.evaluateAll((as) => [...new Set(as.map((a) => a.getAttribute('href')))]);
+    // 20 clubs: 6 rated cards and 14 "not rated yet" tiles in the seed.
+    expect(clubs.length).toBe(20);
+    await page.getByRole('link', { name: 'Newcastle United' }).first().click();
+    await expect(page).toHaveURL(/\/clubs\/newcastle-united\/$/);
+    await expect(page.getByRole('heading', { level: 1, name: 'Newcastle United' })).toBeVisible();
+  });
+
+  test('a club without a marked-up shirt still has a full page', async ({ page }) => {
+    await page.goto('/clubs/newcastle-united/');
+    // A square photo, no markers, and every sponsor in the list.
+    await expect(page.getByText('The logos on this photo aren’t marked yet.', { exact: false })).toBeVisible();
+    await expect(page.getByText('Click a row for the money and the evidence.', { exact: true })).toBeVisible();
+    await expect(page.locator('[data-marker]')).toHaveCount(0);
+    await expect(page.locator('button[aria-controls="panel-noon-sleeve"]')).toBeVisible();
+    await expect(page.getByRole('link', { name: /2025\/26/ })).toBeVisible();
+    // A club with no shirt on file says so, and offers to help check it.
+    await page.goto('/clubs/bayern-munich/');
+    await expect(page.getByText('We haven’t recorded the sponsors on Bayern Munich’s shirt yet.')).toBeVisible();
+    await expect(page.getByText('No shirt on file yet.')).toBeVisible();
+    await expect(page.getByText('Help check Bayern Munich', { exact: true })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Tell Bayern Munich' })).toHaveCount(0);
+  });
+
+  test('clubs that aren’t in the data have no page', async ({ page }) => {
+    const res = await page.goto('/clubs/not-a-club/');
     expect(res?.status()).toBe(404);
   });
 });

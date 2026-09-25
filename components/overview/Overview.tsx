@@ -67,40 +67,78 @@ function ClubCard({ c }: { c: ClubSummary }) {
       </div>
     </>
   );
-  const style = { borderColor: lv.border };
-  return c.hasTeamPage ? (
-    <Link href={c.href} className={`${s.card} ${s.cardLink}`} style={style}>
+  return (
+    <Link href={c.href} className={`${s.card} ${s.cardLink}`} style={{ borderColor: lv.border }}>
       {body}
     </Link>
-  ) : (
-    <article className={s.card} style={style}>
-      {body}
-    </article>
+  );
+}
+
+/** Clubs nobody has rated yet: crest tiles, each linking to the club's page. */
+function UnratedTiles({ league, clubs }: { league: LeagueSummary; clubs: LeagueSummary['clubs'] }) {
+  const n = clubs.length + league.unknown;
+  if (n === 0) return null;
+  return (
+    <section className={s.unrated} aria-label="Not rated yet">
+      <div className={s.unratedHead}>
+        <div className={s.groupTitle}>
+          <LevelMeter level="not-rated" size="l" />
+          <h2 className={s.unratedWord}>Not rated yet</h2>
+          <span className={s.unratedCount}>
+            {n} {n === 1 ? 'club' : 'clubs'}
+          </span>
+        </div>
+        <span className={s.groupDesc}>We haven’t checked who is behind these sponsors yet.</span>
+      </div>
+      <div className={s.tiles}>
+        {clubs.map((c) => (
+          <Link key={c.id} href={c.href} className={`${s.tileItem} ${s.tileLink}`}>
+            <span className={s.tile}>
+              {c.crest ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={c.crest} alt="" width={76} height={76} />
+              ) : (
+                <span className={s.tileInitials}>{c.initials}</span>
+              )}
+            </span>
+            <span className={s.tileName}>{c.name}</span>
+          </Link>
+        ))}
+        {league.unknown > 0 && (
+          <div className={s.more}>
+            <span className={s.moreN}>+{league.unknown}</span>
+            <span className={s.moreText}>more {league.name} clubs, not rated yet</span>
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
 
 function LeagueContent({ league, desc }: { league: LeagueSummary; desc: Record<LevelId, string> }) {
+  const unrated = league.clubs.filter((c) => !LEVELS[c.level].rated);
   if (league.rated === 0) {
     const text = league.notes.length
       ? `Already on file: ${league.notes.join(' ')}`
       : `We haven’t mapped ${league.name} shirts yet. Tell us which club to start with.`;
     return (
-      <div className={s.panel}>
-        <h2 className={s.panelTitle}>
-          {league.name} is {league.notes.length ? 'next' : 'coming'}
-        </h2>
-        <p className={s.panelText}>{text}</p>
-        <Link href="/#contribute" className={s.panelLink}>
-          Help map it →
-        </Link>
+      <div className={s.content}>
+        <div className={s.panel}>
+          <h2 className={s.panelTitle}>
+            {league.name} is {league.notes.length ? 'next' : 'coming'}
+          </h2>
+          <p className={s.panelText}>{text}</p>
+          <Link href="/#contribute" className={s.panelLink}>
+            Help map it →
+          </Link>
+        </div>
+        <UnratedTiles league={league} clubs={unrated} />
       </div>
     );
   }
-  const unrated = league.clubs.filter((c) => !LEVELS[c.level].rated);
   const groups = RATED.map((lv) => ({ lv, clubs: league.clubs.filter((c) => c.level === lv) })).filter(
     (g) => g.clubs.length,
   );
-  const notRatedCount = unrated.length + league.unknown;
   return (
     <div className={s.content}>
       <section aria-label="Every club at a glance" className={s.glance}>
@@ -138,41 +176,7 @@ function LeagueContent({ league, desc }: { league: LeagueSummary; desc: Record<L
         })}
       </div>
 
-      {notRatedCount > 0 && (
-        <section className={s.unrated} aria-label="Not rated yet">
-          <div className={s.unratedHead}>
-            <div className={s.groupTitle}>
-              <LevelMeter level="not-rated" size="l" />
-              <h2 className={s.unratedWord}>Not rated yet</h2>
-              <span className={s.unratedCount}>
-                {notRatedCount} {notRatedCount === 1 ? 'club' : 'clubs'}
-              </span>
-            </div>
-            <span className={s.groupDesc}>We haven’t checked who is behind these sponsors yet.</span>
-          </div>
-          <div className={s.tiles}>
-            {unrated.map((c) => (
-              <div key={c.id} className={s.tileItem}>
-                <div className={s.tile}>
-                  {c.crest ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={c.crest} alt={`${c.name} crest`} width={76} height={76} />
-                  ) : (
-                    <span className={s.tileInitials}>{c.initials}</span>
-                  )}
-                </div>
-                <span className={s.tileName}>{c.name}</span>
-              </div>
-            ))}
-            {league.unknown > 0 && (
-              <div className={s.more}>
-                <span className={s.moreN}>+{league.unknown}</span>
-                <span className={s.moreText}>more {league.name} clubs, not rated yet</span>
-              </div>
-            )}
-          </div>
-        </section>
-      )}
+      <UnratedTiles league={league} clubs={unrated} />
     </div>
   );
 }
@@ -186,6 +190,11 @@ export function OverviewPage({ ds, sportId, leagueId }: { ds: Dataset; sportId: 
   const league = leagueId ? leagueSummary(ds, leagueId) : null;
   const dropped = league ? droppedForLeague(ds, league.id, 3) : featuredDropped(ds).slice(0, 3);
   const rows = sportId === 'soccer' ? [] : knownForSport(ds, sportId);
+  // Other sports: every league with clubs gets the same view as a soccer league, so every club is one click away.
+  const sportLeagues =
+    sportId === 'soccer'
+      ? []
+      : leagues.filter((l) => ds.clubs.some((c) => c.leagueId === l.id)).map((l) => leagueSummary(ds, l.id));
 
   return (
     <>
@@ -229,25 +238,45 @@ export function OverviewPage({ ds, sportId, leagueId }: { ds: Dataset; sportId: 
             <LeagueContent league={league} desc={desc} />
           </>
         ) : (
-          <div className={s.sport}>
-            <h2 className={s.panelTitle}>{SPORT_TITLES[sport.id] ?? `${sport.label} is next`}</h2>
-            <div className={s.rows}>
-              {rows.map((r) => (
-                <div key={r.title} className={s.row}>
-                  <span className={s.rowTitle}>{r.title}</span>
-                  <span className={s.rowText}>
-                    {r.text} <SourceNote source={r.source} />
-                  </span>
-                  <span className={s.rowStatus}>{r.status}</span>
-                </div>
-              ))}
-              {rows.length === 0 && (
-                <div className={s.row}>
-                  <span className={s.rowText}>Nothing on file yet. Tell us where to start.</span>
-                </div>
-              )}
+          <>
+            {sportLeagues.map((l) => (
+              <section key={l.id} className={s.sportLeague} aria-labelledby={`league-${l.id}`}>
+                <h2 id={`league-${l.id}`} className={s.sportLeagueTitle}>
+                  {l.name}
+                </h2>
+                <LeagueContent league={l} desc={desc} />
+              </section>
+            ))}
+            <div className={s.sport}>
+              <h2 className={s.panelTitle}>
+                {sportLeagues.length ? 'Deals we know about' : (SPORT_TITLES[sport.id] ?? `${sport.label} is next`)}
+              </h2>
+              <div className={s.rows}>
+                {rows.map((r) => (
+                  <div key={r.key} className={s.row}>
+                    <span className={s.rowTitle}>
+                      {r.href ? (
+                        <Link href={r.href} className={s.rowLink}>
+                          {r.title}
+                        </Link>
+                      ) : (
+                        r.title
+                      )}
+                    </span>
+                    <span className={s.rowText}>
+                      {r.text} <SourceNote source={r.source} />
+                    </span>
+                    <span className={s.rowStatus}>{r.status}</span>
+                  </div>
+                ))}
+                {rows.length === 0 && (
+                  <div className={s.row}>
+                    <span className={s.rowText}>Nothing on file yet. Tell us where to start.</span>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
+          </>
         )}
 
         {dropped.length > 0 && (

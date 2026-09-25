@@ -1,5 +1,4 @@
 import { getDataset } from '@/lib/data';
-import { hasTeamPage } from '@/lib/data/derive';
 import { teamPage } from '@/lib/data/team';
 import { clubCard, OG_SIZE } from '@/lib/og/card';
 
@@ -10,7 +9,7 @@ export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const ds = await getDataset();
-  return ds.clubs.filter((c) => hasTeamPage(ds, c.id)).map((c) => ({ slug: c.id }));
+  return ds.clubs.map((c) => ({ slug: c.id }));
 }
 
 export default async function Image({ params }: { params: Promise<{ slug: string }> }) {

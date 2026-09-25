@@ -156,7 +156,7 @@ export function TeamPage({ team, showCrest }: { team: TeamPageView; showCrest: b
               <div className={s.titleText}>
                 <h1 className={s.name}>{team.club.name}</h1>
                 <span className={s.sub}>
-                  {[team.club.league, `${p.kitType} shirt ${p.label}`].filter(Boolean).join(' · ')}
+                  {[team.club.league, p.hasKit && `${p.kitType} shirt ${p.label}`].filter(Boolean).join(' · ')}
                 </span>
               </div>
             </div>
@@ -209,7 +209,9 @@ export function TeamPage({ team, showCrest }: { team: TeamPageView; showCrest: b
               <h2 id="sponsors-title" className={s.h2}>
                 {C.sponsors.title}
               </h2>
-              <span className={s.sponsorsSub}>{C.sponsors.sub}</span>
+              {p.rows.length > 0 && (
+                <span className={s.sponsorsSub}>{p.shirt === 'marked' ? C.sponsors.sub : C.sponsors.subNoMarkers}</span>
+              )}
             </div>
             <SponsorList
               rows={p.rows}

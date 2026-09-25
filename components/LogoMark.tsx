@@ -21,6 +21,15 @@ export function BrandMark({ size = 34 }: { size?: number }) {
   );
 }
 
+/** An empty shirt outline, for shirts we have no photo of yet. */
+export function ShirtOutline({ size = 96 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true">
+      <path d={JERSEY} fill="none" stroke="currentColor" strokeWidth="0.9" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 /** The sponsor-card mark: the splat is scaled by the sponsor's tier (hidden, with a dashed outline, when unrated). */
 export function SponsorMark({ tier, size = 46 }: { tier: TierId; size?: number }) {
   const t = TIERS[tier];

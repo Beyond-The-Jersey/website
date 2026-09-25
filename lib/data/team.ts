@@ -1,7 +1,7 @@
 // The team page view model (handover/update-v3/UPDATE.md §5–§8). Pure functions over a Dataset;
 // everything returned is plain JSON for the client component.
 import { fill, numberWord, TEAM_COPY } from '../copy/team-page';
-import { asset, sponsorCheckHref } from '../config';
+import { asset, claimClubHref, sponsorCheckHref } from '../config';
 import {
   formatDate,
   formatMoney,
@@ -19,16 +19,7 @@ import {
 import type { MessageSponsor } from '../messages';
 import type { Dataset } from './dataset';
 import { kitEnd, kitStart } from './dataset';
-import {
-  clubKits,
-  currentKit,
-  dealForKit,
-  hasTeamPage,
-  isTeamPageKit,
-  kitLevel,
-  leagueHref,
-  sportHref,
-} from './derive';
+import { clubKits, currentKit, dealForKit, isMarkedKit, kitLevel, leagueHref, ownerRef, sportHref } from './derive';
 import { compareLevels, TIER_SCORE } from './rating';
 import type { Club, Deal, Hotspot, Kit, KitSponsor, LevelId, Placement, Source, Sponsor, TierId } from './schema';
 
@@ -81,8 +72,14 @@ export function moneyFact(ds: Dataset, deal: Deal | null): MoneyFact {
   return { main: formatMoney(deal.value).main, sub: sub || null };
 }
 
-const ownerName = (ds: Dataset, sponsor: Sponsor) =>
-  sponsor.ownerId ? (ds.byId.owner.get(sponsor.ownerId)?.name ?? null) : null;
+const directOwner = (ds: Dataset, sponsor: Sponsor) =>
+  sponsor.ownerId ? (ds.byId.owner.get(sponsor.ownerId) ?? null) : null;
+const ownerName = (ds: Dataset, sponsor: Sponsor) => directOwner(ds, sponsor)?.name ?? null;
+/** The direct owner in a sentence: 'the Government of Dubai', 'Payward, Inc.'. */
+const ownerPhrase = (ds: Dataset, sponsor: Sponsor) => {
+  const o = directOwner(ds, sponsor);
+  return o ? ownerRef(o) : null;
+};
 
 /** 'owned by', 'paid for by' or, for a sponsor a state only part-owns, 'part-owned by'. */
 export const ownerVerb = (sponsor: Sponsor) =>
@@ -104,8 +101,10 @@ export interface SponsorRowView {
   placementText: string;
   side: 'front' | 'back' | null;
   hotspot: Hotspot | null;
-  /** The direct owner, e.g. 'Government of Dubai'. Null for unrated sponsors ('Not checked yet'). */
+  /** The direct owner, e.g. 'Government of Dubai'. Null when we don't know it ('Not checked yet'). */
   payer: string | null;
+  /** Not rated yet, but the owner and evidence are known: the rating is on hold (status being-rated). */
+  held: boolean;
   money: MoneyFact;
   ownedThrough: string | null;
   /** The first two claims. */
@@ -151,9 +150,10 @@ function row(ds: Dataset, kit: Kit, ks: KitSponsor, number: number): SponsorRowV
     placementText: placementLabel(ks.placement),
     side: ks.side ?? null,
     hotspot: ks.hotspot ?? null,
-    payer: rated ? (owner?.name ?? null) : null,
+    payer: owner?.name ?? null,
+    held: !rated && sponsor.status === 'being-rated',
     money: moneyFact(ds, dealForKit(ds, kit, ks)),
-    ownedThrough: rated ? (owner?.via ?? null) : null,
+    ownedThrough: owner?.via ?? null,
     evidence: sponsor.claimIds.slice(0, 2).flatMap((id) => {
       const c = ds.byId.claim.get(id);
       return c ? [{ text: c.text, source: sourceRef(c.source) }] : [];
@@ -273,7 +273,7 @@ export function headlineFor(ds: Dataset, kit: Kit, rows: SponsorRowView[], isPas
   if (level === 'clean') return splitLevel(ds, fill(C.headline.clean, { is }), level);
   const lead = rows[0];
   const sponsor = ds.byId.sponsor.get(lead.sponsorId)!;
-  const owner = ownerName(ds, sponsor);
+  const owner = ownerPhrase(ds, sponsor);
   const template = owner ? C.headline.driven : C.headline.drivenNoOwner;
   return splitLevel(
     ds,
@@ -417,18 +417,47 @@ export function actionIntroExamples(ds: Dataset, club: Club): string | null {
 }
 
 export interface ClubContactView {
+  /** Who it reaches: the supporter liaison officer, a general fan or customer-service inbox, or nobody known. */
+  kind: 'supporter-liaison' | 'general' | null;
   email: string | null;
   url: string | null;
 }
 
-/** A checked address for "Tell {club}": clubs.json → contact, else the sourced channels in contacts.json. */
+// Clubs publish many addresses. "Tell {club}" should only reach people meant to hear from fans:
+// never a ticket office, a named member of staff, a legal inbox or a legal-notice page.
+const SLO = /(^|[^a-z])slo([^a-z]|$)|supporter.?liaison|fan.?liaison/i;
+const FAN_INBOX =
+  /^(info|fans?|fan.?(feedback|services?|relations|care|experience)|customer.?(service|care)|client.?services|service|support|contact|contact\.us|contacto|enquiries|general.?enquiries|askquestions|comments|talkback|feedback|atencionpublico|reception|segreteria|post|guestexperience|socios)$/i;
+const CONTACT_PAGE = /contact|contatti|contacto|kontakt|supporter-liaison|\bslo\b/i;
+const NOT_FOR_FANS =
+  /ticket|career|job|meeting|event|hospitality|impressum|aviso-legal|legal|privacy|member-central|kooperation|partner|sponsor|press|media|shop|store/i;
+
+/**
+ * Where "Tell {club}" sends people: clubs.json → contact when set, else the best sourced channel in
+ * contacts.json (the supporter liaison officer first, then a general fan inbox, then a contact page).
+ */
 export function contactFor(ds: Dataset, club: Club): ClubContactView {
-  if (club.contact) return { email: club.contact.email ?? null, url: club.contact.url ?? null };
+  if (club.contact)
+    return {
+      kind: club.contact.kind === 'supporter-liaison' ? 'supporter-liaison' : 'general',
+      email: club.contact.email ?? null,
+      url: club.contact.url ?? null,
+    };
   const channels = ds.byId.contact.get(club.id)?.channels ?? [];
-  return {
-    email: channels.find((c) => c.type === 'email')?.value ?? null,
-    url: channels.find((c) => c.type === 'contact-form' || c.type === 'website')?.value ?? null,
-  };
+  // The domain counts too: customercare@ferraristore.com is the online shop, not the team.
+  const emails = channels
+    .filter((c) => c.type === 'email' && !NOT_FOR_FANS.test(c.value.split('@')[1] ?? ''))
+    .map((c) => c.value);
+  const pages = channels
+    .filter((c) => c.type === 'contact-form' && CONTACT_PAGE.test(c.value) && !NOT_FOR_FANS.test(c.value))
+    .map((c) => c.value);
+  const local = (e: string) => e.split('@')[0];
+  const sloEmail = emails.find((e) => SLO.test(local(e)));
+  const sloPage = pages.find((u) => SLO.test(u));
+  if (sloEmail || sloPage) return { kind: 'supporter-liaison', email: sloEmail ?? null, url: sloPage ?? null };
+  const inbox = emails.find((e) => FAN_INBOX.test(local(e)));
+  if (inbox || pages.length) return { kind: 'general', email: inbox ?? null, url: pages[0] ?? null };
+  return { kind: null, email: null, url: null };
 }
 
 export interface RaiseItem {
@@ -444,8 +473,8 @@ export interface ActView {
   examples: string | null;
   raise: RaiseItem[];
   contact: ClubContactView;
-  /** The first unrated sponsor on today's shirt, for "Help check {sponsor}". */
-  check: { name: string; href: string } | null;
+  /** "Help check {sponsor}" for the first unrated sponsor on today's shirt, or "Help check {club}" with no shirt on file. */
+  check: { kind: 'sponsor' | 'club'; name: string; href: string } | null;
   share: { title: string; text: string };
 }
 
@@ -471,7 +500,14 @@ export interface TeamPeriodView {
   whyMissing: string[];
   change: Kit['change'];
   shortLine: string;
-  photos: { front: string; back: string };
+  /**
+   * How the shirt can be shown: 'marked' (both photos, every logo has a hotspot: numbered markers),
+   * 'photo' (a photo but no marked logos) or 'none' (no photo yet).
+   */
+  shirt: 'marked' | 'photo' | 'none';
+  photos: { front: string | null; back: string | null };
+  /** False for a club with no shirt on file yet: the page says so. */
+  hasKit: boolean;
   rows: SponsorRowView[];
   departed: DepartedRowView[];
   backHasSponsor: boolean;
@@ -500,12 +536,41 @@ function shortLineFor(ds: Dataset, kit: Kit): string {
 
 const capitalise = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
+/** A club with no shirt on file: one empty period, so the page can say so. */
+function noKitPeriod(club: Club): TeamPeriodView {
+  const text = fill(C.headline.noKit, { club: club.shortName });
+  return {
+    kitId: '',
+    key: '',
+    from: '',
+    to: '',
+    label: '',
+    kitLabel: 'Home',
+    kitType: 'Home',
+    isCurrent: true,
+    level: 'not-rated',
+    headline: { before: text, level: null, after: '', text },
+    why: [],
+    whyMissing: [],
+    change: null,
+    shortLine: '',
+    shirt: 'none',
+    photos: { front: null, back: null },
+    hasKit: false,
+    rows: [],
+    departed: [],
+    backHasSponsor: false,
+    notes: { clean: null, spotted: null, stained: null, soaked: null },
+  };
+}
+
+/** Every club has a page: with markers when its shirt is marked up, the photo alone, or no photo yet. */
 export function teamPage(ds: Dataset, clubId: string): TeamPageView | null {
   const club = ds.byId.club.get(clubId);
-  if (!club || !hasTeamPage(ds, clubId)) return null;
-  const all = clubKits(ds, clubId);
-  const now = currentKit(ds, clubId)!;
-  const kits = all.filter(isTeamPageKit);
+  if (!club) return null;
+  const kits = clubKits(ds, clubId);
+  const now = currentKit(ds, clubId);
+  const all = kits;
   const scalePeriods: ScalePeriod[] = kits.map((k) => ({
     level: kitLevel(ds, k),
     label: k.periodLabel,
@@ -517,6 +582,8 @@ export function teamPage(ds: Dataset, clubId: string): TeamPageView | null {
     const { rows, departed } = sponsorRows(ds, k, prev, { club: club.shortName, isPast });
     const why = whyBoxes(ds, rows);
     const from = kitStart(k);
+    const marked = isMarkedKit(k);
+    const front = k.photos.front ?? k.photos.square ?? null;
     return {
       kitId: k.id,
       key: from,
@@ -532,16 +599,19 @@ export function teamPage(ds: Dataset, clubId: string): TeamPageView | null {
       whyMissing: why.missing,
       change: k.change,
       shortLine: shortLineFor(ds, k),
-      photos: { front: asset(k.photos.front!), back: asset(k.photos.back!) },
+      shirt: marked ? 'marked' : front ? 'photo' : 'none',
+      photos: { front: front && asset(front), back: k.photos.back ? asset(k.photos.back) : null },
+      hasKit: true,
       rows,
       departed,
-      backHasSponsor: rows.some((r) => r.side === 'back' && r.hotspot),
+      backHasSponsor: marked && rows.some((r) => r.side === 'back' && r.hotspot),
       notes: Object.fromEntries(SCALE_LEVELS.map((l) => [l, scaleNote(club.shortName, l, scalePeriods, i)])) as Record<
         ScaleLevel,
         string | null
       >,
     };
   });
+  if (periods.length === 0) periods.push(noKitPeriod(club));
   const current = periods.length - 1;
   const today = periods[current];
   const raise: RaiseItem[] = today.rows
@@ -557,12 +627,13 @@ export function teamPage(ds: Dataset, clubId: string): TeamPageView | null {
           name: r.name,
           placement: placementLabel(r.placement, 'short'),
           ownerVerb: ownerVerb(sponsor),
-          owner: ownerName(ds, sponsor),
+          owner: ownerPhrase(ds, sponsor),
           messageLine: sponsor.why?.messageLine ?? null,
         },
       };
     });
-  const unrated = today.rows.find((r) => !r.rated);
+  // "Help check" is for sponsors nobody has traced yet, not for ones whose rating is on hold.
+  const unrated = today.rows.find((r) => !r.rated && !r.payer);
   const league = club.leagueId ? ds.byId.league.get(club.leagueId) : undefined;
   const sport = ds.byId.sport.get(club.sportId);
   return {
@@ -590,7 +661,11 @@ export function teamPage(ds: Dataset, clubId: string): TeamPageView | null {
       examples: actionIntroExamples(ds, club),
       raise,
       contact: contactFor(ds, club),
-      check: unrated ? { name: unrated.name, href: sponsorCheckHref(unrated.name) } : null,
+      check: unrated
+        ? { kind: 'sponsor', name: unrated.name, href: sponsorCheckHref(unrated.name) }
+        : today.hasKit
+          ? null
+          : { kind: 'club', name: club.shortName, href: claimClubHref(club.name) },
       share: {
         title: fill(C.act.shareTitle, {
           club: club.shortName,
@@ -620,6 +695,8 @@ export interface FactSheetSponsor {
   moneySource: { name: string; date: string; url: string | null } | null;
   claims: { id: string; text: string; source: { name: string; date: string; url: string | null } | null }[];
   why: string | null;
+  /** Owner and evidence known, rating on hold. */
+  held: boolean;
 }
 
 export interface FactSheetView {
@@ -637,7 +714,7 @@ export interface FactSheetView {
 export function factSheet(ds: Dataset, clubId: string): FactSheetView | null {
   const page = teamPage(ds, clubId);
   if (!page) return null;
-  const kits = clubKits(ds, clubId).filter(isTeamPageKit);
+  const kits = clubKits(ds, clubId);
   const today = page.periods[page.current];
   const seen = new Set<string>();
   const sponsors: FactSheetSponsor[] = [];
@@ -683,6 +760,7 @@ export function factSheet(ds: Dataset, clubId: string): FactSheetView | null {
             : [];
         }),
         why: sp.why?.text ?? null,
+        held: sp.tier === 'unrated' && sp.status === 'being-rated',
       });
     }
   }

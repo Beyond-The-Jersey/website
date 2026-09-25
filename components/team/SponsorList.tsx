@@ -51,7 +51,9 @@ function TierChip({ row }: { row: SponsorRowView }) {
 }
 
 function Detail({ row, factSheetHref }: { row: SponsorRowView; factSheetHref: string }) {
-  if (!row.rated) {
+  // Nothing known yet: the design's "we haven't traced who owns it" panel. A sponsor on hold
+  // (owner and evidence known, rating under review) gets the full panel below instead.
+  if (!row.rated && !row.payer && row.evidence.length === 0) {
     return (
       <div className={`${s.detail} ${s.detailOne}`}>
         <span className={s.detailText}>
@@ -79,6 +81,11 @@ function Detail({ row, factSheetHref }: { row: SponsorRowView; factSheetHref: st
         )}
       </div>
       <div className={s.evidence}>
+        {row.held && (
+          <span className={s.detailText}>
+            <strong>{C.heldLead}</strong> {fill(C.heldDetail, { sponsor: row.name })}
+          </span>
+        )}
         {row.evidence.map((e, i) => (
           <div key={i} className={s.evidenceItem}>
             <span className={s.detailText}>
@@ -143,7 +150,7 @@ export function SponsorList({
               onClick={() => onToggle(r.key)}
             >
               <span className={s.cellMarker}>
-                <SponsorMarker n={r.number} rated={r.rated} size={30} />
+                <SponsorMarker n={r.number} tier={r.tier} size={30} />
               </span>
               <span className={s.nameCell}>
                 <span className={s.sponsorName}>{r.name}</span>
@@ -163,6 +170,7 @@ export function SponsorList({
           </div>
         );
       })}
+      {rows.length === 0 && departed.length === 0 && <p className={s.listEmpty}>{C.empty}</p>}
       {departed.map((d) => {
         const isOpen = open.has(d.key);
         return (

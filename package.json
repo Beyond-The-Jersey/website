@@ -18,6 +18,7 @@
     "test:e2e": "playwright test",
     "validate:data": "tsx scripts/validate-data.ts",
     "data:pull": "bash scripts/pull-data.sh",
+    "data:live": "tsx scripts/build-live-data.ts",
     "build:pages": "bash scripts/build-pages.sh"
   },
   "dependencies": {

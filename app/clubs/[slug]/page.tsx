@@ -4,7 +4,6 @@ import { Container, SiteFooter, SiteHeader } from '@/components/SiteChrome';
 import { TeamPage } from '@/components/team/TeamPage';
 import { SHOW_TEAM_CREST } from '@/lib/config';
 import { getDataset } from '@/lib/data';
-import { hasTeamPage } from '@/lib/data/derive';
 import { teamPage } from '@/lib/data/team';
 import { LEVELS } from '@/lib/levels';
 import s from './page.module.css';
@@ -13,10 +12,10 @@ type Props = { params: Promise<{ slug: string }> };
 
 export const dynamicParams = false;
 
-/** One page per club whose current kit has photos and logo hotspots. */
+/** Every club has a page. */
 export async function generateStaticParams() {
   const ds = await getDataset();
-  return ds.clubs.filter((c) => hasTeamPage(ds, c.id)).map((c) => ({ slug: c.id }));
+  return ds.clubs.map((c) => ({ slug: c.id }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

@@ -165,63 +165,71 @@ export function ActNow({
         </p>
       </div>
 
-      <article className={s.tell} aria-labelledby="tell-title">
-        <div className={s.tellMain}>
-          <div className={s.tellHead}>
-            <span className={s.iconTile} aria-hidden="true">
-              <MailIcon />
-            </span>
-            <h3 id="tell-title" className={s.tellTitle}>
-              {fill(C.tell.title, { club: name })}
-            </h3>
-          </div>
-          <p className={s.tellText}>{C.tell.text}</p>
-          <fieldset className={s.raise}>
-            <legend className={s.label}>{C.tell.raiseLabel}</legend>
-            {act.raise.map((r) =>
-              r.flagged ? (
-                <label key={r.sponsorId} className={s.check}>
-                  <input
-                    type="checkbox"
-                    checked={ticked.has(r.sponsorId)}
-                    onChange={() => toggle(r.sponsorId)}
-                    aria-label={`Include ${r.name} in the message to ${name}`}
-                  />
-                  <strong>{r.name}</strong>
-                  <span style={{ color: TIERS[r.tier].color }}>· {TIERS[r.tier].label}</span>
-                </label>
-              ) : (
-                <label key={r.sponsorId} className={`${s.check} ${s.checkOff}`}>
-                  <input type="checkbox" disabled aria-label={`${r.name} can’t be included until it is rated`} />
-                  <strong>{r.name}</strong>
-                  <span>{C.tell.unratedSuffix}</span>
-                </label>
-              ),
-            )}
-          </fieldset>
-          <button type="button" className={s.write} disabled={!message} onClick={write}>
-            {label}
-          </button>
-        </div>
-        <div className={s.draftCol}>
-          <span className={s.label} id="draft-label">
-            {C.tell.draftLabel}
-          </span>
-          <div
-            className={`${s.draft} ${draftOpen ? s.draftOpen : ''}`}
-            aria-labelledby="draft-label"
-            role="region"
-            data-draft
-          >
-            {message ? message.body : <span className={s.draftEmpty}>{C.tell.draftEmpty}</span>}
-          </div>
-          {message && (
-            <button type="button" className={s.draftToggle} onClick={() => setDraftOpen((o) => !o)}>
-              {draftOpen ? C.tell.draftLess : C.tell.draftMore}
+      {act.raise.length > 0 && (
+        <article className={s.tell} aria-labelledby="tell-title">
+          <div className={s.tellMain}>
+            <div className={s.tellHead}>
+              <span className={s.iconTile} aria-hidden="true">
+                <MailIcon />
+              </span>
+              <h3 id="tell-title" className={s.tellTitle}>
+                {fill(C.tell.title, { club: name })}
+              </h3>
+            </div>
+            <p className={s.tellText}>
+              {act.contact.kind === 'supporter-liaison'
+                ? C.tell.text
+                : act.contact.kind === 'general'
+                  ? C.tell.textGeneral
+                  : C.tell.textNoAddress}
+            </p>
+            <fieldset className={s.raise}>
+              <legend className={s.label}>{C.tell.raiseLabel}</legend>
+              {act.raise.map((r) =>
+                r.flagged ? (
+                  <label key={r.sponsorId} className={s.check}>
+                    <input
+                      type="checkbox"
+                      checked={ticked.has(r.sponsorId)}
+                      onChange={() => toggle(r.sponsorId)}
+                      aria-label={`Include ${r.name} in the message to ${name}`}
+                    />
+                    <strong>{r.name}</strong>
+                    <span style={{ color: TIERS[r.tier].color }}>· {TIERS[r.tier].label}</span>
+                  </label>
+                ) : (
+                  <label key={r.sponsorId} className={`${s.check} ${s.checkOff}`}>
+                    <input type="checkbox" disabled aria-label={`${r.name} can’t be included until it is rated`} />
+                    <strong>{r.name}</strong>
+                    <span>{C.tell.unratedSuffix}</span>
+                  </label>
+                ),
+              )}
+            </fieldset>
+            <button type="button" className={s.write} disabled={!message} onClick={write}>
+              {label}
             </button>
-          )}
-        </div>
-      </article>
+          </div>
+          <div className={s.draftCol}>
+            <span className={s.label} id="draft-label">
+              {C.tell.draftLabel}
+            </span>
+            <div
+              className={`${s.draft} ${draftOpen ? s.draftOpen : ''}`}
+              aria-labelledby="draft-label"
+              role="region"
+              data-draft
+            >
+              {message ? message.body : <span className={s.draftEmpty}>{C.tell.draftEmpty}</span>}
+            </div>
+            {message && (
+              <button type="button" className={s.draftToggle} onClick={() => setDraftOpen((o) => !o)}>
+                {draftOpen ? C.tell.draftLess : C.tell.draftMore}
+              </button>
+            )}
+          </div>
+        </article>
+      )}
 
       <div className={s.more}>
         <span className={`${s.label} ${s.moreLabel}`}>{C.moreLabel}</span>
@@ -248,8 +256,16 @@ export function ActNow({
         {act.check && (
           <MoreRow
             icon={<SearchIcon />}
-            title={fill(C.more.check.title, { sponsor: act.check.name })}
-            text={fill(C.more.check.text, { sponsor: act.check.name })}
+            title={
+              act.check.kind === 'club'
+                ? fill(C.more.checkClub.title, { club: act.check.name })
+                : fill(C.more.check.title, { sponsor: act.check.name })
+            }
+            text={
+              act.check.kind === 'club'
+                ? fill(C.more.checkClub.text, { club: act.check.name })
+                : fill(C.more.check.text, { sponsor: act.check.name })
+            }
             action={
               <a href={act.check.href} className={s.outline}>
                 {C.more.check.button}

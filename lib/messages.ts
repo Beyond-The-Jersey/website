@@ -7,7 +7,7 @@ export interface MessageSponsor {
   placement: string;
   /** 'owned by' or 'paid for by'. */
   ownerVerb: string;
-  /** The direct owner, e.g. 'Government of Dubai'. */
+  /** The direct owner with its article, e.g. 'the Government of Dubai' or 'Payward, Inc.'. */
   owner: string | null;
   /** The one sentence about the owner's record; left out when missing. */
   messageLine: string | null;
@@ -31,7 +31,7 @@ function paragraph(template: string, sp: MessageSponsor): string {
   // Without a known owner, say only what we know: 'our front sponsor, X, …' becomes 'our front sponsor is X.'
   const text = sp.owner
     ? fill(template, vars)
-    : fill(template.replace(/, \{sponsor\}, is \{ownerVerb\} the \{owner\}\./, ' is {sponsor}.'), vars);
+    : fill(template.replace(/, \{sponsor\}, is \{ownerVerb\} \{owner\}\./, ' is {sponsor}.'), vars);
   return text.trim();
 }
 

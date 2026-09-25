@@ -5,7 +5,7 @@ import {
   clubsForSponsor,
   coverage,
   currentKit,
-  hasTeamPage,
+  hasMarkedShirt,
   kitLevel,
   latestChanges,
   leagueSummary,
@@ -148,7 +148,7 @@ describe('selectors', () => {
 
   it('picks the current kit and team pages', () => {
     expect(currentKit(ds, 'arsenal')?.id).toBe('arsenal-2026-27-home');
-    expect(ds.clubs.filter((c) => hasTeamPage(ds, c.id)).map((c) => c.id)).toEqual([
+    expect(ds.clubs.filter((c) => hasMarkedShirt(ds, c.id)).map((c) => c.id)).toEqual([
       'arsenal',
       'aston-villa',
       'atletico-de-madrid',

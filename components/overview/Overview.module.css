@@ -374,6 +374,50 @@
   line-height: 1.25;
 }
 
+.tileLink {
+  text-decoration: none;
+}
+
+.tileLink:hover .tile,
+.tileLink:focus-visible .tile {
+  opacity: 1;
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.tileLink:hover .tileName {
+  color: var(--text);
+}
+
+/* Other sports: one league view per league, then the deals list. */
+.sportLeague {
+  margin-top: 40px;
+}
+
+.sportLeague .content {
+  margin-top: 16px;
+}
+
+.sportLeagueTitle {
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line-3);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 34px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.rowLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.rowLink:hover {
+  text-decoration: underline;
+}
+
 .more {
   grid-column: span 2;
   height: 116px;

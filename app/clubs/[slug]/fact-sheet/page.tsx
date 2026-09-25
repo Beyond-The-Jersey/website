@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { BASE_PATH } from '@/lib/config';
 import { getDataset } from '@/lib/data';
-import { hasTeamPage } from '@/lib/data/derive';
 import { factSheet } from '@/lib/data/team';
 import { formatDate } from '@/lib/format';
 import { LEVELS } from '@/lib/levels';
@@ -18,7 +17,7 @@ export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const ds = await getDataset();
-  return ds.clubs.filter((c) => hasTeamPage(ds, c.id)).map((c) => ({ slug: c.id }));
+  return ds.clubs.map((c) => ({ slug: c.id }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -89,7 +88,10 @@ export default async function FactSheetPage({ params }: Props) {
               {sp.onTodaysShirt ? '' : ' (an earlier shirt)'}
             </dd>
             <dt>Rating</dt>
-            <dd>{sp.tierLabel}</dd>
+            <dd>
+              {sp.tierLabel}
+              {sp.held && ' (on hold until a person reviews the evidence below)'}
+            </dd>
             <dt>Who really pays</dt>
             <dd>{sp.ownerChain.length ? sp.ownerChain.join(' → ') : 'Not checked yet'}</dd>
             {sp.ownedThrough && (
@@ -110,7 +112,7 @@ export default async function FactSheetPage({ params }: Props) {
               )}
             </dd>
           </dl>
-          {sp.verdict && <p className={s.text}>{sp.verdict}</p>}
+          {sp.verdict && !sp.held && <p className={s.text}>{sp.verdict}</p>}
           {sp.claims.length > 0 ? (
             <ol className={s.claims}>
               {sp.claims.map((c) => (

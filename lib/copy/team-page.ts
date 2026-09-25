@@ -22,8 +22,16 @@ export const TEAM_COPY = {
   sponsors: {
     title: 'Every sponsor on the shirt',
     sub: 'Click a row for the money and the evidence. The numbers match the shirt.',
+    /** Not in the design: no marked photo to match. */
+    subNoMarkers: 'Click a row for the money and the evidence.',
+    /** Not in the design: no sponsors on file. */
+    empty: 'No sponsors on file for this shirt yet.',
     columns: ['#', 'Sponsor', 'Who really pays', 'Rating', ''],
     notChecked: 'Not checked yet',
+    /** Not in the design: a sponsor whose owner and evidence we have, but whose rating is on hold. */
+    heldLead: 'Not rated yet.',
+    heldDetail:
+      'We know who owns {sponsor}, but a person still has to check whether that owner’s record supports a rating.',
     unratedDetail:
       'We haven’t traced who owns {sponsor} yet, so there is no rating. A rating only goes up once every claim is sourced.',
     helpLink: 'Help check it →',
@@ -52,6 +60,12 @@ export const TEAM_COPY = {
     tell: {
       title: 'Tell {club}',
       text: 'It takes about two minutes. Send the club a short, polite message: we write the draft, you change what you like and send it from your own email to the club’s supporter liaison officer.',
+      /** Not in the design: when the only checked address is a general fan inbox or contact page. */
+      textGeneral:
+        'It takes about two minutes. Send the club a short, polite message: we write the draft, you change what you like and send it from your own email.',
+      /** Not in the design: no checked address yet. */
+      textNoAddress:
+        'It takes about two minutes. We write a short, polite draft; you change what you like and send it to the club yourself.',
       raiseLabel: 'What to raise',
       unratedSuffix: '· not rated yet',
       buttonOne: 'Write to {club} about {sponsor}',
@@ -74,6 +88,12 @@ export const TEAM_COPY = {
         title: 'Bring it to your fan group',
         text: 'A supporters’ trust carries more weight than one email. Take a one-page fact sheet with every source.',
         button: 'Get the fact sheet',
+      },
+      /** Not in the design: a club with no shirt on file yet. */
+      checkClub: {
+        title: 'Help check {club}',
+        text: 'Nobody has recorded the sponsors on {club}’s shirt yet. Anyone can add them, with a source for each one.',
+        button: 'Help check it',
       },
       check: {
         title: 'Help check {sponsor}',
@@ -111,6 +131,11 @@ export const TEAM_COPY = {
     back: 'Back',
     backNone: 'Back · no sponsor',
     hint: 'Hover a number to find it in the list.',
+    /** Not in the design: a photo whose logos haven't been marked yet. */
+    unmarked: 'The logos on this photo aren’t marked yet. Every sponsor is in the list.',
+    /** Not in the design: no photo of the shirt yet. */
+    noPhoto: 'No photo of this shirt yet.',
+    noKit: 'No shirt on file yet.',
     /** Not in the design: the same hint on touch screens. */
     hintTouch: 'Tap a number to find it in the list.',
   },
@@ -126,18 +151,21 @@ export const TEAM_COPY = {
     subject: 'A question about our shirt sponsor',
     greeting: 'Dear {club},',
     opening: 'I’ve supported the club for years and I’m proud of our shirt.',
-    sponsorParagraph: 'But our {placement} sponsor, {sponsor}, is {ownerVerb} the {owner}. {messageLine}',
-    sponsorParagraphNext: 'Our {placement} sponsor, {sponsor}, is {ownerVerb} the {owner}. {messageLine}',
+    /** {owner} carries its article: 'the Government of Dubai', 'Payward, Inc.'. */
+    sponsorParagraph: 'But our {placement} sponsor, {sponsor}, is {ownerVerb} {owner}. {messageLine}',
+    sponsorParagraphNext: 'Our {placement} sponsor, {sponsor}, is {ownerVerb} {owner}. {messageLine}',
     ask: 'Please don’t let our shirt be used to cover for that. When the deal is next reviewed, please look for a sponsor every fan can be proud of.',
     signoff: 'Thank you,\nA supporter',
   },
   headline: {
     /** Used when a kit has no headline of its own (UPDATE.md §8). */
-    driven: 'The shirt {is} {level}: the {placement} sponsor, {sponsor}, is {ownerVerb} the {owner}.',
+    driven: 'The shirt {is} {level}: the {placement} sponsor, {sponsor}, is {ownerVerb} {owner}.',
     drivenNoOwner: 'The shirt {is} {level}: the {placement} sponsor is {sponsor}.',
     notRated: 'We haven’t rated this shirt yet: {n} sponsors still need checking.',
     notRatedOne: 'We haven’t rated this shirt yet: one sponsor still needs checking.',
     clean: 'The shirt {is} {level}: we checked every sponsor and found nothing.',
+    /** Not in the design: a club with no shirt on file yet. */
+    noKit: 'We haven’t recorded the sponsors on {club}’s shirt yet.',
   },
 } as const;
 

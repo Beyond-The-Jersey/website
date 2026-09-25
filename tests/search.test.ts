@@ -77,6 +77,6 @@ describe('search', () => {
     expect(get('Emirates').description).toBe('Government of Dubai · Arsenal, Real Madrid');
     expect(get('Turkish Airlines').rating).toEqual({ kind: 'tier', tier: 'unrated', label: 'Being rated' });
     expect(get('Aston Villa').href).toBe('/clubs/aston-villa/');
-    expect(get('Chelsea').href).toBe('/soccer/premier-league/');
+    expect(get('Chelsea').href).toBe('/clubs/chelsea/');
   });
 });

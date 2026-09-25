@@ -5,14 +5,14 @@ const emirates: MessageSponsor = {
   name: 'Emirates',
   placement: 'front',
   ownerVerb: 'owned by',
-  owner: 'Government of Dubai',
+  owner: 'the Government of Dubai',
   messageLine: 'In 2024, 43 activists in the UAE got life sentences in one mass trial.',
 };
 const rwanda: MessageSponsor = {
   name: 'Visit Rwanda',
   placement: 'sleeve',
   ownerVerb: 'paid for by',
-  owner: 'Government of Rwanda',
+  owner: 'the Government of Rwanda',
   messageLine: 'UN experts say 3,000–4,000 Rwandan troops are fighting alongside M23 rebels in eastern Congo.',
 };
 

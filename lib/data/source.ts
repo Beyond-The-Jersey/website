@@ -1,7 +1,9 @@
 // Where the data comes from. Pages never read files directly: they go through lib/data/index.ts,
 // which asks one of these sources for the raw JSON and validates it.
 //
-//   BTJ_DATA_SOURCE=seed (default)  data/seed/*.json in this repo
+//   BTJ_DATA_SOURCE=seed (default)  data/seed/*.json in this repo (the design handover's data; /demo/)
+//   BTJ_DATA_SOURCE=live            data/live/*.json: the data repo, fixed and extended for the site by
+//                                   scripts/build-live-data.ts (npm run data:live). The live site uses it.
 //   BTJ_DATA_SOURCE=repo            a checkout of Beyond-The-Jersey/data (see scripts/pull-data.sh),
 //                                   files in $BTJ_DATA_DIR (default .data-repo/normalized)
 //   BTJ_DATA_SOURCE=api             $BTJ_DATA_URL/<file>.json over HTTP, with $BTJ_DATA_TOKEN as a bearer
@@ -70,18 +72,21 @@ export class HttpSource implements DataSource {
 }
 
 export const SEED_DIR = path.join(process.cwd(), 'data', 'seed');
+export const LIVE_DIR = path.join(process.cwd(), 'data', 'live');
 
 export function sourceFromEnv(env: NodeJS.ProcessEnv = process.env): DataSource {
   const kind = env.BTJ_DATA_SOURCE ?? 'seed';
   switch (kind) {
     case 'seed':
       return new DirectorySource('seed', SEED_DIR);
+    case 'live':
+      return new DirectorySource('live', LIVE_DIR);
     case 'repo':
       return new DirectorySource('repo', path.resolve(env.BTJ_DATA_DIR ?? path.join('.data-repo', 'normalized')));
     case 'api':
       if (!env.BTJ_DATA_URL) throw new Error('BTJ_DATA_SOURCE=api needs BTJ_DATA_URL');
       return new HttpSource(env.BTJ_DATA_URL, env.BTJ_DATA_TOKEN);
     default:
-      throw new Error(`Unknown BTJ_DATA_SOURCE "${kind}". Use seed, repo or api.`);
+      throw new Error(`Unknown BTJ_DATA_SOURCE "${kind}". Use seed, live, repo or api.`);
   }
 }

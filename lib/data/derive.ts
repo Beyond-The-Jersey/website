@@ -38,13 +38,17 @@ export function clubLevel(ds: Dataset, clubId: string): LevelId {
   return kit ? kitLevel(ds, kit) : 'not-rated';
 }
 
-/** A kit can be drawn on the team page when it has both photos and every logo has a hotspot and a side. */
-export const isTeamPageKit = (kit: Kit): boolean =>
+/**
+ * A kit whose shirt can be drawn with numbered markers: both photos, and every logo has a hotspot
+ * and a side. Other kits still get a club page, with the photo alone or a placeholder.
+ */
+export const isMarkedKit = (kit: Kit): boolean =>
   Boolean(kit.photos.front && kit.photos.back) && kit.sponsors.every((s) => s.hotspot && s.side);
 
-export function hasTeamPage(ds: Dataset, clubId: string): boolean {
+/** The club's current shirt can be drawn with markers (the design's full team page). */
+export function hasMarkedShirt(ds: Dataset, clubId: string): boolean {
   const kit = currentKit(ds, clubId);
-  return Boolean(kit && isTeamPageKit(kit));
+  return Boolean(kit && isMarkedKit(kit));
 }
 
 export const DEFAULT_LEAGUE = 'premier-league';
@@ -57,11 +61,9 @@ export function sportHref(sport: Pick<Sport, 'id'>): string {
   return sport.id === 'soccer' ? `/soccer/${DEFAULT_LEAGUE}/` : `/${sport.id}/`;
 }
 
-export function clubHref(ds: Dataset, club: Club): string {
-  if (hasTeamPage(ds, club.id)) return `/clubs/${club.id}/`;
-  const league = club.leagueId ? ds.byId.league.get(club.leagueId) : undefined;
-  if (league) return leagueHref(league);
-  return club.sportId === 'soccer' ? sportHref({ id: 'soccer' }) : `/${club.sportId}/`;
+/** Every club has a page. */
+export function clubHref(club: Pick<Club, 'id'>): string {
+  return `/clubs/${club.id}/`;
 }
 
 // ---------------------------------------------------------------- owners, claims, deals
@@ -81,20 +83,22 @@ export function stateOwner(ds: Dataset, sponsor: Sponsor): Owner | null {
   return ownerChain(ds, sponsor.ownerId).find((o) => o.type === 'state') ?? null;
 }
 
-/** Who pays, for sentences: 'Government of Dubai, UAE' when the state sits inside another state. */
-export function payerName(ds: Dataset, sponsor: Sponsor, withCountry = false): string | null {
-  const state = stateOwner(ds, sponsor);
-  const owner = state ?? ownerChain(ds, sponsor.ownerId)[0];
-  if (!owner) return null;
-  return withCountry && state?.parentId && state.country ? `${owner.name}, ${state.country}` : owner.name;
+/** An owner in a sentence: 'the Government of Dubai', 'the Public Investment Fund', but 'Payward, Inc.'. */
+export const ownerRef = (o: Pick<Owner, 'name' | 'type'>) =>
+  (o.type === 'state' || o.type === 'state-fund') && !/^the /i.test(o.name) ? `the ${o.name}` : o.name;
+
+/** Who pays: the first state in the owner chain, else the direct owner. */
+export function payerOwner(ds: Dataset, sponsor: Sponsor): Owner | null {
+  return stateOwner(ds, sponsor) ?? ownerChain(ds, sponsor.ownerId)[0] ?? null;
 }
 
-/** 'paid for by the Government of Rwanda' or 'part-owned by the Public Investment Fund (Saudi Arabia)'. */
-export function payerPhrase(ds: Dataset, sponsor: Sponsor, withCountry = false): string | null {
+/** 'paid for by the Government of Rwanda', 'part-owned by the Public Investment Fund (Saudi Arabia)'. */
+export function payerPhrase(ds: Dataset, sponsor: Sponsor): string | null {
   if (!sponsor.ownerId) return null;
-  if (sponsor.ownership === 'part-owned') return `part-owned by the ${ds.byId.owner.get(sponsor.ownerId)?.name}`;
-  const name = payerName(ds, sponsor, withCountry);
-  return name ? `paid for by the ${name}` : null;
+  const direct = ds.byId.owner.get(sponsor.ownerId);
+  if (sponsor.ownership === 'part-owned') return direct ? `part-owned by ${ownerRef(direct)}` : null;
+  const owner = payerOwner(ds, sponsor);
+  return owner ? `paid for by ${ownerRef(owner)}` : null;
 }
 
 export interface SourceView {
@@ -193,17 +197,18 @@ export function payerLine(ds: Dataset, kit: Kit): string | null {
     const clean = sponsors.find((s) => s.tier === 'none');
     return clean?.verdict ?? kit.summary;
   }
-  const owned = [
-    ...new Set(
+  const owners = [
+    ...new Map(
       bad
         .filter((s) => s.ownership !== 'part-owned')
-        .map((s) => payerName(ds, s))
-        .filter(Boolean) as string[],
-    ),
+        .map((s) => payerOwner(ds, s))
+        .filter((o): o is Owner => Boolean(o))
+        .map((o) => [o.id, o]),
+    ).values(),
   ];
-  if (owned.length > 1 && owned.every((n) => n.startsWith('Government of ')))
-    return `Paid for by the governments of ${listJoin(owned.map((n) => n.replace('Government of ', '')))}`;
-  if (owned.length) return `Paid for by the ${listJoin(owned)}`;
+  if (owners.length > 1 && owners.every((o) => o.name.startsWith('Government of ')))
+    return `Paid for by the governments of ${listJoin(owners.map((o) => o.name.replace('Government of ', '')))}`;
+  if (owners.length) return `Paid for by ${listJoin(owners.map(ownerRef))}`;
   const worst = [...bad].sort((a, b) => (TIER_SCORE[b.tier] ?? 0) - (TIER_SCORE[a.tier] ?? 0))[0];
   const phrase = payerPhrase(ds, worst);
   return phrase ? phrase[0].toUpperCase() + phrase.slice(1) : null;
@@ -217,7 +222,6 @@ export interface ClubSummary {
   initials: string;
   level: LevelId;
   href: string;
-  hasTeamPage: boolean;
   sponsorLine: string;
   payerLine: string | null;
 }
@@ -231,8 +235,7 @@ export function clubSummary(ds: Dataset, club: Club): ClubSummary {
     crest: club.crest ? asset(club.crest) : null,
     initials: club.code || initials(club.name),
     level: clubLevel(ds, club.id),
-    href: clubHref(ds, club),
-    hasTeamPage: hasTeamPage(ds, club.id),
+    href: clubHref(club),
     sponsorLine: kit ? sponsorLine(ds, kit) : '',
     payerLine: kit ? payerLine(ds, kit) : null,
   };
@@ -329,7 +332,7 @@ export function latestChanges(ds: Dataset, n = 4): ChangeView[] {
         text: c.text,
         source: sourceView(c.source),
         club: { name: club.name, crest: club.crest ? asset(club.crest) : null, initials: club.code },
-        href: clubHref(ds, club),
+        href: clubHref(club),
       };
     });
 }
@@ -360,7 +363,7 @@ export function droppedView(ds: Dataset, d: Dataset['dropped'][number]): Dropped
     text: d.text,
     source: sourceView(d.source),
     todo: d.todo ?? null,
-    href: club ? clubHref(ds, club) : null,
+    href: club ? clubHref(club) : null,
   };
 }
 
@@ -384,7 +387,10 @@ export function droppedForLeague(ds: Dataset, leagueId: string, n = 3): DroppedV
 // ---------------------------------------------------------------- other sports
 
 export interface KnownDealRow {
+  key: string;
   title: string;
+  /** The club's page, when the row is about a club. */
+  href: string | null;
   text: string;
   status: string;
   source: SourceView | null;
@@ -407,7 +413,9 @@ export function knownForSport(ds: Dataset, sportId: string): KnownDealRow[] {
         ? `${sponsor.name} partner`
         : `${sponsor.name} ${placementPhrase(d.placement)}`;
     rows.push({
+      key: `deal-${d.id}`,
       title: club?.name ?? d.orgName ?? '',
+      href: club ? clubHref(club) : null,
       text: `${what}${since || until}.${d.value && d.note ? ` ${d.note}` : ''}`,
       status: club ? ds.byId.level.get(clubLevel(ds, club.id))!.label : 'Not rated yet',
       source: sourceView(d.source),
@@ -418,7 +426,9 @@ export function knownForSport(ds: Dataset, sportId: string): KnownDealRow[] {
     const org = x.clubId ? ds.byId.club.get(x.clubId)!.name : (x.orgName ?? '');
     const sponsor = x.sponsorId ? ds.byId.sponsor.get(x.sponsorId) : undefined;
     rows.push({
+      key: `dropped-${x.id}`,
       title: sponsor ? `${org} × ${sponsor.name}` : `${org}: ${x.what}`,
+      href: x.clubId ? clubHref({ id: x.clubId }) : null,
       text: x.text,
       status: `Dropped ${x.year}`,
       source: sourceView(x.source),

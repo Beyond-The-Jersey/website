@@ -19,7 +19,8 @@ search-index.ts  builds the search index at build time (matching lives in lib/se
 
 | `BTJ_DATA_SOURCE` | Reads | Notes |
 |---|---|---|
-| `seed` (default) | `data/seed/*.json` | The facts the designs use. Also the test fixtures. |
+| `seed` (default) | `data/seed/*.json` | The facts the designs use. Also the test fixtures and `/demo/`. |
+| `live` | `data/live/*.json` | The live site. Built from the data repo by `npm run data:live` (see the main README). |
 | `repo` | `$BTJ_DATA_DIR` (default `.data-repo/normalized`) | Run `npm run data:pull` first. Needs read access to Beyond-The-Jersey/data. |
 | `api` | `$BTJ_DATA_URL/<file>.json` | Sends `$BTJ_DATA_TOKEN` as a bearer token if set. Works with raw.githubusercontent.com. |
 

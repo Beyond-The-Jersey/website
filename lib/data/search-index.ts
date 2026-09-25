@@ -63,7 +63,7 @@ export function buildSearchIndex(ds: Dataset): SearchEntry[] {
       label: club.name,
       description: clubDescription(ds, club),
       aliases: club.aliases,
-      href: clubHref(ds, club),
+      href: clubHref(club),
       crest: club.crest ? asset(club.crest) : null,
       initials: club.code || initials(club.name),
       rating: { kind: 'level', level: clubLevel(ds, club.id) },

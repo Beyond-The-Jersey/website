@@ -1,6 +1,6 @@
 # CLAUDE.md: Behind the Jersey
 
-> **This repo, as built so far (25 Sep 2026).** The site lives at the repo root (Next.js 16, static export, Node 24 via `.nvmrc`); the handovers are kept as received in `handover/` (the team page v3 update in `handover/update-v3/`). Data goes through `lib/data` (see `lib/data/README.md`), from `data/seed` by default; the real data repo (Beyond-The-Jersey/data) can be used with `BTJ_DATA_SOURCE=repo` (see `docs/data-request/` for what we asked the data agent for). `README.md` lists the differences from the design we chose to keep. Checks: `npm run build`, `npm test`, `npm run test:e2e`, `node scripts/visual-compare.mjs --site <url>`.
+> **This repo, as built so far (25 Sep 2026).** The site lives at the repo root (Next.js 16, static export, Node 24 via `.nvmrc`); the handovers are kept as received in `handover/` (the team page v3 update in `handover/update-v3/`). Data goes through `lib/data` (see `lib/data/README.md`), from `data/seed` by default (tests, `/demo/`). The live site builds from `data/live`: the data repo (Beyond-The-Jersey/data) run through `npm run data:live`, which fixes what can't be shown as is and merges `data/live-overlay.json`; read `data/live/REPORT.md` after every update. `README.md` lists the differences from the design we chose to keep. Checks: `npm run build`, `npm test`, `npm run test:e2e`, `node scripts/visual-compare.mjs --site <url>`.
 
 You are implementing **Behind the Jersey**, a fan-facing website that shows who really pays for the sponsors on sports jerseys. It rates each club with a blood level: Clean, Spotted, Stained, Soaked. The design is finished for five pages. Your job is to build them as a real, data-driven website and connect them to the data that exists.
 
@@ -28,7 +28,7 @@ Read this file first, then the docs in this order:
 
 1. **Landing page** `/`. Snapshots: `handover/design/static/landing.html`, `landing--search-open.html`. Source: `Landing.dc.html`.
 2. **Soccer overview, club crests version** `/soccer/[league]` (default `premier-league`). Snapshots: `overview-premier-league.html`, `overview-la-liga.html`. Source: `Overview.dc.html` with `view="crests"`, wrapped by `Overview-crests.dc.html`.
-3. Team pages `/clubs/[slug]`: **v3 two-column layout**, see `handover/update-v3/UPDATE.md`. The old stage, cards, lines, hover intent and timeline were removed on purpose.
+3. Team pages `/clubs/[slug]`: **v3 two-column layout**, see `handover/update-v3/UPDATE.md`. The old stage, cards, lines, hover intent and timeline were removed on purpose. Every club has one; clubs without marked-up photos get the same page with the photo alone or a placeholder.
 
 Out of scope for now, parked: the money-flow section (`handover/design/source/parked/MoneyFlow.dc.html`), the mobile "Label" scan feature, the "Follow the Money" story page, "next chance to drop it", and email alerts. Don't build these unless asked.
 

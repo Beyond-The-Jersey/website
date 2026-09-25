@@ -1,0 +1,251 @@
+[
+  {
+    "id": "premier-league",
+    "aliases": [
+      "epl",
+      "england"
+    ],
+    "sportId": "soccer",
+    "name": "Premier League",
+    "country": "England",
+    "clubCount": 20,
+    "season": "2026-27",
+    "status": "partial",
+    "frontOfShirtTotal": {
+      "amount": 444,
+      "currency": "GBP",
+      "unit": "m",
+      "per": "year",
+      "usdApprox": 593,
+      "source": {
+        "name": "Inside World Football (Ampere study)",
+        "date": "2026-09-22",
+        "url": "https://www.insideworldfootball.com/2026/09/22/ampere-study-showcases-front-of-shirt-sponsor-worth-in-english-premier-league"
+      }
+    },
+    "notes": [
+      "The 2026/27 season is the first with the front-of-shirt betting ban; 11 clubs needed new sponsors (SportsPro)."
+    ]
+  },
+  {
+    "id": "la-liga",
+    "aliases": [
+      "laliga",
+      "spain"
+    ],
+    "sportId": "soccer",
+    "name": "La Liga",
+    "country": "Spain",
+    "clubCount": 20,
+    "season": "2026-27",
+    "status": "partial",
+    "notes": [
+      "All 20 clubs for 2026-27 are in the data; front sponsors are unrated."
+    ]
+  },
+  {
+    "id": "bundesliga",
+    "aliases": [
+      "germany"
+    ],
+    "sportId": "soccer",
+    "name": "Bundesliga",
+    "country": "Germany",
+    "clubCount": 18,
+    "season": "2026-27",
+    "status": "partial",
+    "notes": [
+      "All 18 clubs for 2026-27 are in the data; front sponsors are unrated.",
+      "Bayern Munich dropped Qatar Airways in 2023 and moved away from Visit Rwanda in 2025."
+    ]
+  },
+  {
+    "id": "ligue-1",
+    "aliases": [
+      "france"
+    ],
+    "sportId": "soccer",
+    "name": "Ligue 1",
+    "country": "France",
+    "clubCount": 18,
+    "season": "2026-27",
+    "status": "partial",
+    "notes": [
+      "Paris Saint-Germain has Visit Rwanda until 2028."
+    ]
+  },
+  {
+    "id": "serie-a",
+    "aliases": [
+      "italy"
+    ],
+    "sportId": "soccer",
+    "name": "Serie A",
+    "country": "Italy",
+    "clubCount": 20,
+    "season": "2026-27",
+    "status": "partial",
+    "notes": []
+  },
+  {
+    "id": "mls",
+    "aliases": [
+      "major league soccer",
+      "usa"
+    ],
+    "sportId": "soccer",
+    "name": "MLS",
+    "country": "USA and Canada",
+    "clubCount": 30,
+    "season": "2026",
+    "status": "partial",
+    "notes": []
+  },
+  {
+    "id": "nba",
+    "aliases": [
+      "basketball"
+    ],
+    "sportId": "basketball",
+    "name": "NBA",
+    "country": "USA and Canada",
+    "clubCount": 30,
+    "status": "partial",
+    "notes": [
+      "LA Clippers x Visit Rwanda (since 2025), value not disclosed; fronts not mapped yet."
+    ]
+  },
+  {
+    "id": "basketball-africa-league",
+    "aliases": [
+      "bal"
+    ],
+    "sportId": "basketball",
+    "name": "Basketball Africa League",
+    "country": "Africa",
+    "status": "not-started",
+    "notes": [
+      "Visit Rwanda is a league partner, reportedly $6–7m a year."
+    ]
+  },
+  {
+    "id": "nfl",
+    "aliases": [
+      "american football"
+    ],
+    "sportId": "american-football",
+    "name": "NFL",
+    "country": "USA",
+    "clubCount": 32,
+    "status": "partial",
+    "notes": [
+      "LA Rams x Visit Rwanda (since 2025), at the stadium rather than on the shirt."
+    ]
+  },
+  {
+    "id": "formula-1",
+    "aliases": [
+      "f1"
+    ],
+    "sportId": "motorsport",
+    "name": "Formula 1",
+    "status": "partial",
+    "notes": [
+      "Haas dropped Uralkali in 2022; the Russian Grand Prix was cancelled in 2022."
+    ]
+  },
+  {
+    "id": "uefa",
+    "aliases": [
+      "champions league",
+      "euro"
+    ],
+    "sportId": "events",
+    "name": "UEFA competitions",
+    "status": "not-started",
+    "notes": [
+      "UEFA ended its Gazprom deal in 2022."
+    ]
+  },
+  {
+    "id": "fifa",
+    "aliases": [
+      "world cup"
+    ],
+    "sportId": "events",
+    "name": "FIFA World Cups",
+    "status": "not-started",
+    "notes": [
+      "Visit Saudi talks for the 2023 Women’s World Cup were abandoned."
+    ]
+  },
+  {
+    "id": "mlb",
+    "aliases": [
+      "major league baseball",
+      "usa"
+    ],
+    "sportId": "baseball",
+    "name": "MLB",
+    "country": "USA and Canada",
+    "clubCount": 30,
+    "season": "2026",
+    "status": "partial",
+    "notes": []
+  },
+  {
+    "id": "2-bundesliga",
+    "aliases": [
+      "zweite bundesliga",
+      "germany second division"
+    ],
+    "sportId": "soccer",
+    "name": "2. Bundesliga",
+    "country": "Germany",
+    "clubCount": 18,
+    "season": "2026-27",
+    "status": "not-started",
+    "notes": [
+      "VfL Wolfsburg was relegated in 2026 after 29 seasons in the Bundesliga."
+    ]
+  },
+  {
+    "id": "saudi-pro-league",
+    "aliases": [
+      "rsl",
+      "roshn saudi league",
+      "saudi pro league",
+      "saudi arabia"
+    ],
+    "sportId": "soccer",
+    "name": "Roshn Saudi League",
+    "country": "Saudi Arabia",
+    "clubCount": 18,
+    "season": "2026-27",
+    "status": "partial",
+    "notes": [
+      "18 clubs for 2026-27, from the Saudi Pro League official site. Season runs 13 Aug 2026 to 29 May 2027.",
+      "Title sponsor ROSHN Group (a PIF company); league partners include Saudia, Ma'aden, BSF, EA Sports, Sun Cola, Coffee Address, BCare and Baja (official site partner strip).",
+      "Several clubs are state- or PIF-owned: PIF owns Al-Nassr, Al-Ittihad and Al-Ahli and holds 30% of Al-Hilal (70% sold to Kingdom Holding, Sep 2026); Aramco owns Al-Qadsiah, NEOM owns NEOM SC, Diriyah Gate Development Authority runs Diriyah Club."
+    ]
+  },
+  {
+    "id": "uci-worldtour",
+    "aliases": [
+      "worldtour",
+      "uci world tour",
+      "men's worldtour",
+      "world team"
+    ],
+    "sportId": "cycling",
+    "name": "UCI WorldTour (men's road cycling)",
+    "clubCount": 18,
+    "season": "2026",
+    "status": "partial",
+    "notes": [
+      "18 UCI WorldTeams granted 2026-2028 licences by the UCI Licence Commission (UCI press release, 2026-2028 cycle).",
+      "Every team is named after a sponsor; names change with sponsors.",
+      "Sponsor placement here is mapped to the schema's front/back/sleeve/shorts/partner values from 'team title/name' and 'jersey'."
+    ]
+  }
+]

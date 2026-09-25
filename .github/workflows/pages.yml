@@ -17,10 +17,10 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  # Data for the live site: `seed` (the design handover data) or `repo` (Beyond-The-Jersey/data,
-  # normalized/). Switch to `repo` once `BTJ_DATA_SOURCE=repo npm run validate:data` passes.
-  # The seed copy is always published at /demo/.
-  LIVE_DATA_SOURCE: seed
+  # Data for the live site: `live` (data/live in this repo: Beyond-The-Jersey/data, fixed and
+  # extended by `npm run data:live`, reviewed in a commit), `repo` (the data repo as is, pulled at
+  # build time) or `seed` (the design handover data). The seed copy is always published at /demo/.
+  LIVE_DATA_SOURCE: live
 
 jobs:
   build:

@@ -1,0 +1,3620 @@
+[
+  {
+    "id": "3m-company",
+    "name": "3M Company",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "USA"
+  },
+  {
+    "id": "aarp-owner",
+    "name": "AARP",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of washington-nationals (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "abanca",
+    "name": "Abanca Corporacion Bancaria, S.A.",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "access-industries",
+    "name": "Access Industries",
+    "type": "private-company",
+    "country": "United States",
+    "parentId": null,
+    "note": "Majority owner of DAZN; vehicle of Sir Leonard Blavatnik."
+  },
+  {
+    "id": "acrisure-owner",
+    "name": "Acrisure LLC",
+    "type": "private-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of pittsburgh-steelers (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "adidas-ag",
+    "name": "adidas AG",
+    "type": "listed-company",
+    "country": "Germany",
+    "parentId": null
+  },
+  {
+    "id": "adobe-inc",
+    "name": "Adobe Inc. (Nasdaq-listed)",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "adt-owner",
+    "name": "ADT Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of miami-marlins (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "advocate-health-care-owner",
+    "name": "Advocate Health Care",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of chicago-bears (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "agnelli-elkann",
+    "name": "Agnelli/Elkann family",
+    "type": "private-company",
+    "country": "Italy",
+    "parentId": "exor-nv"
+  },
+  {
+    "id": "aia-group",
+    "name": "AIA Group Limited (HKEX: 1299)",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "HK"
+  },
+  {
+    "id": "airbnb-inc",
+    "name": "Airbnb, Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "United States"
+  },
+  {
+    "id": "airwallex-owner",
+    "name": "Airwallex",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of san-francisco-giants (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "albert-owner",
+    "name": "Albert LLC",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of los-angeles-lakers (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "all-in-won-owner",
+    "name": "All In Won Med-Bill & IT, LLC",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of brooklyn-nets (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "allegiant-travel-company-owner",
+    "name": "Allegiant Travel Company",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of las-vegas-raiders (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "allianz-se",
+    "name": "Allianz SE",
+    "type": "listed-company",
+    "country": "Germany",
+    "note": "Allianz is a DAX-listed insurer with no state owner. https://www.allianz.com/en/about-us/corporate-structure/",
+    "parentId": null
+  },
+  {
+    "id": "ally-financial",
+    "name": "Ally Financial Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "alphabet-inc",
+    "name": "Alphabet Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "alpinestars",
+    "name": "Alpinestars S.p.A. (Mazzarolo family)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "IT"
+  },
+  {
+    "id": "amazon-com-inc",
+    "name": "Amazon.com, Inc.",
+    "type": "listed-company",
+    "country": "USA",
+    "parentId": null
+  },
+  {
+    "id": "america-movil",
+    "name": "America Movil, S.A.B. de C.V. (Slim family control)",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "Mexico"
+  },
+  {
+    "id": "american-airlines-owner",
+    "name": "American Airlines",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of dallas-mavericks (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "american-express-company",
+    "name": "American Express Company",
+    "type": "listed-company",
+    "country": "USA",
+    "parentId": null
+  },
+  {
+    "id": "american-family-mutual-insurance-company",
+    "name": "American Family Mutual Insurance Company, S.I.",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "amica-mutual-insurance-owner",
+    "name": "Amica Mutual Insurance Company",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of boston-celtics (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "amr-gp",
+    "name": "AMR GP Limited",
+    "type": "private-company",
+    "country": "United Kingdom",
+    "parentId": null
+  },
+  {
+    "id": "anheuser-busch-owner",
+    "name": "Anheuser-Busch InBev SA/NV",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of st-louis-cardinals (2026-27).",
+    "country": "BE"
+  },
+  {
+    "id": "anta-sports-products",
+    "name": "ANTA Sports Products Limited",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "CN"
+  },
+  {
+    "id": "anthropic",
+    "name": "Anthropic PBC",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "apollo-global-management",
+    "name": "Apollo Global Management, Inc. (Apollo Funds)",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "arctempus",
+    "name": "Arctempus",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "asahi-group-holdings",
+    "name": "Asahi Group Holdings, Ltd.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "Japan"
+  },
+  {
+    "id": "ascale",
+    "name": "Ascale",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "ascension-st-vincent-owner",
+    "name": "Ascension St. Vincent's",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of indianapolis-colts (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "aston-martin-lagonda",
+    "name": "Aston Martin Lagonda Global Holdings plc",
+    "type": "listed-company",
+    "country": "United Kingdom",
+    "parentId": null
+  },
+  {
+    "id": "atlantic-health-owner",
+    "name": "Atlantic Health System",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of new-york-jets (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "atlassian",
+    "name": "Atlassian Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "atos-se",
+    "name": "Atos SE",
+    "type": "listed-company",
+    "country": "France",
+    "parentId": null
+  },
+  {
+    "id": "atrium-health-owner",
+    "name": "Atrium Health",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of carolina-panthers (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "att-inc",
+    "name": "AT&T Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "United States"
+  },
+  {
+    "id": "audi-ag",
+    "name": "Audi AG",
+    "type": "listed-company",
+    "country": "Germany",
+    "parentId": "volkswagen-ag"
+  },
+  {
+    "id": "avery-dennison",
+    "name": "Avery Dennison Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "United States"
+  },
+  {
+    "id": "avnet-owner",
+    "name": "Avnet",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of arizona-diamondbacks (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "aws-owner",
+    "name": "Amazon Web Services (AWS)",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of seattle-seahawks (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "axpo-holding-ag",
+    "name": "Axpo Holding AG (owned by Swiss cantons and cantonal utilities)",
+    "type": "state",
+    "parentId": null,
+    "country": "CH"
+  },
+  {
+    "id": "ayuntamiento-de-benahavis",
+    "name": "Ayuntamiento de Benahavis",
+    "type": "state",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "ayuntamiento-de-malaga",
+    "name": "Ayuntamiento de Malaga",
+    "type": "state",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "baghdadi-capital-sa",
+    "name": "Baghdadi Capital, S.A. (family office of Baihas Baghdadi)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "ES"
+  },
+  {
+    "id": "bain-capital",
+    "name": "Bain Capital, LP (Bain Capital Private Equity)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "balkrishna-industries",
+    "name": "Balkrishna Industries Ltd. (BKT)",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "India"
+  },
+  {
+    "id": "ball-corporation-owner",
+    "name": "Ball Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of denver-nuggets (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "banca-popolare-del-frusinate",
+    "name": "Banca Popolare del Frusinate S.C.p.A.",
+    "type": "private-company",
+    "parentId": null,
+    "country": "IT"
+  },
+  {
+    "id": "bank-of-america",
+    "name": "Bank of America Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "bank-of-montreal",
+    "name": "Bank of Montreal",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "CA"
+  },
+  {
+    "id": "banque-saudi-fransi",
+    "name": "Banque Saudi Fransi (BSF)",
+    "type": "listed-company",
+    "country": "Saudi Arabia",
+    "via": "PIF",
+    "note": "Listed bank; PIF stake reported at ~16.19% (2026).",
+    "parentId": "saudi-pif"
+  },
+  {
+    "id": "baptist-health-owner",
+    "name": "Baptist Health South Florida",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of miami-dolphins (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "barclays",
+    "name": "Barclays PLC",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "GB"
+  },
+  {
+    "id": "barclays-plc",
+    "name": "Barclays plc (LSE/NYSE-listed)",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "GB"
+  },
+  {
+    "id": "barmenia-versicherungen-ag",
+    "name": "Barmenia Versicherungen a.G. (BarmeniaGothaer Group)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "DE"
+  },
+  {
+    "id": "belden",
+    "name": "Belden Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "berkshire-hathaway",
+    "name": "Berkshire Hathaway Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "bet365-group",
+    "name": "bet365 Group Ltd",
+    "type": "private-company",
+    "country": "United Kingdom",
+    "parentId": null,
+    "note": "Controlled by the Coates family."
+  },
+  {
+    "id": "betsson",
+    "name": "Betsson AB",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "SE"
+  },
+  {
+    "id": "beumer-group",
+    "name": "BEUMER Group",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Germany"
+  },
+  {
+    "id": "block-inc",
+    "name": "Block, Inc. (Cash App)",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "United States"
+  },
+  {
+    "id": "blockratize",
+    "name": "Blockratize, Inc. (dba Polymarket)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "USA"
+  },
+  {
+    "id": "blockratize-inc",
+    "name": "Blockratize, Inc. (dba Polymarket)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "boeing",
+    "name": "The Boeing Company",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "bon-secours-mercy-health",
+    "name": "Bon Secours Mercy Health (Mercy Health, Ohio and Kentucky)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "boon-rawd-brewery",
+    "name": "Boon Rawd Brewery Co., Ltd. (Bhirombhakdi family)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Thailand"
+  },
+  {
+    "id": "boylesports",
+    "name": "BoyleSports (Boyle family)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "IE"
+  },
+  {
+    "id": "bp-plc",
+    "name": "BP p.l.c.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "United Kingdom"
+  },
+  {
+    "id": "burns-and-mcdonnell-owner",
+    "name": "Burns & McDonnell",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of kansas-city-chiefs (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "bwt-group",
+    "name": "BWT AG (WAB Group / Weissenbacher family)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "AT"
+  },
+  {
+    "id": "c-hedenkamp-gmbh",
+    "name": "C. Hedenkamp GmbH & Co. KG",
+    "type": "private-company",
+    "parentId": null,
+    "country": "DE"
+  },
+  {
+    "id": "caesars-entertainment-owner",
+    "name": "Caesars Entertainment",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of new-orleans-saints (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "capital-one-owner",
+    "name": "Capital One Financial Corp.",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of washington-wizards (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "carlsberg-group",
+    "name": "Carlsberg Group",
+    "type": "listed-company",
+    "country": "Denmark",
+    "parentId": null
+  },
+  {
+    "id": "carlyle-group-and-gic",
+    "name": "The Carlyle Group and GIC (joint owners)",
+    "type": "state-fund",
+    "parentId": null,
+    "country": "SG"
+  },
+  {
+    "id": "carvana",
+    "name": "Carvana Co.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "celer-lighting",
+    "name": "Celer Lighting",
+    "type": "private-company",
+    "parentId": "grupo-saltoki",
+    "country": "Spain"
+  },
+  {
+    "id": "childrens-hospital-colorado-owner",
+    "name": "Children's Hospital Colorado",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of denver-broncos (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "circle-internet-group",
+    "name": "Circle Internet Group",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "USA"
+  },
+  {
+    "id": "cisco",
+    "name": "Cisco Systems, Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "citigroup-citi-owner",
+    "name": "Citigroup (Citi)",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of new-york-mets (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "citizens-bank-citizens-financial-group-owner",
+    "name": "Citizens Bank (Citizens Financial Group)",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of philadelphia-phillies (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "city-football-group",
+    "name": "City Football Group",
+    "type": "private-company",
+    "country": "UAE",
+    "parentId": "government-of-abu-dhabi",
+    "note": "Majority owned by Abu Dhabi United Group; owner of ES Troyes AC since September 2020."
+  },
+  {
+    "id": "cleveland-cliffs-owner",
+    "name": "Cleveland-Cliffs LLC",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of cleveland-cavaliers (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "clickhouse-inc",
+    "name": "ClickHouse, Inc. (private, VC-backed)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "cmc-markets-plc",
+    "name": "CMC Markets plc (London-listed; Cruddas family significant holder)",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "GB"
+  },
+  {
+    "id": "cme-group-owner",
+    "name": "CME Group Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of chicago-white-sox (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "coca-cola-company",
+    "name": "The Coca-Cola Company",
+    "type": "listed-company",
+    "country": "United States",
+    "parentId": null
+  },
+  {
+    "id": "cofco",
+    "name": "COFCO Corporation",
+    "type": "state",
+    "country": "China",
+    "parentId": null,
+    "note": "Central state-owned enterprise under China's SASAC."
+  },
+  {
+    "id": "cognizant",
+    "name": "Cognizant Technology Solutions Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "coinbase-global",
+    "name": "Coinbase Global, Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "United States"
+  },
+  {
+    "id": "compass-minerals",
+    "name": "Compass Minerals International, Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "continent-gaming",
+    "name": "Continent Gaming N.V.",
+    "type": "private-company",
+    "parentId": null,
+    "country": "CW"
+  },
+  {
+    "id": "coors-brewing-co-molson-coors-owner",
+    "name": "Coors Brewing Co. (Molson Coors)",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of colorado-rockies (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "core-scientific",
+    "name": "Core Scientific, Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "United States"
+  },
+  {
+    "id": "corendon-airlines",
+    "name": "Corendon Airlines",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Turkey"
+  },
+  {
+    "id": "corendon-tourism-group",
+    "name": "Corendon Tourism Group",
+    "type": "private-company",
+    "parentId": null,
+    "country": "NL"
+  },
+  {
+    "id": "corporacion-hijos-de-rivera",
+    "name": "Corporacion Hijos de Rivera, S.L.",
+    "type": "private-company",
+    "parentId": null,
+    "country": "ES"
+  },
+  {
+    "id": "crowdstrike",
+    "name": "CrowdStrike Holdings, Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "cruise-saudi",
+    "name": "Cruise Saudi",
+    "type": "private-company",
+    "country": "Saudi Arabia",
+    "via": "PIF",
+    "note": "PIF-owned; operates AROYA Cruises.",
+    "parentId": "saudi-pif"
+  },
+  {
+    "id": "cvc-capital-partners",
+    "name": "CVC Capital Partners (CVC Fund VI)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "LU"
+  },
+  {
+    "id": "cyvn",
+    "name": "CYVN Holdings",
+    "type": "state-fund",
+    "country": "United Arab Emirates",
+    "parentId": "mclaren-group"
+  },
+  {
+    "id": "daikin-comfort-technologies-owner",
+    "name": "Daikin Comfort Technologies",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of houston-astros (2026-27).",
+    "country": "JP"
+  },
+  {
+    "id": "dan-towriss",
+    "name": "Dan Towriss",
+    "type": "private-company",
+    "country": "United States",
+    "parentId": "twg-global"
+  },
+  {
+    "id": "davide-campari-milano",
+    "name": "Davide Campari-Milano N.V.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "IT"
+  },
+  {
+    "id": "deel-inc",
+    "name": "Deel, Inc.",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "deghi",
+    "name": "DEGHI S.p.A.",
+    "type": "private-company",
+    "parentId": null,
+    "country": "IT"
+  },
+  {
+    "id": "dell-technologies",
+    "name": "Dell Technologies Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "delta-air-lines-owner",
+    "name": "Delta Air Lines LLC",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of utah-jazz (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "desert-financial-credit-union-owner",
+    "name": "Desert Financial Credit Union",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of arizona-cardinals (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "deutsche-post-dhl",
+    "name": "DHL Group (Deutsche Post AG)",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "DE"
+  },
+  {
+    "id": "deutsche-telekom-ag",
+    "name": "Deutsche Telekom AG",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "Germany"
+  },
+  {
+    "id": "deutsche-vermoegensberatung-ag",
+    "name": "Deutsche Vermögensberatung AG (DVAG)",
+    "type": "private-company",
+    "country": "Germany",
+    "note": "DVAG is a private German financial-advisory firm owned by the founder Pohl family. dvag.de",
+    "parentId": null
+  },
+  {
+    "id": "devk",
+    "name": "DEVK Deutsche Eisenbahn Versicherung",
+    "type": "private-company",
+    "country": "Germany",
+    "note": "DEVK is a German mutual insurance association. devk.de",
+    "parentId": null
+  },
+  {
+    "id": "diageo-plc",
+    "name": "Diageo plc (LSE/NYSE-listed)",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "GB"
+  },
+  {
+    "id": "digi-communications-nv",
+    "name": "Digi Communications N.V.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "RO"
+  },
+  {
+    "id": "diputacion-de-malaga",
+    "name": "Diputacion Provincial de Malaga",
+    "type": "state",
+    "parentId": null,
+    "country": "ES"
+  },
+  {
+    "id": "diputacion-foral-de-alava",
+    "name": "Diputacion Foral de Alava",
+    "type": "state",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "diriyah-gate-development-authority",
+    "name": "Diriyah Gate Development Authority",
+    "type": "state",
+    "country": "Saudi Arabia",
+    "note": "Government authority behind Diriyah Company; runs Diriyah Club.",
+    "parentId": "government-of-saudi-arabia"
+  },
+  {
+    "id": "discovery-limited",
+    "name": "Discovery Limited (Johannesburg-listed)",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "ZA"
+  },
+  {
+    "id": "divina-pastora",
+    "name": "Grupo Divina Pastora (Divina Seguros)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "dorilton",
+    "name": "Dorilton Capital",
+    "type": "private-company",
+    "country": "United States",
+    "parentId": null
+  },
+  {
+    "id": "dream-finders-homes-owner",
+    "name": "Dream Finders Homes",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of jacksonville-jaguars (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "easygo",
+    "name": "Easygo (Medium Rare N.V. trading entity)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "AU"
+  },
+  {
+    "id": "eaton-owner",
+    "name": "Eaton Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of cleveland-browns (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "ebpay",
+    "name": "EBpay",
+    "type": "private-company",
+    "parentId": null
+  },
+  {
+    "id": "ed-sheeran",
+    "name": "Ed Sheeran / 'Play' tour (private individual)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "GB"
+  },
+  {
+    "id": "el-camino-health",
+    "name": "El Camino Health",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "el-corte-ingles",
+    "name": "El Corte Ingles, S.A.",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "electronic-arts",
+    "name": "Electronic Arts Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "United States"
+  },
+  {
+    "id": "empower-owner",
+    "name": "Empower LLC",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of denver-broncos (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "energy-transfer-owner",
+    "name": "Energy Transfer LP",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of texas-rangers (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "eni",
+    "name": "Eni S.p.A.",
+    "type": "state",
+    "parentId": null,
+    "country": "IT"
+  },
+  {
+    "id": "entain-plc",
+    "name": "Entain plc",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "GB"
+  },
+  {
+    "id": "essilorluxottica",
+    "name": "EssilorLuxottica SA",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "France/Italy"
+  },
+  {
+    "id": "etoro",
+    "name": "eToro Group Ltd.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "IL"
+  },
+  {
+    "id": "euronics-international",
+    "name": "Euronics International",
+    "type": "private-company",
+    "country": "Netherlands",
+    "parentId": null,
+    "note": "Buying group of independent electrical retailers."
+  },
+  {
+    "id": "everbank-owner",
+    "name": "EverBank",
+    "type": "private-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of jacksonville-jaguars (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "exor-nv",
+    "name": "Exor N.V.",
+    "type": "listed-company",
+    "country": "Netherlands",
+    "parentId": null
+  },
+  {
+    "id": "expedia-group-inc",
+    "name": "Expedia Group, Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "extreme-networks-inc",
+    "name": "Extreme Networks, Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "exxon-mobil-corporation",
+    "name": "Exxon Mobil Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "fanatics",
+    "name": "Fanatics, Inc. (private; owns Topps)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "federal-republic-of-germany",
+    "name": "Federal Republic of Germany (direct stake + KfW) with the remainder free float",
+    "type": "state",
+    "parentId": null,
+    "country": "DE"
+  },
+  {
+    "id": "fedex-corporation",
+    "name": "FedEx Corporation",
+    "type": "listed-company",
+    "country": "USA",
+    "parentId": null
+  },
+  {
+    "id": "fedex-owner",
+    "name": "FedEx LLC",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of memphis-grizzlies (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "ferrari-nv",
+    "name": "Ferrari N.V.",
+    "type": "listed-company",
+    "country": "Italy",
+    "parentId": null
+  },
+  {
+    "id": "fifth-third-bank-owner",
+    "name": "Fifth Third Bancorp",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of tampa-bay-buccaneers (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "finstreet-ltd",
+    "name": "Finstreet Ltd",
+    "type": "private-company",
+    "country": "United Arab Emirates",
+    "parentId": "international-holding-company",
+    "note": "Finstreet is named as ADI Predictstreet's parent, owned by IHC."
+  },
+  {
+    "id": "fiserv-owner",
+    "name": "Fiserv",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of milwaukee-bucks (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "flexicar",
+    "name": "Flexicar",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "flexicar-internacional",
+    "name": "Flexicar Internacional (owner Luis Oliver Cornago)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "ES"
+  },
+  {
+    "id": "ford-motor-company",
+    "name": "Ford Motor Company",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "foris-dax",
+    "name": "Foris DAX MT Limited (owned by Foris Holdings KY Limited)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "KY"
+  },
+  {
+    "id": "foundation-building-materials-owner",
+    "name": "Foundation Building Materials (FBM) LLC",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of los-angeles-angels (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "french-state",
+    "name": "French State via APE",
+    "type": "state",
+    "country": "France",
+    "parentId": "renault-group"
+  },
+  {
+    "id": "friuli-venezia-giulia-region",
+    "name": "Regione Autonoma Friuli Venezia Giulia (via PromoTurismoFVG)",
+    "type": "state",
+    "parentId": null,
+    "country": "IT"
+  },
+  {
+    "id": "frost-bank-owner",
+    "name": "Cullen/Frost Bankers, Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of san-antonio-spurs (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "fundacio-fc-barcelona",
+    "name": "Fundacio FC Barcelona",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "fundacion-1890",
+    "name": "Fundacion 1890",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "gac-group",
+    "name": "Guangzhou Automobile Group Co., Ltd. (Guangzhou SASAC)",
+    "type": "state",
+    "parentId": null,
+    "country": "China"
+  },
+  {
+    "id": "gainbridge-group-1001-owner",
+    "name": "Gainbridge (Group 1001)",
+    "type": "private-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of indiana-pacers (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "gana-energia",
+    "name": "Gana Energia",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "gate-group",
+    "name": "Gate Group / Gate Technology Inc.",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Cayman Islands"
+  },
+  {
+    "id": "gcs",
+    "name": "GCS",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "gene-haas",
+    "name": "Gene Haas",
+    "type": "private-company",
+    "country": "United States",
+    "parentId": null
+  },
+  {
+    "id": "general-motors",
+    "name": "General Motors",
+    "type": "listed-company",
+    "country": "United States",
+    "parentId": null
+  },
+  {
+    "id": "george-kurtz",
+    "name": "George Kurtz",
+    "type": "private-company",
+    "country": "United States",
+    "parentId": "motorsport-invest"
+  },
+  {
+    "id": "globe-life-globe-life-inc-owner",
+    "name": "Globe Life (Globe Life Inc.)",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of texas-rangers (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "golden-1-credit-union-owner",
+    "name": "Golden 1 Credit Union",
+    "type": "private-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of sacramento-kings (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "gov-malaysia",
+    "name": "Government of Malaysia (via Minister of Finance (Incorporated))",
+    "type": "state",
+    "parentId": null,
+    "country": "Malaysia"
+  },
+  {
+    "id": "government-of-abu-dhabi",
+    "name": "Government of Abu Dhabi",
+    "type": "state",
+    "country": "UAE",
+    "parentId": "uae"
+  },
+  {
+    "id": "government-of-bahrain",
+    "name": "Government of Bahrain",
+    "type": "state",
+    "country": "Bahrain",
+    "parentId": null,
+    "note": "The 'Victorious Bahrain' brand is used by the Kingdom to promote Bahrain abroad; fronted by Shaikh Nasser bin Hamad Al Khalifa."
+  },
+  {
+    "id": "government-of-belgium",
+    "name": "Belgian Federal State (Lotto is the state National Lottery)",
+    "type": "state",
+    "country": "Belgium",
+    "parentId": null
+  },
+  {
+    "id": "government-of-cote-divoire",
+    "name": "Government of Côte d'Ivoire",
+    "type": "state",
+    "country": "Côte d'Ivoire",
+    "via": "Ministry of Tourism",
+    "parentId": null,
+    "note": "'Sublime Côte d'Ivoire' is the state's tourism-promotion brand."
+  },
+  {
+    "id": "government-of-dr-congo",
+    "name": "Government of the Democratic Republic of the Congo",
+    "type": "state",
+    "country": "DR Congo",
+    "via": "Ministry of Sports and Leisure",
+    "parentId": null,
+    "note": "'R.D.Congo : Cœur de l'Afrique' is the state's sports/tourism-promotion brand."
+  },
+  {
+    "id": "government-of-dubai",
+    "name": "Government of Dubai",
+    "type": "state",
+    "country": "UAE",
+    "via": "Investment Corporation of Dubai",
+    "parentId": "uae"
+  },
+  {
+    "id": "government-of-kazakhstan",
+    "name": "Government of Kazakhstan",
+    "type": "state",
+    "country": "Kazakhstan",
+    "parentId": null
+  },
+  {
+    "id": "government-of-qatar",
+    "name": "Government of the State of Qatar (Qatar Airways Group Q.C.S.C.)",
+    "type": "state",
+    "parentId": null,
+    "country": "QA"
+  },
+  {
+    "id": "government-of-rwanda",
+    "name": "Government of Rwanda",
+    "type": "state",
+    "country": "Rwanda",
+    "via": "Rwanda Development Board",
+    "parentId": null
+  },
+  {
+    "id": "government-of-saudi-arabia",
+    "name": "Government of Saudi Arabia",
+    "type": "state",
+    "country": "Saudi Arabia",
+    "parentId": null
+  },
+  {
+    "id": "great-american-insurance-owner",
+    "name": "Great American Insurance",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of cincinnati-reds (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "gree-electric",
+    "name": "Gree Electric Appliances",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "China"
+  },
+  {
+    "id": "gree-group-zhuhai-sasac",
+    "name": "Gree Group Co., Ltd. (Zhuhai Municipal Government / Zhuhai SASAC)",
+    "type": "state",
+    "parentId": null,
+    "country": "CN"
+  },
+  {
+    "id": "grupo-bimbo",
+    "name": "Grupo Bimbo, S.A.B. de C.V.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "MX"
+  },
+  {
+    "id": "grupo-saltoki",
+    "name": "Grupo Saltoki (Comercial de Suministros, S.A.)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "ES"
+  },
+  {
+    "id": "guggenheim-owner",
+    "name": "Guggenheim Baseball Management",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of los-angeles-dodgers (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "haas-automation",
+    "name": "Haas Automation",
+    "type": "private-company",
+    "country": "United States",
+    "parentId": "gene-haas"
+  },
+  {
+    "id": "haas-formula",
+    "name": "Haas Formula LLC",
+    "type": "private-company",
+    "country": "United States",
+    "parentId": "gene-haas"
+  },
+  {
+    "id": "haier-group",
+    "name": "Haier Group Corporation",
+    "type": "private-company",
+    "country": "China",
+    "parentId": null,
+    "note": "Collectively owned; parent of listed Haier Smart Home."
+  },
+  {
+    "id": "haier-smart-home",
+    "name": "Haier Smart Home Co., Ltd.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "China"
+  },
+  {
+    "id": "halo-lifestyle-llc",
+    "name": "HALO Lifestyle LLC (HALO Hydration)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "halo-service-management",
+    "name": "Halo Service Solutions",
+    "type": "private-company",
+    "parentId": null,
+    "country": "United Kingdom"
+  },
+  {
+    "id": "hansemerkur",
+    "name": "HanseMerkur Versicherungsgruppe",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Germany"
+  },
+  {
+    "id": "hansemerkur-krankenversicherung-ag",
+    "name": "HanseMerkur Krankenversicherung a.G. (HanseMerkur Group)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "DE"
+  },
+  {
+    "id": "harald-pihl",
+    "name": "Harald Pihl GmbH",
+    "type": "private-company",
+    "country": "Germany",
+    "note": "Harald Pihl GmbH is a private German special-metals trader. harald-pihl.com",
+    "parentId": null
+  },
+  {
+    "id": "hard-rock-international-owner",
+    "name": "Hard Rock International LLC",
+    "type": "private-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of miami-dolphins (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "haufe-group-se",
+    "name": "Haufe Group SE (Haufe-Lexware)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "DE"
+  },
+  {
+    "id": "healthequity-owner",
+    "name": "HealthEquity, Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of utah-jazz (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "heineken-nv",
+    "name": "Heineken N.V.",
+    "type": "listed-company",
+    "country": "Netherlands",
+    "parentId": null
+  },
+  {
+    "id": "helm-ag",
+    "name": "HELM AG",
+    "type": "private-company",
+    "country": "Germany",
+    "note": "HELM AG is a Hamburg family-owned chemical-trading company. helm-ag.com",
+    "parentId": null
+  },
+  {
+    "id": "hep-global",
+    "name": "hep global GmbH",
+    "type": "private-company",
+    "country": "Germany",
+    "note": "hep global is a private German solar-project developer. hep.global",
+    "parentId": null
+  },
+  {
+    "id": "herbalife-ltd",
+    "name": "Herbalife Ltd.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "hibob",
+    "name": "HiBob (Bob)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "IL"
+  },
+  {
+    "id": "highmark-owner",
+    "name": "Highmark",
+    "type": "private-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of buffalo-bills (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "hinduja-group",
+    "name": "Hinduja Group (Hinduja family)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "GB"
+  },
+  {
+    "id": "hisense-group",
+    "name": "Hisense Group",
+    "type": "unknown",
+    "country": "China",
+    "parentId": null,
+    "note": "Qingdao-based television and appliance group. Widely reported Qingdao state-linked (SASAC) but not confirmed against a primary filing in this pass."
+  },
+  {
+    "id": "honda-motor-co-ltd",
+    "name": "Honda Motor Co., Ltd.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "JP"
+  },
+  {
+    "id": "hp-inc",
+    "name": "HP Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "hugo-boss-ag",
+    "name": "HUGO BOSS AG",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "Germany"
+  },
+  {
+    "id": "humain",
+    "name": "HUMAIN",
+    "type": "private-company",
+    "country": "Saudi Arabia",
+    "via": "PIF",
+    "note": "Launched May 2025 under PIF; chaired by Crown Prince Mohammed bin Salman.",
+    "parentId": "saudi-pif"
+  },
+  {
+    "id": "huntington-national-bank-huntington-bancshares-owner",
+    "name": "Huntington National Bank (Huntington Bancshares)",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of cleveland-browns (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "hyundai-motor-group",
+    "name": "Hyundai Motor Group",
+    "type": "listed-company",
+    "country": "South Korea",
+    "parentId": null,
+    "note": "Kia Corporation is a Hyundai Motor Group affiliate, so Hyundai and Kia act together under one group."
+  },
+  {
+    "id": "ibm-corp",
+    "name": "International Business Machines Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "United States"
+  },
+  {
+    "id": "ibotta-owner",
+    "name": "Ibotta LLC",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of denver-nuggets (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "idm-energiesysteme",
+    "name": "IDM Energiesysteme GmbH",
+    "type": "private-company",
+    "country": "Austria",
+    "note": "IDM is a private Austrian heat-pump manufacturer (Matrei in Osttirol). idm-energie.at",
+    "parentId": null
+  },
+  {
+    "id": "ifs-ab",
+    "name": "IFS AB (Industrial and Financial Systems)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "SE"
+  },
+  {
+    "id": "indeed-inc",
+    "name": "Indeed, Inc.",
+    "type": "private-company",
+    "parentId": "recruit-holdings",
+    "country": "USA"
+  },
+  {
+    "id": "independence-blue-cross-owner",
+    "name": "Independence Blue Cross",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of philadelphia-phillies (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "ineos",
+    "name": "INEOS Industries Holdings",
+    "type": "private-company",
+    "country": "United Kingdom",
+    "parentId": null
+  },
+  {
+    "id": "ineos-group-limited",
+    "name": "INEOS Group Limited",
+    "type": "private-company",
+    "parentId": null,
+    "country": "GB"
+  },
+  {
+    "id": "intermountain-health",
+    "name": "Intermountain Health",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "international-capital-markets",
+    "name": "International Capital Markets Pty Ltd",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Australia"
+  },
+  {
+    "id": "international-holding-company",
+    "name": "International Holding Company (IHC)",
+    "type": "listed-company",
+    "country": "United Arab Emirates",
+    "parentId": null,
+    "note": "Abu Dhabi royal-family-linked holding company chaired by Sheikh Tahnoon bin Zayed Al Nahyan, brother of the UAE president."
+  },
+  {
+    "id": "intuit-intuit-inc-nasdaq-intu-owner",
+    "name": "Intuit Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of la-clippers (2026-27).",
+    "country": "United States"
+  },
+  {
+    "id": "iren-owner",
+    "name": "IREN (IREN Ltd, AI cloud infrastructure)",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of golden-state-warriors (2026-27).",
+    "country": "AUS"
+  },
+  {
+    "id": "jasper-white",
+    "name": "Jasper White (private UK entrepreneur)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "GB"
+  },
+  {
+    "id": "jefferson-health-owner",
+    "name": "Jefferson Health",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of philadelphia-eagles (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "jp-financial",
+    "name": "JP Financial",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "jpmorgan-chase-owner",
+    "name": "JPMorgan Chase & Co.",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of golden-state-warriors (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "jpmorganchase-owner",
+    "name": "JPMorganChase (Chase)",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of dallas-mavericks (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "judi-health-owner",
+    "name": "Judi Health",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of charlotte-hornets (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "just-eat-takeaway",
+    "name": "Just Eat Takeaway.com N.V.",
+    "type": "listed-company",
+    "country": "Netherlands",
+    "parentId": null
+  },
+  {
+    "id": "kaizen-gaming",
+    "name": "Kaizen Gaming",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Greece"
+  },
+  {
+    "id": "kaleida-health-owner",
+    "name": "Kaleida Health",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of buffalo-bills (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "kaseya-owner",
+    "name": "Kaseya",
+    "type": "private-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of miami-heat (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "kayanee",
+    "name": "Kayanee",
+    "type": "private-company",
+    "country": "Saudi Arabia",
+    "via": "PIF",
+    "note": "PIF-backed wellbeing company.",
+    "parentId": "saudi-pif"
+  },
+  {
+    "id": "kermi",
+    "name": "Kermi GmbH",
+    "type": "private-company",
+    "country": "Germany",
+    "note": "Kermi is a private German heating/radiator manufacturer. kermi.de",
+    "parentId": null
+  },
+  {
+    "id": "kia-america-owner",
+    "name": "Kia America",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of orlando-magic (2026-27).",
+    "country": "KOR"
+  },
+  {
+    "id": "kingdom-holding",
+    "name": "Kingdom Holding Company (KHC)",
+    "type": "listed-company",
+    "country": "Saudi Arabia",
+    "note": "78.1% held by Prince Alwaleed bin Talal; PIF holds 16.9%. Acquired 70% of Al-Hilal from PIF (Sep 2026).",
+    "parentId": null
+  },
+  {
+    "id": "knox-hydrate-pty-ltd",
+    "name": "Knox Hydrate (Pty) Ltd",
+    "type": "private-company",
+    "parentId": null,
+    "country": "ZA"
+  },
+  {
+    "id": "koemmerling-kunststoffe",
+    "name": "Koemmerling Kunststoffe",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Germany"
+  },
+  {
+    "id": "komatsu-ltd",
+    "name": "Komatsu Ltd.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "Japan"
+  },
+  {
+    "id": "kosner",
+    "name": "Kosner",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "kroger-owner",
+    "name": "Kroger",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of cincinnati-reds (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "kutxabank",
+    "name": "Kutxabank",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "kutxabank-sa",
+    "name": "Kutxabank, S.A. (owned by BBK, Kutxa and Vital foundations)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "ES"
+  },
+  {
+    "id": "lawrence-stroll",
+    "name": "Lawrence Stroll",
+    "type": "private-company",
+    "country": "Canada",
+    "parentId": "yew-tree"
+  },
+  {
+    "id": "lbbw",
+    "name": "Landesbank Baden-Wuerttemberg",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "Germany",
+    "via": "Land Baden-Wuerttemberg"
+  },
+  {
+    "id": "ledger-owner",
+    "name": "Ledger LLC",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of san-antonio-spurs (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "legend-holdings",
+    "name": "Legend Holdings Corporation",
+    "type": "listed-company",
+    "country": "China",
+    "parentId": null,
+    "note": "Largest shareholder of Lenovo Group Limited at 31.41% as of 31 Mar 2025. Legend's own largest shareholder is reported to be Chinese Academy of Sciences Holdings (CAS), a state entity - to confirm from a Legend filing."
+  },
+  {
+    "id": "legends",
+    "name": "Legends",
+    "type": "private-company",
+    "parentId": null,
+    "country": "United States"
+  },
+  {
+    "id": "lenovo-group-limited",
+    "name": "Lenovo Group Limited",
+    "type": "listed-company",
+    "country": "Hong Kong",
+    "parentId": "legend-holdings",
+    "note": "Listed on the Hong Kong Stock Exchange (HKSE: 992)."
+  },
+  {
+    "id": "lenovo-group-ltd",
+    "name": "Lenovo Group Limited",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "HK"
+  },
+  {
+    "id": "levi-strauss-and-co-levi-s-owner",
+    "name": "Levi Strauss & Co.",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of san-francisco-49ers (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "lexware-gmbh",
+    "name": "Lexware (Haufe Group)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Germany"
+  },
+  {
+    "id": "libertex-group",
+    "name": "Libertex Group / Indication Investments Ltd",
+    "type": "private-company",
+    "parentId": null,
+    "country": "CY"
+  },
+  {
+    "id": "lincoln-financial-group-owner",
+    "name": "Lincoln Financial Group",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of philadelphia-eagles (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "little-caesars-owner",
+    "name": "Little Caesars",
+    "type": "private-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of detroit-pistons (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "loandepot-owner",
+    "name": "loanDepot Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of miami-marlins (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "loves-travel-stops-owner",
+    "name": "Love's Travel Stops & Country Stores",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of oklahoma-city-thunder (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "lucas-oil-products-owner",
+    "name": "Lucas Oil Products",
+    "type": "private-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of indianapolis-colts (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "luckia",
+    "name": "Luckia Group",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "lumen-technologies-owner",
+    "name": "Lumen Technologies Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of seattle-seahawks (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "lvcva-owner",
+    "name": "Las Vegas Convention and Visitors Authority",
+    "type": "state",
+    "parentId": null,
+    "note": "jersey patch partner of athletics (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "lvmh",
+    "name": "LVMH Moet Hennessy Louis Vuitton SE",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "FR"
+  },
+  {
+    "id": "m-and-t-bank-owner",
+    "name": "M&T Bank",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of baltimore-ravens (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "mahou-san-miguel",
+    "name": "Mahou San Miguel",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "malaga-turismo",
+    "name": "Malaga Turismo",
+    "type": "state",
+    "parentId": "ayuntamiento-de-malaga",
+    "country": "Spain"
+  },
+  {
+    "id": "mapei-spa",
+    "name": "Mapei S.p.A.",
+    "type": "private-company",
+    "parentId": null,
+    "country": "IT"
+  },
+  {
+    "id": "maple-invest",
+    "name": "Maple Invest Co. Ltd (Hussain Sajwani family)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "United Arab Emirates"
+  },
+  {
+    "id": "marathon-owner",
+    "name": "Marathon",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of cleveland-guardians (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "marex-group-plc",
+    "name": "Marex Group plc (Nasdaq-listed)",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "GB"
+  },
+  {
+    "id": "mark-mateschitz",
+    "name": "Mark Mateschitz",
+    "type": "private-company",
+    "country": "Austria",
+    "parentId": "mateschitz-yoovidhya-families"
+  },
+  {
+    "id": "massmutual-owner",
+    "name": "MassMutual",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of boston-red-sox (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "mastercard-inc",
+    "name": "Mastercard Incorporated",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "mateschitz-yoovidhya-families",
+    "name": "Mateschitz family (49%) and Yoovidhya family (51%), via Red Bull GmbH",
+    "type": "private-company",
+    "parentId": null,
+    "country": "AT"
+  },
+  {
+    "id": "matthaei-bau",
+    "name": "Matthaei Bauunternehmung",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Germany"
+  },
+  {
+    "id": "matthaei-gruppe",
+    "name": "Matthaei Gruppe (Matthaei Holding)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "DE"
+  },
+  {
+    "id": "mclaren-group",
+    "name": "McLaren Group Holdings",
+    "type": "private-company",
+    "country": "United Kingdom",
+    "parentId": null
+  },
+  {
+    "id": "mediacom-communications-corp",
+    "name": "Mediacom Communications Corporation",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "meijer-owner",
+    "name": "Meijer",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of detroit-lions (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "memorial-hermann-owner",
+    "name": "Memorial Hermann Health System",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of houston-rockets (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "mengniu-dairy",
+    "name": "China Mengniu Dairy Company Limited",
+    "type": "listed-company",
+    "country": "China",
+    "parentId": "cofco",
+    "note": "Listed in Hong Kong; part of the COFCO group."
+  },
+  {
+    "id": "mercedes-benz-group",
+    "name": "Mercedes-Benz Group AG",
+    "type": "listed-company",
+    "country": "Germany",
+    "parentId": null
+  },
+  {
+    "id": "metlife-owner",
+    "name": "MetLife LLC",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of new-york-jets (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "mgm-resorts",
+    "name": "MGM Resorts International",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "United States"
+  },
+  {
+    "id": "mgs-seguros",
+    "name": "MGS Seguros y Reaseguros, S.A.",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "microsoft-corporation",
+    "name": "Microsoft Corporation (Nasdaq-listed)",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "midea-group",
+    "name": "Midea Group Co., Ltd.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "China"
+  },
+  {
+    "id": "mk-sports-news",
+    "name": "mk体育 / MKSPORTS News (mktynews.com)",
+    "type": "unknown",
+    "parentId": null,
+    "country": "CN"
+  },
+  {
+    "id": "mk-tiyu-news",
+    "name": "MK TIYU News",
+    "type": "private-company",
+    "parentId": null,
+    "country": "China"
+  },
+  {
+    "id": "moda-health-owner",
+    "name": "Moda Health",
+    "type": "private-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of portland-trail-blazers (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "moeve",
+    "name": "Moeve (Compania Espanola de Petroleos, S.A.U.)",
+    "type": "private-company",
+    "parentId": "mubadala",
+    "country": "Spain"
+  },
+  {
+    "id": "mondelez-international",
+    "name": "Mondelez International, Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "United States"
+  },
+  {
+    "id": "mondofix-inc",
+    "name": "Mondofix Inc. (dba Fix Network World)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "CA"
+  },
+  {
+    "id": "monzo-bank-limited",
+    "name": "Monzo Bank Limited (UK; private, VC-backed)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "GB"
+  },
+  {
+    "id": "motorola-mobility-owner",
+    "name": "Lenovo Group Limited",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of chicago-bulls (2026-27).",
+    "country": "HK"
+  },
+  {
+    "id": "motorola-owner",
+    "name": "Motorola LLC",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of san-diego-padres (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "motors",
+    "name": "Motors.co.uk Limited (O3 Industries / Novum Capital)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "GB"
+  },
+  {
+    "id": "motorsport-invest",
+    "name": "Motorsport Invest Limited",
+    "type": "private-company",
+    "country": "United Kingdom",
+    "parentId": null
+  },
+  {
+    "id": "msc-group-aponte-family",
+    "name": "Mediterranean Shipping Company (MSC Group) - Aponte family",
+    "type": "private-company",
+    "parentId": null,
+    "country": "CH"
+  },
+  {
+    "id": "mubadala",
+    "name": "Mubadala Investment Company (Abu Dhabi sovereign fund)",
+    "type": "state-fund",
+    "parentId": null,
+    "country": "United Arab Emirates"
+  },
+  {
+    "id": "mumtalakat",
+    "name": "Bahrain Mumtalakat Holding Company",
+    "type": "state-fund",
+    "country": "Bahrain",
+    "parentId": "mclaren-group"
+  },
+  {
+    "id": "nationwide-mutual-insurance-company",
+    "name": "Nationwide Mutual Insurance Company",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "natural-nine-bv",
+    "name": "Natural Nine B.V.",
+    "type": "private-company",
+    "parentId": null,
+    "country": "CW"
+  },
+  {
+    "id": "neom",
+    "name": "NEOM",
+    "type": "private-company",
+    "country": "Saudi Arabia",
+    "via": "PIF",
+    "note": "PIF giga-project; owns NEOM SC.",
+    "parentId": "saudi-pif"
+  },
+  {
+    "id": "nestle-sa",
+    "name": "Nestle S.A.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "CH"
+  },
+  {
+    "id": "netapp-inc",
+    "name": "NetApp, Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "newage-products-owner",
+    "name": "NewAge Products",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of new-orleans-pelicans (2026-27).",
+    "country": "CAN"
+  },
+  {
+    "id": "newyork-presbyterian-owner",
+    "name": "NewYork-Presbyterian",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of new-york-mets (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "nhc",
+    "name": "NHC (National Housing Company)",
+    "type": "private-company",
+    "country": "Saudi Arabia",
+    "via": "Ministry of Municipal and Rural Affairs and Housing",
+    "note": "Set up by the ministry as its real-estate investment arm; state-owned.",
+    "parentId": "government-of-saudi-arabia"
+  },
+  {
+    "id": "niedax-group",
+    "name": "Niedax Gruppe",
+    "type": "private-company",
+    "country": "Germany",
+    "note": "Niedax Group is a family-owned German cable-management manufacturer. niedax.com company page",
+    "parentId": null
+  },
+  {
+    "id": "nintendo-owner",
+    "name": "Nintendo (Nintendo of America) LLC",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of seattle-mariners (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "nissan-owner",
+    "name": "Nissan Motor Co., Ltd.",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of tennessee-titans (2026-27).",
+    "country": "JP"
+  },
+  {
+    "id": "northwest-federal-credit-union-owner",
+    "name": "Northwest Federal Credit Union",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of washington-commanders (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "northwestern-mutual-owner",
+    "name": "Northwestern Mutual",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of milwaukee-brewers (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "nrg-energy-reliant-brand-owner",
+    "name": "NRG Energy (Reliant brand) LLC",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of houston-texans (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "occidental-petroleum-owner",
+    "name": "Occidental Petroleum Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of houston-astros (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "odty-news",
+    "name": "ODTY News",
+    "type": "private-company",
+    "parentId": null
+  },
+  {
+    "id": "okx-group",
+    "name": "OKX / Aux Cayes FinTech Co. Ltd (OK Group)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Seychelles"
+  },
+  {
+    "id": "oracle-corporation",
+    "name": "Oracle Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "orlando-health-inc",
+    "name": "Orlando Health, Inc.",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "osceola-county-tourism-authority",
+    "name": "Experience Kissimmee (official tourism authority for Osceola County, Florida)",
+    "type": "state",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "oshee",
+    "name": "Oshee Polska",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Poland"
+  },
+  {
+    "id": "otro-capital",
+    "name": "Otro Capital",
+    "type": "private-company",
+    "country": "United States",
+    "parentId": null
+  },
+  {
+    "id": "oxagon",
+    "name": "Oxagon",
+    "type": "private-company",
+    "country": "Saudi Arabia",
+    "via": "NEOM",
+    "note": "Industrial city/region of NEOM.",
+    "parentId": "neom"
+  },
+  {
+    "id": "pamesa-ceramica",
+    "name": "Pamesa Ceramica",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "pamesa-grupo-empresarial",
+    "name": "Pamesa Grupo Empresarial (Fernando Roig)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "ES"
+  },
+  {
+    "id": "panini-group",
+    "name": "Panini Group",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Italy"
+  },
+  {
+    "id": "paycom-owner",
+    "name": "Paycom",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of oklahoma-city-thunder (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "paycor-owner",
+    "name": "Paycor",
+    "type": "private-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of cincinnati-bengals (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "paypal-owner",
+    "name": "PayPal LLC",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of phoenix-suns (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "payward",
+    "name": "Payward, Inc. (d/b/a Kraken)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "paze-owner",
+    "name": "Early Warning Services, LLC",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of atlanta-hawks (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "perdue-farms-owner",
+    "name": "Perdue Farms",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of baltimore-ravens (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "petco-owner",
+    "name": "Petco",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of san-diego-padres (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "piero-ferrari",
+    "name": "Piero Ferrari",
+    "type": "private-company",
+    "country": "Italy",
+    "parentId": "ferrari-nv"
+  },
+  {
+    "id": "plenitude-eni",
+    "name": "Plenitude (Eni)",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "Italy"
+  },
+  {
+    "id": "pnc-bank-pnc-financial-services-owner",
+    "name": "PNC Financial Services Group, Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of pittsburgh-pirates (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "polestar-automotive",
+    "name": "Polestar Automotive Holding UK PLC",
+    "type": "listed-company",
+    "country": "Sweden",
+    "note": "Swedish premium EV maker, listed on Nasdaq; controlled by Li Shufu/PSD Investment and Volvo Car Group. Parent: Geely. geely.com",
+    "parentId": null
+  },
+  {
+    "id": "procter-and-gamble",
+    "name": "The Procter & Gamble Company",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "profine-gmbh",
+    "name": "profine GmbH (owner Dr Peter A. Mrosik / Hidden Peak Capital)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "DE"
+  },
+  {
+    "id": "progressive-owner",
+    "name": "Progressive Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of cleveland-guardians (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "prominent-group",
+    "name": "ProMinent Group",
+    "type": "private-company",
+    "country": "Germany",
+    "note": "ProMinent is a private German dosing/metering technology company (Heidelberg). prominent.com",
+    "parentId": null
+  },
+  {
+    "id": "providence-health-system",
+    "name": "Providence (Providence Health & Services / Providence Swedish)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "puma-se",
+    "name": "PUMA SE (Frankfurt-listed)",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "DE"
+  },
+  {
+    "id": "pvh-corp",
+    "name": "PVH Corp.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "United States"
+  },
+  {
+    "id": "qatar-sports-investments",
+    "name": "Qatar Sports Investments (QSI)",
+    "type": "state-fund",
+    "country": "Qatar",
+    "via": "Qatar Investment Authority",
+    "parentId": "qia",
+    "note": "Wholly owned by the Qatar Investment Authority (QIA); chaired by Nasser Al-Khelaifi; controlling owner of Paris Saint-Germain since 2011."
+  },
+  {
+    "id": "qia",
+    "name": "Qatar Investment Authority",
+    "type": "state-fund",
+    "country": "Qatar",
+    "parentId": null
+  },
+  {
+    "id": "qualcomm",
+    "name": "Qualcomm Incorporated (Nasdaq-listed)",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "quest-diagnostics-owner",
+    "name": "Quest Diagnostics",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of new-york-giants (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "quikrete-owner",
+    "name": "QUIKRETE",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of atlanta-braves (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "quiktrip-owner",
+    "name": "QuikTrip LLC",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of kansas-city-royals (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "raisin-ds",
+    "name": "Raisin DS",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Germany"
+  },
+  {
+    "id": "raisin-gmbh",
+    "name": "Raisin GmbH (Raisin DS)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "DE"
+  },
+  {
+    "id": "rate-formerly-guaranteed-rate-owner",
+    "name": "Rate (formerly Guaranteed Rate)",
+    "type": "private-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of chicago-white-sox (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "raymond-james-financial-owner",
+    "name": "Raymond James Financial",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of tampa-bay-buccaneers (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "recruit-holdings",
+    "name": "Recruit Holdings",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "Japan"
+  },
+  {
+    "id": "red-bull-racing-limited",
+    "name": "Red Bull Racing Limited",
+    "type": "private-company",
+    "country": "United Kingdom",
+    "parentId": "mateschitz-yoovidhya-families"
+  },
+  {
+    "id": "red-sea-global",
+    "name": "Red Sea Global (RSG)",
+    "type": "private-company",
+    "country": "Saudi Arabia",
+    "via": "PIF",
+    "note": "Listed in PIF's portfolio; RSG governance 'reflects the values of the PIF'.",
+    "parentId": "saudi-pif"
+  },
+  {
+    "id": "regione-autonoma-della-sardegna",
+    "name": "Regione Autonoma della Sardegna (Assessorato del Turismo)",
+    "type": "state",
+    "parentId": null,
+    "country": "IT"
+  },
+  {
+    "id": "renasant-corporation",
+    "name": "Renasant Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "renault-group",
+    "name": "Renault Group",
+    "type": "listed-company",
+    "country": "France",
+    "parentId": null
+  },
+  {
+    "id": "reuter-gruppe",
+    "name": "Reuter Gruppe",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Germany"
+  },
+  {
+    "id": "revel",
+    "name": "REVEL",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "revolut-group-holdings",
+    "name": "Revolut Group Holdings Ltd",
+    "type": "private-company",
+    "parentId": null,
+    "country": "United Kingdom"
+  },
+  {
+    "id": "rewe-group",
+    "name": "REWE Group",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Germany"
+  },
+  {
+    "id": "rezzil",
+    "name": "Rezzil (private)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "GB"
+  },
+  {
+    "id": "robinhood-owner",
+    "name": "Robinhood",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of memphis-grizzlies (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "rocket-rocket-companies-owner",
+    "name": "Rocket (Rocket Companies) LLC",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of cleveland-cavaliers (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "rogers-communications-owner",
+    "name": "Rogers Communications Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of toronto-blue-jays (2026-27).",
+    "country": "CA"
+  },
+  {
+    "id": "rolex-sa",
+    "name": "Rolex SA (Hans Wilsdorf Foundation)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Switzerland"
+  },
+  {
+    "id": "roshn",
+    "name": "ROSHN Group",
+    "type": "private-company",
+    "country": "Saudi Arabia",
+    "via": "PIF",
+    "note": "Describes itself as 'a Public Investment Fund (PIF) company'.",
+    "parentId": "saudi-pif"
+  },
+  {
+    "id": "rouses-markets-owner",
+    "name": "Rouses Markets",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of new-orleans-saints (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "royal-caribbean-cruises-ltd",
+    "name": "Royal Caribbean Cruises Ltd.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "royal-commission-for-alula",
+    "name": "Royal Commission for AlUla (RCU)",
+    "type": "state",
+    "country": "Saudi Arabia",
+    "note": "Saudi government agency running the Experience AlUla tourist board.",
+    "parentId": "government-of-saudi-arabia"
+  },
+  {
+    "id": "russian-federation",
+    "name": "Russian Federation (Federal Agency for State Property Management)",
+    "type": "state",
+    "parentId": null,
+    "country": "RU"
+  },
+  {
+    "id": "sabor-a-malaga",
+    "name": "Sabor a Malaga",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "salesforce-inc",
+    "name": "Salesforce, Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "United States"
+  },
+  {
+    "id": "samruk-kazyna",
+    "name": "Samruk-Kazyna (Kazakhstan sovereign wealth fund)",
+    "type": "state-fund",
+    "country": "Kazakhstan",
+    "parentId": "government-of-kazakhstan"
+  },
+  {
+    "id": "sap-se",
+    "name": "SAP SE",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "Germany"
+  },
+  {
+    "id": "saputo-inc",
+    "name": "Saputo Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "CA"
+  },
+  {
+    "id": "saudi-aramco",
+    "name": "Saudi Arabian Oil Company (Aramco)",
+    "type": "state",
+    "parentId": null,
+    "country": "SA"
+  },
+  {
+    "id": "saudi-pif",
+    "name": "Public Investment Fund (Saudi Arabia)",
+    "type": "state-fund",
+    "country": "Saudi Arabia",
+    "note": "Chaired by Crown Prince Mohammed bin Salman",
+    "parentId": "government-of-saudi-arabia"
+  },
+  {
+    "id": "saudia",
+    "name": "Saudia (Saudi Arabian Airlines)",
+    "type": "private-company",
+    "country": "Saudi Arabia",
+    "via": "PIF",
+    "note": "PIF holds the controlling stake in parent Saudi Arabian Airlines Corporation.",
+    "parentId": "saudi-pif"
+  },
+  {
+    "id": "schwarz-group",
+    "name": "Schwarz Group",
+    "type": "private-company",
+    "country": "Germany",
+    "parentId": null,
+    "note": "Parent of Lidl and PreZero."
+  },
+  {
+    "id": "scotiabank-owner",
+    "name": "Scotiabank",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of toronto-raptors (2026-27).",
+    "country": "CA"
+  },
+  {
+    "id": "securian-financial-owner",
+    "name": "Securian Financial Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of minnesota-twins (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "sega-sammy",
+    "name": "Sega Sammy Holdings Inc. (Tokyo-listed; owns Football Manager studio)",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "JP"
+  },
+  {
+    "id": "seminole-tribe-of-florida",
+    "name": "Seminole Tribe of Florida (Hard Rock International)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "United States"
+  },
+  {
+    "id": "sesame-hr-sl",
+    "name": "Sesame HR (Sesame HR S.L.)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "ES"
+  },
+  {
+    "id": "sezzle-owner",
+    "name": "Sezzle Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of minnesota-timberwolves (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "sgam-spa",
+    "name": "Societa Generale delle Acque Minerali S.p.A. (Acqua Lete)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "IT"
+  },
+  {
+    "id": "shaikh-nasser-bin-hamad-al-khalifa",
+    "name": "Shaikh Nasser bin Hamad Al Khalifa",
+    "type": "private-company",
+    "country": "Bahrain",
+    "note": "Son of the King of Bahrain; founder of Team Bahrain Victorious (owner, not a sponsor on the jersey).",
+    "parentId": "government-of-bahrain"
+  },
+  {
+    "id": "sheetz-owner",
+    "name": "Sheetz",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of pittsburgh-pirates (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "shell-plc",
+    "name": "Shell plc",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "United Kingdom"
+  },
+  {
+    "id": "siegmund",
+    "name": "Siegmund GmbH & Co. KG",
+    "type": "private-company",
+    "country": "Germany",
+    "note": "Siegmund is a private German welding-table manufacturer. siegmund.com",
+    "parentId": null
+  },
+  {
+    "id": "siemens-ag",
+    "name": "Siemens AG",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "DE"
+  },
+  {
+    "id": "sinochem-holdings",
+    "name": "China National Chemical Corporation (Sinochem Holdings)",
+    "type": "state",
+    "parentId": null,
+    "country": "CN"
+  },
+  {
+    "id": "sirc",
+    "name": "Saudi Investment Recycling Company (SIRC)",
+    "type": "private-company",
+    "country": "Saudi Arabia",
+    "via": "PIF",
+    "note": "PIF-owned recycling company.",
+    "parentId": "saudi-pif"
+  },
+  {
+    "id": "smoothie-king-owner",
+    "name": "Smoothie King",
+    "type": "private-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of new-orleans-pelicans (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "sofi-owner",
+    "name": "SoFi LLC",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of los-angeles-chargers (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "sonepar",
+    "name": "Sonepar",
+    "type": "private-company",
+    "country": "France",
+    "note": "Sonepar is a family-owned French electrical-equipment distributor. sonepar.com company page",
+    "parentId": null
+  },
+  {
+    "id": "sony-group",
+    "name": "Sony Group Corporation",
+    "type": "listed-company",
+    "country": "Japan",
+    "parentId": null,
+    "note": "Parent of Sony Interactive Entertainment (PlayStation)."
+  },
+  {
+    "id": "sorare",
+    "name": "Sorare",
+    "type": "private-company",
+    "parentId": null,
+    "country": "France"
+  },
+  {
+    "id": "spectrum-charter-communications-owner",
+    "name": "Charter Communications, Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of charlotte-hornets (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "spotify-technology",
+    "name": "Spotify Technology S.A.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "Sweden"
+  },
+  {
+    "id": "standard-chartered-plc",
+    "name": "Standard Chartered plc",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "GB"
+  },
+  {
+    "id": "standard-general",
+    "name": "Standard General L.P.",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "starr-insurance-owner",
+    "name": "Starr Insurance Companies",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of new-york-yankees (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "state-farm-owner",
+    "name": "State Farm",
+    "type": "private-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of atlanta-hawks (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "state-of-baden-wuerttemberg",
+    "name": "State of Baden-Württemberg, Sparkassenverband Baden-Württemberg and City of Stuttgart",
+    "type": "state",
+    "parentId": null,
+    "country": "DE"
+  },
+  {
+    "id": "state-of-qatar-qia",
+    "name": "State of Qatar (via Qatar Investment Authority)",
+    "type": "state",
+    "parentId": null,
+    "country": "QA"
+  },
+  {
+    "id": "stc",
+    "name": "stc (Saudi Telecom Company)",
+    "type": "listed-company",
+    "country": "Saudi Arabia",
+    "via": "PIF",
+    "note": "PIF is the majority shareholder; parent of neoleap.",
+    "parentId": "saudi-pif"
+  },
+  {
+    "id": "stellantis-nv",
+    "name": "Stellantis N.V.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "NL"
+  },
+  {
+    "id": "stifel-owner",
+    "name": "Stifel Financial Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of st-louis-cardinals (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "stockx-owner",
+    "name": "StockX",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of detroit-pistons (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "strauss-gmbh",
+    "name": "Strauss GmbH (STRAUSS)",
+    "type": "private-company",
+    "country": "Germany",
+    "parentId": null
+  },
+  {
+    "id": "sumup-ltd",
+    "name": "SumUp Ltd",
+    "type": "private-company",
+    "parentId": null,
+    "country": "GB"
+  },
+  {
+    "id": "sun-life-owner",
+    "name": "Sun Life",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of toronto-raptors (2026-27).",
+    "country": "CAN"
+  },
+  {
+    "id": "suntory-holdings",
+    "name": "Suntory Holdings Limited",
+    "type": "private-company",
+    "parentId": null,
+    "country": "JP"
+  },
+  {
+    "id": "super-group",
+    "name": "Super Group (SGHC) Limited",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "Guernsey"
+  },
+  {
+    "id": "surj-sports-investment",
+    "name": "SURJ Sports Investment",
+    "type": "state-fund",
+    "country": "Saudi Arabia",
+    "parentId": "saudi-pif",
+    "note": "PIF subsidiary that took a reported ~US$1bn minority stake in DAZN and set up DAZN MENA."
+  },
+  {
+    "id": "sutter-health-owner",
+    "name": "Sutter Health",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of sacramento-kings (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "suzuki-motor-corporation",
+    "name": "Suzuki Motor Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "JP"
+  },
+  {
+    "id": "t-mobile-owner",
+    "name": "T-Mobile LLC",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of seattle-mariners (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "t-rowe-price-owner",
+    "name": "T. Rowe Price Group, Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of baltimore-orioles (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "target-corporation",
+    "name": "Target Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "td-bank-owner",
+    "name": "TD Bank",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of boston-celtics (2026-27).",
+    "country": "CA"
+  },
+  {
+    "id": "teamviewer-se",
+    "name": "TeamViewer SE",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "DE"
+  },
+  {
+    "id": "tecnocasa-group",
+    "name": "Tecnocasa Group",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Italy"
+  },
+  {
+    "id": "tecnocasa-holding-spa",
+    "name": "Tecnocasa Holding S.p.A.",
+    "type": "private-company",
+    "parentId": null,
+    "country": "IT"
+  },
+  {
+    "id": "tek-fox-ltd",
+    "name": "Tek Fox Ltd (MrQ)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "MT"
+  },
+  {
+    "id": "telus-corporation",
+    "name": "TELUS Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "CA"
+  },
+  {
+    "id": "temporal-technologies",
+    "name": "Temporal Technologies, Inc. (private, VC-backed)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "tm-grupo-inmobiliario",
+    "name": "TM Grupo Inmobiliario (Serna family)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "ES"
+  },
+  {
+    "id": "tm-real-estate-group",
+    "name": "TM Real Estate Group",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Spain"
+  },
+  {
+    "id": "toto-wolff",
+    "name": "Toto Wolff",
+    "type": "private-company",
+    "country": "Austria",
+    "parentId": "motorsport-invest"
+  },
+  {
+    "id": "toyota-motor-corporation",
+    "name": "Toyota Motor Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "JP"
+  },
+  {
+    "id": "toyota-owner",
+    "name": "Toyota LLC",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of houston-rockets (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "tpg",
+    "name": "TPG Capital (TPG Inc.)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "trainline-plc",
+    "name": "Trainline plc",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "United Kingdom"
+  },
+  {
+    "id": "tropicana-tropicana-brands-group-owner",
+    "name": "Tropicana Brands Group",
+    "type": "private-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of tampa-bay-rays (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "truist-owner",
+    "name": "Truist",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of atlanta-braves (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "turkiye-wealth-fund",
+    "name": "Türkiye Wealth Fund",
+    "type": "state-fund",
+    "country": "Türkiye",
+    "parentId": null
+  },
+  {
+    "id": "twg-global",
+    "name": "TWG Global / TWG Motorsports",
+    "type": "private-company",
+    "country": "United States",
+    "parentId": null
+  },
+  {
+    "id": "uae",
+    "name": "United Arab Emirates (federal)",
+    "type": "state",
+    "country": "UAE",
+    "parentId": null
+  },
+  {
+    "id": "uber-technologies",
+    "name": "Uber Technologies, Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "United States"
+  },
+  {
+    "id": "ubs-group-ag",
+    "name": "UBS Group AG",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "CH"
+  },
+  {
+    "id": "uchealth",
+    "name": "UCHealth (University of Colorado Health)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "ucla-health-owner",
+    "name": "University of California",
+    "type": "state",
+    "parentId": null,
+    "note": "jersey patch partner of los-angeles-chargers (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "uline-owner",
+    "name": "Uline",
+    "type": "private-company",
+    "parentId": null,
+    "note": "jersey patch partner of milwaukee-bucks (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "uney-gmbh",
+    "name": "Uney GmbH",
+    "type": "private-company",
+    "parentId": null,
+    "country": "CH"
+  },
+  {
+    "id": "unicredit-spa",
+    "name": "UniCredit S.p.A.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "IT"
+  },
+  {
+    "id": "uniqlo-owner",
+    "name": "UNIQLO",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of los-angeles-dodgers (2026-27).",
+    "country": "JPN"
+  },
+  {
+    "id": "united-airlines-owner",
+    "name": "United Airlines",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of chicago-bulls (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "united-wholesale-mortgage-owner",
+    "name": "United Wholesale Mortgage Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of phoenix-suns (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "university-of-texas-system",
+    "name": "The University of Texas System (UT MD Anderson Cancer Center)",
+    "type": "state",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "uralchem",
+    "name": "Uralchem PJSC (controlled by Dmitry Mazepin and family)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "RU"
+  },
+  {
+    "id": "ursapharm-arzneimittel-gmbh",
+    "name": "URSAPHARM Arzneimittel GmbH",
+    "type": "private-company",
+    "parentId": null,
+    "country": "DE"
+  },
+  {
+    "id": "us-bank-owner",
+    "name": "U.S. Bank",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of san-francisco-49ers (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "ut-southwestern-medical-center",
+    "name": "The University of Texas Southwestern Medical Center",
+    "type": "state",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "uw-health-owner",
+    "name": "UW Health",
+    "type": "state",
+    "parentId": null,
+    "note": "jersey patch partner of green-bay-packers (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "visa-inc",
+    "name": "Visa Inc.",
+    "type": "listed-company",
+    "country": "United States",
+    "parentId": null
+  },
+  {
+    "id": "vodafone-group",
+    "name": "Vodafone Group",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "United Kingdom"
+  },
+  {
+    "id": "vodafone-group-plc",
+    "name": "Vodafone Group Plc — public shareholders (Niel family now largest holder)",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "GB"
+  },
+  {
+    "id": "volkswagen-ag",
+    "name": "Volkswagen Group AG",
+    "type": "listed-company",
+    "country": "Germany",
+    "parentId": null
+  },
+  {
+    "id": "walt-disney-world-owner",
+    "name": "Walt Disney World Resort",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of orlando-magic (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "webull-owner",
+    "name": "Webull LLC",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of tampa-bay-rays (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "williams-grand-prix-engineering",
+    "name": "Williams Grand Prix Engineering Ltd",
+    "type": "private-company",
+    "country": "United Kingdom",
+    "parentId": "dorilton"
+  },
+  {
+    "id": "wwk-lebensversicherung-ag",
+    "name": "WWK Lebensversicherung a.G. (WWK Versicherungsgruppe)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "DE"
+  },
+  {
+    "id": "wwk-versicherungen",
+    "name": "WWK Versicherungen",
+    "type": "private-company",
+    "parentId": null,
+    "country": "Germany"
+  },
+  {
+    "id": "xfinity-mobile-comcast-owner",
+    "name": "Xfinity Mobile (Comcast)",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "arena naming-rights holder of philadelphia-76ers (2026-27).",
+    "country": "USA"
+  },
+  {
+    "id": "xfinity-owner",
+    "name": "Comcast Corporation",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of houston-texans (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "xrg",
+    "name": "XRG (international energy and chemicals investment company)",
+    "type": "private-company",
+    "country": "United Arab Emirates",
+    "note": "Wholly owned by ADNOC; headquartered in Abu Dhabi.",
+    "parentId": "government-of-abu-dhabi"
+  },
+  {
+    "id": "yeti-holdings-inc",
+    "name": "YETI Holdings, Inc.",
+    "type": "listed-company",
+    "parentId": null,
+    "country": "US"
+  },
+  {
+    "id": "yew-tree",
+    "name": "Yew Tree Consortium",
+    "type": "private-company",
+    "country": "United Kingdom",
+    "parentId": "amr-gp"
+  },
+  {
+    "id": "yildiz-holding",
+    "name": "Yildiz Holding A.S. (Ulker family)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "TR"
+  },
+  {
+    "id": "yoovidhya-family",
+    "name": "Yoovidhya family",
+    "type": "private-company",
+    "country": "Thailand",
+    "parentId": "mateschitz-yoovidhya-families"
+  },
+  {
+    "id": "york-space-systems-owner",
+    "name": "York Space Systems",
+    "type": "listed-company",
+    "parentId": null,
+    "note": "jersey patch partner of colorado-rockies (2026-27).",
+    "country": "US"
+  },
+  {
+    "id": "zhejiang-geely-holding-group",
+    "name": "Zhejiang Geely Holding Group Co., Ltd.",
+    "type": "private-company",
+    "parentId": null,
+    "country": "CN"
+  },
+  {
+    "id": "zoomex",
+    "name": "Zoomex (crypto derivatives exchange, founded 2021)",
+    "type": "private-company",
+    "parentId": null,
+    "country": "unknown"
+  }
+]
