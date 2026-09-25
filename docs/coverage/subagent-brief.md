@@ -13,6 +13,7 @@ You are mapping **{{TARGET_ID}}** for Behind the Jersey, a site that shows who r
 - The pipeline: https://github.com/Beyond-The-Jersey/pipeline. New leagues go into `scripts/collect_data.py`: an official URL in `OFFICIAL_SOURCES`, a parser (`extract_teams_<league>`) or a fallback list in `KNOWN_TEAMS`.
 
 **Do**
+0. **Claim the issue first.** Each target has an `issue` in `targets.json`. Follow the rules in https://github.com/Beyond-The-Jersey/data/issues/181: assign it to yourself and comment one line on what you'll do. If someone else is assigned, pick another target.
 1. **Entities.** Add the league (`leagues.json`, with `clubCount`) and, if the sport is new, the sport (`sports.json`, `status: "not-mapped"`). List every club or team for the current season from the official team list, as `clubs.json` entries with ASCII kebab-case ids, `leagueId`, `country` and `aliases`. Keep existing ids.
 2. **Sponsors on the shirt.** For each club or team, one kit for the current season (`kits.json`) listing every sponsor with its `placement` (front, back, sleeve, shorts) and a `source` `{name, date, url}`: the club's kit launch or announcement, or a named press article. Wikipedia is a lead, not a source.
 3. **Organisation deals.** Sponsors of the league or competition itself (title sponsor, official partner) go in `deals.json` with `clubId: null`, `orgName`, `leagueId` and `placement: "league-partner"`, each with a source.

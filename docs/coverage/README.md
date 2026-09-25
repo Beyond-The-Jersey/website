@@ -4,6 +4,7 @@ Research leads for contributors and agents, **not ratings**. Every lead below ha
 
 - [`targets.json`](targets.json): 46 targets with entities, official team lists, sourced leads and data notes, for agents.
 - [`subagent-brief.md`](subagent-brief.md): the prompt to start one subagent per target.
+- Every target has an issue in [Beyond-The-Jersey/data](https://github.com/Beyond-The-Jersey/data/issues) (`issue` in `targets.json`); claim it there before starting, as the [index issue](https://github.com/Beyond-The-Jersey/data/issues/181) describes.
 
 ## Before starting subagents
 
