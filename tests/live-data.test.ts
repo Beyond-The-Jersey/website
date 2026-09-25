@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { beforeAll, describe, expect, it } from 'vitest';
 import { loadDataset, type Dataset } from '@/lib/data';
-import { clubLevel, hasMarkedShirt } from '@/lib/data/derive';
+import { clubLevel, clubsToCheck, hasMarkedShirt } from '@/lib/data/derive';
 import { contactFor, teamPage } from '@/lib/data/team';
 import { DirectorySource, LIVE_DIR } from '@/lib/data/source';
 
@@ -88,5 +88,15 @@ describe('data/live', () => {
     // Only the three with broken evidence links are still rated serious or severe without a why text.
     const unsupported = ds.sponsors.filter((s) => (s.tier === 'serious' || s.tier === 'severe') && !s.why);
     expect(unsupported.map((s) => s.id).sort()).toEqual(['gazprom', 'qatar-airways-global', 'valvoline']);
+  });
+
+  it('offers a full list of clubs to check, from the big five leagues first', () => {
+    const { pick, more, notStarted } = clubsToCheck(ds, 16);
+    expect(pick).toHaveLength(16);
+    const leagues = new Set(pick.map((c) => ds.byId.club.get(c.id)!.leagueId));
+    expect([...leagues].sort()).toEqual(['bundesliga', 'la-liga', 'ligue-1', 'premier-league', 'serie-a']);
+    expect(pick.every((c) => c.level === 'not-rated')).toBe(true);
+    expect(more).toBeGreaterThan(100);
+    expect(notStarted).toContain('2. Bundesliga');
   });
 });

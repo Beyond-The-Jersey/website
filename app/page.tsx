@@ -7,7 +7,14 @@ import { SearchBox } from '@/components/search/SearchBox';
 import { Container, SiteFooter, SiteHeader } from '@/components/SiteChrome';
 import { claimClubHref, PIPELINE_URL, REPO_URL, repoHref } from '@/lib/config';
 import { getDataset } from '@/lib/data';
-import { coverage, featuredDropped, latestChanges, leagueSummary, leaguesForSport } from '@/lib/data/derive';
+import {
+  clubsToCheck,
+  coverage,
+  featuredDropped,
+  latestChanges,
+  leagueSummary,
+  leaguesForSport,
+} from '@/lib/data/derive';
 import type { LevelId } from '@/lib/data/schema';
 import { buildSearchIndex } from '@/lib/data/search-index';
 import { listJoin } from '@/lib/format';
@@ -89,9 +96,7 @@ export default async function Landing() {
   const changes = latestChanges(ds, 4);
   const dropped = featuredDropped(ds);
   const soccer = leaguesForSport(ds, 'soccer').map((l) => leagueSummary(ds, l.id));
-  const pl = soccer.find((l) => l.id === 'premier-league');
-  const todo = pl?.clubs.filter((c) => !LEVELS[c.level].rated) ?? [];
-  const notStarted = soccer.filter((l) => l.status === 'not-started').map((l) => l.name);
+  const { pick: todo, more, leagues: todoLeagues, notStarted } = clubsToCheck(ds, 16);
 
   return (
     <>
@@ -247,8 +252,11 @@ export default async function Landing() {
                   </a>
                 ))}
               </div>
-              {notStarted.length > 0 && (
-                <span className={s.more}>Plus the {listJoin(notStarted)}: nobody has started those yet.</span>
+              {(more > 0 || notStarted.length > 0) && (
+                <span className={s.more}>
+                  {more > 0 && `Plus ${more} more clubs and teams across ${todoLeagues} leagues and competitions. `}
+                  {notStarted.length > 0 && `Nobody has started the ${listJoin(notStarted)} yet.`}
+                </span>
               )}
               <div className={s.helpButtons}>
                 <a href={repoHref()} className={s.primary}>

@@ -294,6 +294,34 @@ export function leagueSummary(ds: Dataset, leagueId: string): LeagueSummary {
 
 export const leaguesForSport = (ds: Dataset, sportId: string) => ds.leagues.filter((l) => l.sportId === sportId);
 
+/** The big five soccer leagues come first when we ask people to check clubs. */
+const PICK_FIRST = ['premier-league', 'la-liga', 'bundesliga', 'serie-a', 'ligue-1'];
+
+/**
+ * "Nobody has checked these yet · pick one": up to n unrated clubs, taken in turn from each of
+ * the big five soccer leagues, then from every other league, so the list is never one league's
+ * leftovers. Also the number of other unrated clubs, and the leagues nobody has started.
+ */
+export function clubsToCheck(ds: Dataset, n = 16) {
+  const queues = ds.leagues
+    .map((l) => ({ id: l.id, clubs: leagueSummary(ds, l.id).clubs.filter((c) => !isRated(c.level)) }))
+    .filter((q) => q.clubs.length > 0);
+  const first = PICK_FIRST.flatMap((id) => queues.filter((q) => q.id === id));
+  const rest = queues.filter((q) => !PICK_FIRST.includes(q.id));
+  const pick: ClubSummary[] = [];
+  for (const group of [first, rest]) {
+    for (let i = 0; pick.length < n && group.some((q) => q.clubs.length > i); i++)
+      for (const q of group) if (pick.length < n && q.clubs[i]) pick.push(q.clubs[i]);
+  }
+  const total = queues.reduce((sum, q) => sum + q.clubs.length, 0);
+  return {
+    pick,
+    more: total - pick.length,
+    leagues: queues.length,
+    notStarted: ds.leagues.filter((l) => l.status === 'not-started').map((l) => l.name),
+  };
+}
+
 /** Clubs with a rated current kit, and leagues with at least one of them. For the landing kicker. */
 export function coverage(ds: Dataset) {
   const ratedClubs = ds.clubs.filter((c) => isRated(clubLevel(ds, c.id)));
