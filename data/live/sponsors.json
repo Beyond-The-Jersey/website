@@ -1594,7 +1594,7 @@
       "ut-southwestern-medical-center-record"
     ],
     "aliases": [],
-    "note": "Rating note: Judgement call: the sponsor entry covers two owners. Scored on the state half (UT Southwestern) because state ownership is the tier-driving fact; Children's Health's non-profit status is evidenced by ProPublica Nonprofit Explorer (EIN 75-0800628). 'serious' reflects state rather than state-fund ownership."
+    "note": "Rating note: Judgement call: the sponsor entry covers two owners. Scored on the state half (UT Southwestern) because state ownership is the tier-driving fact; Children's Health's non-profit status is evidenced by ProPublica Nonprofit Explorer (EIN 75-0800628). 'serious' reflects state rather than state-fund ownership. ON HOLD: public ownership, but no sourced claim of abuses by that owner, which serious needs; the sponsor also covers a private non-profit (Children's Health)."
   },
   {
     "id": "childrens-hospital-colorado",
@@ -2520,7 +2520,7 @@
       "eni-record"
     ],
     "aliases": [],
-    "note": "Rating note: Kept at serious rather than severe: Eni is a state oil major with conflict-zone assets but is not itself a belligerent or a Russian state entity."
+    "note": "Rating note: Kept at serious rather than severe: Eni is a state oil major with conflict-zone assets but is not itself a belligerent or a Russian state entity. ON HOLD: a 33% Italian state stake, no sourced claim of abuses by that owner, and the conflict-exposure sentence had no source."
   },
   {
     "id": "enterprise-rent-a-car",
@@ -2652,7 +2652,6 @@
     ],
     "aliases": [],
     "note": "Rating note: Ultimate owner is the Government of Abu Dhabi, a state entity, which places it in the serious tier per rubric (state owner).",
-    "ownerVerb": "paid for by",
     "why": {
       "text": "Experience Abu Dhabi is the official tourism authority of the Emirate of Abu Dhabi, part of the United Arab Emirates. In 2024, 43 activists and dissidents got life sentences in a single mass trial that rights groups called grossly unfair, and in March 2025 the UAE’s Federal Supreme Court upheld the convictions. A tourism brand on a famous jersey makes the country look good to millions of fans while that goes on. That’s called sportswashing.",
       "claimIds": [
@@ -2662,7 +2661,8 @@
       ],
       "messageLine": "In 2024, 43 activists in the UAE got life sentences in one mass trial, and the convictions were upheld in 2025.",
       "status": "draft"
-    }
+    },
+    "ownerVerb": "paid for by"
   },
   {
     "id": "experience-kissimmee",
@@ -2676,7 +2676,7 @@
       "osceola-county-tourism-authority-record"
     ],
     "aliases": [],
-    "note": "Rating note: County-level rather than national, so 'concern' would also be defensible; called 'serious' because the rubric gives 'serious' for any state or state-fund owner. Public funding confirmed in Experience Kissimmee's own 26-27 Grants Manual citing the Tourist Development Tax."
+    "note": "Rating note: County-level rather than national, so 'concern' would also be defensible; called 'serious' because the rubric gives 'serious' for any state or state-fund owner. Public funding confirmed in Experience Kissimmee's own 26-27 Grants Manual citing the Tourist Development Tax. ON HOLD: public ownership, but no sourced claim of abuses by that owner, which serious needs."
   },
   {
     "id": "expressvpn",
@@ -3855,7 +3855,8 @@
     "claimIds": [
       "friuli-venezia-giulia-region-record"
     ],
-    "aliases": []
+    "aliases": [],
+    "note": "Rating note: ON HOLD: public ownership, but no sourced claim of abuses by that owner, which serious needs."
   },
   {
     "id": "iren",
@@ -4619,7 +4620,7 @@
       "lvcva-owner-record"
     ],
     "aliases": [],
-    "note": "Rating note: LVCVA is a state agency created by statute; Nevada is a U.S. state with no ongoing armed conflict or severe abuses, but state ownership triggers serious tier per rubric."
+    "note": "Rating note: LVCVA is a state agency created by statute; Nevada is a U.S. state with no ongoing armed conflict or severe abuses, but state ownership triggers serious tier per rubric. ON HOLD: public ownership, but no sourced claim of abuses by that owner, which serious needs."
   },
   {
     "id": "m-and-t-bank",
@@ -4845,7 +4846,8 @@
     "claimIds": [
       "university-of-texas-system-record"
     ],
-    "aliases": []
+    "aliases": [],
+    "note": "Rating note: ON HOLD: public ownership, but no sourced claim of abuses by that owner, which serious needs."
   },
   {
     "id": "mediacom",
@@ -4912,7 +4914,7 @@
       "mercedes-benz-group-record"
     ],
     "aliases": [],
-    "note": "Rating note: Ultimate owners include state-owned enterprise BAIC Group and state fund Kuwait Investment Authority, making the owner type state/state-fund, thus serious tier."
+    "note": "Rating note: Ultimate owners include state-owned enterprise BAIC Group and state fund Kuwait Investment Authority, making the owner type state/state-fund, thus serious tier. ON HOLD: minority state stakes (BAIC 9.98%, KIA 5.33%): concern at most under tiers.json."
   },
   {
     "id": "mercy-health",
@@ -5880,7 +5882,7 @@
       "sinochem-holdings-record"
     ],
     "aliases": [],
-    "note": "Rating note: State stake is being reduced (talk of a further cut toward 10%) but Sinochem remained Pirelli's second-largest shareholder after the July 2026 sale, so 'serious' still stands. Camfin (Tronchetti Provera family) is the largest holder."
+    "note": "Rating note: State stake is being reduced (talk of a further cut toward 10%) but Sinochem remained Pirelli's second-largest shareholder after the July 2026 sale, so 'serious' still stands. Camfin (Tronchetti Provera family) is the largest holder. ON HOLD: a minority state stake (about 20%): concern at most under tiers.json."
   },
   {
     "id": "play",
@@ -6021,7 +6023,7 @@
       "sinochem-holdings-record"
     ],
     "aliases": [],
-    "note": "Rating note: Sinochem's own newsroom carries the same 38% CNRC/Prometeon transaction, confirming the state chain."
+    "note": "Rating note: Sinochem's own newsroom carries the same 38% CNRC/Prometeon transaction, confirming the state chain. ON HOLD: the only claim is about Pirelli's shareholder, not about Prometeon's own ownership."
   },
   {
     "id": "prominent",
@@ -6060,7 +6062,7 @@
       "axpo-holding-ag-record"
     ],
     "aliases": [],
-    "note": "Rating note: Cantons are treated as 'state' (public-law bodies), which is why this lands at 'serious' rather than 'none'. The shareholder table on the page carries a 2014 date but the structure is current."
+    "note": "Rating note: Cantons are treated as 'state' (public-law bodies), which is why this lands at 'serious' rather than 'none'. The shareholder table on the page carries a 2014 date but the structure is current. ON HOLD: public ownership, but no sourced claim of abuses by that owner, which serious needs."
   },
   {
     "id": "puma",
@@ -6686,7 +6688,7 @@
       "regione-autonoma-della-sardegna-record"
     ],
     "aliases": [],
-    "note": "Rating note: Sponsor is a hybrid: regional state tourism body plus private brewery, and Cagliari has rotated sponsors (Banco di Sardegna, Moby). Call is driven by the state-side branding; if the exposure is judged to be Doppio Malto alone the tier would drop to 'none'."
+    "note": "Rating note: Sponsor is a hybrid: regional state tourism body plus private brewery, and Cagliari has rotated sponsors (Banco di Sardegna, Moby). Call is driven by the state-side branding; if the exposure is judged to be Doppio Malto alone the tier would drop to 'none'. ON HOLD: public ownership, but no sourced claim of abuses by that owner, which serious needs."
   },
   {
     "id": "saudi-investment-recycling-company",
@@ -7881,7 +7883,7 @@
       "ucla-health-owner-record"
     ],
     "aliases": [],
-    "note": "Rating note: UCLA Health is part of the University of California system, which is a public state university system."
+    "note": "Rating note: UCLA Health is part of the University of California system, which is a public state university system. ON HOLD: public ownership, but no sourced claim of abuses by that owner, which serious needs."
   },
   {
     "id": "uline",
@@ -8028,7 +8030,7 @@
       "uw-health-owner-record"
     ],
     "aliases": [],
-    "note": "Rating note: UW Health is a public hospital system (state agency) created by Wisconsin statute; the state is the ultimate owner. No evidence of ongoing armed conflict or conflict minerals at the state level, so 'serious' not 'severe'."
+    "note": "Rating note: UW Health is a public hospital system (state agency) created by Wisconsin statute; the state is the ultimate owner. No evidence of ongoing armed conflict or conflict minerals at the state level, so 'serious' not 'severe'. ON HOLD: public ownership, but no sourced claim of abuses by that owner, which serious needs."
   },
   {
     "id": "valvoline",
@@ -8152,7 +8154,6 @@
     ],
     "aliases": [],
     "note": "Rating note: Partnership: Qatar Tourism press release, 2025-11-29 (https://www.qatartourism.com/en/news-and-media/press-releases/visit-qatar-announces-principal-partnership-with-the-future-audi) and Audi press release of the same date.",
-    "ownerVerb": "paid for by",
     "why": {
       "text": "Visit Qatar is the Qatari state’s tourism body. Amnesty International reports that migrant workers in Qatar are still exposed to exploitation despite reforms, and that expression and assembly are tightly restricted. A tourism brand on a famous team makes the country look good to millions of fans while that goes on. That’s called sportswashing.",
       "claimIds": [
@@ -8160,7 +8161,8 @@
       ],
       "messageLine": "Amnesty International reports that migrant workers in Qatar are still exposed to exploitation.",
       "status": "draft"
-    }
+    },
+    "ownerVerb": "paid for by"
   },
   {
     "id": "visit-rwanda",
@@ -8204,7 +8206,6 @@
     ],
     "aliases": [],
     "note": "Rating note: State body → state tier above none. Could be argued severe on Yemen-war grounds, but the Saudi-led intervention has largely wound down, so serious is used. Cross-source: HRW Saudi Arabia chapter https://hrw.org/world-report/2026/country-chapters/saudi-arabia.",
-    "ownerVerb": "paid for by",
     "why": {
       "text": "Visit Saudi is the brand of the Saudi Tourism Authority, a government body funded entirely by the state. Human Rights Watch records migrant workers in Saudi Arabia facing widespread wage theft and avoidable deaths at work, and the country carried out a record 345 executions in 2024. A tourism brand in a famous stadium makes the country look good to millions of fans while that goes on. That’s called sportswashing.",
       "claimIds": [
@@ -8213,7 +8214,8 @@
       ],
       "messageLine": "Human Rights Watch records migrant workers in Saudi Arabia facing widespread wage theft and avoidable deaths at work.",
       "status": "draft"
-    }
+    },
+    "ownerVerb": "paid for by"
   },
   {
     "id": "visma",

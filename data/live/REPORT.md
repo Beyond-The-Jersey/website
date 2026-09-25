@@ -1,6 +1,6 @@
 # data/live
 
-Built by `npm run data:live` from Beyond-The-Jersey/data `9a47707` (`normalized/`, updated 2026-09-24) and `data/live-overlay.json`. Don't edit these files by hand: change the data repo or the overlay and rebuild.
+Built by `npm run data:live` from Beyond-The-Jersey/data `5c4b022` (`normalized/`, updated 2026-09-24) and `data/live-overlay.json`. Don't edit these files by hand: change the data repo or the overlay and rebuild.
 
 331 clubs, 271 kits, 656 sponsors, 490 claims. 24 warnings.
 
@@ -155,63 +155,6 @@ Built by `npm run data:live` from Beyond-The-Jersey/data `9a47707` (`normalized/
 - contacts/fc-dallas: email customerservice@fcdallas.com
 - contacts/fc-dallas: phone +1 214-705-6700
 - contacts/red-bull-racing: contact-form https://www.redbullracing.com/int-en/club/contacto
-
-## Overlay (27)
-
-- levels/clean: plain
-- levels/spotted: plain
-- levels/stained: plain
-- levels/soaked: plain
-- sponsors/emirates: ownerVerb, why
-- sponsors/visit-rwanda: ownerVerb, why
-- sponsors/riyadh-air: ownerVerb, why
-- sponsors/etihad-airways: why
-- sponsors/experience-abu-dhabi: ownerVerb, why
-- sponsors/g42: why
-- sponsors/aramco: why
-- sponsors/maaden: why
-- sponsors/sela: why
-- sponsors/visit-saudi: ownerVerb, why
-- sponsors/petronas: why
-- sponsors/qatar-airways: why
-- sponsors/visit-qatar: ownerVerb, why
-- sponsors/turkish-airlines: why
-- sponsors/aeroflot: why
-- kits/arsenal-2026-27-home: headline, shortLine, change
-- kits/arsenal-2025-26-home: headline, shortLine
-- kits/arsenal-2017-18-home: headline, shortLine
-- kits/atletico-de-madrid-2026-27-home: headline, shortLine
-- kits/aston-villa-2026-27-home: headline, shortLine
-- kits/aston-villa-2025-26-home: shortLine
-- deals/arsenal-emirates: source
-- deals/arsenal-visit-rwanda: endedOn, source
-
-## Ratings on hold (shown as not rated yet, data kept) (13)
-
-- sponsors/childrens-health: was "serious". Public ownership, but no sourced claim of abuses by that owner, which serious needs. The sponsor also covers a private non-profit (Children's Health).
-- sponsors/md-anderson-cancer-center: was "serious". Public ownership, but no sourced claim of abuses by that owner, which serious needs.
-- sponsors/io-sono-friuli-venezia-giulia: was "serious". Public ownership, but no sourced claim of abuses by that owner, which serious needs.
-- sponsors/sardegna-turismo: was "serious". Public ownership, but no sourced claim of abuses by that owner, which serious needs.
-- sponsors/pulsee-luce-e-gas: was "serious". Public ownership, but no sourced claim of abuses by that owner, which serious needs.
-- sponsors/experience-kissimmee: was "serious". Public ownership, but no sourced claim of abuses by that owner, which serious needs.
-- sponsors/lvcva: was "serious". Public ownership, but no sourced claim of abuses by that owner, which serious needs.
-- sponsors/ucla-health: was "serious". Public ownership, but no sourced claim of abuses by that owner, which serious needs.
-- sponsors/uw-health: was "serious". Public ownership, but no sourced claim of abuses by that owner, which serious needs.
-- sponsors/eni: was "serious". A 33% Italian state stake; no sourced claim of abuses by that owner, and the conflict-exposure sentence has no source.
-- sponsors/prometeon: was "serious". The only claim is about Pirelli's shareholder, not about Prometeon.
-- sponsors/pirelli: was "serious". A minority state stake (about 20%), which the tiers call concern at most.
-- sponsors/mercedes-benz: was "serious". Minority state stakes (9.98% and 5.33%), which the tiers call concern at most.
-
-## Rating commentary removed from claims (8)
-
-- claims/ut-southwestern-medical-center-record: "State ownership of one half of the patch drives a state tier. Human-rights relevance is limited to public-sector healthcare and labour policy."
-- claims/eni-record: "State ownership alone earns serious. Eni's upstream operations in Libya, Egypt, Nigeria and Mozambique give it live, conflict-adjacent human-rights exposure on top."
-- claims/osceola-county-tourism-authority-record: "Because the owner is a public body, the state-owner rule puts it in 'serious'. Human-rights relevance is remote - a local government tourism body with no armed-conflict or conflict-minerals exposure."
-- claims/friuli-venezia-giulia-region-record: "The owner is therefore a public authority - 'serious' under the state-owner rule. Human-rights relevance: a regional government's destination marketing, with no conflict or minerals exposure."
-- claims/university-of-texas-system-record: "State ownership, so 'serious' under the rule. Human-rights relevance: public healthcare/research, no conflict exposure."
-- claims/sinochem-holdings-record: "A Chinese state owner of that size is a material state link on a Ferrari sponsor."
-- claims/axpo-holding-ag-record: "The Genoa front sponsor is therefore backed by sub-national Swiss state capital."
-- claims/regione-autonoma-della-sardegna-record: "It is a public-law regional body, so this is sub-national state money."
 
 ## Stale headlines removed (1)
 

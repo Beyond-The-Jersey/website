@@ -2,5 +2,5 @@
   "schemaVersion": 1,
   "updatedAt": "2026-09-24",
   "generatedBy": "Beyond-The-Jersey data pipeline (scripts/); fixed and extended by the website (scripts/build-live-data.ts, data/live-overlay.json)",
-  "sourceCommit": "9a47707"
+  "sourceCommit": "5c4b022"
 }

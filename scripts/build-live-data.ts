@@ -36,7 +36,8 @@ const files = Object.fromEntries(
 const overlay = read(OVERLAY) as Record<string, Json>;
 const log: Record<string, string[]> = {};
 const note = (section: string, line: string) => (log[section] ??= []).push(line);
-const real = <T>(o: Record<string, T>) => Object.entries(o).filter(([k]) => !k.startsWith('_'));
+/** Entries of an overlay section, without its _notes. Every section is optional. */
+const real = <T>(o: Record<string, T> | undefined) => Object.entries(o ?? {}).filter(([k]) => !k.startsWith('_'));
 
 // ---------------------------------------------------------------- seasons
 
