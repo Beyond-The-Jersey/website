@@ -19,6 +19,9 @@ GRID_DIR = PUBLIC_ASSETS / 'shirts' / 'grid'
 MANIFEST_FILE = PUBLIC_ASSETS / 'manifest.json'
 CSV_FILE = BASE / 'scripts' / 'assets' / 'wikimedia-assets.csv'
 
+# Set False to force a full re-render over whatever is already on disk.
+KEEP_EXISTING = os.environ.get('BTJ_OVERWRITE') != '1'
+
 # Ensure directories exist
 CREST_DIR.mkdir(parents=True, exist_ok=True)
 SHIRT_DIR.mkdir(parents=True, exist_ok=True)
@@ -203,8 +206,11 @@ def process_kit(row):
             out_file = out_dir / f"2026-27-{suffix}-back.jpg"
         else:  # front-square
             out_file = GRID_DIR / f"{club}-2026-27-{suffix}-front-square.jpg"
-        # Save as JPEG quality 90
-        bg.convert('RGB').save(out_file, 'JPEG', quality=90)
+        # Save as JPEG quality 90.
+        # Never clobber a file already on disk: the design handover's own shirt
+        # images outrank an upscaled Wikipedia template, and a rerun must be safe.
+        if not (KEEP_EXISTING and out_file.exists() and out_file.stat().st_size > 0):
+            bg.convert('RGB').save(out_file, 'JPEG', quality=90)
         # Compute hash
         hash_val = md5_file(out_file)
         rel_path = f"assets/shirts/{club}/2026-27-{suffix}-front.jpg" if typ == 'front' else \
