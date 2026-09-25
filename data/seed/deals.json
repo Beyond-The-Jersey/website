@@ -41,7 +41,8 @@
     "source": {
       "name": "Sporting Goods Intelligence (citing SportsPro estimate)",
       "date": "2026-08-06",
-      "url": "https://www.sgieurope.com/marketing/emirates-and-arsenal-extend-shirt-deal-to-2033/122576.article"
+      "url": "https://www.sgieurope.com/marketing/emirates-and-arsenal-extend-shirt-deal-to-2033/122576.article",
+      "short": "SportsPro"
     },
     "note": "Renewal announced 6 Aug 2026 (Inside World Football). Estimate; Footy Headlines suggests £65m for 2026/27–2027/28 then £75m."
   },
@@ -64,9 +65,11 @@
     "source": {
       "name": "SportsPro (citing The Athletic)",
       "date": "2026-07-15",
-      "url": "https://www.sportspro.com/news/sponsorship-marketing/aston-villa-visit-rwanda-shirt-principal-sponsorship-july-2026/"
+      "url": "https://www.sportspro.com/news/sponsorship-marketing/aston-villa-visit-rwanda-shirt-principal-sponsorship-july-2026/",
+      "short": "The Athletic"
     },
-    "note": "About £10m a year; ended June 2026."
+    "note": "About £10m a year; ended June 2026.",
+    "endedOn": "2026-06"
   },
   {
     "id": "arsenal-deel",

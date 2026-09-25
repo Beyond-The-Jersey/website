@@ -1,0 +1,169 @@
+/* The rating scale (UPDATE.md §5.2). */
+
+.scale {
+  position: relative;
+  flex-shrink: 0;
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-5);
+}
+
+.labelTouch {
+  display: none;
+}
+
+@media (hover: none), (max-width: 899px) {
+  .labelHover {
+    display: none;
+  }
+  .labelTouch {
+    display: inline;
+  }
+}
+
+.cells {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.cell {
+  height: 54px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 7px;
+  padding: 8px 9px;
+  border-radius: 8px;
+  border: 1px solid var(--line-3);
+  background: transparent;
+  opacity: 0.72;
+  cursor: help;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+
+.cell:hover,
+.cell:focus-visible,
+.cell[data-active] {
+  border-color: #7a6f66;
+  background: rgba(243, 237, 230, 0.06);
+  opacity: 1;
+}
+
+.cell:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+/* The kit on screen. A 2px border, with 1px less padding so nothing moves. */
+.cell[data-current] {
+  border: 2px solid var(--lv-border);
+  background: var(--lv-tint);
+  padding: 7px 8px;
+  opacity: 1;
+}
+
+.barSlot {
+  height: 10px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.bar {
+  width: 100%;
+  border-radius: 2px;
+}
+
+.word {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 17px;
+  line-height: 0.9;
+}
+
+.marks {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+  height: 14px;
+}
+
+.mark {
+  padding-left: 9px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* The Plex Mono subset has no ▲, so the fallback glyph is set a little smaller to match. */
+.tri {
+  font-size: 0.8em;
+}
+
+/* Under the last cell a long club name would run past the scale: align it right, so it grows left. */
+.markEnd {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 9px 0 0;
+}
+
+.tip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  margin-top: 6px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--card-dark);
+  border: 1px solid var(--line-4);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+.tipWord {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 22px;
+  line-height: 0.9;
+}
+
+.tipText {
+  font-size: 14px;
+  line-height: 1.45;
+  color: #e8e2da;
+}
+
+.tipNote {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 899px) {
+  .scale {
+    width: 100%;
+  }
+}

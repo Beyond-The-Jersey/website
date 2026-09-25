@@ -1,5 +1,6 @@
 import { getDataset } from '@/lib/data';
-import { hasTeamPage, teamPage } from '@/lib/data/derive';
+import { hasTeamPage } from '@/lib/data/derive';
+import { teamPage } from '@/lib/data/team';
 import { clubCard, OG_SIZE } from '@/lib/og/card';
 
 export const size = OG_SIZE;

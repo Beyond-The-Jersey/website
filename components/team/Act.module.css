@@ -1,0 +1,441 @@
+/* "What you can do" (UPDATE.md §5.7) and its dialogs. */
+
+.act {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 26px 26px 12px;
+  border-radius: 20px;
+  background: var(--panel);
+  border: 1px solid var(--line-4);
+  container: act / inline-size;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--good);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 44px;
+  line-height: 0.9;
+}
+
+.intro {
+  margin: 0;
+  font-size: 16.5px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+.introLink {
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.introLink:hover {
+  text-decoration: underline;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  /* #8a8078 in the design is 4.2:1 on this card; one step lighter reaches 5.4:1. */
+  color: var(--text-4);
+}
+
+/* ------------------------------------------------------------ Tell {club} */
+
+.tell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 290px;
+  gap: 22px;
+  padding: 22px;
+  border-radius: 16px;
+  background: var(--card-dark);
+  border: 1px solid #6a3a31;
+}
+
+.tellMain {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.tellHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.iconTile {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--card-dark);
+  border: 1px solid var(--line-3);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tellTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 0.9;
+}
+
+.tellText {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+.raise {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.raise legend {
+  padding: 0;
+  margin-bottom: 8px;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.check input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  flex-shrink: 0;
+  accent-color: var(--cta-red);
+  /* Light boxes, like the design: a white box reads as "tick me" on the dark card. */
+  color-scheme: light;
+  cursor: pointer;
+}
+
+.checkOff {
+  color: var(--text-5);
+  cursor: default;
+}
+
+.checkOff input {
+  cursor: not-allowed;
+}
+
+.write {
+  align-self: flex-start;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  padding: 0 22px;
+  border-radius: 23px;
+  border: none;
+  background: var(--cta-red);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.write:hover:not(:disabled) {
+  background: #db2128;
+}
+
+.write:disabled {
+  background: var(--line-4);
+  cursor: not-allowed;
+}
+
+.draftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.draft {
+  position: relative;
+  height: 236px;
+  overflow: hidden;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--bg);
+  border: 1px solid var(--line-3);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text-2);
+  white-space: pre-line;
+}
+
+.draft::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 60px;
+  background: linear-gradient(rgba(15, 13, 12, 0), var(--bg));
+  pointer-events: none;
+}
+
+.draftEmpty {
+  color: var(--text-5);
+}
+
+/* Mobile only: the draft collapses to 120px with a toggle. */
+.draftToggle {
+  display: none;
+  align-self: flex-start;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------ more ways to help */
+
+.more {
+  display: flex;
+  flex-direction: column;
+}
+
+.moreLabel {
+  padding-bottom: 6px;
+}
+
+.moreRow {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.moreText {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.moreTitle {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.moreBody {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--text-3);
+}
+
+.outline,
+.primary {
+  flex-shrink: 0;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  border-radius: 19px;
+  border: 1px solid #7a6f66;
+  background: transparent;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.outline:hover {
+  border-color: var(--text-2);
+}
+
+.primary {
+  border-color: var(--cta-red);
+  background: var(--cta-red);
+  color: #ffffff;
+}
+
+.primary:hover {
+  background: #db2128;
+}
+
+@container act (max-width: 619px) {
+  .tell {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 18px;
+  }
+  .write {
+    align-self: stretch;
+    justify-content: center;
+  }
+  .draft {
+    height: 120px;
+  }
+  .draftOpen {
+    height: auto;
+  }
+  .draftOpen::after {
+    display: none;
+  }
+  .draftToggle {
+    display: block;
+  }
+  .moreRow {
+    grid-template-columns: 44px minmax(0, 1fr);
+    align-items: start;
+  }
+  .moreRow > :last-child {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 899px) {
+  .act {
+    padding: 20px 18px 8px;
+  }
+  .title {
+    font-size: 36px;
+  }
+  .intro {
+    font-size: 15.5px;
+  }
+}
+
+/* ------------------------------------------------------------ dialogs */
+
+.dialog {
+  width: min(560px, calc(100% - 32px));
+  max-height: calc(100% - 32px);
+  padding: 0;
+  border-radius: 16px;
+  border: 1px solid var(--line-4);
+  background: var(--card-dark);
+  color: var(--text);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+}
+
+.dialog::backdrop {
+  background: rgba(15, 13, 12, 0.72);
+}
+
+.dialogBody {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+}
+
+.dialogTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 0.9;
+}
+
+.dialogText {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+.dialogField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 260px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--line-3);
+  background: var(--bg);
+  color: var(--text-2);
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.55;
+  resize: vertical;
+}
+
+.textarea:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.dialogActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.toastRegion {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 60;
+  pointer-events: none;
+}
+
+.toast {
+  display: block;
+  max-width: calc(100vw - 32px);
+  padding: 10px 16px;
+  border-radius: 20px;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 14px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}

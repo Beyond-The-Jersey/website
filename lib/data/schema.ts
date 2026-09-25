@@ -23,7 +23,14 @@ export const tierId = z.enum(TIER_IDS);
 export const placement = z.enum(PLACEMENTS);
 
 export const source = z
-  .object({ name: z.string(), date: z.string(), url: z.string().nullable(), note: z.string().optional() })
+  .object({
+    name: z.string(),
+    date: z.string(),
+    url: z.string().nullable(),
+    note: z.string().optional(),
+    /** A short label for small source lines, e.g. 'SportsPro' next to a deal value. */
+    short: z.string().optional(),
+  })
   .strict();
 
 export const level = z
@@ -33,6 +40,8 @@ export const level = z
     label: z.string(),
     meter: z.number().int().min(0).max(4),
     definition: z.string(),
+    /** The one-line meaning in the team page's rating-scale tooltip. Falls back to definition. */
+    plain: z.string().optional(),
     colors: z
       .object({
         text: z.string(),
@@ -85,6 +94,28 @@ export const league = z
   })
   .strict();
 
+const PLACEHOLDER = /X{3,}|\.\.\.|example\./i;
+const EMAIL = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+/** Where "Tell {club}" sends people. Only a checked, sourced address; never a guess. */
+export const clubContact = z
+  .object({
+    kind: z.enum(['supporter-liaison', 'contact-page']),
+    email: z
+      .string()
+      .regex(EMAIL, 'not a valid ASCII email address')
+      .refine((v) => !PLACEHOLDER.test(v), 'placeholder values are not allowed')
+      .optional(),
+    url: z
+      .string()
+      .regex(/^https:\/\//, 'contact pages must be https URLs')
+      .refine((v) => !PLACEHOLDER.test(v), 'placeholder values are not allowed')
+      .optional(),
+    source: z.string().min(3),
+  })
+  .strict()
+  .refine((c) => Boolean(c.email || c.url), 'a contact needs an email or a url');
+
 export const club = z
   .object({
     id,
@@ -97,6 +128,7 @@ export const club = z
     crest: z.string().nullable(),
     aliases: z.array(z.string()),
     hasTeamPageDesign: z.boolean().optional(),
+    contact: clubContact.nullable().optional(),
   })
   .strict();
 
@@ -123,6 +155,17 @@ export const claim = z
   })
   .strict();
 
+export const sponsorWhy = z
+  .object({
+    /** The "Why is that a problem?" paragraph. Written only from the claims below. */
+    text: z.string(),
+    claimIds: z.array(id).min(1),
+    /** The one sentence used in the "Tell {club}" draft message. */
+    messageLine: z.string().optional(),
+    status: z.enum(['draft', 'reviewed']),
+  })
+  .strict();
+
 export const sponsor = z
   .object({
     id,
@@ -135,6 +178,9 @@ export const sponsor = z
     claimIds: z.array(id),
     aliases: z.array(z.string()),
     note: z.string().optional(),
+    /** 'owned by' (default) or 'paid for by', for sentences about the owner. */
+    ownerVerb: z.enum(['owned by', 'paid for by']).optional(),
+    why: sponsorWhy.optional(),
   })
   .strict();
 
@@ -146,6 +192,7 @@ export const kitSponsor = z
     placement,
     side: z.enum(['front', 'back']).optional(),
     hotspot: hotspot.optional(),
+    /** Unused since the v3 team page; kept so older data still validates. */
     cardSlot: z.enum(['L', 'R', 'T']).optional(),
     source: source.nullable().optional(),
   })
@@ -170,6 +217,10 @@ export const kit = z
     summary: z.string().nullable(),
     change: kitChange.nullable(),
     levelOverride: levelId.optional(),
+    /** The sentence under the club name; '{level}' is replaced by the level word. Past kits use 'was'. */
+    headline: z.string().optional(),
+    /** One line for "Travel back in time". */
+    shortLine: z.string().optional(),
   })
   .strict();
 
@@ -198,6 +249,11 @@ export const deal = z
     value: money.nullable(),
     source: source.nullable(),
     note: z.string().optional(),
+    /** YYYY-MM, when the deal ended at a known month ('Gone since June 2026'). */
+    endedOn: z
+      .string()
+      .regex(/^[0-9]{4}-[0-9]{2}$/, 'endedOn is YYYY-MM')
+      .optional(),
   })
   .strict();
 
@@ -233,8 +289,6 @@ export const dropped = z
   })
   .strict();
 
-const PLACEHOLDER = /X{3,}|\.\.\.|example\./i;
-
 export const contactChannel = z
   .object({
     type: z.enum(['email', 'contact-form', 'x', 'instagram', 'facebook', 'phone', 'website']),
@@ -246,10 +300,7 @@ export const contactChannel = z
     source: z.object({ name: z.string(), url: z.string().regex(/^https?:\/\//), date: z.string() }).strict(),
   })
   .strict()
-  .refine(
-    (c) => c.type !== 'email' || /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(c.value),
-    'not a valid ASCII email address',
-  );
+  .refine((c) => c.type !== 'email' || EMAIL.test(c.value), 'not a valid ASCII email address');
 
 export const contact = z
   .object({
@@ -294,6 +345,8 @@ export type Tier = z.infer<typeof tier>;
 export type Sport = z.infer<typeof sport>;
 export type League = z.infer<typeof league>;
 export type Club = z.infer<typeof club>;
+export type ClubContact = z.infer<typeof clubContact>;
+export type SponsorWhy = z.infer<typeof sponsorWhy>;
 export type Owner = z.infer<typeof owner>;
 export type Claim = z.infer<typeof claim>;
 export type Sponsor = z.infer<typeof sponsor>;

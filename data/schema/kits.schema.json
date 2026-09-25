@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Kits (one per club per season or period)",
-  "description": "hotspot: logo centre (x,y) and size (w,h) as fractions of the photo (photos are 720x800). cardSlot: where the sponsor card sits around the shirts on the team page.",
+  "description": "hotspot: logo centre (x,y) and size (w,h) as fractions of the photo (photos are 720x800); side: which photo the logo is on. cardSlot is no longer used (v3 team page) but still accepted. headline: the sentence under the club name, with {level} for the level word. shortLine: one line for 'Travel back in time'.",
   "type": "array",
   "items": {
     "type": "object",
@@ -165,6 +165,10 @@
                 },
                 "note": {
                   "type": "string"
+                },
+                "short": {
+                  "type": "string",
+                  "description": "Short label for small source lines, e.g. 'SportsPro' next to a deal value."
                 }
               },
               "description": "Where this sponsor and placement on this season's shirt is documented (club announcement, kit launch, press)."
@@ -221,6 +225,14 @@
           "stained",
           "soaked"
         ]
+      },
+      "headline": {
+        "type": "string",
+        "description": "The sentence under the club name on the team page. '{level}' is replaced by the level word; past kits use 'was'."
+      },
+      "shortLine": {
+        "type": "string",
+        "description": "One line for 'Travel back in time', e.g. 'Emirates on the front'."
       }
     }
   }

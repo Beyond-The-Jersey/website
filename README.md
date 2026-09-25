@@ -21,7 +21,7 @@ npm run dev          # http://localhost:3000
 | `npm run build` | Validates the data, then writes the static site to `out/` |
 | `npm run build:pages` | What GitHub Pages serves: the live site in `out/` plus the seed demo in `out/demo/` |
 | `npm run preview` | Serves `out/` on http://localhost:4173 |
-| `npm test` | Unit tests (Vitest): rating rule, league summaries, search, data checks, hover intent |
+| `npm test` | Unit tests (Vitest): rating rule, league summaries, search, data checks, the team page view model (rows, headlines, why boxes, markers) and the "Tell the club" message |
 | `npm run test:e2e` | Builds, serves `out/` and runs the Playwright tests (desktop 1440×900 and a phone) |
 | `npm run validate:data` | Validates the configured data source against the schemas and checks references and assets |
 | `npm run data:pull` | Clones or updates Beyond-The-Jersey/data into `.data-repo/` |
@@ -47,14 +47,16 @@ Club levels are never stored: they're derived from the sponsors' tiers and where
 All in `data/seed/` (or the same files in the data repo). Run `npm run validate:data` after each change.
 
 - **Club:** add it to `clubs.json` with an ASCII kebab-case `id`, `leagueId` and `aliases` (what fans type: "spurs", "gunners"). Put the crest at `public/assets/crests/<id>.png` (200×200 PNG) and set `crest: "assets/crests/<id>.png"`, or `null` to show initials.
-- **Kit:** one entry per club per season, or per period when nothing changed (`periodFrom`/`periodTo`, `periodLabel` "2006/07 – 2017/18"). List each sponsor with its `placement` and a `source`. For a team page, add front and back photos (720×800 on white) under `public/assets/shirts/<club>/<season>-home-{front,back}.jpg` and give every sponsor `side`, `cardSlot` (`L`, `R` or `T` for sleeves) and a `hotspot`: the logo's centre and size as fractions of the photo. Measure the logo box in pixels and divide by 720 and 800; a logo centred at (369, 314) and 266×104 px is `{ "x": 0.513, "y": 0.393, "w": 0.37, "h": 0.13 }`. A club gets a team page as soon as its latest kit has both photos and every hotspot.
+- **Kit:** one entry per club per season, or per period when nothing changed (`periodFrom`/`periodTo`, `periodLabel` "2006/07 – 2017/18"). List each sponsor with its `placement` and a `source`. For a team page, add front and back photos (720×800 on white) under `public/assets/shirts/<club>/<season>-home-{front,back}.jpg` and give every sponsor `side` (`front` or `back`: which photo) and a `hotspot`: the logo's centre and size as fractions of the photo. Measure the logo box in pixels and divide by 720 and 800; a logo centred at (369, 314) and 266×104 px is `{ "x": 0.513, "y": 0.393, "w": 0.37, "h": 0.13 }`. A club gets a team page as soon as its latest kit has both photos and every hotspot. `cardSlot` is no longer used. Optional: `headline` (the sentence under the club name, with `{level}`; otherwise it's built from the worst sponsor) and `shortLine` (the line in "Travel back in time").
 - **Sponsor:** add it to `sponsors.json` with `tier: "unrated"` and `status: "unrated"` until it's been researched. A tier of concern or worse needs `ownerId` and at least one claim.
 - **Owner:** `owners.json`, with `parentId` up to the state (e.g. Riyadh Air → `saudi-pif` → `government-of-saudi-arabia`).
 - **Claim:** `claims.json`: one sourced statement about an owner, `source: { name, date, url }`. Link it from the sponsor's `claimIds`. Set `reviewed: true` only once a person checked it.
 - **Deal (money):** `deals.json`, always "reported" with a source; `value: null` shows "Value not disclosed".
 - **Change:** `changes.json`. The landing page shows the newest four (by month; within a month, file order).
 - **Dropped:** `dropped.json` with `featured: true` to show it on the landing page. Items about an organisation rather than a club use `orgName` and `leagueId`.
-- **Contacts:** `contacts.json`: public channels a club publishes, each with the URL of the page it's on. They power the "Tell the club" button. No placeholders or guessed addresses: validation rejects them.
+- **Why is that a problem?** `sponsors[].why`: a short paragraph, the claims it rests on (they must be about the sponsor's own owner chain; validation checks it), the one sentence for the "Tell {club}" message, and `status` (`draft` until the team has reviewed it). Only sponsors rated serious or severe show it, and the site never writes one itself. `ownerVerb` (`owned by` or `paid for by`) sets how sentences name the owner.
+- **Departed sponsors:** a sponsor rated concern or worse on the previous kit and missing from the current one shows as a teal "Left in …" row. `deals[].endedOn` (`YYYY-MM`) gives the month; `source.short` is the short source name next to a deal value.
+- **Contacts:** `clubs[].contact` (`{ kind, email?, url?, source }`) is where "Tell {club}" sends the message: `mailto:` with an email, otherwise a dialog to copy the message (and a link to the contact page if there is one). `contacts.json` channels are used when `contact` is empty. No placeholders or guessed addresses: validation rejects them.
 
 ## Configuration
 
@@ -66,7 +68,7 @@ Copy `.env.example` to `.env.local`.
 | `NEXT_PUBLIC_SITE_URL` | `http://localhost:3000` | Absolute URLs for Open Graph images |
 | `NEXT_PUBLIC_SHOW_TEAM_CREST` | `true` | The crest next to the club name on team pages (a test feature) |
 | `NEXT_PUBLIC_BASE_PATH`, `NEXT_PUBLIC_DEMO` | unset | Set by `build:pages` for the `/demo/` copy |
-| `NEXT_PUBLIC_TEAM_INTERACTION` | `click` | Team page: `click` (hover highlights, a click opens a card or selects a period) or `hover` (the original design: hover opens cards and switches periods, with hover intent). Any visit can override it with `?interaction=hover` or `?interaction=click`. |
+| `NEXT_PUBLIC_FOLLOW_ROW` | `true` | The "Follow {club}" row on team pages. Alerts aren't live, so it opens a dialog pointing to the open data. |
 | `BTJ_DATA_SOURCE`, `BTJ_DATA_DIR`, `BTJ_DATA_URL`, `BTJ_DATA_TOKEN` | `seed` | See above |
 
 ## Deploying
@@ -84,33 +86,38 @@ Pages are still marked `noindex` (see `app/layout.tsx`) until the team clears th
 ## Layout
 
 ```
-app/                 routes: / · /soccer/[league] · /[sport] · /clubs/[slug] (+ opengraph-image)
+app/                 routes: / · /soccer/[league] · /[sport] · /clubs/[slug] (+ opengraph-image, fact-sheet/)
 components/          shared components; overview/ and team/ for the two big pages
+lib/copy/team-page.ts  every fixed string on the team page
+lib/messages.ts      the "Tell {club}" draft message
 lib/data/            data layer (see its README)
 lib/search.ts        search matching (runs in the browser)
 lib/og/              share-card rendering and the TTF it needs (SIL OFL)
 data/seed, schema    seed data and JSON Schemas; data/validate.py is the same check in Python for the data agent
 docs/data-request/   what the website needs from Beyond-The-Jersey/data
 e2e/, tests/         Playwright and Vitest
-handover/            the design handover as received (docs, snapshots, design source, assets)
+handover/            the design handover as received (docs, snapshots, design source, assets); update-v3/ is the team page update
 public/assets/       crests and shirt photos from the handover (not cleared for public use)
 app/fonts/           Big Shoulders Display, self-hosted and bundled by Next (SIL OFL; licence in OFL.txt)
 ```
 
 ## Differences from the design we chose to keep
 
-Compared with `handover/design/static/*` at 1440px:
+Compared with `handover/design/static/*` and `handover/update-v3/design/static/*` at 1440px:
 
 - **Data over design copy.** Where the data says something different, the page follows the data: source lines name the actual source (the Arsenal renewal cites Inside World Football), club short names come from `clubs.json` ("Palace", "Forest"), league notes are the full sentences from `leagues.json`, PSG shows up in the Ligue 1 strip, the Visit Rwanda card lists all five sourced claims, and placements show dates from the deals ("Sleeve · 2018–2026", "from 2026/27").
 - **"[DEAL VALUE]"** is shown as "Value not disclosed". Known values show the reported amount, the USD approximation and the source.
 - **Overview "They dropped it"** uses the landing page's teal cards, filtered to the league, as the handover recommends, instead of the older stamp style.
 - **Team pages have the standard footer** with the photo licensing note. The design source has no footer there.
 - **Header links without a destination** ("Sources", "About") point to the repo and the contribute section. "About" is dropped.
-- **Team page reacts to clicks, not hover** (after user feedback that hovers moved the page and left nowhere safe for the mouse). Hovering a logo or card only highlights it; a click opens the card, which stays open until you click elsewhere or press Esc. Timeline periods and sponsor lanes change on click (and arrow keys), and the selected period goes into the URL. The original hover behaviour is still there with `?interaction=hover`.
-- **Nothing reflows:** the title row keeps its size for every period, an open card stays inside the stage and scrolls instead of growing the page, and the page always reserves room for the scrollbar.
-- **Other cards don't fade** when a sponsor card is open, only the other lines, as in the design source (the page spec says cards fade too).
+- **Team page v3** (`handover/update-v3/UPDATE.md`) replaced the first design's stage, cards and timeline. Where the v3 mockup and the data disagree, the page follows the data: "Up to £70m a year" (not "a season"), the claim's own wording ("were given life sentences"), "Visit Rwanda left Arsenal's sleeve in 2026" (the spec asks for the year instead of "this summer"), other clubs by their short names ("Bayern Munich, Schalke 04 and Man Utd"), and the Soaked tooltip says "Arsenal was here in 2018/19 – 2025/26" (the spec's rule) rather than "until June 2026".
+- **Source lines without a link** show no "↗": the claims in the seed have no URLs yet, and an arrow that goes nowhere would promise a link.
+- **Tier chips hug their text** (the spec) rather than stretching across the column (the mockup).
+- **Long club names** ("Atlético de Madrid") put the rating scale under the name instead of beside it; so does any window where the left column is narrower than 700px.
+- **Two small contrast fixes:** "FRONT" on the white shirt panel and the small labels in the "Tell {club}" card are one shade lighter/darker than the mockup, to reach 4.5:1.
+- **Not designed, kept minimal:** the old-shirt notice, the "Tell {club}" dialog (no checked address yet, so it offers the draft to copy), the Follow dialog, the "Link copied" toast, the fact sheet at `/clubs/[slug]/fact-sheet/`, the notes on an old shirt's rating scale ("{club} is here now"), and the phone layout (UPDATE.md §10).
 - **Search icons** use generic initials (EA, RA) rather than the hand-picked codes (EY, RX).
-- **"Say thanks"** has no destination yet, as the handover says. **"Share"** uses the phone's share sheet or copies a link. **"Tell the club"** opens the club's sourced contacts (none in the seed yet).
+- **"Share the card"** uses the phone's share sheet or copies a link. The link's preview is the club's share card.
 - **Page heights** are natural. The design artboards have fixed heights with extra space before the footer.
 
 ## Open questions for the team
@@ -118,5 +125,5 @@ Compared with `handover/design/static/*` at 1440px:
 See [`handover/docs/07-open-questions.md`](handover/docs/07-open-questions.md), plus:
 
 - "Your chest. Their ad." uses the design's dark red `#8a2a22`, about 2.3:1 on the background. That's below the 4.5:1 contrast rule; it's deliberately quiet. Keep it or lighten it?
-- The "Tell the club" dialog and its draft message are new copy that needs a review.
+- From the v3 update (UPDATE.md §13): no checked club contacts yet; "fans speaking up is part of why" needs a source per club named (or softer wording); the Human Rights Watch link for `uae-mass-trial-2024` is still missing; the why texts and message lines are drafts.
 - The GitHub org is `Beyond-The-Jersey` while the site is "Behind the Jersey". Is that the final name for `NEXT_PUBLIC_REPO_URL`?

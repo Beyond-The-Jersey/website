@@ -56,6 +56,13 @@ export function checkDataset(d: RawDataset): CheckResult {
     need('leagues', c.leagueId, `clubs/${c.id}`);
   }
   for (const o of d.owners) need('owners', o.parentId, `owners/${o.id}`);
+  const owners = new Map(d.owners.map((o) => [o.id, o]));
+  const claims = new Map(d.claims.map((c) => [c.id, c]));
+  const chain = (ownerId: string | null) => {
+    const out: string[] = [];
+    for (let o = ownerId; o && owners.has(o) && !out.includes(o); o = owners.get(o)!.parentId) out.push(o);
+    return out;
+  };
   for (const s of d.sponsors) {
     need('owners', s.ownerId, `sponsors/${s.id}`);
     for (const c of s.claimIds) need('claims', c, `sponsors/${s.id}`);
@@ -63,6 +70,17 @@ export function checkDataset(d: RawDataset): CheckResult {
       errors.push(`sponsors/${s.id}: tier "${s.tier}" needs status "rated"`);
     if (['concern', 'serious', 'severe'].includes(s.tier) && s.claimIds.length === 0)
       errors.push(`sponsors/${s.id}: tier "${s.tier}" needs at least one claim`);
+    if (s.why) {
+      // The why text may only rest on claims about an owner in the sponsor's own owner chain.
+      const ownedBy = chain(s.ownerId);
+      for (const id of s.why.claimIds) {
+        const c = claims.get(id);
+        if (!c) errors.push(`sponsors/${s.id}: why cites unknown claim "${id}"`);
+        else if (!c.ownerIds.some((o) => ownedBy.includes(o)))
+          errors.push(`sponsors/${s.id}: why cites claim "${id}", which is about a different owner`);
+      }
+      if (s.why.status !== 'reviewed') warnings.push(`sponsors/${s.id}: why text is a draft`);
+    }
   }
   for (const c of d.claims) {
     for (const o of c.ownerIds) need('owners', o, `claims/${c.id}`);
@@ -73,8 +91,7 @@ export function checkDataset(d: RawDataset): CheckResult {
     need('clubs', k.clubId, where);
     for (const p of k.sponsors) {
       need('sponsors', p.sponsorId, where);
-      if (p.hotspot && !(p.side && p.cardSlot))
-        errors.push(`${where}: sponsor "${p.sponsorId}" has a hotspot but no side/cardSlot`);
+      if (p.hotspot && !p.side) errors.push(`${where}: sponsor "${p.sponsorId}" has a hotspot but no side`);
       const h = p.hotspot;
       if (h && ![h.x, h.y, h.w, h.h].every((v) => v >= 0 && v <= 1))
         errors.push(`${where}: hotspot for "${p.sponsorId}" must use fractions between 0 and 1`);

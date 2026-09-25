@@ -1,0 +1,165 @@
+{
+  "_about": "New fields for the v3 team page. Merge each block into the matching seed file (or the real data source) by id, then extend the zod schemas in lib/data and data/schema. Every fact here comes from claims already in claims.json. Text marked draft needs a review by the team before launch. See UPDATE.md §9.",
+
+  "levels": {
+    "_field": "plain: the one-line meaning shown in the rating-scale tooltip",
+    "clean":   { "plain": "We checked every sponsor on the shirt and found nothing." },
+    "spotted": { "plain": "A lesser link, like a sponsor that a state partly owns." },
+    "stained": { "plain": "A sponsor with a serious record on the front, or a severe one elsewhere on the shirt." },
+    "soaked":  { "plain": "A sponsor with a severe record on the front, or two serious ones." }
+  },
+
+  "sponsors": {
+    "_fields": "ownerVerb: 'owned by' (default) or 'paid for by'. why.text: the 'Why is that a problem?' paragraph (draft). why.claimIds: the claims it rests on, shown as its source. why.messageLine: the one sentence used in the Tell-the-club draft message.",
+    "emirates": {
+      "ownerVerb": "owned by",
+      "why": {
+        "text": "Dubai is part of the United Arab Emirates, where criticising the government can land you in prison. In 2024, 43 activists got life sentences in a single mass trial. Putting Emirates on a famous shirt makes the country look good to millions of fans while that goes on. That’s called sportswashing.",
+        "claimIds": ["uae-mass-trial-2024"],
+        "messageLine": "In 2024, 43 activists in the UAE got life sentences in one mass trial.",
+        "status": "draft"
+      }
+    },
+    "visit-rwanda": {
+      "ownerVerb": "paid for by",
+      "why": {
+        "text": "Rwanda’s government pays to put its tourism brand on the shirt. UN experts say 3,000–4,000 Rwandan troops are fighting alongside M23 rebels in eastern Congo, where the rebels take about $800,000 a month from coltan mining. A famous shirt makes Rwanda look like a holiday destination while that goes on. That’s called sportswashing.",
+        "claimIds": ["rwanda-troops-m23", "m23-coltan-levies"],
+        "messageLine": "UN experts say 3,000–4,000 Rwandan troops are fighting alongside M23 rebels in eastern Congo.",
+        "status": "draft"
+      }
+    },
+    "riyadh-air": {
+      "ownerVerb": "owned by",
+      "why": {
+        "text": "Riyadh Air belongs to Saudi Arabia’s state fund, which the crown prince chairs. Saudi Arabia carried out a record 345 executions in 2024, and US intelligence assessed that the crown prince approved the operation that killed journalist Jamal Khashoggi. A famous shirt makes the country look good to millions of fans while that goes on. That’s called sportswashing.",
+        "claimIds": ["saudi-executions-2024", "khashoggi-assessment"],
+        "messageLine": "Saudi Arabia carried out a record 345 executions in 2024.",
+        "status": "draft"
+      }
+    }
+  },
+
+  "kits": {
+    "_fields": "headline: the bold sentence under the club name; {level} is replaced by the level word in its level colour. Past kits use 'was'. shortLine: the one line in 'Travel back in time'. change.text replaces the existing text where given.",
+    "arsenal-2026-27-home": {
+      "headline": "The shirt is {level}: the front sponsor, Emirates, is owned by the Government of Dubai.",
+      "shortLine": "Visit Rwanda gone, Deel on the sleeve",
+      "change": { "kind": "better", "text": "Better than last season: Visit Rwanda left in June 2026", "badge": "Rwanda gone" }
+    },
+    "arsenal-2025-26-home": {
+      "headline": "The shirt was {level}: Emirates on the front is owned by the Government of Dubai, and Visit Rwanda on the sleeve is paid for by the Government of Rwanda.",
+      "shortLine": "Emirates, plus Visit Rwanda on the sleeve"
+    },
+    "arsenal-2017-18-home": {
+      "headline": "The shirt was {level}: the front sponsor, Emirates, is owned by the Government of Dubai.",
+      "shortLine": "Emirates on the front"
+    },
+    "atletico-de-madrid-2026-27-home": {
+      "headline": "The shirt is {level}: Saudi Arabia’s state fund owns the front sponsor, Riyadh Air, and Rwanda’s government pays for Visit Rwanda on the back.",
+      "shortLine": "Riyadh Air on the front, Visit Rwanda on the back"
+    },
+    "aston-villa-2026-27-home": {
+      "headline": "The shirt is {level}: the front sponsor, Visit Rwanda, is paid for by the Government of Rwanda.",
+      "shortLine": "Visit Rwanda on the front, Betano on the sleeves"
+    },
+    "aston-villa-2025-26-home": {
+      "headline": "We haven’t rated this shirt yet: nobody has traced who owns Betano or Trade Nation.",
+      "shortLine": "Betano on the front, Trade Nation on the sleeve"
+    }
+  },
+
+  "deals": {
+    "_fields": "endedOn: YYYY-MM when a deal ended early or at a known month (drives 'Gone since June 2026'). source.short: the short source label shown next to money.",
+    "arsenal-emirates":     { "source": { "short": "SportsPro" } },
+    "arsenal-visit-rwanda": { "endedOn": "2026-06", "source": { "short": "The Athletic" } }
+  },
+
+  "clubs": {
+    "_fields": "contact: where 'Tell {club}' sends people. { kind: 'supporter-liaison' | 'contact-page', email?: string, url?: string, source: string }. Leave null until someone has checked the real address. Never guess one.",
+    "arsenal": { "contact": null },
+    "aston-villa": { "contact": null },
+    "atletico-de-madrid": { "contact": null }
+  },
+
+  "copy": {
+    "_about": "Fixed strings for the v3 team page. {club}, {sponsor}, {n}, {level}, {period} are placeholders.",
+    "explainer": {
+      "lead": "What is this?",
+      "text": "Behind the Jersey shows who really pays for the sponsors on a club’s shirt. We trace each sponsor to its owner, check the human-rights record behind the money, and rate the shirt on a four-step scale from Clean to Soaked.",
+      "button": "How we rate →"
+    },
+    "scale": {
+      "label": "Rating · hover a level",
+      "labelTouch": "Rating · tap a level",
+      "labelNotRated": "Rating · not rated yet",
+      "marker": "▲ {club}",
+      "noteHere": "{club} is here",
+      "noteWas": "{club} was here in {period}"
+    },
+    "why": { "lead": "Why is that a problem?" },
+    "sponsors": {
+      "title": "Every sponsor on the shirt",
+      "sub": "Click a row for the money and the evidence. The numbers match the shirt.",
+      "columns": ["#", "Sponsor", "Who really pays", "Rating", ""],
+      "notChecked": "Not checked yet",
+      "unratedDetail": "We haven’t traced who owns {sponsor} yet, so there is no rating. A rating only goes up once every claim is sourced.",
+      "helpLink": "Help check it →",
+      "evidenceLead": "Evidence:",
+      "allSources": "All sources for {sponsor} →",
+      "moneyLabel": "Money (reported)",
+      "ownedThroughLabel": "Owned through",
+      "leftChip": "Left in {year}",
+      "departedLine": "Gone since {monthYear}, after {seasons} seasons.",
+      "departedWhy": "That’s why {club} is {level} now, not {prevLevel}."
+    },
+    "act": {
+      "kicker": "Now what?",
+      "title": "What you can do",
+      "intro": "You don’t have to stop supporting {club} or wearing the shirt. Sponsors do change, and fans speaking up is part of why: {examples}.",
+      "introLink": "See who dropped a sponsor →",
+      "tell": {
+        "title": "Tell {club}",
+        "text": "It takes about two minutes. Send the club a short, polite message: we write the draft, you change what you like and send it from your own email to the club’s supporter liaison officer.",
+        "raiseLabel": "What to raise",
+        "unratedSuffix": "· not rated yet",
+        "buttonOne": "Write to {club} about {sponsor}",
+        "buttonMany": "Write to {club} about {n} sponsors",
+        "buttonNone": "Tick a sponsor first",
+        "draftLabel": "Your message (draft)",
+        "draftEmpty": "Tick a sponsor to see your message."
+      },
+      "moreLabel": "More ways to help",
+      "more": [
+        { "id": "share",  "title": "Share {club}’s status", "text": "Most fans don’t know who pays for their shirt. Share a card with the rating and the facts.", "button": "Share the card" },
+        { "id": "group",  "title": "Bring it to your fan group", "text": "A supporters’ trust carries more weight than one email. Take a one-page fact sheet with every source.", "button": "Get the fact sheet" },
+        { "id": "check",  "title": "Help check {sponsor}", "text": "We haven’t traced who owns {sponsor} yet. Anyone can add a source, and every one is checked.", "button": "Help check it" },
+        { "id": "follow", "title": "Follow {club}", "text": "One email when the shirt changes or a sponsor deal comes up for renewal. Nothing else.", "button": "Follow {club}" }
+      ]
+    },
+    "shirt": {
+      "header": "The shirt · {kitLabel}",
+      "front": "Front",
+      "back": "Back",
+      "backNone": "Back · no sponsor",
+      "hint": "Hover a number to find it in the list."
+    },
+    "travel": {
+      "title": "Travel back in time",
+      "sub": "Click a season to see that shirt and its sponsors.",
+      "here": "You are here",
+      "pastNotice": "You’re looking at an old shirt ({period}).",
+      "pastNoticeLink": "Back to today’s shirt →"
+    },
+    "message": {
+      "_about": "Draft for 'Tell {club}'. One sponsor paragraph per ticked sponsor, in list order.",
+      "subject": "A question about our shirt sponsor",
+      "greeting": "Dear {club},",
+      "opening": "I’ve supported the club for years and I’m proud of our shirt.",
+      "sponsorParagraph": "But our {placement} sponsor, {sponsor}, is {ownerVerb} the {owner}. {messageLine}",
+      "sponsorParagraphNext": "Our {placement} sponsor, {sponsor}, is {ownerVerb} the {owner}. {messageLine}",
+      "ask": "Please don’t let our shirt be used to cover for that. When the deal is next reviewed, please look for a sponsor every fan can be proud of.",
+      "signoff": "Thank you,\nA supporter"
+    }
+  }
+}

@@ -52,7 +52,9 @@
     ],
     "sponsorsComplete": true,
     "summary": "Saudi Arabia’s state fund pays for the front of this shirt. Rwanda’s government pays for the back.",
-    "change": null
+    "change": null,
+    "headline": "The shirt is {level}: Saudi Arabia’s state fund owns the front sponsor, Riyadh Air, and Rwanda’s government pays for Visit Rwanda on the back.",
+    "shortLine": "Riyadh Air on the front, Visit Rwanda on the back"
   },
   {
     "id": "arsenal-2017-18-home",
@@ -82,7 +84,9 @@
     ],
     "sponsorsComplete": true,
     "summary": "Dubai’s government pays for the front of this shirt.",
-    "change": null
+    "change": null,
+    "headline": "The shirt was {level}: the front sponsor, Emirates, is owned by the Government of Dubai.",
+    "shortLine": "Emirates on the front"
   },
   {
     "id": "arsenal-2025-26-home",
@@ -129,7 +133,9 @@
       "kind": "worse",
       "text": "Worse from 2018: Visit Rwanda joined",
       "badge": "+ Visit Rwanda"
-    }
+    },
+    "headline": "The shirt was {level}: Emirates on the front is owned by the Government of Dubai, and Visit Rwanda on the sleeve is paid for by the Government of Rwanda.",
+    "shortLine": "Emirates, plus Visit Rwanda on the sleeve"
   },
   {
     "id": "arsenal-2026-27-home",
@@ -174,9 +180,11 @@
     "summary": "Rwanda is off the sleeve, but Dubai’s government still pays for the front, so the shirt stays stained.",
     "change": {
       "kind": "better",
-      "text": "Better than last season: Visit Rwanda is gone",
+      "text": "Better than last season: Visit Rwanda left in June 2026",
       "badge": "Rwanda gone"
-    }
+    },
+    "headline": "The shirt is {level}: the front sponsor, Emirates, is owned by the Government of Dubai.",
+    "shortLine": "Visit Rwanda gone, Deel on the sleeve"
   },
   {
     "id": "aston-villa-2025-26-home",
@@ -218,7 +226,9 @@
     ],
     "sponsorsComplete": true,
     "summary": "Betano and Trade Nation haven’t been rated yet.",
-    "change": null
+    "change": null,
+    "headline": "We haven’t rated this shirt yet: nobody has traced who owns Betano or Trade Nation.",
+    "shortLine": "Betano on the front, Trade Nation on the sleeve"
   },
   {
     "id": "aston-villa-2026-27-home",
@@ -265,7 +275,9 @@
       "kind": "worse",
       "text": "Worse than last season: Visit Rwanda took the front",
       "badge": "+ Visit Rwanda"
-    }
+    },
+    "headline": "The shirt is {level}: the front sponsor, Visit Rwanda, is paid for by the Government of Rwanda.",
+    "shortLine": "Visit Rwanda on the front, Betano on the sleeves"
   },
   {
     "id": "manchester-city-2026-27-home",

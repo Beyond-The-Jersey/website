@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Container, SiteFooter, SiteHeader } from '@/components/SiteChrome';
-import { TeamView } from '@/components/team/TeamView';
+import { TeamPage } from '@/components/team/TeamPage';
 import { SHOW_TEAM_CREST } from '@/lib/config';
 import { getDataset } from '@/lib/data';
-import { hasTeamPage, teamPage } from '@/lib/data/derive';
+import { hasTeamPage } from '@/lib/data/derive';
+import { teamPage } from '@/lib/data/team';
 import { LEVELS } from '@/lib/levels';
 import s from './page.module.css';
 
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const level = LEVELS[p.level];
   return {
     title: `${t.club.name}: ${level.rated ? level.word : 'not rated yet'}`,
-    description: p.summary ?? `Who pays for the sponsors on ${t.club.name}’s shirt.`,
+    description: p.headline.text,
   };
 }
 
@@ -41,7 +42,7 @@ export default async function ClubPage({ params }: Props) {
       <SiteHeader variant="team" crumbs={team.crumbs} current={team.club.name} />
       <main className={s.main}>
         <Container>
-          <TeamView team={team} showCrest={SHOW_TEAM_CREST} />
+          <TeamPage team={team} showCrest={SHOW_TEAM_CREST} />
         </Container>
       </main>
       <SiteFooter variant="standard" />

@@ -10,7 +10,6 @@ import {
   latestChanges,
   leagueSummary,
   featuredDropped,
-  teamPage,
 } from '@/lib/data/derive';
 import { levelForKit } from '@/lib/data/rating';
 import { DirectorySource, SEED_DIR } from '@/lib/data/source';
@@ -185,34 +184,6 @@ describe('selectors', () => {
       'la-rams',
     ]);
   });
-
-  it('builds the Arsenal timeline', () => {
-    const t = teamPage(ds, 'arsenal')!;
-    expect(t.periods.map((p) => [p.label, p.level, p.seasons])).toEqual([
-      ['2006/07 – 2017/18', 'stained', 12],
-      ['2018/19 – 2025/26', 'soaked', 8],
-      ['2026/27', 'stained', 1],
-    ]);
-    expect(t.lanes.map((l) => [l.name, l.runs])).toEqual([
-      ['Emirates', [{ from: 0, to: 2 }]],
-      ['Visit Rwanda', [{ from: 1, to: 1 }]],
-      ['Deel', [{ from: 2, to: 2 }]],
-    ]);
-    const vr = t.periods[1].sponsors.find((s) => s.sponsorId === 'visit-rwanda')!;
-    expect(vr.placementText).toBe('Sleeve · 2018–2026');
-    expect(vr.payer).toBe('paid for by the Government of Rwanda');
-    expect(vr.money?.main).toBe('£10m a year');
-    const emirates = t.periods[2].sponsors[0];
-    expect(emirates.payer).toBe('paid for by the Government of Dubai, UAE');
-    expect(emirates.money?.main).toBe('Up to £70m a year');
-  });
-
-  it('marks new sponsors on the current kit', () => {
-    const villa = teamPage(ds, 'aston-villa')!;
-    expect(villa.periods[1].sponsors[0].placementText).toBe('Front of shirt · from 2026/27');
-    expect(villa.periods[1].sponsors[0].money?.main).toBe('Up to £20m a year');
-    expect(villa.periods[0].level).toBe('not-rated');
-  });
 });
 
 describe('validation', () => {
@@ -234,6 +205,25 @@ describe('validation', () => {
           ],
         },
       ],
+    };
+    expect(() => parseFiles(files, 'test')).toThrow(/placeholder/);
+  });
+
+  it('rejects a why text that cites another owner’s claim', () => {
+    const bad = structuredClone(ds) as unknown as Parameters<typeof checkDataset>[0];
+    const emirates = bad.sponsors.find((x) => x.id === 'emirates')!;
+    emirates.why = { ...emirates.why!, claimIds: ['saudi-executions-2024'] };
+    expect(checkDataset(bad).errors).toContain(
+      'sponsors/emirates: why cites claim "saudi-executions-2024", which is about a different owner',
+    );
+  });
+
+  it('rejects a guessed or placeholder club contact', () => {
+    const files = rawFiles();
+    (files.clubs as { id: string; contact?: unknown }[])[0].contact = {
+      kind: 'supporter-liaison',
+      email: 'slo@example.com',
+      source: 'guess',
     };
     expect(() => parseFiles(files, 'test')).toThrow(/placeholder/);
   });

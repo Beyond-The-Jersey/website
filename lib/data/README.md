@@ -5,11 +5,13 @@ Pages never read JSON themselves. They call `getDataset()` from `lib/data` and t
 ```
 source.ts        where the files come from (seed, repo checkout, HTTP)
 schema.ts        zod schemas, mirroring data/schema/*.schema.json
-checks.ts        cross-file checks: references, tiers need claims, hotspots need side and cardSlot
+checks.ts        cross-file checks: references, tiers need claims, hotspots need a side, why texts cite the sponsor's own owner
 index.ts         loadDataset(): load → validate → check → Dataset with lookup maps (memoised per build)
 dataset.ts       the Dataset type and lookup maps
 rating.ts        levelForKit(): the draft rating rule (illustrative until the method is agreed)
-derive.ts        selectors and view models: currentKit, clubLevel, leagueSummary, sponsorCards, teamPage…
+derive.ts        selectors and view models: currentKit, clubLevel, leagueSummary, latestChanges…
+team.ts          the team page (v3): sponsorRows, headlineFor, whyBoxes, scaleNote, markerPosition,
+                 actionIntroExamples, teamPage, factSheet
 search-index.ts  builds the search index at build time (matching lives in lib/search.ts)
 ```
 

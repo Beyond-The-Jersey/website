@@ -110,6 +110,7 @@
 .crumbs li {
   display: flex;
   gap: 10px;
+  min-width: 0;
 }
 
 .crumbLink {

@@ -5,6 +5,7 @@ import s from './Level.module.css';
 
 const SIZES = {
   xs: { w: 4, gap: 2, r: 1, h: [5, 8, 11, 14] },
+  travel: { w: 4, gap: 3, r: 1, h: [5, 8, 11, 14] },
   s: { w: 4, gap: 2, r: 1, h: [6, 9, 12, 15] },
   key: { w: 4, gap: 2, r: 1, h: [6, 9, 12, 16] },
   m: { w: 6, gap: 3, r: 1, h: [8, 13, 18, 24] },

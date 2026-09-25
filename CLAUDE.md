@@ -1,6 +1,6 @@
 # CLAUDE.md: Behind the Jersey
 
-> **This repo, as built so far (24 Sep 2026).** The site lives at the repo root (Next.js 16, static export, Node 24 via `.nvmrc`); the handover is kept as received in `handover/`. Data goes through `lib/data` (see `lib/data/README.md`), from `data/seed` by default. The real data repo (Beyond-The-Jersey/data) doesn't publish the normalised files yet: the request to the data agent is in `docs/data-request/`. `README.md` lists the differences from the design we chose to keep. Checks: `npm run build`, `npm test`, `npm run test:e2e`, `node scripts/visual-compare.mjs --site <url>`.
+> **This repo, as built so far (25 Sep 2026).** The site lives at the repo root (Next.js 16, static export, Node 24 via `.nvmrc`); the handovers are kept as received in `handover/` (the team page v3 update in `handover/update-v3/`). Data goes through `lib/data` (see `lib/data/README.md`), from `data/seed` by default; the real data repo (Beyond-The-Jersey/data) can be used with `BTJ_DATA_SOURCE=repo` (see `docs/data-request/` for what we asked the data agent for). `README.md` lists the differences from the design we chose to keep. Checks: `npm run build`, `npm test`, `npm run test:e2e`, `node scripts/visual-compare.mjs --site <url>`.
 
 You are implementing **Behind the Jersey**, a fan-facing website that shows who really pays for the sponsors on sports jerseys. It rates each club with a blood level: Clean, Spotted, Stained, Soaked. The design is finished for five pages. Your job is to build them as a real, data-driven website and connect them to the data that exists.
 
@@ -28,7 +28,7 @@ Read this file first, then the docs in this order:
 
 1. **Landing page** `/`. Snapshots: `handover/design/static/landing.html`, `landing--search-open.html`. Source: `Landing.dc.html`.
 2. **Soccer overview, club crests version** `/soccer/[league]` (default `premier-league`). Snapshots: `overview-premier-league.html`, `overview-la-liga.html`. Source: `Overview.dc.html` with `view="crests"`, wrapped by `Overview-crests.dc.html`.
-3. **Team pages** `/clubs/[slug]` for **Atlético de Madrid**, **Arsenal** and **Aston Villa**, all built from one template driven by data. Snapshots: `team-*.html`. Source: `TeamDetail.dc.html`, with `teamId` set to `atletico`, `arsenal` or `villa`.
+3. Team pages `/clubs/[slug]`: **v3 two-column layout**, see `handover/update-v3/UPDATE.md`. The old stage, cards, lines, hover intent and timeline were removed on purpose.
 
 Out of scope for now, parked: the money-flow section (`handover/design/source/parked/MoneyFlow.dc.html`), the mobile "Label" scan feature, the "Follow the Money" story page, "next chance to drop it", and email alerts. Don't build these unless asked.
 
@@ -47,16 +47,16 @@ Out of scope for now, parked: the money-flow section (`handover/design/source/pa
 3. **Derive club levels from sponsors** using the rule in `handover/docs/05-data-model.md`. Don't hard-code levels in components. `levelOverride` exists in the data model for exceptions but should rarely be needed.
 4. **Tone:** factual, never mocking clubs or fans. Positive changes are celebrated in teal. Don't add blood splatter to shirts: the team explicitly removed it.
 5. **Copy is part of the design.** Use the exact headings and sentences from the specs and snapshots unless data replaces them. The main headline is "Who's buying your ___?", rotating *shirt → shoes → stadium → game → league → club → loyalty*. Never use the word "race" in it.
-6. **Accessibility:** real links and buttons, a keyboard path to everything that has a hover (focus opens sponsor cards), visible focus states, and `prefers-reduced-motion` stops the headline rotation (show "loyalty"). Text contrast is at least 4.5:1.
+6. **Accessibility:** real links and buttons, a keyboard path to everything that has a hover, visible focus states, and `prefers-reduced-motion` stops the headline rotation (show "loyalty"). Text contrast is at least 4.5:1.
 7. **Images:** the shirt photos (footballkitarchive.com, footyheadlines.com) and crests (football-data.org) are fine for a prototype but not cleared for public launch. Keep `public/assets/manifest.json` licensing notes with them and don't deploy publicly without the team's OK.
 8. The designs are desktop at 1440px. Build responsive layouts that keep the same hierarchy on mobile, following the notes in `handover/docs/03-page-specs.md`, and don't invent new sections.
 
 ## Definition of done for this handover
 
-- All five pages render from data, with the states shown in `handover/design/static/` reproducible (search open, sponsor card open, each timeline period).
+- All five pages render from data, with the states shown in `handover/design/static/` reproducible (search open), and the team page states in `handover/update-v3/design/static/`.
 - They look like the snapshots at 1440px: same layout, type, colours and copy, with only small differences.
 - Search works across clubs, leagues, sports and sponsors with the matching rules in `handover/docs/06-interactions.md`.
-- Team pages work for all three clubs from one template: sponsor cards around the shirt, lines to the logo hotspots, hover intent, and a timeline for Arsenal and Villa.
+- Team pages match `update-v3/design/screenshots/` for Arsenal, and follow UPDATE.md §8 for Atlético and Villa.
 - Data is loaded through `lib/data`, validated, and switchable to the real source. The adapter for any existing data you find is written and documented.
 - `npm run build`, `npm test` and `npm run test:e2e` pass. The README explains how to run the site, where the data comes from and how to add a club.
 

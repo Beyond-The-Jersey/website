@@ -47,7 +47,7 @@ export function sourceLine(source: Pick<Source, 'name' | 'date'>): string {
 
 /** 'SportsPro · Jul 2026': without the '(citing …)' part, for small source lines on cards. */
 export function sourceLineShort(source: Pick<Source, 'name' | 'date'>): string {
-  return `${source.name.replace(/\s*\(.*?\)\s*/g, ' ').trim()} · ${sourceDate(source.date)}`;
+  return `${stripCiting(source.name)} · ${sourceDate(source.date)}`;
 }
 
 const SYMBOL: Record<Money['currency'], string> = { GBP: '£', EUR: '€', USD: '$' };
@@ -68,6 +68,35 @@ export function formatMoney(v: Money): { main: string; usd: string | null } {
   const usd =
     v.currency !== 'USD' && v.usdApprox !== null ? `about $${amount(v.usdApprox)}${v.unit} ${perText(v.per)}` : null;
   return { main, usd };
+}
+
+/** 'about $93m' (no period), or null for USD values and unknown conversions. */
+export function usdApprox(v: Money): string | null {
+  return v.currency !== 'USD' && v.usdApprox !== null ? `about $${amount(v.usdApprox)}${v.unit}` : null;
+}
+
+/** 'SportsPro (citing The Athletic)' → 'SportsPro'. */
+export const stripCiting = (name: string) => name.replace(/\s*\(.*?\)\s*/g, ' ').trim();
+
+const MONTHS_LONG = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+
+/** '2026-06' → 'June 2026'. */
+export function monthYear(ym: string): string {
+  const m = /^(\d{4})-(\d{2})/.exec(ym);
+  return m ? `${MONTHS_LONG[Number(m[2]) - 1]} ${m[1]}` : ym;
 }
 
 const PLACEMENT: Record<Placement, [long: string, short: string]> = {

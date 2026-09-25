@@ -82,6 +82,16 @@ def references():
         asset(c['crest'], 'clubs/' + c['id'])
     for o in get('owners'):
         need('owners', o['parentId'], 'owners/' + o['id'])
+    owners = {o['id']: o for o in get('owners')}
+    claims = {c['id']: c for c in get('claims')}
+
+    def chain(owner_id):
+        out = []
+        while owner_id and owner_id in owners and owner_id not in out:
+            out.append(owner_id)
+            owner_id = owners[owner_id].get('parentId')
+        return out
+
     for s in get('sponsors'):
         need('owners', s['ownerId'], 'sponsors/' + s['id'])
         for cl in s['claimIds']:
@@ -90,6 +100,16 @@ def references():
             errors.append(f'sponsors/{s["id"]}: tier "{s["tier"]}" needs status "rated"')
         if s['tier'] in ('concern', 'serious', 'severe') and not s['claimIds']:
             errors.append(f'sponsors/{s["id"]}: tier "{s["tier"]}" needs at least one claim')
+        why = s.get('why')
+        if why:
+            owned_by = set(chain(s['ownerId']))
+            for cl in why['claimIds']:
+                if cl not in claims:
+                    errors.append(f'sponsors/{s["id"]}: why cites unknown claim "{cl}"')
+                elif not owned_by & set(claims[cl]['ownerIds']):
+                    errors.append(f'sponsors/{s["id"]}: why cites claim "{cl}", which is about a different owner')
+            if why['status'] != 'reviewed':
+                warnings.append(f'sponsors/{s["id"]}: why text is a draft')
     for c in get('claims'):
         for o in c['ownerIds']:
             need('owners', o, 'claims/' + c['id'])
@@ -101,8 +121,8 @@ def references():
             asset(v, where)
         for p in k['sponsors']:
             need('sponsors', p['sponsorId'], where)
-            if 'hotspot' in p and not ('side' in p and 'cardSlot' in p):
-                errors.append(f'{where}: sponsor "{p["sponsorId"]}" has a hotspot but no side/cardSlot')
+            if 'hotspot' in p and 'side' not in p:
+                errors.append(f'{where}: sponsor "{p["sponsorId"]}" has a hotspot but no side')
             h = p.get('hotspot')
             if h and not all(0 <= h[a] <= 1 for a in 'xywh'):
                 errors.append(f'{where}: hotspot for "{p["sponsorId"]}" must use fractions between 0 and 1')
@@ -119,6 +139,12 @@ def references():
             need('sponsors', x.get('sponsorId'), f'{n}/{x["id"]}')
             sourced(x.get('source'), f'{n}/{x["id"]}')
     placeholder = re.compile(r'X{3,}|\.\.\.|example\.', re.I)
+    for c in get('clubs'):
+        ct = c.get('contact')
+        if ct:
+            for v in (ct.get('email'), ct.get('url')):
+                if v and placeholder.search(v):
+                    errors.append(f'clubs/{c["id"]}: placeholder contact "{v}"')
     for c in get('contacts'):
         need('clubs', c['clubId'], 'contacts/' + c['clubId'])
         for ch in c['channels']:

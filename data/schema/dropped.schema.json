@@ -81,6 +81,10 @@
           },
           "note": {
             "type": "string"
+          },
+          "short": {
+            "type": "string",
+            "description": "Short label for small source lines, e.g. 'SportsPro' next to a deal value."
           }
         }
       },

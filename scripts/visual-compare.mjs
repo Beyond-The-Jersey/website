@@ -1,4 +1,4 @@
-// Visual check against the design snapshots (handover/design/static).
+// Visual check against the design snapshots (handover/design/static, handover/update-v3/design/static).
 // Screenshots each route and its snapshot full page at 1440 wide, and writes a side-by-side
 // image per route to test-results/visual/. Serves handover/ itself; the site must be running:
 //
@@ -41,33 +41,61 @@ const DESIGN = `http://localhost:${designServer.address().port}`;
 const only = process.argv.slice(2).filter((a, i, all) => !a.startsWith('--') && !all[i - 1]?.startsWith('--'));
 const OUT = path.join('test-results', 'visual');
 
-/** Each case: our route, the snapshot, and an optional action to reach the state. */
+/** Each case: our route, the snapshot (a path in handover/), and an optional action to reach the state. */
+const V3 = 'update-v3/design/static';
 const CASES = [
-  { name: 'landing', route: '/', design: 'landing.html', wait: 10000 },
+  { name: 'landing', route: '/', design: 'design/static/landing.html', wait: 10000 },
   {
     name: 'landing--search-open',
     route: '/',
-    design: 'landing--search-open.html',
+    design: 'design/static/landing--search-open.html',
     act: async (p) => {
       await p.getByRole('combobox').first().fill('rwa');
     },
   },
-  { name: 'overview-premier-league', route: '/soccer/premier-league/', design: 'overview-premier-league.html' },
-  { name: 'overview-la-liga', route: '/soccer/la-liga/', design: 'overview-la-liga.html' },
-  { name: 'team-atletico', route: '/clubs/atletico-de-madrid/', design: 'team-atletico.html' },
   {
-    name: 'team-atletico--card-open',
-    route: '/clubs/atletico-de-madrid/',
-    design: 'team-atletico--card-open.html',
+    name: 'overview-premier-league',
+    route: '/soccer/premier-league/',
+    design: 'design/static/overview-premier-league.html',
+  },
+  { name: 'overview-la-liga', route: '/soccer/la-liga/', design: 'design/static/overview-la-liga.html' },
+  // Team page v3 (handover/update-v3). The first handover's team snapshots are superseded.
+  { name: 'team-arsenal-v3', route: '/clubs/arsenal/', design: `${V3}/team-arsenal-v3.html` },
+  {
+    name: 'team-arsenal-v3--scale-tooltip-soaked',
+    route: '/clubs/arsenal/',
+    design: `${V3}/team-arsenal-v3--scale-tooltip-soaked.html`,
     act: async (p) => {
-      await p.getByRole('button', { name: 'Visit Rwanda: show who pays' }).click();
+      await p.getByRole('button', { name: /^Soaked, 4 of 4/ }).hover();
     },
   },
-  { name: 'team-arsenal', route: '/clubs/arsenal/', design: 'team-arsenal.html' },
-  { name: 'team-arsenal--2018-2026', route: '/clubs/arsenal/?season=2018-19', design: 'team-arsenal--2018-2026.html' },
-  { name: 'team-arsenal--2006-2018', route: '/clubs/arsenal/?season=2006-07', design: 'team-arsenal--2006-2018.html' },
-  { name: 'team-villa', route: '/clubs/aston-villa/', design: 'team-villa.html' },
-  { name: 'team-villa--2024-2026', route: '/clubs/aston-villa/?season=2024-25', design: 'team-villa--2024-2026.html' },
+  {
+    name: 'team-arsenal-v3--hover-emirates',
+    route: '/clubs/arsenal/',
+    design: `${V3}/team-arsenal-v3--hover-emirates.html`,
+    act: async (p) => {
+      await p.locator('button[aria-controls="panel-emirates-front"]').hover();
+    },
+  },
+  {
+    name: 'team-arsenal-v3--all-rows-open',
+    route: '/clubs/arsenal/',
+    design: `${V3}/team-arsenal-v3--all-rows-open.html`,
+    act: async (p) => {
+      await p.locator('button[aria-controls="panel-deel-sleeve"]').click();
+      await p.locator('button[aria-controls="panel-gone-visit-rwanda"]').click();
+      await p.mouse.move(0, 0);
+    },
+  },
+  {
+    name: 'team-arsenal-v3--nothing-ticked',
+    route: '/clubs/arsenal/',
+    design: `${V3}/team-arsenal-v3--nothing-ticked.html`,
+    act: async (p) => {
+      await p.getByRole('checkbox', { name: 'Include Emirates in the message to Arsenal' }).uncheck();
+      await p.mouse.move(0, 0);
+    },
+  },
 ];
 
 fs.mkdirSync(OUT, { recursive: true });
@@ -76,7 +104,7 @@ const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, r
 
 for (const c of CASES.filter((c) => !only.length || only.includes(c.name))) {
   const page = await ctx.newPage();
-  await page.goto(`${DESIGN}/design/static/${c.design}`, { waitUntil: 'networkidle' });
+  await page.goto(`${DESIGN}/${c.design}`, { waitUntil: 'networkidle' });
   await page.evaluate(() => document.fonts.ready);
   const design = await page.screenshot({ fullPage: true });
   await page.goto(`${SITE}${c.route}`, { waitUntil: 'networkidle' });

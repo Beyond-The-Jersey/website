@@ -12,7 +12,8 @@
       "gunners",
       "afc"
     ],
-    "hasTeamPageDesign": true
+    "hasTeamPageDesign": true,
+    "contact": null
   },
   {
     "id": "aston-villa",
@@ -27,7 +28,8 @@
       "villa",
       "avfc"
     ],
-    "hasTeamPageDesign": true
+    "hasTeamPageDesign": true,
+    "contact": null
   },
   {
     "id": "afc-bournemouth",
@@ -280,7 +282,8 @@
       "atletico",
       "atleti"
     ],
-    "hasTeamPageDesign": true
+    "hasTeamPageDesign": true,
+    "contact": null
   },
   {
     "id": "real-madrid",

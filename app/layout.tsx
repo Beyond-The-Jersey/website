@@ -6,7 +6,8 @@ import './globals.css';
 
 const schibsted = Schibsted_Grotesk({
   subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500', '700'],
+  // 800 for the numbers in the sponsor markers on team pages.
+  weight: ['400', '500', '700', '800'],
   variable: '--font-schibsted',
   display: 'swap',
 });

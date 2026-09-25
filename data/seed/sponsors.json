@@ -16,7 +16,17 @@
     ],
     "aliases": [
       "rwanda"
-    ]
+    ],
+    "ownerVerb": "paid for by",
+    "why": {
+      "text": "Rwanda’s government pays to put its tourism brand on the shirt. UN experts say 3,000–4,000 Rwandan troops are fighting alongside M23 rebels in eastern Congo, where the rebels take about $800,000 a month from coltan mining. A famous shirt makes Rwanda look like a holiday destination while that goes on. That’s called sportswashing.",
+      "claimIds": [
+        "rwanda-troops-m23",
+        "m23-coltan-levies"
+      ],
+      "messageLine": "UN experts say 3,000–4,000 Rwandan troops are fighting alongside M23 rebels in eastern Congo.",
+      "status": "draft"
+    }
   },
   {
     "id": "emirates",
@@ -31,7 +41,16 @@
     ],
     "aliases": [
       "dubai"
-    ]
+    ],
+    "ownerVerb": "owned by",
+    "why": {
+      "text": "Dubai is part of the United Arab Emirates, where criticising the government can land you in prison. In 2024, 43 activists got life sentences in a single mass trial. Putting Emirates on a famous shirt makes the country look good to millions of fans while that goes on. That’s called sportswashing.",
+      "claimIds": [
+        "uae-mass-trial-2024"
+      ],
+      "messageLine": "In 2024, 43 activists in the UAE got life sentences in one mass trial.",
+      "status": "draft"
+    }
   },
   {
     "id": "etihad-airways",
@@ -65,7 +84,17 @@
     "aliases": [
       "saudi",
       "pif"
-    ]
+    ],
+    "ownerVerb": "owned by",
+    "why": {
+      "text": "Riyadh Air belongs to Saudi Arabia’s state fund, which the crown prince chairs. Saudi Arabia carried out a record 345 executions in 2024, and US intelligence assessed that the crown prince approved the operation that killed journalist Jamal Khashoggi. A famous shirt makes the country look good to millions of fans while that goes on. That’s called sportswashing.",
+      "claimIds": [
+        "saudi-executions-2024",
+        "khashoggi-assessment"
+      ],
+      "messageLine": "Saudi Arabia carried out a record 345 executions in 2024.",
+      "status": "draft"
+    }
   },
   {
     "id": "sela",

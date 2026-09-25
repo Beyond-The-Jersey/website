@@ -38,6 +38,10 @@
       "definition": {
         "type": "string"
       },
+      "plain": {
+        "type": "string",
+        "description": "The one-line meaning shown in the team page's rating-scale tooltip. Falls back to definition."
+      },
       "colors": {
         "type": "object",
         "required": [

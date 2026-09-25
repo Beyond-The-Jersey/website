@@ -8,8 +8,6 @@ import {
   placementLabel,
   placementPhrase,
   seasonEndYear,
-  seasonLabel,
-  seasonSpan,
   seasonStartYear,
   sourceLine,
   sourceLineShort,
@@ -18,20 +16,7 @@ import { asset } from '../config';
 import type { Dataset } from './dataset';
 import { kitEnd, kitStart } from './dataset';
 import { compareLevels, isBad, isRated, levelForKit, TIER_SCORE } from './rating';
-import type {
-  Club,
-  ContactChannel,
-  Deal,
-  Kit,
-  KitSponsor,
-  League,
-  LevelId,
-  Owner,
-  Source,
-  Sponsor,
-  Sport,
-  TierId,
-} from './schema';
+import type { Club, Deal, Kit, KitSponsor, League, LevelId, Owner, Source, Sponsor, Sport, TierId } from './schema';
 
 // ---------------------------------------------------------------- basics
 
@@ -53,9 +38,9 @@ export function clubLevel(ds: Dataset, clubId: string): LevelId {
   return kit ? kitLevel(ds, kit) : 'not-rated';
 }
 
-/** A kit can be drawn on the team page when it has both photos and every logo has a hotspot. */
+/** A kit can be drawn on the team page when it has both photos and every logo has a hotspot and a side. */
 export const isTeamPageKit = (kit: Kit): boolean =>
-  Boolean(kit.photos.front && kit.photos.back) && kit.sponsors.every((s) => s.hotspot && s.side && s.cardSlot);
+  Boolean(kit.photos.front && kit.photos.back) && kit.sponsors.every((s) => s.hotspot && s.side);
 
 export function hasTeamPage(ds: Dataset, clubId: string): boolean {
   const kit = currentKit(ds, clubId);
@@ -440,147 +425,4 @@ export function knownForSport(ds: Dataset, sportId: string): KnownDealRow[] {
     });
   }
   return rows;
-}
-
-// ---------------------------------------------------------------- team page
-
-export interface SponsorCardView {
-  key: string;
-  sponsorId: string;
-  name: string;
-  tier: TierId;
-  status: Sponsor['status'];
-  placement: KitSponsor['placement'];
-  /** 'Front of shirt', 'Sleeve · 2018–2026', 'Front of shirt · from 2026/27'. */
-  placementText: string;
-  /** 'paid for by the Government of Rwanda', or null when unrated / nothing found. */
-  payer: string | null;
-  verdict: string | null;
-  claims: ClaimView[];
-  money: MoneyView | null;
-  side: 'front' | 'back';
-  slot: 'L' | 'R' | 'T';
-  hotspot: { x: number; y: number; w: number; h: number };
-  source: SourceView | null;
-}
-
-function placementText(ds: Dataset, kit: Kit, ks: KitSponsor, deal: Deal | null): string {
-  const base = placementLabel(ks.placement);
-  if (!deal) return base;
-  if (deal.from && deal.to && deal.to < ds.currentSeason)
-    return `${base} · ${seasonStartYear(deal.from)}–${seasonEndYear(deal.to)}`;
-  if (deal.from && deal.from === ds.currentSeason && kitEnd(kit) === ds.currentSeason)
-    return `${base} · from ${seasonLabel(deal.from)}`;
-  return base;
-}
-
-export function sponsorCards(ds: Dataset, kit: Kit): SponsorCardView[] {
-  return kit.sponsors.map((ks) => {
-    const sponsor = ds.byId.sponsor.get(ks.sponsorId)!;
-    const deal = dealForKit(ds, kit, ks);
-    const scored = (TIER_SCORE[sponsor.tier] ?? 0) >= 1;
-    return {
-      key: `${ks.sponsorId}:${ks.placement}`,
-      sponsorId: sponsor.id,
-      name: sponsor.name,
-      tier: sponsor.tier,
-      status: sponsor.status,
-      placement: ks.placement,
-      placementText: placementText(ds, kit, ks, deal),
-      payer: scored ? payerPhrase(ds, sponsor, true) : null,
-      verdict: sponsor.verdict,
-      claims: claimsForSponsor(ds, sponsor),
-      money: moneyView(deal),
-      side: ks.side!,
-      slot: ks.cardSlot!,
-      hotspot: ks.hotspot!,
-      source: sourceView(ks.source),
-    };
-  });
-}
-
-export interface TeamPeriod {
-  kitId: string;
-  label: string;
-  kitLabel: string;
-  from: string;
-  to: string;
-  seasons: number;
-  level: LevelId;
-  change: Kit['change'];
-  summary: string | null;
-  photos: { front: string; back: string };
-  sponsors: SponsorCardView[];
-}
-
-export interface TimelineLane {
-  sponsorId: string;
-  name: string;
-  tier: TierId;
-  /** Contiguous runs of period indexes. */
-  runs: { from: number; to: number }[];
-}
-
-export interface TeamPage {
-  club: { id: string; name: string; crest: string | null; initials: string };
-  crumbs: { label: string; href: string | null }[];
-  leagueHref: string;
-  periods: TeamPeriod[];
-  current: number;
-  lanes: TimelineLane[];
-  contacts: ContactChannel[];
-  contactsChecked: string | null;
-}
-
-export function teamPage(ds: Dataset, clubId: string): TeamPage | null {
-  const club = ds.byId.club.get(clubId);
-  if (!club || !hasTeamPage(ds, clubId)) return null;
-  const kits = clubKits(ds, clubId).filter(isTeamPageKit);
-  const periods: TeamPeriod[] = kits.map((k) => {
-    const from = kitStart(k);
-    const to = kitEnd(k);
-    return {
-      kitId: k.id,
-      label: k.periodLabel,
-      kitLabel: `${k.kitType[0].toUpperCase()}${k.kitType.slice(1)} shirt · ${seasonLabel(k.season ?? to)}`,
-      from,
-      to,
-      seasons: seasonSpan(from, to),
-      level: kitLevel(ds, k),
-      change: k.change,
-      summary: k.summary,
-      photos: { front: asset(k.photos.front!), back: asset(k.photos.back!) },
-      sponsors: sponsorCards(ds, k),
-    };
-  });
-  const lanes: TimelineLane[] = [];
-  periods.forEach((p, i) => {
-    for (const s of p.sponsors) {
-      let lane = lanes.find((l) => l.sponsorId === s.sponsorId);
-      if (!lane) {
-        lane = { sponsorId: s.sponsorId, name: s.name, tier: s.tier, runs: [] };
-        lanes.push(lane);
-      }
-      const last = lane.runs.at(-1);
-      if (last && last.to === i) continue;
-      if (last && last.to === i - 1) last.to = i;
-      else lane.runs.push({ from: i, to: i });
-    }
-  });
-  const league = club.leagueId ? ds.byId.league.get(club.leagueId) : undefined;
-  const sport = ds.byId.sport.get(club.sportId);
-  const contact = ds.byId.contact.get(clubId);
-  return {
-    club: { id: club.id, name: club.name, crest: club.crest ? asset(club.crest) : null, initials: club.code },
-    crumbs: [
-      ...(sport ? [{ label: sport.label, href: sportHref(sport) }] : []),
-      ...(league ? [{ label: league.name, href: leagueHref(league) }] : []),
-    ],
-    leagueHref: league ? leagueHref(league) : sportHref({ id: club.sportId }),
-    periods,
-    current: periods.length - 1,
-    lanes,
-    contacts: contact?.channels ?? [],
-    contactsChecked: contact?.lastChecked ?? null,
-  };
 }

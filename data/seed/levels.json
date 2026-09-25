@@ -24,7 +24,8 @@
       "fill": "#e8e2da",
       "band": "#e8e2da",
       "bandText": "#0f0d0c"
-    }
+    },
+    "plain": "We checked every sponsor on the shirt and found nothing."
   },
   {
     "id": "spotted",
@@ -37,7 +38,8 @@
       "fill": "#d9a399",
       "band": "#d9a399",
       "bandText": "#2a1512"
-    }
+    },
+    "plain": "A lesser link, like a sponsor that a state partly owns."
   },
   {
     "id": "stained",
@@ -50,7 +52,8 @@
       "fill": "#b0402f",
       "band": "#6e2820",
       "bandText": "#ffe3de"
-    }
+    },
+    "plain": "A sponsor with a serious record on the front, or a severe one elsewhere on the shirt."
   },
   {
     "id": "soaked",
@@ -63,6 +66,7 @@
       "fill": "#e3121b",
       "band": "#c8121b",
       "bandText": "#ffffff"
-    }
+    },
+    "plain": "A sponsor with a severe record on the front, or two serious ones."
   }
 ]
