@@ -173,15 +173,17 @@ test.describe('team page (v3)', () => {
     const logo = (await page.getByRole('button', { name: '2: Deel, sleeve' }).boundingBox())!;
     // Its centre (where we hover and click) is outside the logo area.
     expect(box.y + box.height / 2).toBeLessThan(logo.y);
-    await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+    // hover() and click() wait for the number to stand still and check it receives the pointer.
+    await two.hover();
     await expect(two).toHaveAttribute('data-hl', 'true');
     await expect(page.locator('[data-hl]').filter({ has: row(page, 'deel-sleeve') })).toHaveCount(1);
-    await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+    await two.click();
     await expect(row(page, 'deel-sleeve')).toHaveAttribute('aria-expanded', 'true');
     // Emirates' number overlaps the logo's left edge: its far left point counts too.
-    const one = (await marker(page, 1).boundingBox())!;
-    await page.mouse.move(one.x + 4, one.y + one.height / 2);
-    await expect(marker(page, 1)).toHaveAttribute('data-hl', 'true');
+    const one = marker(page, 1);
+    const r = (await one.boundingBox())!;
+    await one.hover({ position: { x: 4, y: r.height / 2 } });
+    await expect(one).toHaveAttribute('data-hl', 'true');
   });
 
   test('keyboard: focusing a logo highlights its marker, Enter opens the row', async ({ page }) => {

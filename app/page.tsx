@@ -5,7 +5,7 @@ import { CodeIcon } from '@/components/LogoMark';
 import { RotatingHeadline } from '@/components/RotatingHeadline';
 import { SearchBox } from '@/components/search/SearchBox';
 import { Container, SiteFooter, SiteHeader } from '@/components/SiteChrome';
-import { claimClubHref, REPO_URL, repoHref } from '@/lib/config';
+import { claimClubHref, PIPELINE_URL, REPO_URL, repoHref } from '@/lib/config';
 import { getDataset } from '@/lib/data';
 import { coverage, featuredDropped, latestChanges, leagueSummary, leaguesForSport } from '@/lib/data/derive';
 import type { LevelId } from '@/lib/data/schema';
@@ -66,13 +66,13 @@ const WAYS = [
     title: 'Run our agents',
     text: 'Point our pipeline at a club nobody has checked yet and open a pull request with what it finds.',
     cta: 'Read the guide',
-    href: repoHref('#readme'),
+    href: `${PIPELINE_URL}#readme`,
   },
   {
     title: 'Bring your own agent',
     text: 'Any agent can help if it writes our evidence format: one claim, one source, one file.',
     cta: 'See the format',
-    href: repoHref('#readme'),
+    href: repoHref('#files'),
   },
   {
     title: 'Check a club by hand',
@@ -129,7 +129,7 @@ export default async function Landing() {
               id="just-changed"
               title="Just changed"
               sub="Sponsors come and go every summer. This is what moved, and which way."
-              link={{ href: repoHref(), label: 'Every change, with sources →' }}
+              link={{ href: repoHref('/blob/main/normalized/changes.json'), label: 'Every change, with sources →' }}
             />
             <div className={s.grid4}>
               {changes.map((c) => (
@@ -258,7 +258,7 @@ export default async function Landing() {
                 <a href={repoHref('#readme')} className={s.secondary}>
                   Read the contributor guide
                 </a>
-                {!REPO_URL && <span className={s.org}>github.com/[org]</span>}
+                <span className={s.org}>{REPO_URL.replace(/^https?:\/\//, '')}</span>
               </div>
             </div>
           </section>

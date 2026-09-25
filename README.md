@@ -72,7 +72,8 @@ Copy `.env.example` to `.env.local`.
 
 | Variable | Default | Purpose |
 |---|---|---|
-| `NEXT_PUBLIC_REPO_URL` | unset | The public GitHub repo. Until it's set, repo links go to `/#contribute` and the page shows a `github.com/[org]` placeholder. |
+| `NEXT_PUBLIC_REPO_URL` | `https://github.com/Beyond-The-Jersey/data` | The open data: "Open data on GitHub", "Sources", the contribute section, "Every change, with sources", the Follow dialog, and the "Help check" issue links (labels `club` and `research`). |
+| `NEXT_PUBLIC_PIPELINE_URL` | `https://github.com/Beyond-The-Jersey/pipeline` | "Run our agents → Read the guide" in the contribute section. |
 | `NEXT_PUBLIC_SITE_URL` | `http://localhost:3000` | Absolute URLs for Open Graph images |
 | `NEXT_PUBLIC_SHOW_TEAM_CREST` | `true` | The crest next to the club name on team pages (a test feature) |
 | `NEXT_PUBLIC_BASE_PATH`, `NEXT_PUBLIC_DEMO` | unset | Set by `build:pages` for the `/demo/` copy |
@@ -139,4 +140,3 @@ See [`handover/docs/07-open-questions.md`](handover/docs/07-open-questions.md), 
 
 - "Your chest. Their ad." uses the design's dark red `#8a2a22`, about 2.3:1 on the background. That's below the 4.5:1 contrast rule; it's deliberately quiet. Keep it or lighten it?
 - From the v3 update (UPDATE.md §13): no checked club contacts yet; "fans speaking up is part of why" needs a source per club named (or softer wording); the Human Rights Watch link for `uae-mass-trial-2024` is still missing; the why texts and message lines are drafts.
-- The GitHub org is `Beyond-The-Jersey` while the site is "Behind the Jersey". Is that the final name for `NEXT_PUBLIC_REPO_URL`?
