@@ -103,6 +103,7 @@ const PLACEMENT: Record<Placement, [long: string, short: string]> = {
   front: ['Front of shirt', 'front'],
   back: ['Back of shirt', 'back'],
   sleeve: ['Sleeve', 'sleeve'],
+  patch: ['Patch', 'patch'],
   shorts: ['Shorts', 'shorts'],
   stadium: ['Stadium', 'stadium'],
   partner: ['Partner', 'partner'],

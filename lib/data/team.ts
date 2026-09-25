@@ -42,6 +42,7 @@ const PLACEMENT_ORDER: Placement[] = [
   'front',
   'back',
   'sleeve',
+  'patch',
   'shorts',
   'training-kit',
   'stadium',

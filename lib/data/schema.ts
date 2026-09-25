@@ -11,6 +11,7 @@ export const PLACEMENTS = [
   'front',
   'back',
   'sleeve',
+  'patch',
   'shorts',
   'stadium',
   'partner',
